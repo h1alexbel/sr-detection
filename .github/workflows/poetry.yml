@@ -49,3 +49,7 @@ jobs:
       - name: Poetry build
         run: |
           poetry install
+      - name: Check with Pylint and Flake8
+        run: |
+          pylint $(git ls-files '*.py')
+          flake8 $(git ls-files '*.py')

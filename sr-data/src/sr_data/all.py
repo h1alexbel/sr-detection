@@ -19,21 +19,17 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-data"
-version = "0.0.0"
-description = "GitHub repositories data to vectors"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{include = "sr_data", from = "src"}]
+from .verifications.install import install
 
-[tool.poetry.dependencies]
-python = "^3.11 || ^3.12"
 
-[tool.poetry.scripts]
-sr-data = "sr_data.all:main"
+def main():
+    install(
+        [
+            "npm install -g ghminer@0.0.5",
+            "echo \"All dependencies are installed and up to date!\""
+        ]
+    )
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+
+if __name__ == "__main__":
+    main()
