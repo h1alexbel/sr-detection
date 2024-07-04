@@ -24,8 +24,6 @@ architect:
   - h1alexbel
 docker:
   image: yegor256/rultor-image:1.23.1
-assets:
-  pypi: h1alexbel/home#assets/pypi
 install: |
   python3 -m pip install --upgrade pip
   pip3 install poetry
