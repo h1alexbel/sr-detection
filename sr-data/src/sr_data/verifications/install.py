@@ -1,3 +1,6 @@
+"""
+install.py
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,18 +22,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-"""
-install.py
-"""
 import os
-
-"""
-Install tools using provided commands.
-"""
 
 
 def install(commands: []):
+    """
+    Install tools using provided commands.
+    """
     print("Installing tools...")
     for cmd in commands:
         os.system(cmd)

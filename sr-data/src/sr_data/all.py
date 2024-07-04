@@ -1,3 +1,6 @@
+"""
+Run all tasks.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,18 +22,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-"""
-all.py.
-"""
 from .verifications.install import install
-
-"""
-Run all tasks.
-"""
 
 
 def main():
+    """
+    Run all tasks.
+    """
     install(
         [
             "npm install -g ghminer@0.0.5",
