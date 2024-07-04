@@ -28,7 +28,8 @@ install: |
   python3 -m pip install --upgrade pip
   pip3 install -U pip setuptools
   export POETRY_HOME=/opt/poetry
-  python3 install-poetry.py --version 1.2.0
+  python3 -m venv $POETRY_HOME
+  $POETRY_HOME/bin/pip install poetry==1.8.3
   $POETRY_HOME/bin/poetry --version
 # @todo #5:30min Make rultor merge script more strict.
 #  Let's incorporate more serious and strict build procedures. We should
