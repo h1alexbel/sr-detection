@@ -26,6 +26,7 @@ docker:
   image: yegor256/rultor-image:1.23.1
 install: |
   python3 -m pip install --upgrade pip
+  pip3 install -U pip setuptools
   pip3 install poetry
 # @todo #5:30min Make rultor merge script more strict.
 #  Let's incorporate more serious and strict build procedures. We should
