@@ -1,0 +1,16 @@
+build/
+venv/
+bin/
+pwd/
+*.egg-info/
+.vscode/
+.idea/
+.DS_Store
+*.iml
+.project
+.settings
+.classpath
+.recommenders
+.factorypath
+pyvenv.cfg
+poetry.lock
