@@ -1,5 +1,7 @@
 # sr-detection
 
+[![poetry](https://github.com/h1alexbel/sr-detection/actions/workflows/poetry.yml/badge.svg)](https://github.com/h1alexbel/sr-detection/actions/workflows/poetry.yml)
+
 The goal of the study is to create a model that, by looking at the README file
 and meta-information, can identify GitHub ``sample repositories'' (SR), that
 mostly contain educational or demonstration materials supposed to be copied
