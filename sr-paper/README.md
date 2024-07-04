@@ -2,7 +2,7 @@
 
 [![latexmk](https://github.com/h1alexbel/sr-detection/actions/workflows/latexmk.yml/badge.svg)](https://github.com/h1alexbel/sr-detection/actions/workflows/latexmk.yml)
 
-This paper reveals samples-filter models performance and how they were trained.
+This paper explains how SR detection works.
 
 Auto-generated PDF is here: [paper.pdf](https://github.com/h1alexbel/sr-detection/blob/gh-pages/paper.pdf)
 
