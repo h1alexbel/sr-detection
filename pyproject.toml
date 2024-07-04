@@ -28,7 +28,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11 || ^3.12"
 sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
 sr-detector = { path = "./sr-detector" }
