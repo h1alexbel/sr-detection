@@ -19,10 +19,19 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+"""
+install.py
+"""
 import os
+
+"""
+Install tools using provided commands.
+"""
 
 
 def install(commands: []):
     print("Installing tools...")
     for cmd in commands:
         os.system(cmd)
+    os.system("echo \"All dependencies are installed and up to date!\"")

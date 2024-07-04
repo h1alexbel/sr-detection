@@ -19,14 +19,21 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+"""
+all.py.
+"""
 from .verifications.install import install
+
+"""
+Run all tasks.
+"""
 
 
 def main():
     install(
         [
             "npm install -g ghminer@0.0.5",
-            "echo \"All dependencies are installed and up to date!\""
         ]
     )
 
