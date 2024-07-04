@@ -51,5 +51,5 @@ jobs:
           poetry install
       - name: Check with Pylint and Flake8
         run: |
-          pylint $(git ls-files '*.py')
-          flake8 $(git ls-files '*.py')
+          poetry run pylint $(git ls-files '*.py')
+          poetry run flake8 $(git ls-files '*.py')
