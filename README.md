@@ -1,6 +1,9 @@
 # sr-detection
 
 [![poetry](https://github.com/h1alexbel/sr-detection/actions/workflows/poetry.yml/badge.svg)](https://github.com/h1alexbel/sr-detection/actions/workflows/poetry.yml)
+[![Hits-of-Code](https://hitsofcode.com/github/h1alexbel/sr-detection)](https://hitsofcode.com/view/github/h1alexbel/sr-detection)
+[![PDD status](http://www.0pdd.com/svg?name=h1alexbel/sr-detection)](http://www.0pdd.com/p?name=h1alexbel/sr-detection)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h1alexbel/sr-detection/blob/master/LICENSE.txt)
 
 The goal of the study is to create a model that, by looking at the README file
 and meta-information, can identify GitHub ``sample repositories'' (SR), that
