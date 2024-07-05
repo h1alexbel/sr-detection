@@ -27,17 +27,16 @@ docker:
 install: |
   python3 -m pip install --upgrade pip
   pip3 install -U pip setuptools
-  sudo export POETRY_HOME=/opt/poetry
-  sudo $POETRY_HOME/bin/pip install poetry==1.8.3
-  sudo $POETRY_HOME/bin/poetry --version
+  curl -sSL https://install.python-poetry.org | python3 -
+  sudo poetry --version
 # @todo #5:30min Make rultor merge script more strict.
 #  Let's incorporate more serious and strict build procedures. We should
 #  make test execution as well as static analysis (pylint, flake8, mypy)
 #  mandatory here and in the .github/workflows/poetry.yml.
 merge:
   script: |
-    sudo $POETRY_HOME/bin/poetry install
-    sudo $POETRY_HOME/bin/poetry build
+    sudo poetry install
+    sudo poetry build
 # @todo #5:30min Create release script for whole project.
 #  Let's create a one for the whole project, including all modules.
 #  We should release all the modules: `sr-data|train|detector` to the PyPI. By
