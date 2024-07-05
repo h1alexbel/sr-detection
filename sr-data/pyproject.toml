@@ -22,14 +22,17 @@
 [tool.poetry]
 name = "sr-data"
 version = "0.0.0"
-description = "Collected, processed data from GitHub API to CSV"
+description = "GitHub repositories data to vectors"
 authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include = "sr_data", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11 || ^3.12"
+python = "^3.10 || ^3.11 || ^3.12"
 
+[tool.poetry.scripts]
+sr-data = "sr_data.all:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]

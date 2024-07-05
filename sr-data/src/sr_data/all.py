@@ -1,3 +1,6 @@
+"""
+Run all tasks.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,18 +22,19 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-train"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
+from .verifications.install import install
 
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+def main():
+    """
+    Run all tasks.
+    """
+    install(
+        [
+            "npm install -g ghminer@0.0.5",
+        ]
+    )
+
+
+if __name__ == "__main__":
+    main()
