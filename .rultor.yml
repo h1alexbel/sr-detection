@@ -40,7 +40,6 @@ install: |
 merge:
   script: |
     poetry install
-    poetry build
 # @todo #5:30min Create release script for whole project.
 #  Let's create a one for the whole project, including all modules.
 #  We should release all the modules: `sr-data|train|detector` to the PyPI. By
