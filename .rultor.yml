@@ -28,6 +28,7 @@ install: |
   python3 -m pip install --upgrade pip
   pip3 install -U pip setuptools
   pip install --user pipx
+  export PATH=/home/r/.local/bin
   pipx ensurepath
   pipx install poetry==1.8.3
   poetry --version
