@@ -35,8 +35,7 @@ install: |
 #  mandatory here and in the .github/workflows/poetry.yml.
 merge:
   script: |
-    ls
-    pwd
+    cd sr-data
     sudo /home/r/.local/bin/poetry install
     sudo /home/r/.local/bin/poetry build
 # @todo #5:30min Create release script for whole project.
