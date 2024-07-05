@@ -28,6 +28,7 @@ install: |
   python3 -m pip install --upgrade pip
   pip3 install -U pip setuptools
   curl -sSL https://install.python-poetry.org > install-poetry.py
+  python3 install-poetry.py
   sudo /home/r/.local/bin/poetry --version
 # @todo #5:30min Make rultor merge script more strict.
 #  Let's incorporate more serious and strict build procedures. We should
