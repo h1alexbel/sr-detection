@@ -28,15 +28,15 @@ install: |
   python3 -m pip install --upgrade pip
   pip3 install -U pip setuptools
   pip3 install poetry==1.8.3
-  poetry --version
+  sudo /home/r/.local/bin/poetry --version
 # @todo #5:30min Make rultor merge script more strict.
 #  Let's incorporate more serious and strict build procedures. We should
 #  make test execution as well as static analysis (pylint, flake8, mypy)
 #  mandatory here and in the .github/workflows/poetry.yml.
 merge:
   script: |
-    poetry install
-    poetry build
+    sudo /home/r/.local/bin/poetry install
+    sudo /home/r/.local/bin/poetry build
 # @todo #5:30min Create release script for whole project.
 #  Let's create a one for the whole project, including all modules.
 #  We should release all the modules: `sr-data|train|detector` to the PyPI. By
