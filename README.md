@@ -25,7 +25,7 @@ SR data.
 
 ## How to contribute
 
-It's a Python project, so make sure that you have [Python 3.11+] on your
+It's a Python project, so make sure that you have [Python 3.10+] on your
 system, fork this repository, make changes, send us a [pull request][guidelines].
 We will review your changes and apply them to the `master` branch shortly,
 provided they don't violate our quality standards. To avoid frustration, before
@@ -38,4 +38,4 @@ poetry build
 [CaM]: https://github.com/yegor256/cam
 [cam-issue]: https://github.com/yegor256/cam/issues/227
 [guidelines]: https://www.yegor256.com/2014/04/15/github-guidelines.html
-[Python 3.11+]: https://www.python.org/downloads/release/python-3110
+[Python 3.10+]: https://www.python.org/downloads/release/python-3100
