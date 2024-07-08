@@ -33,6 +33,14 @@ python = "^3.10 || ^3.11 || ^3.12"
 
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"
+collect = "sr_data.tasks.collect:main"
+filter = "sr_data.tasks.filter:main"
+text = "sr_data.tasks.text:main"
+highlight = "sr_data.tasks.highlight:main"
+embed = "sr_data.tasks.embed:main"
+u = "sr_data.tasks.u:main"
+v = "sr_data.tasks.v:main"
+w = "sr_data.tasks.w:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]
