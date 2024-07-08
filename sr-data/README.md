@@ -12,8 +12,8 @@ To run all tasks:
 poetry run sr-data
 ```
 
-All tasks will be executed in order, and you should expect to have these
-[CSVs][CSV]:
+All tasks will be executed in order, with default arguments, and you should
+expect to have these [CSVs][CSV]:
 
 * `repos.csv`
 * `filtered.csv`
@@ -29,8 +29,16 @@ In order to run single task in isolation, then use it like that
 (run it inside `/sr-data` dir!):
 
 ```bash
-poetry run <task id> # e.g. collect
+poetry poe <task id> # e.g. collect
 ```
+
+Most tasks in isolation require some arguments to pass. To observe them run:
+
+```bash
+poetry poe <task id> --help
+```
+
+Make sure you have [poethepoet] installed.
 
 ## Tasks
 
@@ -62,4 +70,5 @@ identification purposes.
 * `workflows`, the number of GitHub Actions workflow files.
 
 [CSV]: https://en.wikipedia.org/wiki/Comma-separated_values
+[poethepoet]: https://poethepoet.natn.io/poetry_plugin.html
 [GitHub GraphQL API]: https://api.github.com/graphql
