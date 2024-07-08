@@ -19,33 +19,3 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-data"
-version = "0.0.0"
-description = "GitHub repositories data to vectors"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{include = "sr_data", from = "src"}]
-
-[tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
-
-[tool.poe.tasks.collect]
-script = "sr_data.tasks.collect:main(config)"
-args = [{name = "config"}]
-
-[tool.poetry.scripts]
-sr-data = "sr_data.all:main"
-collect = "sr_data.tasks.collect:main"
-filter = "sr_data.tasks.filter:main"
-text = "sr_data.tasks.text:main"
-highlight = "sr_data.tasks.highlight:main"
-embed = "sr_data.tasks.embed:main"
-u = "sr_data.tasks.u:main"
-v = "sr_data.tasks.v:main"
-w = "sr_data.tasks.w:main"
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
