@@ -69,4 +69,10 @@ jobs:
       - name: Check with Pylint and Flake8
         run: |
           poetry install
-          git ls-files '*.py' | xargs -I {} sh -c 'poetry run pylint "$@" && poetry run flake8 "$@"' _ {}
+          git ls-files '*.py' | \
+              xargs -I {} sh -c '
+              echo "Running Pylint for {}"
+              poetry run pylint "$@"
+              echo "Running Flake8 for {}"
+              poetry run flake8 "$@"
+              ' _ {}

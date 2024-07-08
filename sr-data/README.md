@@ -5,15 +5,15 @@ data about GitHub repositories.
 
 ## How it works?
 
-`sr-data` runs a [task](#tasks) or a set of tasks and produces output.
+`sr-data` runs a task or a set of [tasks](#tasks) and produces some output.
 To run all tasks:
 
 ```bash
 poetry run sr-data
 ```
 
-All tasks will be executed in order, and you should expect to have these
-[CSVs][CSV]:
+All tasks will be executed in order, with default arguments, and you should
+expect to have these [CSVs][CSV]:
 
 * `repos.csv`
 * `filtered.csv`
@@ -25,22 +25,36 @@ All tasks will be executed in order, and you should expect to have these
 * `v.csv`
 * `w.csv`
 
-In order to run single task in isolation, use it like that:
+In order to run single task in isolation, then use it like that
+(run it inside `/sr-data` dir!):
 
 ```bash
-poetry run sr-data:collect
+poetry poe <task id> # e.g. collect
 ```
+
+Most tasks in isolation require some arguments to pass. To observe them run:
+
+```bash
+poetry poe <task id> --help
+```
+
+Make sure you have [poethepoet] installed.
 
 ## Tasks
 
 * `collect`, collects data about public repositories through
-[GitHub GraphQL API] and outputs `repos.csv` CSV with gathered repositories
+[GitHub GraphQL API] and outputs `repos.csv` with gathered repositories
 and their [metadata](#collected-metadata).
-* `en-filter`, filters out repositories with non-English README file and
-outputs `filtered.csv` CSV with English-only entries.
-* `text`, converts README markdown content into plain text, outputs
-`text.csv` CSV.
-TBD..
+* `filter`, filters out repositories with non-English README and outputs
+`filtered.csv`.
+* `text`, converts README markdown content into plain text, outputs `text.csv`.
+* `highlight`, highlights READMEs by annotating them with a help of LLM,
+outputs `annotated.csv`.
+* `embed`, generates embeddings for README content, outputs `embeddings.csv`.
+* `u`, constructs a set of vectors with numerical metadata, outputs `u.csv`.
+* `v`, constructs a set of vectors with README, outputs `v.csv`.
+* `w`, constructs a set of vectors with both: numerical metadata and README,
+outputs `w.csv`.
 
 ## Collected metadata
 
@@ -56,4 +70,5 @@ identification purposes.
 * `workflows`, the number of GitHub Actions workflow files.
 
 [CSV]: https://en.wikipedia.org/wiki/Comma-separated_values
+[poethepoet]: https://poethepoet.natn.io/poetry_plugin.html
 [GitHub GraphQL API]: https://api.github.com/graphql
