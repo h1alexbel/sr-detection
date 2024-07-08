@@ -17,7 +17,7 @@ research on this very subject.
 
 The repository structured as follows:
 
-* [sr-data](/sr-data), module for collection, preprocessing and preparing the
+* [sr-data](/sr-data), module for collection, preparing, and vectorizing the
 SR data.
 * [sr-train](/sr-train), module for training ML models.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
