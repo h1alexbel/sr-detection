@@ -48,29 +48,29 @@ def main(config=default):
             --tokens {config["tokens"]}
     """
     try:
-        process = subprocess.Popen(
-            cmd,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
-        )
-        while True:
-            output = process.stdout.readline()
-            if output == '' and process.poll() is not None:
-                break
-            if output:
-                print(output.strip())
-        err = process.stderr.read()
-        if err:
-            print(f"Error: {err.strip()}")
-        process.wait()
-        if process.returncode != 0:
-            raise subprocess.CalledProcessError(
-                process.returncode,
+        with subprocess.Popen(
                 cmd,
-                output=process.stdout.read(),
-                stderr=err
-            )
+                shell=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+        ) as process:
+            while True:
+                output = process.stdout.readline()
+                if output == '' and process.poll() is not None:
+                    break
+                if output:
+                    print(output.strip())
+            err = process.stderr.read()
+            if err:
+                print(f"Error: {err.strip()}")
+            process.wait()
+            if process.returncode != 0:
+                raise subprocess.CalledProcessError(
+                    process.returncode,
+                    cmd,
+                    output=process.stdout.read(),
+                    stderr=err
+                )
     except subprocess.CalledProcessError as e:
         print(f"Something went wrong: {e.stderr}")
