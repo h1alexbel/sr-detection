@@ -32,6 +32,7 @@ default = {
 }
 
 
+# pylint: disable=dangerous-default-value
 def main(config=default):
     """
     Collect repositories.
