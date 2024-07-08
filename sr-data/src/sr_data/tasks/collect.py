@@ -1,3 +1,6 @@
+"""
+Collect repositories.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
