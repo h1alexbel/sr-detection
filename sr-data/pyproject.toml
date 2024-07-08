@@ -31,6 +31,10 @@ packages = [{include = "sr_data", from = "src"}]
 [tool.poetry.dependencies]
 python = "^3.10 || ^3.11 || ^3.12"
 
+[tool.poe.tasks.collect]
+script = "sr_data.tasks.collect:main(config)"
+args = [{name = "config"}]
+
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"
 collect = "sr_data.tasks.collect:main"
