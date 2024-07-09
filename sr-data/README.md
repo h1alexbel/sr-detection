@@ -18,7 +18,6 @@ expect to have these [CSVs][CSV]:
 * `repos.csv`
 * `filtered.csv`
 * `preprocessed.csv`
-* `text.csv`
 * `highlighted.csv`
 * `embeddings.csv`
 * `u.csv`
@@ -47,7 +46,6 @@ Make sure you have [poethepoet] installed.
 and their [metadata](#collected-metadata).
 * `filter`, filters out repositories with non-English README and outputs
 `filtered.csv`.
-* `text`, converts README markdown content into plain text, outputs `text.csv`.
 * `highlight`, highlights READMEs by annotating them with a help of LLM,
 outputs `annotated.csv`.
 * `embed`, generates embeddings for README content, outputs `embeddings.csv`.
