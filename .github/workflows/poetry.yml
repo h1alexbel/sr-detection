@@ -49,6 +49,7 @@ jobs:
       - name: Poetry build
         run: |
           poetry install
+          poetry run pytest
   check:
     strategy:
       fail-fast: false
