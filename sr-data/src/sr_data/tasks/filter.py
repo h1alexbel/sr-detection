@@ -55,15 +55,15 @@ def main(csv, out):
     frame.to_csv(out, index=False)
 
 
-def md_to_text(input):
+def md_to_text(text):
     """
     Markdown to plain text.
-    :param input: Markdown string
+    :param text: Markdown string
     :return: Text representation
     """
     try:
         result = BeautifulSoup(
-            markdown.markdown(input), "html.parser"
+            markdown.markdown(text), "html.parser"
         ).get_text(
             separator=' ',
             strip=True
@@ -79,6 +79,6 @@ def english(text):
     """
     try:
         result = detect(text) == 'en'
-    except Exception:
+    except (LangDetectException, TypeError):
         result = False
     return result
