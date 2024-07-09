@@ -34,6 +34,7 @@ langdetect = "^1.0.9"
 pandas = "^2.2.2"
 beautifulsoup4 = "^4.12.3"
 markdown = "^3.6"
+openai = "^1.35.10"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -45,6 +46,10 @@ args = [{name = "config"}]
 [tool.poe.tasks.filter]
 script = "sr_data.tasks.filter:main(csv, out)"
 args = [{name = "csv"}, {name = "out"}]
+
+[tool.poe.tasks.highlight]
+script = "sr_data.tasks.highlight:main(key, csv, out)"
+args = [{name = "key"}, {name = "csv"}, {name = "out"}]
 
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"
