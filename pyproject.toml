@@ -34,6 +34,7 @@ sr-train = { path = "./sr-train" }
 sr-detector = { path = "./sr-detector" }
 
 [tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
 pylint = "^3.2.5"
 flake8 = "^7.1.0"
 
