@@ -30,15 +30,21 @@ packages = [{include = "sr_data", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10 || ^3.11 || ^3.12"
+langdetect = "^1.0.9"
+pandas = "^2.2.2"
+beautifulsoup4 = "^4.12.3"
+markdown = "^3.6"
 
 [tool.poe.tasks.collect]
 script = "sr_data.tasks.collect:main(config)"
 args = [{name = "config"}]
 
+[tool.poe.tasks.filter]
+script = "sr_data.tasks.filter:main(csv, out)"
+args = [{name = "csv"}, {name = "out"}]
+
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"
-collect = "sr_data.tasks.collect:main"
-filter = "sr_data.tasks.filter:main"
 text = "sr_data.tasks.text:main"
 highlight = "sr_data.tasks.highlight:main"
 embed = "sr_data.tasks.embed:main"
