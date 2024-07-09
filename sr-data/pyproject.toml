@@ -45,7 +45,6 @@ args = [{name = "csv"}, {name = "out"}]
 
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"
-text = "sr_data.tasks.text:main"
 highlight = "sr_data.tasks.highlight:main"
 embed = "sr_data.tasks.embed:main"
 u = "sr_data.tasks.u:main"
