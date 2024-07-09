@@ -24,8 +24,8 @@ Filter repositories.
 # SOFTWARE.
 import markdown
 import pandas as pd
-from bs4 import BeautifulSoup
-from langdetect import DetectorFactory
+from bs4 import BeautifulSoup, ParserRejectedMarkup
+from langdetect import DetectorFactory, LangDetectException
 from langdetect import detect
 
 
@@ -62,11 +62,13 @@ def md_to_text(input):
     :return: Text representation
     """
     try:
-        result = BeautifulSoup(markdown.markdown(input), "html.parser").get_text(
+        result = BeautifulSoup(
+            markdown.markdown(input), "html.parser"
+        ).get_text(
             separator=' ',
             strip=True
         )
-    except:
+    except ParserRejectedMarkup:
         result = None
     return result
 
@@ -77,6 +79,6 @@ def english(text):
     """
     try:
         result = detect(text) == 'en'
-    except:
+    except Exception:
         result = False
     return result
