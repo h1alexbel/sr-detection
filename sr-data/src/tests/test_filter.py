@@ -1,3 +1,6 @@
+"""
+Test case for filter.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,41 +22,26 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-data"
-version = "0.0.0"
-description = "GitHub repositories data to vectors"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{include = "sr_data", from = "src"}]
+import os
+import unittest
 
-[tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
-langdetect = "^1.0.9"
-pandas = "^2.2.2"
-beautifulsoup4 = "^4.12.3"
-markdown = "^3.6"
+import pandas as pd
+from sr_data.tasks.filter import main
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
 
-[tool.poe.tasks.collect]
-script = "sr_data.tasks.collect:main(config)"
-args = [{name = "config"}]
+class TestFilter(unittest.TestCase):
 
-[tool.poe.tasks.filter]
-script = "sr_data.tasks.filter:main(csv, out)"
-args = [{name = "csv"}, {name = "out"}]
+    def tearDown(self):
+        os.remove("test_out.csv")
 
-[tool.poetry.scripts]
-sr-data = "sr_data.all:main"
-highlight = "sr_data.tasks.highlight:main"
-embed = "sr_data.tasks.embed:main"
-u = "sr_data.tasks.u:main"
-v = "sr_data.tasks.v:main"
-w = "sr_data.tasks.w:main"
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+    def test_filters_input(self):
+        target = "test_out.csv"
+        dir = os.path.dirname(os.path.realpath(__file__))
+        main(os.path.join(dir, "test.csv"), target)
+        out = pd.read_csv(target)["repo"].values.tolist()
+        expected = ["blitz-js/blitz", "wasp-lang/wasp"]
+        self.assertEqual(
+            out,
+            expected,
+            f"Output CSV {out} does not match with expected {expected}"
+        )
