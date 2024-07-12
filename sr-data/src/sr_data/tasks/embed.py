@@ -31,6 +31,13 @@ import requests
 #  get rejected with that error. We should identify that rows and possibly
 #  remove/recover them.
 def main(key, checkpoint, csv, out):
+    """
+    Embed.
+    :param key: HuggingFace token
+    :param checkpoint: HuggingFace Inference checkpoint
+    :param csv: Source CSV
+    :param out: Output CSV
+    """
     frame = pd.read_csv(csv)
     print(f"Generating embeddings for {frame}...")
     print(f"Inference checkpoint: {checkpoint}")
@@ -50,7 +57,7 @@ def infer(texts, checkpoint, key):
     """
     return requests.post(
         # pylint: disable=line-too-long
-        f"https://api-inference.huggingface.co/pipeline/feature-extraction/{checkpoint}", # noqa: E501
+        f"https://api-inference.huggingface.co/pipeline/feature-extraction/{checkpoint}",  # noqa: E501
         headers={
             "Authorization": f"Bearer {key}"
         },
@@ -59,5 +66,6 @@ def infer(texts, checkpoint, key):
             "options": {
                 "wait_for_model": True
             }
-        }
+        },
+        timeout=300
     ).json()
