@@ -50,6 +50,7 @@ def infer(texts, checkpoint, key):
     """
     return requests.post(
         # pylint: disable=line-too-long
+        # noqa: E501
         f"https://api-inference.huggingface.co/pipeline/feature-extraction/{checkpoint}",
         headers={
             "Authorization": f"Bearer {key}"
