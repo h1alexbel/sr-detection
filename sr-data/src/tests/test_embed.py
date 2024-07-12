@@ -31,8 +31,14 @@ from sr_data.tasks.embed import infer, main
 
 
 class TestEmbed(unittest.TestCase):
+    """
+    Test cases for embed.
+    """
 
     def test_returns_embeddings(self):
+        """
+        Test case for returning embeddings for text.
+        """
         embeddings = infer(
             ["some dummy text"],
             "sentence-transformers/all-MiniLM-L6-v2",
@@ -46,12 +52,14 @@ class TestEmbed(unittest.TestCase):
         self.assertEqual(
             rows,
             rexpected,
-            f"Generated embeddings rows count {rows} does not match with expected {rexpected}"
+            f"Generated embeddings rows count {rows} does not match with"
+            f" expected {rexpected}"
         )
         self.assertEqual(
             columns,
             cexpected,
-            f"Generated embeddings columns count {columns} does not match with expected {cexpected}"
+            f"Generated embeddings columns count {columns} does not match with"
+            f" expected {cexpected}"
         )
 
     # @todo #9:30min Use ExtendsWith analogue or some temp directory for 'out'.
@@ -59,11 +67,16 @@ class TestEmbed(unittest.TestCase):
     #  more elegant solution - temp directory or something like extensions from
     #  JUnit. We should fix the same problem in test_filter.py as well.
     def test_creates_csv_with_embeddings(self):
+        """
+        Test case for checking generated CSV file with embeddings.
+        """
         out = "embeddings.csv"
         main(
             os.environ["HF_TESTING_TOKEN"],
             "sentence-transformers/all-MiniLM-L6-v2",
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "embed.csv"),
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "embed.csv"
+            ),
             out
         )
         frame = pd.read_csv(out)
@@ -74,11 +87,13 @@ class TestEmbed(unittest.TestCase):
         self.assertEqual(
             rows,
             rexpected,
-            f"Generated embeddings rows count {rows} does not match with expected {rexpected}"
+            f"Generated embeddings rows count {rows} does not match with"
+            f" expected {rexpected}"
         )
         self.assertEqual(
             columns,
             cexpected,
-            f"Generated embeddings columns count {columns} does not match with expected {cexpected}"
+            f"Generated embeddings columns count {columns} does not match with"
+            f" expected {cexpected}"
         )
         os.remove(out)
