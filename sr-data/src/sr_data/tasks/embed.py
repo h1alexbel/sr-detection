@@ -26,9 +26,10 @@ import pandas as pd
 import requests
 
 
-# @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on some records in the CSV.
-#  When sending records to the endpoint, some READMEs get rejected with that
-#  error. We should identify that rows and possibly remove/recover them.
+# @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on
+#  some records in the CSV. When sending records to the endpoint, some READMEs
+#  get rejected with that error. We should identify that rows and possibly
+#  remove/recover them.
 def main(key, checkpoint, csv, out):
     frame = pd.read_csv(csv)
     print(f"Generating embeddings for {frame}...")
@@ -48,6 +49,7 @@ def infer(texts, checkpoint, key):
     :return: JSON embeddings
     """
     return requests.post(
+        # pylint: disable=line-too-long
         f"https://api-inference.huggingface.co/pipeline/feature-extraction/{checkpoint}",
         headers={
             "Authorization": f"Bearer {key}"
