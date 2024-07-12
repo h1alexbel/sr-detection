@@ -26,7 +26,7 @@ import pandas as pd
 import requests
 
 
-# @todo#9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on some records in the CSV.
+# @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on some records in the CSV.
 #  When sending records to the endpoint, some READMEs get rejected with that
 #  error. We should identify that rows and possibly remove/recover them.
 def main(key, checkpoint, csv, out):
