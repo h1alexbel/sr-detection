@@ -17,7 +17,6 @@ expect to have these [CSVs][CSV]:
 
 * `repos.csv`
 * `filtered.csv`
-* `preprocessed.csv`
 * `highlighted.csv`
 * `embeddings.csv`
 * `u.csv`
