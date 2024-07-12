@@ -28,6 +28,8 @@ on:
   pull_request:
     branches:
       - master
+env:
+  HF_TESTING_TOKEN: ${{ secrets.HF_TESTING_TOKEN }}
 jobs:
   build:
     strategy:
