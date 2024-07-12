@@ -30,12 +30,22 @@ from sr_data.tasks.filter import main
 
 
 class TestFilter(unittest.TestCase):
+    """
+    Test cases for filter.
+    """
 
     def tearDown(self):
+        """
+        Teardown.
+        """
         os.remove("test_out.csv")
 
     def test_filters_input(self):
+        """
+        Test case for filtering input.
+        """
         target = "test_out.csv"
+        # pylint: disable=redefined-builtin
         dir = os.path.dirname(os.path.realpath(__file__))
         main(os.path.join(dir, "test.csv"), target)
         out = pd.read_csv(target)["repo"].values.tolist()
