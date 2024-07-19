@@ -24,6 +24,8 @@ Generate embeddings.
 # SOFTWARE.
 import pandas as pd
 import requests
+import torch
+from sentence_transformers.util import semantic_search
 
 
 # @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on
@@ -41,10 +43,25 @@ def main(key, checkpoint, csv, out):
     frame = pd.read_csv(csv)
     print(f"Generating embeddings for {frame}...")
     print(f"Inference checkpoint: {checkpoint}")
-    embeddings = pd.DataFrame(infer(frame["readme"].tolist(), checkpoint, key))
+    embeddings = pd.DataFrame(infer(frame["headings"].tolist(), checkpoint, key))
     embeddings.insert(0, 'repo', frame["repo"])
     embeddings.to_csv(out, index=False)
-    print(f"Generated embeddings {out}")
+    print(f"Generated embeddings saved in {out}")
+    print("Starting similarity check...")
+    similarity_check(out, checkpoint, key, csv)
+
+def similarity_check(csv, checkpoint, key, origin):
+    check = "example, tutorial"
+    embeddings = pd.read_csv(csv)
+    dataset = torch.from_numpy(embeddings.iloc[:, 1:].to_numpy()).to(torch.float)
+    head_embeddings = torch.FloatTensor(
+        infer([check], checkpoint, key)
+    )
+    hits = semantic_search(head_embeddings, dataset, top_k=5)
+    frame = pd.read_csv(origin)
+    found = [frame["repo"][hits[0][i]['corpus_id']] for i in range(len(hits[0]))]
+    return pd.DataFrame(found).to_csv("similarity_check.csv", index=False)
+
 
 
 def infer(texts, checkpoint, key):
