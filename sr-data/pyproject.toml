@@ -48,10 +48,6 @@ args = [{name = "config"}]
 script = "sr_data.tasks.filter:main(csv, out)"
 args = [{name = "csv"}, {name = "out"}]
 
-[tool.poe.tasks.highlight]
-script = "sr_data.tasks.highlight:main(key, csv, out)"
-args = [{name = "key"}, {name = "csv"}, {name = "out"}]
-
 [tool.poe.tasks.embed]
 script = "sr_data.tasks.embed:main(key, checkpoint, csv, out)"
 args = [ {name = "key"}, {name = "checkpoint"}, {name = "csv"}, {name = "out"} ]
