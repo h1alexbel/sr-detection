@@ -25,7 +25,7 @@ for models.
 
 ## How to contribute
 
-Make sure that you have [Python 3.10+], [npm], and [just] installed on your
+Make sure that you have [Python 3.10+], [just], and [npm] installed on your
 system, fork this repository, make changes, send us a [pull request][guidelines].
 We will review your changes and apply them to the `master` branch shortly,
 provided they don't violate our quality standards. To avoid frustration, before
