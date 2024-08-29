@@ -19,32 +19,39 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
----
-architect:
-  - h1alexbel
-docker:
-  image: yegor256/rultor-image:1.23.1
-install: |
-  python3 -m pip install --upgrade pip
-  pip3 install -U pip setuptools
-  sudo apt-get -y update
-  sudo apt-get -y install python3.10-venv
-  pip install --user pipx
-  export PATH=/home/r/.local/bin
-  pipx ensurepath
-  pipx install poetry==1.8.3
-  cargo install --version 1.30.1 just
-  just versions
-merge:
-  script: |
-    just full
-# @todo #5:30min Create release script for whole project.
-#  Let's create a one for the whole project, including all modules.
-#  We should release all the modules: `sr-data|train|detector` to the PyPI. By
-#  doing so, we should ensure that `sr-detector` is available to be installed
-#  as standalone CLI tool. For `sr-data` and `sr-train` we should output some
-#  prominent files like CSV files and model files. Let's skip sr-paper for now.
-release:
-  script: |-
-    echo "there is no #release script at the moment"
-    exit 0
+
+# Verify versions.
+versions:
+  python3 --version
+  poetry --version
+  cargo --version
+  npm --version
+
+# Full build.
+full:
+  just install
+  just test
+  just check
+
+# Install dependencies.
+install:
+  poetry install
+  npm install -g ghminer@0.0.5
+
+# Run tests.
+test:
+  poetry run pytest
+
+# Check quality of source code.
+check:
+  git ls-files '*.py' | xargs -I {} sh -c \
+    ' echo "Running Pylint for {}" poetry run pylint "$@" echo "Running Flake8 for {}" poetry run flake8 "$@" \
+     ' _ {}
+
+# Collect repositories
+collect:
+
+# Build paper with LaTeX.
+paper:
+  latexmk --version
+  cd sr-paper && latexmk paper.tex -pdf
