@@ -48,8 +48,18 @@ check:
     ' echo "Running Pylint for {}" poetry run pylint "$@" echo "Running Flake8 for {}" poetry run flake8 "$@" \
      ' _ {}
 
-# Collect repositories
+# Run experiment.
+@experiment:
+  EID=$(uuidgen); echo ID of experiment is: "$EID"
+  NOW=$(date +%F):$(date +%T); echo Experiment date is: "$NOW"
+  just collect
+  just filter
+
+# Collect repositories.
 collect:
+
+# Filter collected repositories.
+filter:
 
 # Build paper with LaTeX.
 paper:
