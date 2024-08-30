@@ -33,6 +33,7 @@ install: |
   export PATH=/home/r/.local/bin
   pipx ensurepath
   pipx install poetry==1.8.3
+  curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
   rustup update
   cargo install --version 1.30.1 just
   just versions
