@@ -35,6 +35,9 @@ install: |
   export PATH=/home/r/.local/bin
   pipx ensurepath
   pipx install poetry==1.8.3
+  
+  which just
+  which pipx
   just versions
 merge:
   script: |
