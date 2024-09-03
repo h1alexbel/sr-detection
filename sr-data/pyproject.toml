@@ -41,8 +41,8 @@ requests = "^2.32.3"
 pytest = "^8.2.2"
 
 [tool.poe.tasks.filter]
-script = "sr_data.tasks.filter:main(csv, out)"
-args = [{name = "csv"}, {name = "out"}]
+script = "sr_data.tasks.filter:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.embed]
 script = "sr_data.tasks.embed:main(key, checkpoint, csv, out)"
