@@ -29,28 +29,28 @@ from langdetect import DetectorFactory, LangDetectException
 from langdetect import detect
 
 
-def main(csv, out):
+def main(repos, out):
     """
     Filter.
-    :param csv: CSV filename
+    :param repos: CSV with repositories
     :param out: Output CSV file name
     :return: Filtered CSV
     """
     print("Start filtering...")
     DetectorFactory.seed = 0
-    frame = pd.read_csv(csv)
+    frame = pd.read_csv(repos)
     start = len(frame)
     print(f"Repositories in {start}")
     frame = frame.dropna(subset=["readme"])
     non_null = start - len(frame)
     after_null = len(frame)
-    print(f"Skipped {non_null} repositories with NULL READMEs")
+    print(f"Skipped {non_null} repositories with empty README files")
     frame["readme"] = frame["readme"].apply(md_to_text)
     frame = frame[frame["readme"].apply(english)]
     non_english = after_null - len(frame)
     print(f"Skipped {non_english} non-english repositories")
     print(f"Total skipped: {non_null + non_english}")
-    print(f"Staying with {len(frame)} good repositories")
+    print(f"Saving {len(frame)} good repositories to {out}")
     print(frame)
     frame.to_csv(out, index=False)
 
