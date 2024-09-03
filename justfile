@@ -59,7 +59,8 @@ check:
 # by new line.
 collect:
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-    --start "2019-01-01" --end "2024-05-01" --tokens "$PATS"
+    --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
+    --filename "collected" && mv collected sr-data/collected
 
 # Collect test repositories.
 test-collect:
@@ -70,6 +71,8 @@ test-collect:
 
 # Filter collected repositories.
 filter:
+  cd sr-data && poetry poe filter --repos "results.csv" \
+    --out "after-filter.csv"
 
 # Build paper with LaTeX.
 paper:
