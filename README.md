@@ -23,7 +23,7 @@ collected metadata about GitHub repositories.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
 * [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
 
-## Experiment's method
+## Experiment's steps
 
 ### Metadata collection
 
