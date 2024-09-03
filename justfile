@@ -60,12 +60,12 @@ check:
 collect:
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
     --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
-    --filename "collected" && mv collected sr-data/collected
+    --filename "sr-data/repos"
 
 # Collect test repositories.
 test-collect:
-  mkdir -p tmp
-  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+  mkdir -p sr-data/tmp
+  cd sr-data && ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
     --start "2024-05-01" --end "2024-05-01" --tokens "$PATS" \
     --filename "tmp/test-repos"
 
