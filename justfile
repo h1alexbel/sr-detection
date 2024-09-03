@@ -50,13 +50,23 @@ check:
 
 # Run experiment.
 @experiment:
-  EID=$(uuidgen); echo ID of experiment is: "$EID"
-  NOW=$(date +%F):$(date +%T); echo Experiment date is: "$NOW"
+  NOW=$(date +%F):$(TZ=UTC date +%T); echo Experiment datetime is: "$NOW (UTC)"
   just collect
   just filter
 
 # Collect repositories.
+# Here, $PATS is a name of file with a number of GitHub PATs, separated
+# by new line.
 collect:
+  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+    --start "2019-01-01" --end "2024-05-01" --tokens "$PATS"
+
+# Collect test repositories.
+test-collect:
+  mkdir -p tmp
+  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+    --start "2024-05-01" --end "2024-05-01" --tokens "$PATS" \
+    --filename "tmp/test-repos"
 
 # Filter collected repositories.
 filter:
