@@ -66,6 +66,7 @@ clean:
 # Here, $PATS is a name of file with a number of GitHub PATs, separated
 # by new line.
 collect:
+  mkdir -p sr-data/experiment
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
     --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
     --filename "repos" && mv repos.csv sr-data/experiment/repos.csv
