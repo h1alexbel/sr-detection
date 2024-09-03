@@ -50,8 +50,7 @@ check:
 
 # Run experiment.
 @experiment:
-  EID=$(uuidgen); echo ID of experiment is: "$EID"
-  NOW=$(date +%F):$(date +%T); echo Experiment date is: "$NOW"
+  NOW=$(date +%F):$(TZ=UTC date +%T); echo Experiment datetime is: "$NOW (UTC)"
   just collect
   just filter
 
