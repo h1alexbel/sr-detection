@@ -55,7 +55,11 @@ check:
   just filter
 
 # Collect repositories.
+# Here, $PATS is a name of file with a number of GitHub PATs, separated
+# by new line.
 collect:
+  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+    --start "2019-01-01" --end "2024-05-01" --tokens "$PATS"
 
 # Filter collected repositories.
 filter:
