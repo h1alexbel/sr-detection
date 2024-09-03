@@ -63,8 +63,10 @@ collect:
 
 # Collect test repositories.
 test-collect:
+  mkdir -p tmp
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-    --start "2024-01-01" --end "2024-05-01" --tokens "$PATS"
+    --start "2024-05-01" --end "2024-05-01" --tokens "$PATS" \
+    --filename "tmp/test-repos"
 
 # Filter collected repositories.
 filter:
