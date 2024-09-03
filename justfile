@@ -70,9 +70,8 @@ test-collect:
     --filename "tmp/test-repos"
 
 # Filter collected repositories.
-filter:
-  cd sr-data && poetry poe filter --repos "results.csv" \
-    --out "after-filter.csv"
+filter repos out="after-filter.csv":
+  cd sr-data && poetry poe filter --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.
 paper:
