@@ -17,11 +17,37 @@ research on this very subject.
 
 The repository structured as follows:
 
-* [sr-data](/sr-data), module for collection, filtering, and preparing SR data
-for models.
+* [sr-data](/sr-data), module that consists of a set of tasks that filters
+collected metadata about GitHub repositories.
 * [sr-train](/sr-train), module for training ML models.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
 * [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
+
+## Experiment's method
+
+### Metadata collection
+
+We collect two-fold metadata for each GitHub repository: numerical, and
+textual. For numerical we collect:
+
+* `releases`, the number of releases.
+* `pulls`, the number of pull requests.
+* `issues`, the total number of issues (opened + closed).
+* `branches`, the number of branches.
+* `actions`, the number of GitHub Actions workflow files.
+For textual: `README.md` file.
+
+To run this:
+
+```bash
+just collect
+```
+
+Or if you want to capture smaller amount of repositories:
+
+```bash
+just test-collect
+```
 
 ## How to contribute
 
