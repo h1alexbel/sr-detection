@@ -40,10 +40,6 @@ requests = "^2.32.3"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
 
-[tool.poe.tasks.collect]
-script = "sr_data.tasks.collect:main(config)"
-args = [{name = "config"}]
-
 [tool.poe.tasks.filter]
 script = "sr_data.tasks.filter:main(csv, out)"
 args = [{name = "csv"}, {name = "out"}]
