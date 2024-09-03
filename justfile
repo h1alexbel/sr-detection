@@ -50,9 +50,17 @@ check:
 
 # Run experiment.
 @experiment:
-  NOW=$(date +%F):$(TZ=UTC date +%T); echo Experiment datetime is: "$NOW (UTC)"
+  NOW=$(date +%F):$(TZ=UTC date +%T) && echo "$NOW" >> now.txt; \
+    echo Experiment datetime is: "$NOW (UTC)"
+  mkdir -p sr-data/experiment
+  mv now.txt sr-data/experiment/now.txt
   just collect
   just filter
+
+# Clean up experiment.
+clean:
+  echo "Cleaning up sr-data/experiment..."
+  rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
 # Here, $PATS is a name of file with a number of GitHub PATs, separated
@@ -60,7 +68,7 @@ check:
 collect:
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
     --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
-    --filename "sr-data/repos"
+    --filename "repos" && mv repos.csv sr-data/experiment/repos.csv
 
 # Collect test repositories.
 test-collect:
@@ -70,7 +78,7 @@ test-collect:
     --filename "tmp/test-repos"
 
 # Filter collected repositories.
-filter repos out="after-filter.csv":
+filter repos out="experiment/after-filter.csv":
   cd sr-data && poetry poe filter --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.

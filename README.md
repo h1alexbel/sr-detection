@@ -43,11 +43,32 @@ To run this:
 just collect
 ```
 
-Or if you want to capture smaller amount of repositories:
+You should expect to have `sr-data/experiment/repos.csv` with collected
+repositories and their metadata.
+
+To capture smaller amount of repositories you can run this:
 
 ```bash
 just test-collect
 ```
+
+You should expect to have `sr-data/tmp/test-repos.csv`, with the same structure
+as `repos.csv`, but smaller.
+
+### Filter
+
+We filter collected repositories. We remove repositories with empty README
+file. Then, we convert README file to plain text and check in which languages
+file is written. We remove repositories with README file that is not fully
+written in English.
+
+To run this:
+
+```bash
+just filter repos.csv
+```
+
+You should expect to have `sr-data/experiment/after-filter.csv`.
 
 ## How to contribute
 
