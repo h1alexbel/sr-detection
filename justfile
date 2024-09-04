@@ -83,7 +83,7 @@ filter repos out="experiment/after-filter.csv":
   cd sr-data && poetry poe filter --repos {{repos}} --out {{out}}
 
 # Extract headings from README files.
-extract repos out="experiment/with-extracted-headings.csv":
+extract repos out="experiment/after-extract.csv":
   cd sr-data && poetry poe extract --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.
