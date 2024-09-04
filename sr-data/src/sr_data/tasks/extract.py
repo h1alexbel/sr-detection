@@ -24,17 +24,37 @@ Extract README headings (#).
 # SOFTWARE.
 import re
 
+import nltk
 import pandas as pd
+from nltk.corpus import stopwords
 
 
 def main(repos, out):
+    nltk.download("stopwords")
     print("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
     print(f"Removed {before - len(frame)} repositories that don't have at least one heading (#)")
+    frame["heading"] = frame["headings"].apply(
+        lambda readme: remove_stop_words(readme, stopwords.words("english"))
+    )
+    frame["headings"] = frame["headings"].apply(lemmatize)
     frame.to_csv(out, index=False)
+
+
+def lemmatize(headings):
+    print("")
+
+
+def remove_stop_words(headings, words):
+    clean = []
+    for head in headings:
+        clean.append(
+            ' '.join([word for word in head.split() if word not in words])
+        )
+    return clean
 
 
 def headings(readme):
@@ -43,6 +63,6 @@ def headings(readme):
     hashless = []
     for match in pattern.findall(readme):
         hashless.append(match.replace("#", "").strip())
-    if len(hashless) is not 0:
+    if len(hashless) != 0:
         result = hashless
     return result
