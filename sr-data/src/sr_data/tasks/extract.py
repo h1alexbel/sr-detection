@@ -31,12 +31,18 @@ def main(repos, out):
     print("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
+    before = len(frame)
+    frame = frame.dropna(subset=["headings"])
+    print(f"Removed {before - len(frame)} repositories that don't have at least one heading (#)")
     frame.to_csv(out, index=False)
 
 
 def headings(readme):
     pattern = re.compile("(#+\\s.+)")
+    result = None
     hashless = []
     for match in pattern.findall(readme):
         hashless.append(match.replace("#", "").strip())
-    return hashless
+    if len(hashless) is not 0:
+        result = hashless
+    return result
