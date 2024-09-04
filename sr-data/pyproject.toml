@@ -44,6 +44,10 @@ pytest = "^8.2.2"
 script = "sr_data.tasks.filter:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.extract]
+script = "sr_data.tasks.extract:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [tool.poe.tasks.embed]
 script = "sr_data.tasks.embed:main(key, checkpoint, csv, out)"
 args = [ {name = "key"}, {name = "checkpoint"}, {name = "csv"}, {name = "out"} ]
