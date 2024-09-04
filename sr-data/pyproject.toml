@@ -34,8 +34,8 @@ langdetect = "^1.0.9"
 pandas = "^2.2.2"
 beautifulsoup4 = "^4.12.3"
 markdown = "^3.6"
-openai = "^1.35.10"
 requests = "^2.32.3"
+nltk = "^3.9.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
