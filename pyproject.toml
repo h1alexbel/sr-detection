@@ -32,6 +32,7 @@ python = "^3.10 || ^3.11 || ^3.12"
 sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
 sr-detector = { path = "./sr-detector" }
+nltk = "^3.9.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"

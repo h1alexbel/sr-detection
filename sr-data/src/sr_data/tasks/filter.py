@@ -45,8 +45,9 @@ def main(repos, out):
     non_null = start - len(frame)
     after_null = len(frame)
     print(f"Skipped {non_null} repositories with empty README files")
-    frame["readme"] = frame["readme"].apply(md_to_text)
-    frame = frame[frame["readme"].apply(english)]
+    frame["readme_text"] = frame["readme"].apply(md_to_text)
+    frame = frame[frame["readme_text"].apply(english)]
+    frame = frame.drop(columns=["readme_text"])
     non_english = after_null - len(frame)
     print(f"Skipped {non_english} non-english repositories")
     print(f"Total skipped: {non_null + non_english}")
