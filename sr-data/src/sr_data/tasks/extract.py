@@ -26,26 +26,35 @@ import re
 
 import nltk
 import pandas as pd
+from nltk import WordNetLemmatizer
 from nltk.corpus import stopwords
 
 
 def main(repos, out):
     nltk.download("stopwords")
+    nltk.download("wordnet")
     print("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
     print(f"Removed {before - len(frame)} repositories that don't have at least one heading (#)")
-    frame["heading"] = frame["headings"].apply(
+    frame["headings"] = frame["headings"].apply(
         lambda readme: remove_stop_words(readme, stopwords.words("english"))
     )
-    frame["headings"] = frame["headings"].apply(lemmatize)
+    frame["lem_headings"] = frame["headings"].apply(lemmatize)
     frame.to_csv(out, index=False)
 
 
+# https://stackoverflow.com/questions/61987040/how-to-lemmatise-a-dataframe-column-python
 def lemmatize(headings):
-    print("")
+    lemmatized = []
+    lemmatizer = WordNetLemmatizer()
+    tokenizer = nltk.tokenize.WhitespaceTokenizer()
+    s = [lemmatizer.lemmatize(w) for w in tokenizer.tokenize(" ".join(headings).lower())]
+    # for head in headings:
+    #     lemmatized.append([lemmatizer.lemmatize(w) for w in tokenizer.tokenize(head)])
+    return s
 
 
 def remove_stop_words(headings, words):
