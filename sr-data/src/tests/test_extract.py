@@ -25,7 +25,7 @@ Test cases for extracting README headings (#).
 import unittest
 
 from nltk.corpus import stopwords
-from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter
+from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter, top_words
 
 
 class TestExtract(unittest.TestCase):
@@ -68,4 +68,16 @@ class TestExtract(unittest.TestCase):
             ),
             ["get", "start", "lt", "gt"],
             "Headings were not filtered"
+        )
+
+    def test_finds_top_3(self):
+        top = top_words(
+            ["get", "start", "get", "http", "gt", "gt"],
+            3
+        )
+        expected = ["get", "gt", "start"]
+        self.assertEqual(
+            top,
+            expected,
+            f"Top words found: {top}, but didn't match with expected: {expected}"
         )
