@@ -24,7 +24,8 @@ Test cases for extracting README headings (#).
 # SOFTWARE.
 import unittest
 
-from sr_data.tasks.extract import headings
+from nltk.corpus import stopwords
+from sr_data.tasks.extract import headings, remove_stop_words
 
 
 class TestExtract(unittest.TestCase):
@@ -43,4 +44,11 @@ class TestExtract(unittest.TestCase):
             heads,
             expected,
             f"README headings extracted: {heads}, but do not match with expected: {expected}"
+        )
+
+    def test_removes_stop_words(self):
+        self.assertEqual(
+            remove_stop_words(["to", "it", "contribute"], stopwords.words("english")),
+            ["", "", "contribute"],
+            "Stop words was not removed"
         )
