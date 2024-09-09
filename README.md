@@ -70,6 +70,70 @@ just filter repos.csv
 
 You should expect to have `sr-data/experiment/after-filter.csv`.
 
+### Extract headings
+
+From each README file we extract it's all headings (text after `#`).
+We remove English stop words from each heading. Then, we apply
+lemmatization for each word, filter words with `^[a-zA-Z]+$` regex,
+and calculate up to 5 most common words across README headings.
+
+For instance, this README:
+
+```markdown
+# Building web applications in Java with Spring Boot 3
+...
+
+## Agenda
+...
+
+## Who am I?
+...
+
+## Prerequisites
+...
+
+## Outcomes
+...
+
+## What is Spring?
+...
+
+## Resources
+...
+
+### Dan Vega
+...
+
+### Spring
+... 
+
+### Documentation
+...
+
+### Books
+...
+
+### Podcasts
+...
+
+### YouTube
+...
+```
+
+Will be transformed to:
+
+```text
+['spring', 'build', 'web', 'application', 'java']
+```
+
+To run this:
+
+```bash
+just extract after-filter.csv
+```
+
+You should expect to have `sr-data/experiment/after-extract.csv`.
+
 ## How to contribute
 
 Make sure that you have [Python 3.10+], [just], and [npm] installed on your
