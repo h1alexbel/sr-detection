@@ -1,3 +1,6 @@
+"""
+Test cases for extracting README headings (#).
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,26 +22,25 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-detection"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
+import unittest
 
-[tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
-sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-sr-detector = { path = "./sr-detector" }
-nltk = "^3.9.1"
+from sr_data.tasks.extract import headings
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
-pylint = "^3.2.5"
-flake8 = "^7.1.0"
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+class TestExtract(unittest.TestCase):
+
+    def test_extracts_headings(self):
+        heads = headings(
+            """
+            # test repo
+            This is some test repo.
+            ...
+            #### How to contribute
+            """
+        )
+        expected = ["test repo", "How to contribute"]
+        self.assertEqual(
+            heads,
+            expected,
+            f"README headings extracted: {heads}, but do not match with expected: {expected}"
+        )

@@ -23,16 +23,22 @@ Extract README headings (#).
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import re
+from collections import Counter
 
 import nltk
 import pandas as pd
-from nltk import WordNetLemmatizer
-from nltk.corpus import stopwords
+from nltk import WordNetLemmatizer, word_tokenize
+from nltk.corpus import stopwords, wordnet
+
+nltk.download("stopwords")
+nltk.download("wordnet")
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng')
+nltk.download('omw-1.4')
+lemmatizer = WordNetLemmatizer()
 
 
 def main(repos, out):
-    nltk.download("stopwords")
-    nltk.download("wordnet")
     print("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
@@ -42,22 +48,78 @@ def main(repos, out):
     frame["headings"] = frame["headings"].apply(
         lambda readme: remove_stop_words(readme, stopwords.words("english"))
     )
-    frame["lem_headings"] = frame["headings"].apply(lemmatize)
+    frame["headings"] = frame["headings"].apply(
+        lambda headings: [lemmatize(heading) for heading in headings]
+    )
+    frame["headings"] = frame["headings"].apply(
+        lambda headings: filter(headings, r"^[a-zA-Z]+$")
+    )
+    frame["top"] = frame["headings"].apply(
+        lambda headings: top_words(headings, 5)
+    )
     frame.to_csv(out, index=False)
 
 
-# https://stackoverflow.com/questions/61987040/how-to-lemmatise-a-dataframe-column-python
-def lemmatize(headings):
-    lemmatized = []
-    lemmatizer = WordNetLemmatizer()
-    tokenizer = nltk.tokenize.WhitespaceTokenizer()
-    s = [lemmatizer.lemmatize(w) for w in tokenizer.tokenize(" ".join(headings).lower())]
-    # for head in headings:
-    #     lemmatized.append([lemmatizer.lemmatize(w) for w in tokenizer.tokenize(head)])
-    return s
+def top_words(headings, amount):
+    """
+    Calculate top words in headings
+    :param headings: README headings
+    :param amount: Amount of top words to find
+    :return: Array of top words
+    """
+    words = [word for heading in headings for word in word_tokenize(heading)]
+    return [word for word, _ in Counter(words).most_common(amount)]
+
+
+def filter(headings, regex):
+    """
+    Filter headings
+    :param headings: README headings
+    :param regex: Regex
+    :return: Filtered headings
+    """
+    words = [word for heading in headings for word in word_tokenize(heading)]
+    return [word for word in words if re.match(regex, word)]
+
+
+def lemmatize(heading):
+    """
+    Lemmatize heading.
+    :param heading: README heading
+    :return: Lemmatized README heading
+    """
+    tokens = word_tokenize(heading)
+    tags = nltk.pos_tag(tokens)
+    return " ".join(
+        [lemmatizer.lemmatize(token.lower(), wordnet_pos(tag)) for token, tag in tags]
+    )
+
+
+def wordnet_pos(tag):
+    """
+    NLTK POS tag to WordNet POS tag
+    :param tag: NLTK POS tag
+    :return: WordNet POS tag
+    """
+    if tag.startswith('J'):
+        return wordnet.ADJ
+    elif tag.startswith('V'):
+        return wordnet.VERB
+    elif tag.startswith('N'):
+        return wordnet.NOUN
+    elif tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN
 
 
 def remove_stop_words(headings, words):
+    """
+    Remove stop words
+    :param headings: Headings
+    :param words: Stop words
+    :return: Headings without stop words
+    """
     clean = []
     for head in headings:
         clean.append(
@@ -67,6 +129,11 @@ def remove_stop_words(headings, words):
 
 
 def headings(readme):
+    """
+    Extract all headings
+    :param readme: README content
+    :return: All README headings
+    """
     pattern = re.compile("(#+\\s.+)")
     result = None
     hashless = []
