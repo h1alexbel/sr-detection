@@ -25,7 +25,7 @@ Test cases for extracting README headings (#).
 import unittest
 
 from nltk.corpus import stopwords
-from sr_data.tasks.extract import headings, remove_stop_words, lemmatize
+from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter
 
 
 class TestExtract(unittest.TestCase):
@@ -58,4 +58,14 @@ class TestExtract(unittest.TestCase):
             lemmatize("Getting Started"),
             "get start",
             "Heading was not lemmatized"
+        )
+
+    def test_filters(self):
+        self.assertEqual(
+            filter(
+                ["get start",";lt gt", ":;"],
+                r"^[a-zA-Z]+$"
+            ),
+            ["get", "start", "lt", "gt"],
+            "Headings were not filtered"
         )
