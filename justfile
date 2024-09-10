@@ -86,7 +86,7 @@ extract repos out="experiment/after-extract.csv":
   cd sr-data && poetry poe extract --repos {{repos}} --out {{out}}
 
 # Create embeddings.
-embed repos prefix="embeddings":
+embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
