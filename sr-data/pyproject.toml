@@ -36,6 +36,8 @@ beautifulsoup4 = "^4.12.3"
 markdown = "^3.6"
 requests = "^2.32.3"
 nltk = "^3.9.1"
+scikit-learn = "^1.5.1"
+cohere = "^5.9.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -48,9 +50,13 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.tasks.extract:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.tfidf]
+script = "sr_data.tasks.tfidf:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [tool.poe.tasks.embed]
-script = "sr_data.tasks.embed:main(key, checkpoint, csv, out)"
-args = [ {name = "key"}, {name = "checkpoint"}, {name = "csv"}, {name = "out"} ]
+script = "sr_data.tasks.embed:main(repos, prefix, hf, cohere)"
+args = [ {name = "repos"}, {name = "prefix"}, {name = "hf"}, {name = "cohere"} ]
 
 [tool.poetry.scripts]
 sr-data = "sr_data.all:main"

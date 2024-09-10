@@ -30,6 +30,7 @@ on:
       - master
 env:
   HF_TESTING_TOKEN: ${{ secrets.HF_TESTING_TOKEN }}
+  COHERE_TESTING_TOKEN: ${{ secrets.COHERE_TESTING_TOKEN }}
 jobs:
   build:
     strategy:
