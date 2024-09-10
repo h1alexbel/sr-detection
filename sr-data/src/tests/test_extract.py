@@ -1,6 +1,7 @@
 """
 Test cases for extracting README headings (#).
 """
+import os
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,8 +25,9 @@ Test cases for extracting README headings (#).
 # SOFTWARE.
 import unittest
 
+import pandas as pd
 from nltk.corpus import stopwords
-from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter, top_words
+from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter, top_words, main
 
 
 class TestExtract(unittest.TestCase):
@@ -63,7 +65,7 @@ class TestExtract(unittest.TestCase):
     def test_filters(self):
         self.assertEqual(
             filter(
-                ["get start",";lt gt", ":;"],
+                ["get start", ";lt gt", ":;"],
                 r"^[a-zA-Z]+$"
             ),
             ["get", "start", "lt", "gt"],
@@ -80,4 +82,18 @@ class TestExtract(unittest.TestCase):
             top,
             expected,
             f"Top words found: {top}, but didn't match with expected: {expected}"
+        )
+
+    def test_filters_repo_with_empty_headings(self):
+        out = "extracted.csv"
+        main(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "to-extract.csv"
+            ),
+            out
+        )
+        self.assertEqual(
+            len(pd.read_csv(out)),
+            1,
+            "Should filter repo with empty headings"
         )
