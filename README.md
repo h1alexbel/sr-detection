@@ -134,6 +134,24 @@ just extract after-filter.csv
 
 You should expect to have `sr-data/experiment/after-extract.csv`.
 
+### Generate Embeddings
+
+For each repo, we aggregate all [top words](#extract-headings) from README file
+headings into string. We convert each string to three variants of embeddings:
+[S-BERT], [E5], [Embedv3].
+
+To run this:
+
+```bash
+just embed after-extract.csv
+```
+
+You should expect to have three files:
+
+* `sr-data/experiment/embeddings-s-bert-384.csv`
+* `sr-data/experiment/embeddings-e5-1024.csv`
+* `sr-data/experiment/embeddings-embedv3-1024.csv`
+
 ## How to contribute
 
 Make sure that you have [Python 3.10+], [just], and [npm] installed on your
@@ -152,3 +170,6 @@ just full
 [Python 3.10+]: https://www.python.org/downloads/release/python-3100
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [just]: https://just.systems/man/en/chapter_4.html
+[S-BERT]: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+[E5]: https://huggingface.co/intfloat/e5-large
+[Embedv3]: https://cohere.com/blog/introducing-embed-v3

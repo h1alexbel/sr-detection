@@ -24,27 +24,53 @@ Generate embeddings.
 # SOFTWARE.
 import pandas as pd
 import requests
+import cohere
+import numpy as np
+from nltk.corpus import words
+
+models = {
+    "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
+    "e5-1024": "intfloat/e5-large",
+    "cohere": ""
+}
 
 
-# @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on
-#  some records in the CSV. When sending records to the endpoint, some READMEs
-#  get rejected with that error. We should identify that rows and possibly
-#  remove/recover them.
-def main(key, checkpoint, csv, out):
+def main(repos, prefix, hf, cohere):
     """
     Embed.
-    :param key: HuggingFace token
-    :param checkpoint: HuggingFace Inference checkpoint
-    :param csv: Source CSV
-    :param out: Output CSV
+    :param repos: Source CSV
+    :param prefix: Prefix for output CSV with embeddings
+    :param hf: HuggingFace token
+    :param cohere Cohere token
     """
-    frame = pd.read_csv(csv)
-    print(f"Generating embeddings for {frame}...")
-    print(f"Inference checkpoint: {checkpoint}")
-    embeddings = pd.DataFrame(infer(frame["readme"].tolist(), checkpoint, key))
-    embeddings.insert(0, 'repo', frame["repo"])
-    embeddings.to_csv(out, index=False)
-    print(f"Generated embeddings {out}")
+    frame = pd.read_csv(repos)
+    frame["top"] = frame["top"].apply(
+        lambda words:
+            words.replace("[", "").replace("]", "").replace("'", "")
+    )
+    for model, checkpoint in models.items():
+        print(f"Generating {model} embeddings for {frame}...")
+        if model == "cohere":
+            embed_cohere(cohere, frame, prefix)
+        else:
+            print(f"Inference checkpoint: {checkpoint}")
+            embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
+            embeddings.insert(0, 'repo', frame["repo"])
+            embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
+        print(f"Generated embeddings {prefix}-{model}")
+
+
+def embed_cohere(key, texts, prefix):
+    client = cohere.Client(key)
+    embeddings = pd.DataFrame(
+        np.asarray(
+            client.embed(
+                texts=texts["top"].tolist(), input_type="search_document", model="embed-english-v3.0"
+            ).embeddings
+        )
+    )
+    embeddings.insert(0, "repo", texts["repo"])
+    embeddings.to_csv(f"{prefix}-embedv3-1024.csv", index=False)
 
 
 def infer(texts, checkpoint, key):

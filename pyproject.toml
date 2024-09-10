@@ -33,6 +33,8 @@ sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
 sr-detector = { path = "./sr-detector" }
 nltk = "^3.9.1"
+scikit-learn = "^1.5.1"
+cohere = "^5.9.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
