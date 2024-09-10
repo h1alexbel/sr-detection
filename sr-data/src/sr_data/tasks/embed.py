@@ -25,26 +25,27 @@ Generate embeddings.
 import pandas as pd
 import requests
 
+models = {
+    "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
+    "e5-1024": "intfloat/e5-large"
+}
 
-# @todo #9:45min JSONDecodeError Expecting value: line 1 column 1 (char 0) on
-#  some records in the CSV. When sending records to the endpoint, some READMEs
-#  get rejected with that error. We should identify that rows and possibly
-#  remove/recover them.
-def main(key, checkpoint, csv, out):
+
+def main(repos, prefix, key):
     """
     Embed.
     :param key: HuggingFace token
-    :param checkpoint: HuggingFace Inference checkpoint
-    :param csv: Source CSV
-    :param out: Output CSV
+    :param repos: Source CSV
+    :param prefix: Prefix for output CSV with embeddings
     """
-    frame = pd.read_csv(csv)
-    print(f"Generating embeddings for {frame}...")
-    print(f"Inference checkpoint: {checkpoint}")
-    embeddings = pd.DataFrame(infer(frame["readme"].tolist(), checkpoint, key))
-    embeddings.insert(0, 'repo', frame["repo"])
-    embeddings.to_csv(out, index=False)
-    print(f"Generated embeddings {out}")
+    frame = pd.read_csv(repos)
+    for model, checkpoint in models.items():
+        print(f"Generating {model} embeddings for {frame}...")
+        print(f"Inference checkpoint: {checkpoint}")
+        embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, key))
+        embeddings.insert(0, 'repo', frame["repo"])
+        embeddings.to_csv(f"{prefix}-{model}", index=False)
+        print(f"Generated embeddings {prefix}-{model}")
 
 
 def infer(texts, checkpoint, key):
