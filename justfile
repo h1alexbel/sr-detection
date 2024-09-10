@@ -55,7 +55,8 @@ check:
   mkdir -p sr-data/experiment
   mv now.txt sr-data/experiment/now.txt
   just collect
-  just filter
+  just filter experiment/repos.csv
+  just extract experiment/after-filter.csv
 
 # Clean up experiment.
 clean:
@@ -63,8 +64,6 @@ clean:
   rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
-# Here, $PATS is a name of file with a number of GitHub PATs, separated
-# by new line.
 collect:
   mkdir -p sr-data/experiment
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
@@ -85,6 +84,15 @@ filter repos out="experiment/after-filter.csv":
 # Extract headings from README files.
 extract repos out="experiment/after-extract.csv":
   cd sr-data && poetry poe extract --repos {{repos}} --out {{out}}
+
+# Create embeddings.
+embed repos prefix="embeddings":
+  cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
+    --key "$HF_TOKEN"
+
+# Calculate TF-IDF for README files.
+tfidf repos out="experiment/after-tfidf.csv":
+  cd sr-data && poetry poe tfidf --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.
 paper:
