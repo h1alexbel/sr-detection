@@ -24,6 +24,8 @@ Generate embeddings.
 # SOFTWARE.
 import pandas as pd
 import requests
+import cohere
+import numpy as np
 
 models = {
     "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
@@ -31,10 +33,10 @@ models = {
 }
 
 
-def main(repos, prefix, key):
+def main(repos, prefix, hf, cohere):
     """
     Embed.
-    :param key: HuggingFace token
+    :param hf: HuggingFace token
     :param repos: Source CSV
     :param prefix: Prefix for output CSV with embeddings
     """
@@ -42,10 +44,24 @@ def main(repos, prefix, key):
     for model, checkpoint in models.items():
         print(f"Generating {model} embeddings for {frame}...")
         print(f"Inference checkpoint: {checkpoint}")
-        embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, key))
+        embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
         embeddings.insert(0, 'repo', frame["repo"])
-        embeddings.to_csv(f"{prefix}-{model}", index=False)
+        embeddings.to_csv(f"experiment/{prefix}-{model}.csv", index=False)
         print(f"Generated embeddings {prefix}-{model}")
+    embed_cohere(cohere, frame)
+
+
+def embed_cohere(key, texts):
+    client = cohere.Client(key)
+    embeddings = pd.DataFrame(
+        np.asarray(
+            client.embed(
+                texts=texts["top"].tolist(), input_type="search_document", model="embed-english-v3.0"
+            ).embeddings
+        )
+    )
+    embeddings.insert(0, "repo", texts["repo"])
+    embeddings.to_csv("experiment/embeddings-embedv3-1024.csv", index=False)
 
 
 def infer(texts, checkpoint, key):
