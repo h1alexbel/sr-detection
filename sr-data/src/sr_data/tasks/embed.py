@@ -26,7 +26,6 @@ import pandas as pd
 import requests
 import cohere
 import numpy as np
-from nltk.corpus import words
 
 models = {
     "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
