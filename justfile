@@ -88,7 +88,7 @@ extract repos out="experiment/after-extract.csv":
 # Create embeddings.
 embed repos prefix="embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
-    --key "$HF_TOKEN"
+    --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Calculate TF-IDF for README files.
 tfidf repos out="experiment/after-tfidf.csv":
