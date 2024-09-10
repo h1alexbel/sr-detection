@@ -26,6 +26,7 @@ import pandas as pd
 import requests
 import cohere
 import numpy as np
+from nltk.corpus import words
 
 models = {
     "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
@@ -43,6 +44,10 @@ def main(repos, prefix, hf, cohere):
     :param cohere Cohere token
     """
     frame = pd.read_csv(repos)
+    frame["top"] = frame["top"].apply(
+        lambda words:
+            words.replace("[", "").replace("]", "").replace("'", "")
+    )
     for model, checkpoint in models.items():
         print(f"Generating {model} embeddings for {frame}...")
         if model == "cohere":
