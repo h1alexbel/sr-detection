@@ -90,10 +90,6 @@ embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
-# Calculate TF-IDF for README files.
-tfidf repos out="experiment/after-tfidf.csv":
-  cd sr-data && poetry poe tfidf --repos {{repos}} --out {{out}}
-
 # Build paper with LaTeX.
 paper:
   latexmk --version
