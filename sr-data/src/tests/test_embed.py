@@ -24,9 +24,9 @@ Test case for embed.
 # SOFTWARE.
 import os
 import unittest
+from pathlib import Path
 
 import pandas as pd
-
 from sr_data.tasks.embed import infer, main
 
 
@@ -62,26 +62,15 @@ class TestEmbed(unittest.TestCase):
             f" expected {cexpected}"
         )
 
-    # @todo #9:30min Use ExtendsWith analogue or some temp directory for 'out'.
-    #  We shouldn't manage removal of output files directly, instead, let's use
-    #  more elegant solution - temp directory or something like extensions from
-    #  JUnit. We should fix the same problem in test_filter.py as well.
-    def test_creates_csv_with_embeddings(self):
-        """
-        Test case for checking generated CSV file with embeddings.
-        """
-        out = "embeddings.csv"
-        main(
-            os.environ["HF_TESTING_TOKEN"],
-            "sentence-transformers/all-MiniLM-L6-v2",
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "embed.csv"
-            ),
-            out
+    def test_returns_e5_embeddings(self):
+        embeddings = infer(
+            ["some dummy text"],
+            "intfloat/e5-large",
+            os.environ["HF_TESTING_TOKEN"]
         )
-        frame = pd.read_csv(out)
+        frame = pd.DataFrame(embeddings)
         columns = len(frame.columns)
-        cexpected = 385
+        cexpected = 1024
         rows = len(frame)
         rexpected = 1
         self.assertEqual(
@@ -96,4 +85,29 @@ class TestEmbed(unittest.TestCase):
             f"Generated embeddings columns count {columns} does not match with"
             f" expected {cexpected}"
         )
-        os.remove(out)
+
+    # @todo #9:30min Use ExtendsWith analogue or some temp directory for 'out'.
+    #  We shouldn't manage removal of output files directly, instead, let's use
+    #  more elegant solution - temp directory or something like extensions from
+    #  JUnit. We should fix the same problem in test_filter.py as well.
+    def test_creates_csv_with_embeddings(self):
+        """
+        Test case for checking generated CSV file with embeddings.
+        """
+        main(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "embed.csv"
+            ),
+            "t-embeddings",
+            os.environ["HF_TESTING_TOKEN"],
+            os.environ["COHERE_TESTING_TOKEN"]
+        )
+        e5 = "t-embeddings-e5-1024.csv"
+        sbert = "t-embeddings-s-bert-384.csv"
+        cohere = "t-embeddings-embedv3-1024.csv"
+        self.assertTrue(Path(e5).is_file())
+        self.assertTrue(Path(sbert).is_file())
+        self.assertTrue(Path(cohere).is_file())
+        os.remove(e5)
+        os.remove(sbert)
+        os.remove(cohere)

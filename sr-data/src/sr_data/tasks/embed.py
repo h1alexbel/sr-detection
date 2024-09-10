@@ -29,29 +29,33 @@ import numpy as np
 
 models = {
     "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
-    "e5-1024": "intfloat/e5-large"
+    "e5-1024": "intfloat/e5-large",
+    "cohere": ""
 }
 
 
 def main(repos, prefix, hf, cohere):
     """
     Embed.
-    :param hf: HuggingFace token
     :param repos: Source CSV
     :param prefix: Prefix for output CSV with embeddings
+    :param hf: HuggingFace token
+    :param cohere Cohere token
     """
     frame = pd.read_csv(repos)
     for model, checkpoint in models.items():
         print(f"Generating {model} embeddings for {frame}...")
-        print(f"Inference checkpoint: {checkpoint}")
-        embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
-        embeddings.insert(0, 'repo', frame["repo"])
-        embeddings.to_csv(f"experiment/{prefix}-{model}.csv", index=False)
+        if model == "cohere":
+            embed_cohere(cohere, frame, prefix)
+        else:
+            print(f"Inference checkpoint: {checkpoint}")
+            embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
+            embeddings.insert(0, 'repo', frame["repo"])
+            embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
         print(f"Generated embeddings {prefix}-{model}")
-    embed_cohere(cohere, frame)
 
 
-def embed_cohere(key, texts):
+def embed_cohere(key, texts, prefix):
     client = cohere.Client(key)
     embeddings = pd.DataFrame(
         np.asarray(
@@ -61,7 +65,7 @@ def embed_cohere(key, texts):
         )
     )
     embeddings.insert(0, "repo", texts["repo"])
-    embeddings.to_csv("experiment/embeddings-embedv3-1024.csv", index=False)
+    embeddings.to_csv(f"{prefix}-embedv3-1024.csv", index=False)
 
 
 def infer(texts, checkpoint, key):

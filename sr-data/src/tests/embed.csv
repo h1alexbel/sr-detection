@@ -1,2 +1,2 @@
-repo,readme
-foo,dummy README
+repo,top
+foo,"['test', 'dummy']"
