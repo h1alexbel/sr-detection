@@ -27,7 +27,7 @@ import unittest
 from pathlib import Path
 
 import pandas as pd
-from sr_data.tasks.embed import infer, main
+from sr_data.steps.embed import infer, main
 
 
 class TestEmbed(unittest.TestCase):

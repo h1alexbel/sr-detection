@@ -1,5 +1,5 @@
 """
-Test case for filter.
+Create datasets from repositories.
 """
 # The MIT License (MIT)
 #
@@ -22,36 +22,22 @@ Test case for filter.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import os
-import unittest
-
 import pandas as pd
-from sr_data.steps.filter import main
 
 
-class TestFilter(unittest.TestCase):
+def main(repos, out):
     """
-    Test cases for filter.
+    Create datasets from repositories.
     """
-
-    def tearDown(self):
-        """
-        Teardown.
-        """
-        os.remove("test_out.csv")
-
-    def test_filters_input(self):
-        """
-        Test case for filtering input.
-        """
-        target = "test_out.csv"
-        # pylint: disable=redefined-builtin
-        dir = os.path.dirname(os.path.realpath(__file__))
-        main(os.path.join(dir, "test.csv"), target)
-        out = pd.read_csv(target)["repo"].values.tolist()
-        expected = ["blitz-js/blitz", "wasp-lang/wasp"]
-        self.assertEqual(
-            out,
-            expected,
-            f"Output CSV {out} does not match with expected {expected}"
-        )
+    print("Creating first dataset with scores...")
+    frame = pd.read_csv(repos)
+    frame["score"] = (
+            frame["releases"] * 50 +
+            frame["pulls"] * 7.5 +
+            frame["issues"] * 12.5 +
+            frame["branches"] * 30 +
+            frame["workflows"] * 10
+    )
+    scores = frame[["repo", "score"]]
+    scores.to_csv(out, index=False)
+    print(f"Scores dataset created in {out}")
