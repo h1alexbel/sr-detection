@@ -43,28 +43,20 @@ cohere = "^5.9.1"
 pytest = "^8.2.2"
 
 [tool.poe.tasks.filter]
-script = "sr_data.tasks.filter:main(repos, out)"
+script = "sr_data.steps.filter:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.extract]
-script = "sr_data.tasks.extract:main(repos, out)"
+script = "sr_data.steps.extract:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.tfidf]
-script = "sr_data.tasks.tfidf:main(repos, out)"
+script = "sr_data.steps.tfidf:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.embed]
-script = "sr_data.tasks.embed:main(repos, prefix, hf, cohere)"
+script = "sr_data.steps.embed:main(repos, prefix, hf, cohere)"
 args = [ {name = "repos"}, {name = "prefix"}, {name = "hf"}, {name = "cohere"} ]
-
-[tool.poetry.scripts]
-sr-data = "sr_data.all:main"
-highlight = "sr_data.tasks.highlight:main"
-embed = "sr_data.tasks.embed:main"
-u = "sr_data.tasks.u:main"
-v = "sr_data.tasks.v:main"
-w = "sr_data.tasks.w:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]

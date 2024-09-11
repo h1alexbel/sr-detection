@@ -27,7 +27,7 @@ import unittest
 
 import pandas as pd
 from nltk.corpus import stopwords
-from sr_data.tasks.extract import headings, remove_stop_words, lemmatize, filter, top_words, main
+from sr_data.steps.extract import headings, remove_stop_words, lemmatize, filter, top_words, main
 
 
 class TestExtract(unittest.TestCase):

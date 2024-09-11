@@ -26,7 +26,7 @@ import os
 import unittest
 
 import pandas as pd
-from sr_data.tasks.filter import main
+from sr_data.steps.filter import main
 
 
 class TestFilter(unittest.TestCase):
