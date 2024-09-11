@@ -59,7 +59,8 @@ script = "sr_data.steps.embed:main(repos, prefix, hf, cohere)"
 args = [ {name = "repos"}, {name = "prefix"}, {name = "hf"}, {name = "cohere"} ]
 
 [tool.poe.tasks.scores]
-script = "sr_data.steps.scores:main"
+script = "sr_data.steps.scores:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]
