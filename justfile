@@ -92,6 +92,7 @@ embed repos prefix="experiment/embeddings":
 
 # Create datasets.
 datasets prefix="experiment":
+  just scores "{{prefix}}/after-extract.csv"
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
