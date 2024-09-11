@@ -1,6 +1,3 @@
-"""
-Test case for filter.
-"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -26,32 +23,29 @@ import os
 import unittest
 
 import pandas as pd
-from sr_data.steps.filter import main
+from sr_data.steps.scores import main
 
 
-class TestFilter(unittest.TestCase):
-    """
-    Test cases for filter.
-    """
+class TestScores(unittest.TestCase):
 
-    def tearDown(self):
-        """
-        Teardown.
-        """
-        os.remove("test_out.csv")
-
-    def test_filters_input(self):
-        """
-        Test case for filtering input.
-        """
-        target = "test_out.csv"
-        # pylint: disable=redefined-builtin
-        dir = os.path.dirname(os.path.realpath(__file__))
-        main(os.path.join(dir, "test.csv"), target)
-        out = pd.read_csv(target)["repo"].values.tolist()
-        expected = ["blitz-js/blitz", "wasp-lang/wasp"]
+    def test_calculates_score(self):
+        out = "scores.csv"
+        main(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "to-score.csv"
+            ),
+            out
+        )
+        scores = pd.read_csv(out)
+        cols = 2
         self.assertEqual(
-            out,
-            expected,
-            f"Output CSV {out} does not match with expected {expected}"
+            len(scores.columns.tolist()),
+            cols,
+            f"Number of columns should be {cols}"
+        )
+        score = 112.5
+        self.assertEqual(
+            scores["score"].tolist()[0],
+            score,
+            f"SR score should be {score}"
         )
