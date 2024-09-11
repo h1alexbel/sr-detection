@@ -134,7 +134,7 @@ just extract after-filter.csv
 
 You should expect to have `sr-data/experiment/after-extract.csv`.
 
-### Generate Embeddings
+### Generate embeddings
 
 For each repo, we aggregate all [top words](#extract-headings) from README file
 headings into string. We convert each string to three variants of embeddings:
@@ -151,6 +151,27 @@ You should expect to have three files:
 * `sr-data/experiment/embeddings-s-bert-384.csv`
 * `sr-data/experiment/embeddings-e5-1024.csv`
 * `sr-data/experiment/embeddings-embedv3-1024.csv`
+
+### Create datasets
+
+We calculate SR-score from numerical metadata for each repository, and create
+seven datasets from prepared data:
+
+* `scores.csv`, dataset with SR-scores;
+* `sbert.csv`, dataset from S-BERT-384 embeddings;
+* `e5.csv`, dataset from E5-1024 embeddings;
+* `embedv3.csv`, dataset from Embedv3 embeddings;
+* `scores+sbert.csv`, combination of SR-score and S-BERT-384 embeddings;
+* `scores+e5.csv`, combination of SR-score and E5-1024 embeddings;
+* `scores+embedv3.csv`, combination of SR-score and Embedv3-1024 embeddings;
+
+To run this:
+
+```bash
+just datasets
+```
+
+You should expect to have all seven files in `sr-data/experiment` directory.
 
 ## How to contribute
 

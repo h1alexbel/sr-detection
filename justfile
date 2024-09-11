@@ -57,6 +57,8 @@ check:
   just collect
   just filter experiment/repos.csv
   just extract experiment/after-filter.csv
+  just embed experiment/after-extract.csv
+  just datasets
 
 # Clean up experiment.
 clean:
@@ -91,12 +93,23 @@ embed repos prefix="experiment/embeddings":
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
-datasets prefix="experiment":
-  just scores "{{prefix}}/after-extract.csv"
+datasets dir="experiment":
+  just scores "{{dir}}/after-extract.csv"
+  cp "sr-data/{{dir}}/embeddings-s-bert-384.csv" "sr-data/{{dir}}/sbert.csv"
+  cp "sr-data/{{dir}}/embeddings-e5-1024.csv" "sr-data/{{dir}}/e5.csv"
+  cp "sr-data/{{dir}}/embeddings-embedv3-1024.csv" "sr-data/{{dir}}/embedv3.csv"
+  just combination {{dir}} "{{dir}}/sbert.csv"
+  just combination {{dir}} "{{dir}}/e5.csv"
+  just combination {{dir}} "{{dir}}/embedv3.csv"
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
   cd sr-data && poetry poe scores --repos {{repos}} --out {{out}}
+
+# Create dataset from combination.
+combination dir embeddings scores="experiment/scores.csv":
+  cd sr-data && poetry poe combination --scores {{scores}} \
+    --embeddings {{embeddings}} --dir {{dir}}
 
 # Build paper with LaTeX.
 paper:
