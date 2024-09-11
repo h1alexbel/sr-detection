@@ -57,6 +57,8 @@ check:
   just collect
   just filter experiment/repos.csv
   just extract experiment/after-filter.csv
+  just embed experiment/after-extract.csv
+  just datasets
 
 # Clean up experiment.
 clean:
