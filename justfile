@@ -90,6 +90,10 @@ embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
+# Create datasets.
+datasets prefix="experiment":
+  cd sr-data && export EXP_OUTPUT_PREFIX={{prefix}} && poetry poe scores
+
 # Build paper with LaTeX.
 paper:
   latexmk --version
