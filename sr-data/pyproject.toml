@@ -62,6 +62,10 @@ args = [ {name = "repos"}, {name = "prefix"}, {name = "hf"}, {name = "cohere"} ]
 script = "sr_data.steps.scores:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.combination]
+script = "sr_data.steps.combination:main(scores, embeddings, dir)"
+args = [{name = "scores"}, {name = "embeddings"}, {name = "dir"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
