@@ -93,6 +93,9 @@ embed repos prefix="experiment/embeddings":
 # Create datasets.
 datasets prefix="experiment":
   just scores "{{prefix}}/after-extract.csv"
+  cp "sr-data/{{prefix}}/embeddings-s-bert-384.csv" "sr-data/{{prefix}}/sbert.csv"
+  cp "sr-data/{{prefix}}/embeddings-e5-1024.csv" "sr-data/{{prefix}}/e5.csv"
+  cp "sr-data/{{prefix}}/embeddings-embedv3-1024.csv" "sr-data/{{prefix}}/embedv3.csv"
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
