@@ -91,15 +91,23 @@ embed repos prefix="experiment/embeddings":
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
-datasets prefix="experiment":
-  just scores "{{prefix}}/after-extract.csv"
-  cp "sr-data/{{prefix}}/embeddings-s-bert-384.csv" "sr-data/{{prefix}}/sbert.csv"
-  cp "sr-data/{{prefix}}/embeddings-e5-1024.csv" "sr-data/{{prefix}}/e5.csv"
-  cp "sr-data/{{prefix}}/embeddings-embedv3-1024.csv" "sr-data/{{prefix}}/embedv3.csv"
+datasets dir="experiment":
+  just scores "{{dir}}/after-extract.csv"
+  cp "sr-data/{{dir}}/embeddings-s-bert-384.csv" "sr-data/{{dir}}/sbert.csv"
+  cp "sr-data/{{dir}}/embeddings-e5-1024.csv" "sr-data/{{dir}}/e5.csv"
+  cp "sr-data/{{dir}}/embeddings-embedv3-1024.csv" "sr-data/{{dir}}/embedv3.csv"
+  just combination {{dir}} "{{dir}}/sbert.csv"
+  just combination {{dir}} "{{dir}}/e5.csv"
+  just combination {{dir}} "{{dir}}/embedv3.csv"
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
   cd sr-data && poetry poe scores --repos {{repos}} --out {{out}}
+
+# Create dataset from combination.
+combination dir embeddings scores="experiment/scores.csv":
+  cd sr-data && poetry poe combination --scores {{scores}} \
+    --embeddings {{embeddings}} --dir {{dir}}
 
 # Build paper with LaTeX.
 paper:
