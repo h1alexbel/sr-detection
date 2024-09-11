@@ -92,7 +92,10 @@ embed repos prefix="experiment/embeddings":
 
 # Create datasets.
 datasets prefix="experiment":
-  cd sr-data && export EXP_OUTPUT_PREFIX={{prefix}} && poetry poe scores
+
+# Create scores dataset.
+scores repos out="experiment/scores.csv":
+  cd sr-data && poetry poe scores --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.
 paper:

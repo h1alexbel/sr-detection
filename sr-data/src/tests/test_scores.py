@@ -1,6 +1,3 @@
-"""
-Create datasets from repositories.
-"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -22,22 +19,33 @@ Create datasets from repositories.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os
+import unittest
+
 import pandas as pd
+from sr_data.steps.scores import main
 
 
-def main(repos, out):
-    """
-    Create datasets from repositories.
-    """
-    print("Creating first dataset with scores...")
-    frame = pd.read_csv(repos)
-    frame["score"] = (
-            frame["releases"] * 50 +
-            frame["pulls"] * 7.5 +
-            frame["issues"] * 12.5 +
-            frame["branches"] * 30 +
-            frame["workflows"] * 10
-    )
-    scores = frame[["repo", "score"]]
-    scores.to_csv(out, index=False)
-    print(f"Scores dataset created in {out}")
+class TestScores(unittest.TestCase):
+
+    def test_calculates_score(self):
+        out = "scores.csv"
+        main(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "to-score.csv"
+            ),
+            out
+        )
+        scores = pd.read_csv(out)
+        cols = 2
+        self.assertEqual(
+            len(scores.columns.tolist()),
+            cols,
+            f"Number of columns should be {cols}"
+        )
+        score = 112.5
+        self.assertEqual(
+            scores["score"].tolist()[0],
+            score,
+            f"SR score should be {score}"
+        )
