@@ -32,7 +32,7 @@ def main(scores, embeddings, dir):
     Combination of datasets.
     :param scores: Dataset with SR-score
     :param embeddings: Dataset with embeddings
-    :param dir: In which directory to save
+    :param dir: Output directory
     :return:
     """
     print(f"Combining {scores} + {embeddings}")
