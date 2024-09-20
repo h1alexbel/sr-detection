@@ -38,6 +38,7 @@ requests = "^2.32.3"
 nltk = "^3.9.1"
 scikit-learn = "^1.5.1"
 cohere = "^5.9.1"
+loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -65,6 +66,10 @@ args = [{name = "repos"}, {name = "out"}]
 [tool.poe.tasks.combination]
 script = "sr_data.steps.combination:main(scores, embeddings, dir)"
 args = [{name = "scores"}, {name = "embeddings"}, {name = "dir"}]
+
+[tool.poe.tasks.cluster]
+script = "sr_data.steps.cluster:main(dataset, dir)"
+args = [{name = "dataset"}, {name = "dir"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]
