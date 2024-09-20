@@ -1,3 +1,6 @@
+"""
+Test case for cluster step.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,29 +22,24 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-detection"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
+import os
+import shutil
+import unittest
+from sr_data.steps.cluster import kmeans
 
-[tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
-sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-sr-detector = { path = "./sr-detector" }
-nltk = "^3.9.1"
-scikit-learn = "^1.5.1"
-cohere = "^5.9.1"
-loguru = "^0.7.2"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
-pylint = "^3.2.5"
-flake8 = "^7.1.0"
+class TestCluster(unittest.TestCase):
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+    def test_clusters_kmeans_numerical(self):
+        kmeans(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+            ),
+            "kmeans"
+        )
+        expected = "kmeans/to-cluster/clusters"
+        self.assertTrue(
+            os.path.exists(expected),
+            f"Path {expected} does not exists"
+        )
+        shutil.rmtree("kmeans")
