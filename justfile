@@ -59,6 +59,7 @@ check:
   just extract experiment/after-filter.csv
   just embed experiment/after-extract.csv
   just datasets
+  just cluster
 
 # Clean up experiment.
 clean:
@@ -110,6 +111,11 @@ scores repos out="experiment/scores.csv":
 combination dir embeddings scores="experiment/scores.csv":
   cd sr-data && poetry poe combination --scores {{scores}} \
     --embeddings {{embeddings}} --dir {{dir}}
+
+# Cluster repositories.
+cluster dir="experiment":
+  cd sr-data && poetry poe cluster --dataset "experiment/scores.csv" \
+    --dir {{dir}}
 
 # Build paper with LaTeX.
 paper:
