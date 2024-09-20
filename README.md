@@ -173,6 +173,48 @@ just datasets
 
 You should expect to have all seven files in `sr-data/experiment` directory.
 
+### Cluster
+
+We apply [clustering][Cluster analysis] on our previously
+[created datasets](#create-datasets). We use the following algorithms:
+
+* [KMeans]
+* [Agglomerative clustering]
+* [DBSCAN]
+* [GMM]
+
+Each algorithm generates set of clusters for each dataset.
+
+To run this:
+
+```bash
+just cluster
+```
+
+You should expect to have the following directories inside `experiment`
+directory:
+
+* `kmeans`
+* `agglomerative`
+* `dbscan`
+* `gmm`
+
+Each directory have its subs named after dataset name: `e5`, `embedv3`,
+`scores+sbert`, etc. In each subdirectory you should have `clusters` directory
+with files containing clustered repositories. Each file, for instance `0.txt`,
+where `0` is cluster identifier, hosts list of repositories in `OWNER/REPO`
+format, separated by new line:
+
+```text
+Faceplugin-ltd/FaceRecognition-LivenessDetection-Android
+LxxxSec/CTF-Java-Gadget
+flutter-youni/flutter_youni_gromore
+ax1sX/RouteCheck-Alpha
+darksolopic/PasswordManagerGUI
+borjavb/bq-lineage-tool
+...
+```
+
 ## How to contribute
 
 Make sure that you have [Python 3.10+], [just], and [npm] installed on your
@@ -194,3 +236,8 @@ just full
 [S-BERT]: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
 [E5]: https://huggingface.co/intfloat/e5-large
 [Embedv3]: https://cohere.com/blog/introducing-embed-v3
+[KMeans]: https://en.wikipedia.org/wiki/K-means_clustering
+[Cluster analysis]: https://en.wikipedia.org/wiki/Cluster_analysis
+[Agglomerative clustering]: https://en.wikipedia.org/wiki/Hierarchical_clustering
+[DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
+[GMM]: https://en.wikipedia.org/wiki/Mixture_model
