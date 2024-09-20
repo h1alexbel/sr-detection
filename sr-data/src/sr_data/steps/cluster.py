@@ -41,10 +41,13 @@ def kmeans(dataset, dir):
     :param dataset: Dataset to cluster
     :param dir: Output directory
     """
-    logger.info("Running KMeans clustering...")
+    logger.info(f"Running KMeans clustering for {dataset}...")
     frame = pd.read_csv(dataset)
     kmeans = KMeans(n_clusters=8, random_state=CLUSTERING_RANDOM_STATE)
-    kmeans.fit(frame[["score"]])
+    if Path(dataset).stem != "scores":
+        kmeans.fit(frame.drop(columns=["repo"]))
+    else:
+        kmeans.fit(frame[["score"]])
     centroids = kmeans.cluster_centers_
     logger.info(f"Centroids: {centroids}")
     frame["cluster"] = kmeans.labels_
