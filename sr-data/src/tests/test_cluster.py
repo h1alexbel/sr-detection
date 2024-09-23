@@ -37,9 +37,15 @@ class TestCluster(unittest.TestCase):
             ),
             "kmeans"
         )
-        expected = "kmeans/to-cluster/clusters"
+        prefix = "kmeans/to-cluster"
+        expected = f"{prefix}/clusters"
         self.assertTrue(
             os.path.exists(expected),
             f"Path {expected} does not exists"
+        )
+        config = f"{prefix}/config.json"
+        self.assertTrue(
+            os.path.exists(config),
+            f"File {config} does not exists"
         )
         shutil.rmtree("kmeans")

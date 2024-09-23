@@ -28,6 +28,7 @@ from pathlib import Path
 import pandas as pd
 from loguru import logger
 from sklearn.cluster import KMeans
+import json
 
 """
 Clustering random state.
@@ -51,9 +52,17 @@ def kmeans(dataset, dir):
     centroids = kmeans.cluster_centers_
     logger.info(f"Centroids: {centroids}")
     frame["cluster"] = kmeans.labels_
-    prefix = f"{dir}/{Path(dataset).stem}/clusters"
-    Path(prefix).mkdir(parents=True, exist_ok=True)
-    to_txt(frame.groupby("cluster"), prefix)
+    prefix = f"{dir}/{Path(dataset).stem}"
+    Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
+    save_config(prefix, json.dumps(kmeans.get_params(), indent=4), ".json")
+    to_txt(frame.groupby("cluster"), f"{prefix}/clusters")
+
+
+def save_config(prefix, model, ext):
+    full = f"{prefix}/config{ext}"
+    with open(full, "w") as file:
+        file.write(model)
+    logger.info(f"Model settings saved to {full}")
 
 
 def to_txt(clusters, prefix):
