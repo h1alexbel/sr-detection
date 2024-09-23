@@ -200,10 +200,11 @@ directory:
 * `gmm`
 
 Each directory have its subs named after dataset name: `e5`, `embedv3`,
-`scores+sbert`, etc. In each subdirectory you should have `clusters` directory
-with files containing clustered repositories. Each file, for instance `0.txt`,
-where `0` is cluster identifier, hosts list of repositories in `OWNER/REPO`
-format, separated by new line:
+`scores+sbert`, etc. In each subdirectory you should have `config.json|txt`
+file with used model parameters, and `clusters` directory with files containing
+clustered repositories. Each file, for instance `0.txt`, where `0` is cluster
+identifier, hosts list of repositories in `OWNER/REPO` format, separated by new
+line:
 
 ```text
 Faceplugin-ltd/FaceRecognition-LivenessDetection-Android
