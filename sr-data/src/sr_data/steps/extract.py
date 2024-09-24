@@ -27,6 +27,7 @@ from collections import Counter
 
 import nltk
 import pandas as pd
+from loguru import logger
 from nltk import WordNetLemmatizer, word_tokenize
 from nltk.corpus import stopwords, wordnet
 
@@ -39,13 +40,13 @@ lemmatizer = WordNetLemmatizer()
 
 
 def main(repos, out):
-    print("Extracting headings from README files...")
+    logger.info("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
     stops = len(frame)
-    print(f"Removed {before - stops} repositories that don't have at least one heading (#)")
+    logger.info(f"Removed {before - stops} repositories that don't have at least one heading (#)")
     frame["headings"] = frame["headings"].apply(
         lambda readme: remove_stop_words(readme, stopwords.words("english"))
     )
@@ -56,7 +57,7 @@ def main(repos, out):
         lambda headings: filter(headings, r"^[a-zA-Z]+$")
     )
     frame = frame[frame["headings"].apply(bool)]
-    print(
+    logger.info(
         f"Removed {stops - len(frame)} repositories that have 0 headings after regex filtering"
     )
     frame["top"] = frame["headings"].apply(
