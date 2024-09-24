@@ -1,5 +1,5 @@
 """
-Creates scores dataset from repositories.
+Create plain numerical dataset.
 """
 # The MIT License (MIT)
 #
@@ -27,18 +27,21 @@ from loguru import logger
 
 
 def main(repos, out):
-    """
-    Create datasets from repositories.
-    """
-    logger.info("Creating dataset with scores...")
+    logger.info("Creating dataset with all numerical data...")
     frame = pd.read_csv(repos)
-    frame["score"] = (
-            frame["releases"] * 50 +
-            frame["pulls"] * 7.5 +
-            frame["issues"] * 12.5 +
-            frame["branches"] * 30 +
-            frame["workflows"] * 10
-    )
-    scores = frame[["repo", "score"]]
-    scores.to_csv(out, index=False)
-    logger.info(f"Scores dataset created in {out}")
+    frame = frame[
+        [
+            "repo",
+            "releases",
+            "contributors",
+            "pulls",
+            "commits",
+            "issues",
+            "forks",
+            "stars",
+            "branches",
+            "workflows",
+        ]
+    ]
+    frame.to_csv(out, index=False)
+    logger.info(f"Numerical dataset created in {out}")

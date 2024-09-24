@@ -95,6 +95,7 @@ embed repos prefix="experiment/embeddings":
 
 # Create datasets.
 datasets dir="experiment":
+  just numerical "{{dir}}/after-extract.csv"
   just scores "{{dir}}/after-extract.csv"
   cp "sr-data/{{dir}}/embeddings-s-bert-384.csv" "sr-data/{{dir}}/sbert.csv"
   cp "sr-data/{{dir}}/embeddings-e5-1024.csv" "sr-data/{{dir}}/e5.csv"
@@ -107,6 +108,10 @@ datasets dir="experiment":
 scores repos out="experiment/scores.csv":
   cd sr-data && poetry poe scores --repos {{repos}} --out {{out}}
 
+# Create all numerical dataset.
+numerical repos out="experiment/numerical.csv":
+  cd sr-data && poetry poe numerical --repos {{repos}} --out {{out}}
+
 # Create dataset from combination.
 combination dir embeddings scores="experiment/scores.csv":
   cd sr-data && poetry poe combination --scores {{scores}} \
@@ -114,6 +119,7 @@ combination dir embeddings scores="experiment/scores.csv":
 
 # Cluster repositories.
 cluster dir="experiment":
+  cd sr-data && poetry poe cluster --dataset "experiment/numerical.csv" --dir {{dir}}
   cd sr-data && poetry poe cluster --dataset "experiment/scores.csv" --dir {{dir}}
   cd sr-data && poetry poe cluster --dataset "experiment/sbert.csv" --dir {{dir}}
   cd sr-data && poetry poe cluster --dataset "experiment/e5.csv" --dir {{dir}}
