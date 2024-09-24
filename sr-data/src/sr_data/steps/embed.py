@@ -26,6 +26,7 @@ import pandas as pd
 import requests
 import cohere
 import numpy as np
+from loguru import logger
 
 models = {
     "s-bert-384": "sentence-transformers/all-MiniLM-L6-v2",
@@ -45,18 +46,18 @@ def main(repos, prefix, hf, cohere):
     frame = pd.read_csv(repos)
     frame["top"] = frame["top"].apply(
         lambda words:
-            words.replace("[", "").replace("]", "").replace("'", "")
+        words.replace("[", "").replace("]", "").replace("'", "")
     )
     for model, checkpoint in models.items():
-        print(f"Generating {model} embeddings for {frame}...")
+        logger.info(f"Generating {model} embeddings for {frame}...")
         if model == "cohere":
             embed_cohere(cohere, frame, prefix)
         else:
-            print(f"Inference checkpoint: {checkpoint}")
+            logger.info(f"Inference checkpoint: {checkpoint}")
             embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
             embeddings.insert(0, 'repo', frame["repo"])
             embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
-        print(f"Generated embeddings {prefix}-{model}")
+        logger.info(f"Generated embeddings {prefix}-{model}")
 
 
 def embed_cohere(key, texts, prefix):
