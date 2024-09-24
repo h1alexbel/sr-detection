@@ -27,6 +27,7 @@ import pandas as pd
 from bs4 import BeautifulSoup, ParserRejectedMarkup
 from langdetect import DetectorFactory, LangDetectException
 from langdetect import detect
+from loguru import logger
 
 
 def main(repos, out):
@@ -36,23 +37,23 @@ def main(repos, out):
     :param out: Output CSV file name
     :return: Filtered CSV
     """
-    print("Start filtering...")
+    logger.info("Start filtering...")
     DetectorFactory.seed = 0
     frame = pd.read_csv(repos)
     start = len(frame)
-    print(f"Repositories in {start}")
+    logger.info(f"Repositories in {start}")
     frame = frame.dropna(subset=["readme"])
     non_null = start - len(frame)
     after_null = len(frame)
-    print(f"Skipped {non_null} repositories with empty README files")
+    logger.info(f"Skipped {non_null} repositories with empty README files")
     frame["readme_text"] = frame["readme"].apply(md_to_text)
     frame = frame[frame["readme_text"].apply(english)]
     frame = frame.drop(columns=["readme_text"])
     non_english = after_null - len(frame)
-    print(f"Skipped {non_english} non-english repositories")
-    print(f"Total skipped: {non_null + non_english}")
-    print(f"Saving {len(frame)} good repositories to {out}")
-    print(frame)
+    logger.info(f"Skipped {non_english} non-english repositories")
+    logger.info(f"Total skipped: {non_null + non_english}")
+    logger.info(f"Saving {len(frame)} good repositories to {out}")
+    logger.debug(frame)
     frame.to_csv(out, index=False)
 
 

@@ -23,13 +23,14 @@ Create datasets from repositories.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import pandas as pd
+from loguru import logger
 
 
 def main(repos, out):
     """
     Create datasets from repositories.
     """
-    print("Creating first dataset with scores...")
+    logger.info("Creating dataset with scores...")
     frame = pd.read_csv(repos)
     frame["score"] = (
             frame["releases"] * 50 +
@@ -40,4 +41,4 @@ def main(repos, out):
     )
     scores = frame[["repo", "score"]]
     scores.to_csv(out, index=False)
-    print(f"Scores dataset created in {out}")
+    logger.info(f"Scores dataset created in {out}")

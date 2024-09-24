@@ -25,6 +25,7 @@ Combination of two datasets.
 import os
 
 import pandas as pd
+from loguru import logger
 
 
 def main(scores, embeddings, dir):
@@ -35,7 +36,7 @@ def main(scores, embeddings, dir):
     :param dir: Output directory
     :return:
     """
-    print(f"Combining {scores} + {embeddings}")
+    logger.info(f"Combining {scores} + {embeddings}")
     out = (
         f"{dir}/{os.path.splitext(os.path.basename(scores))[0]}"
         f"+{os.path.splitext(os.path.basename(embeddings))[0]}.csv"
@@ -46,4 +47,4 @@ def main(scores, embeddings, dir):
         out,
         index=False
     )
-    print(f"Output dataset saved to {out}")
+    logger.info(f"Output dataset saved to {out}")
