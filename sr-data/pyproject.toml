@@ -59,6 +59,10 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.embed:main(repos, prefix, hf, cohere)"
 args = [ {name = "repos"}, {name = "prefix"}, {name = "hf"}, {name = "cohere"} ]
 
+[tool.poe.tasks.numerical]
+script = "sr_data.steps.numerical:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [tool.poe.tasks.scores]
 script = "sr_data.steps.scores:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
