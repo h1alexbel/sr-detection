@@ -69,7 +69,7 @@ clean:
 # Collect repositories.
 collect:
   mkdir -p sr-data/experiment
-  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
     --filename "repos" && mv repos.csv sr-data/experiment/repos.csv
 
