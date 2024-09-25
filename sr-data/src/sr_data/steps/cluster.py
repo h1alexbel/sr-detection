@@ -80,7 +80,6 @@ def cmeans(dataset, dir):
     results.to_csv(f"{prefix}/clusters/srs.csv", index=False)
 
 
-
 def save_config(prefix, model, ext):
     full = f"{prefix}/config{ext}"
     with open(full, "w") as file:
