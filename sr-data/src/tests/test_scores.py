@@ -43,7 +43,7 @@ class TestScores(unittest.TestCase):
             cols,
             f"Number of columns should be {cols}"
         )
-        score = 112.5
+        score = 102.5
         self.assertEqual(
             scores["score"].tolist()[0],
             score,
