@@ -33,14 +33,9 @@ def main(repos, out):
         [
             "repo",
             "releases",
-            "contributors",
             "pulls",
-            "commits",
             "issues",
-            "forks",
-            "stars",
-            "branches",
-            "workflows",
+            "branches"
         ]
     ]
     frame.to_csv(out, index=False)

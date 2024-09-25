@@ -36,8 +36,7 @@ def main(repos, out):
             frame["releases"] * 50 +
             frame["pulls"] * 7.5 +
             frame["issues"] * 12.5 +
-            frame["branches"] * 30 +
-            frame["workflows"] * 10
+            frame["branches"] * 30
     )
     scores = frame[["repo", "score"]]
     scores.to_csv(out, index=False)
