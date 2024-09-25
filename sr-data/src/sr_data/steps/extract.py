@@ -53,12 +53,13 @@ def main(repos, out):
     frame["headings"] = frame["headings"].apply(
         lambda headings: [lemmatize(heading) for heading in headings]
     )
+    rword = r"^[a-zA-Z]+$"
     frame["headings"] = frame["headings"].apply(
-        lambda headings: filter(headings, r"^[a-zA-Z]+$")
+        lambda headings: filter(headings, rword)
     )
     frame = frame[frame["headings"].apply(bool)]
     logger.info(
-        f"Removed {stops - len(frame)} repositories that have 0 headings after regex filtering"
+        f"Removed {stops - len(frame)} repositories that have 0 headings after regex filtering ('{rword}')"
     )
     frame["top"] = frame["headings"].apply(
         lambda headings: top_words(headings, 5)
