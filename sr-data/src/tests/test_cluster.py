@@ -25,7 +25,7 @@ Test case for cluster step.
 import os
 import shutil
 import unittest
-from sr_data.steps.cluster import kmeans
+from sr_data.steps.cluster import kmeans, cmeans
 
 
 class TestCluster(unittest.TestCase):
@@ -49,3 +49,18 @@ class TestCluster(unittest.TestCase):
             f"File {config} does not exists"
         )
         shutil.rmtree("kmeans")
+
+    def test_clusters_with_cmeans(self):
+        dir = "cmeans"
+        cmeans(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+            ),
+            dir
+        )
+        file = "cmeans/to-cluster/clusters/srs.csv"
+        self.assertTrue(
+            os.path.exists(file),
+            f"C-Means results was not saved to {file}"
+        )
+        shutil.rmtree(dir)
