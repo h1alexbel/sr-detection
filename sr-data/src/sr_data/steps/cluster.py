@@ -29,6 +29,7 @@ import pandas as pd
 from loguru import logger
 from sklearn.cluster import KMeans
 import json
+import skfuzzy
 
 """
 Clustering random state.
@@ -58,6 +59,28 @@ def kmeans(dataset, dir):
     to_txt(frame.groupby("cluster"), f"{prefix}/clusters")
 
 
+def cmeans(dataset, dir):
+    logger.info(f"Running Fuzzy C-Means for {dataset}")
+    frame = pd.read_csv(dataset)
+    centroids, u, u0, d, jm, p, fpc = skfuzzy.cmeans(
+        frame.drop(columns=["repo"]).T,
+        c=2,
+        m=2.0,
+        error=0.005,
+        maxiter=1000,
+        init=None
+    )
+    scores = u[0]
+    results = pd.DataFrame({
+        'repo': frame['repo'],
+        'srs': scores
+    })
+    prefix = f"{dir}/{Path(dataset).stem}"
+    Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
+    results.to_csv(f"{prefix}/clusters/srs.csv", index=False)
+
+
+
 def save_config(prefix, model, ext):
     full = f"{prefix}/config{ext}"
     with open(full, "w") as file:
@@ -81,3 +104,4 @@ def main(dataset, dir):
     :param dir: Output directory
     """
     kmeans(dataset, f"{dir}/kmeans")
+    cmeans(dataset, f"{dir}/cmeans")
