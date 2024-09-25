@@ -60,6 +60,11 @@ def kmeans(dataset, dir):
 
 
 def cmeans(dataset, dir):
+    """
+    Fuzzy C-Means clustering
+    :param dataset: Dataset to cluster
+    :param dir: Output directory
+    """
     logger.info(f"Running Fuzzy C-Means for {dataset}")
     frame = pd.read_csv(dataset)
     centroids, u, u0, d, jm, p, fpc = skfuzzy.cmeans(
@@ -70,14 +75,13 @@ def cmeans(dataset, dir):
         maxiter=1000,
         init=None
     )
-    scores = u[0]
-    results = pd.DataFrame({
-        'repo': frame['repo'],
-        'srs': scores
-    })
     prefix = f"{dir}/{Path(dataset).stem}"
     Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
-    results.to_csv(f"{prefix}/clusters/srs.csv", index=False)
+    out = f"{prefix}/clusters/srs.csv"
+    pd.DataFrame({"repo": frame["repo"], "srs": u[0]}).to_csv(
+        out, index=False
+    )
+    logger.info(f"Saved results to {out}")
 
 
 def save_config(prefix, model, ext):
