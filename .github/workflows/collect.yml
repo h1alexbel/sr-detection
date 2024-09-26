@@ -31,6 +31,9 @@ name: collect
         description: "Collect repositories created up to, in YYYY-MM-DD format"
         required: false
         default: "2024-05-01"
+      filename:
+        description: "Output filename"
+        required: true
 permissions: write-all
 env:
   PATS: pats.txt
@@ -48,8 +51,8 @@ jobs:
           mkdir -p collection
           ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
             --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-              --tokens "$PATS" --filename "repos"
-          cp "repos.csv" collection
+              --filename "${{ inputs.filename }}" --tokens "$PATS"
+          cp "${{ inputs.filename }}" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           branch: collect
