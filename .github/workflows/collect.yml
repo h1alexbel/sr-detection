@@ -39,11 +39,11 @@ jobs:
         run: |
           npm install -g ghminer@0.0.5
       - name: Run collect
-        "run": |
+        run: |
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> $PATS
           mkdir collection
           ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-            --start ${{ inputs.start }} --end "2024-05-01" --tokens "$PATS" \
+            --start "${{ inputs.start }}" --end "2024-05-01" --tokens "$PATS" \
               --filename "repos"
           cp "repos.csv" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.1
