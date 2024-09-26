@@ -53,7 +53,7 @@ jobs:
             --query "stars:>10 language:java size:>=20 mirror:false template:false" \
               --filename "${{ inputs.filename }}" --tokens "$PATS"
           cp "${{ inputs.filename }}" collection
-      - uses: JamesIves/github-pages-deploy-action@v4.6.1
+      - uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
           branch: collect
           folder: collection
