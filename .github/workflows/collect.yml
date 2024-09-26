@@ -47,8 +47,8 @@ jobs:
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
           mkdir -p collection
           ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
-            --tokens "$PATS" --filename "repos" \
-              --query "stars:>10 language:java size:>=20 mirror:false template:false"
+            --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+              --tokens "$PATS" --filename "repos"
           cp "repos.csv" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
