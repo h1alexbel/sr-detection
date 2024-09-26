@@ -40,7 +40,7 @@ jobs:
           npm install -g ghminer@0.0.5
       - name: Run collect
         run: |
-          echo ${{ secrets.COLLECT_TOKEN_1 }} >> $PATS
+          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> $PATS
           mkdir collection
           ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
             --start ${{ inputs.start }} --end "2024-05-01" --tokens "$PATS" \
