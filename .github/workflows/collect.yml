@@ -21,7 +21,7 @@
 # SOFTWARE.
 ---
 name: collect
-on:
+'on':
   workflow_dispatch:
     inputs:
       start:
