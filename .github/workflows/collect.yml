@@ -25,8 +25,12 @@ name: collect
   workflow_dispatch:
     inputs:
       start:
-        description: "Start collection from date in YYYY-MM-DD format"
+        description: "Collect repositories created from, in YYYY-MM-D format"
         required: true
+      end:
+        description: "Collect repositories created up to, in YYYY-MM-DD format"
+        required: false
+        default: "2024-05-01"
 permissions: write-all
 env:
   PATS: pats.txt
@@ -42,9 +46,9 @@ jobs:
         run: |
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
           mkdir -p collection
-          ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-            --start "${{ inputs.start }}" --end "2024-05-01" --tokens "$PATS" \
-              --filename "repos"
+          ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
+            --query "stars:>10 language:java size:>=20 mirror:false template:false" \
+              --tokens "$PATS" --filename "repos"
           cp "repos.csv" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
