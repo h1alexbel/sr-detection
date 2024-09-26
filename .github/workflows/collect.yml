@@ -35,11 +35,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
-      - name: Install ghminer
-        run: |
+      - run: |
           npm install -g ghminer@0.0.5
-      - name: Run collect
-        run: |
+      - run: |
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> $PATS
           mkdir collection
           ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
