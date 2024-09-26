@@ -52,7 +52,7 @@ jobs:
           ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
             --query "stars:>10 language:java size:>=20 mirror:false template:false" \
               --filename "${{ inputs.filename }}" --tokens "$PATS"
-          cp "${{ inputs.filename }}" collection
+          cp "${{ inputs.filename }}.csv" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           branch: collect
