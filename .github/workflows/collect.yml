@@ -38,8 +38,8 @@ jobs:
       - run: |
           npm install -g ghminer@0.0.5
       - run: |
-          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> $PATS
-          mkdir collection
+          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
+          mkdir -p collection
           ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false" \
             --start "${{ inputs.start }}" --end "2024-05-01" --tokens "$PATS" \
               --filename "repos"
