@@ -20,23 +20,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# Verify versions.
-versions:
-  python3 --version
-  poetry --version
-  cargo --version
-  npm --version
+# Install dependencies.
+install:
+  npm install -g ghminer@0.0.6
 
 # Full build.
 full:
-  just install
+  poetry install
   just test
   just check
-
-# Install dependencies.
-install:
-  poetry install
-  npm install -g ghminer@0.0.5
 
 # Run tests.
 test:
