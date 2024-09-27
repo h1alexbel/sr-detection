@@ -29,8 +29,8 @@ env:
   HF_TESTING_TOKEN: ${{ secrets.HF_TESTING_TOKEN }}
   COHERE_TESTING_TOKEN: ${{ secrets.COHERE_TESTING_TOKEN }}
 jobs:
-  collect:
-    runs-on: ubuntu-24.04
+  build:
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,3 +46,13 @@ jobs:
         run: |
           just install
           just full "nightly or deep or fast"
+  report-fail:
+    name: Create issue on failure
+    needs: build
+    if: failure() && github.event.pull_request == null
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: jayqi/failed-build-issue-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+22
