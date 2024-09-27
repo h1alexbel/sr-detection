@@ -28,6 +28,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import pandas as pd
+import pytest
 from sr_data.steps.embed import infer, main
 
 
@@ -36,6 +37,7 @@ class TestEmbed(unittest.TestCase):
     Test cases for embed.
     """
 
+    @pytest.mark.slow
     def test_returns_embeddings(self):
         """
         Test case for returning embeddings for text.
@@ -63,6 +65,7 @@ class TestEmbed(unittest.TestCase):
             f" expected {cexpected}"
         )
 
+    @pytest.mark.slow
     def test_returns_e5_embeddings(self):
         embeddings = infer(
             ["some dummy text"],
@@ -87,6 +90,7 @@ class TestEmbed(unittest.TestCase):
             f" expected {cexpected}"
         )
 
+    @pytest.mark.slow
     def test_creates_csv_with_embeddings(self):
         """
         Test case for checking generated CSV file with embeddings.
