@@ -24,6 +24,7 @@ Test cases for extracting README headings (#).
 # SOFTWARE.
 import os
 import unittest
+from tempfile import TemporaryFile, TemporaryDirectory
 
 import pandas as pd
 from nltk.corpus import stopwords
@@ -85,15 +86,16 @@ class TestExtract(unittest.TestCase):
         )
 
     def test_filters_repo_with_empty_headings(self):
-        out = "extracted.csv"
-        main(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "to-extract.csv"
-            ),
-            out
-        )
-        self.assertEqual(
-            len(pd.read_csv(out)),
-            1,
-            "Should filter repo with empty headings"
-        )
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "testing.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-extract.csv"
+                ),
+                path
+            )
+            self.assertEqual(
+                len(pd.read_csv(path)),
+                1,
+                "Should filter repo with empty headings"
+            )
