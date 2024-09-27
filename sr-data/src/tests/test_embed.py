@@ -25,8 +25,10 @@ Test case for embed.
 import os
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import pandas as pd
+import pytest
 from sr_data.steps.embed import infer, main
 
 
@@ -35,6 +37,7 @@ class TestEmbed(unittest.TestCase):
     Test cases for embed.
     """
 
+    @pytest.mark.deep
     def test_returns_embeddings(self):
         """
         Test case for returning embeddings for text.
@@ -62,6 +65,7 @@ class TestEmbed(unittest.TestCase):
             f" expected {cexpected}"
         )
 
+    @pytest.mark.deep
     def test_returns_e5_embeddings(self):
         embeddings = infer(
             ["some dummy text"],
@@ -86,28 +90,23 @@ class TestEmbed(unittest.TestCase):
             f" expected {cexpected}"
         )
 
-    # @todo #9:30min Use ExtendsWith analogue or some temp directory for 'out'.
-    #  We shouldn't manage removal of output files directly, instead, let's use
-    #  more elegant solution - temp directory or something like extensions from
-    #  JUnit. We should fix the same problem in test_filter.py as well.
+    @pytest.mark.deep
     def test_creates_csv_with_embeddings(self):
         """
         Test case for checking generated CSV file with embeddings.
         """
-        main(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "embed.csv"
-            ),
-            "t-embeddings",
-            os.environ["HF_TESTING_TOKEN"],
-            os.environ["COHERE_TESTING_TOKEN"]
-        )
-        e5 = "t-embeddings-e5-1024.csv"
-        sbert = "t-embeddings-s-bert-384.csv"
-        cohere = "t-embeddings-embedv3-1024.csv"
-        self.assertTrue(Path(e5).is_file())
-        self.assertTrue(Path(sbert).is_file())
-        self.assertTrue(Path(cohere).is_file())
-        os.remove(e5)
-        os.remove(sbert)
-        os.remove(cohere)
+        with TemporaryDirectory() as temp:
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "embed.csv"
+                ),
+                temp,
+                os.environ["HF_TESTING_TOKEN"],
+                os.environ["COHERE_TESTING_TOKEN"]
+            )
+            e5 = f"{temp}-e5-1024.csv"
+            sbert = f"{temp}-s-bert-384.csv"
+            cohere = f"{temp}-embedv3-1024.csv"
+            self.assertTrue(Path(e5).is_file())
+            self.assertTrue(Path(sbert).is_file())
+            self.assertTrue(Path(cohere).is_file())

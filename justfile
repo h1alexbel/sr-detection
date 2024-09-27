@@ -25,14 +25,14 @@ install:
   npm install -g ghminer@0.0.6
 
 # Full build.
-full:
-  poetry install
-  just test
+full tests="fast":
+  just install
+  just test "{{tests}}"
   just check
 
 # Run tests.
-test:
-  poetry run pytest
+test which="fast":
+  poetry run pytest -m "{{which}}"
 
 # Check quality of source code.
 check:

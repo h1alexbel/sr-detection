@@ -21,31 +21,35 @@
 # SOFTWARE.
 import os
 import unittest
+from tempfile import TemporaryDirectory
 
 import pandas as pd
+import pytest
 from sr_data.steps.scores import main
 
 
 class TestScores(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_calculates_score(self):
-        out = "scores.csv"
-        main(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "to-score.csv"
-            ),
-            out
-        )
-        scores = pd.read_csv(out)
-        cols = 2
-        self.assertEqual(
-            len(scores.columns.tolist()),
-            cols,
-            f"Number of columns should be {cols}"
-        )
-        score = 102.5
-        self.assertEqual(
-            scores["score"].tolist()[0],
-            score,
-            f"SR score should be {score}"
-        )
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "scores.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-score.csv"
+                ),
+                path
+            )
+            scores = pd.read_csv(path)
+            cols = 2
+            self.assertEqual(
+                len(scores.columns.tolist()),
+                cols,
+                f"Number of columns should be {cols}"
+            )
+            score = 102.5
+            self.assertEqual(
+                scores["score"].tolist()[0],
+                score,
+                f"SR score should be {score}"
+            )

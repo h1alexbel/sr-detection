@@ -55,4 +55,4 @@ jobs:
       - name: Build
         run: |
           just install
-          just full
+          just full "deep or fast"
