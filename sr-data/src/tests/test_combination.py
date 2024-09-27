@@ -21,6 +21,7 @@
 # SOFTWARE.
 import os
 import unittest
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 from sr_data.steps.combination import main
@@ -29,21 +30,21 @@ from sr_data.steps.combination import main
 class TestCombination(unittest.TestCase):
 
     def test_combines_into_dataset(self):
-        main(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "scores.csv"
-            ),
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "embeddings.csv"
-            ),
-            os.path.dirname(os.path.realpath(__file__))
-        )
-        out = os.path.join(os.path.dirname(os.path.realpath(__file__)), "scores+embeddings.csv")
-        combination = pd.read_csv(out)
-        cols = 5
-        self.assertEqual(
-            len(combination.columns.tolist()),
-            cols,
-            f"Number of columns should be {cols}"
-        )
-        os.remove(out)
+        with TemporaryDirectory() as temp:
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "scores.csv"
+                ),
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "embeddings.csv"
+                ),
+                temp
+            )
+            out = os.path.join(temp, "scores+embeddings.csv")
+            combination = pd.read_csv(out)
+            cols = 5
+            self.assertEqual(
+                len(combination.columns.tolist()),
+                cols,
+                f"Number of columns should be {cols}"
+            )

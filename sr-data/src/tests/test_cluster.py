@@ -23,44 +23,44 @@ Test case for cluster step.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import os
-import shutil
 import unittest
+from tempfile import TemporaryDirectory
+
 from sr_data.steps.cluster import kmeans, cmeans
 
 
 class TestCluster(unittest.TestCase):
 
     def test_clusters_kmeans_numerical(self):
-        kmeans(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
-            ),
-            "kmeans"
-        )
-        prefix = "kmeans/to-cluster"
-        expected = f"{prefix}/clusters"
-        self.assertTrue(
-            os.path.exists(expected),
-            f"Path {expected} does not exists"
-        )
-        config = f"{prefix}/config.json"
-        self.assertTrue(
-            os.path.exists(config),
-            f"File {config} does not exists"
-        )
-        shutil.rmtree("kmeans")
+        with TemporaryDirectory() as temp:
+            kmeans(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                ),
+                temp
+            )
+            path = os.path.join(temp, "to-cluster")
+            expected = f"{path}/clusters"
+            self.assertTrue(
+                os.path.exists(expected),
+                f"Directory: {expected} does not exists"
+            )
+            config = f"{path}/config.json"
+            self.assertTrue(
+                os.path.exists(config),
+                f"File {config} does not exists"
+            )
 
     def test_clusters_with_cmeans(self):
-        dir = "cmeans"
-        cmeans(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
-            ),
-            dir
-        )
-        file = "cmeans/to-cluster/clusters/srs.csv"
-        self.assertTrue(
-            os.path.exists(file),
-            f"C-Means results was not saved to {file}"
-        )
-        shutil.rmtree(dir)
+        with TemporaryDirectory() as temp:
+            cmeans(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                ),
+                temp
+            )
+            file = os.path.join(temp, "to-cluster/clusters/srs.csv")
+            self.assertTrue(
+                os.path.exists(file),
+                f"C-Means results was not saved to {file}"
+            )
