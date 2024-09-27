@@ -26,19 +26,14 @@ description = ""
 authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{ include = "sr-data" }]
 
 [tool.poetry.dependencies]
 python = "^3.10 || ^3.11 || ^3.12"
 sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-sr-detector = { path = "./sr-detector" }
-nltk = "^3.9.1"
-scikit-learn = "^1.5.1"
-cohere = "^5.9.1"
-loguru = "^0.7.2"
-scikit-fuzzy = "^0.5.0"
 
 [tool.poetry.group.dev.dependencies]
+sr-data = { path = "./sr-data" }
 pytest = "^8.2.2"
 pylint = "^3.2.5"
 flake8 = "^7.1.0"
