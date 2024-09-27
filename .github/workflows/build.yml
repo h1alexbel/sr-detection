@@ -54,5 +54,5 @@ jobs:
           just-version: ${{ matrix.just-version }}
       - name: Build
         run: |
-          just versions
+          just install
           just full
