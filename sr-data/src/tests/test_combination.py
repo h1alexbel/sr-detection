@@ -21,7 +21,7 @@
 # SOFTWARE.
 import os
 import unittest
-from tempfile import TemporaryFile, TemporaryDirectory
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 from sr_data.steps.combination import main
