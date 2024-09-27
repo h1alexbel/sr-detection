@@ -24,11 +24,13 @@ import unittest
 from tempfile import TemporaryDirectory
 
 import pandas as pd
+import pytest
 from sr_data.steps.scores import main
 
 
 class TestScores(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_calculates_score(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "scores.csv")
