@@ -24,34 +24,33 @@ Test case for filter.
 # SOFTWARE.
 import os
 import unittest
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 from sr_data.steps.filter import main
-
+import pytest
 
 class TestFilter(unittest.TestCase):
-    """
-    Test cases for filter.
-    """
 
-    def tearDown(self):
-        """
-        Teardown.
-        """
-        os.remove("test_out.csv")
-
+    @pytest.mark.fast
     def test_filters_input(self):
         """
         Test case for filtering input.
         """
-        target = "test_out.csv"
-        # pylint: disable=redefined-builtin
-        dir = os.path.dirname(os.path.realpath(__file__))
-        main(os.path.join(dir, "test.csv"), target)
-        out = pd.read_csv(target)["repo"].values.tolist()
-        expected = ["blitz-js/blitz", "wasp-lang/wasp"]
-        self.assertEqual(
-            out,
-            expected,
-            f"Output CSV {out} does not match with expected {expected}"
-        )
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "after-filter.csv")
+            # pylint: disable=redefined-builtin
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "to-filter.csv"
+                ),
+                path
+            )
+            out = pd.read_csv(path)["repo"].values.tolist()
+            expected = ["blitz-js/blitz", "wasp-lang/wasp"]
+            self.assertEqual(
+                out,
+                expected,
+                f"Output CSV {out} does not match with expected {expected}"
+            )
