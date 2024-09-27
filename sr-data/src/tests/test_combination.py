@@ -25,10 +25,12 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 from sr_data.steps.combination import main
+import pytest
 
 
 class TestCombination(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_combines_into_dataset(self):
         with TemporaryDirectory() as temp:
             main(

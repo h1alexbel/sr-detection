@@ -28,10 +28,11 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 from sr_data.steps.filter import main
-
+import pytest
 
 class TestFilter(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_filters_input(self):
         """
         Test case for filtering input.
