@@ -28,9 +28,9 @@ versions:
   npm --version
 
 # Full build.
-full:
+full tests="fast":
   just install
-  just test
+  just test "{{tests}}"
   just check
 
 # Install dependencies.
@@ -39,8 +39,8 @@ install:
   npm install -g ghminer@0.0.5
 
 # Run tests.
-test:
-  poetry run pytest
+test which="fast":
+  poetry run pytest -m "{{which}}"
 
 # Check quality of source code.
 check:

@@ -26,11 +26,13 @@ import os
 import unittest
 from tempfile import TemporaryDirectory
 
+import pytest
 from sr_data.steps.cluster import kmeans, cmeans
 
 
 class TestCluster(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_clusters_kmeans_numerical(self):
         with TemporaryDirectory() as temp:
             kmeans(
@@ -51,6 +53,7 @@ class TestCluster(unittest.TestCase):
                 f"File {config} does not exists"
             )
 
+    @pytest.mark.fast
     def test_clusters_with_cmeans(self):
         with TemporaryDirectory() as temp:
             cmeans(
