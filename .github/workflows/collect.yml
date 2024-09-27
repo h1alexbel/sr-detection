@@ -63,7 +63,7 @@ jobs:
           ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
             --query "stars:>10 language:java size:>=20 mirror:false template:false" \
               --filename "${{ inputs.filename }}" --tokens "$PATS"
-          just filter "$COLLECTION" "$FILTER" 
+          just filter "$COLLECTION" "$FILTER"
           just extract "$FILTER" "$EXTRACT"
           cp "$COLLECTION" collection
           cp "$FILTER" collection
