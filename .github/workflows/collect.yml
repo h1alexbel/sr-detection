@@ -68,7 +68,7 @@ jobs:
           cp "$COLLECTION" collection
           cp "$FILTER" collection
           cp "$EXTRACT" collection
-      - uses: JamesIves/github-pages-deploy-action@v4.6.1
+      - uses: JamesIves/github-pages-deploy-action@v4.6.6
         with:
           branch: collect
           folder: collection
