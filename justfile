@@ -26,7 +26,6 @@ install:
 
 # Full build.
 full tests="fast":
-  just install
   poetry install
   just test "{{tests}}"
   just check
