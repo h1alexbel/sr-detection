@@ -30,7 +30,7 @@ versions:
 # Full build.
 full tests="fast":
   just install
-  just test {{tests}}
+  just test "{{tests}}"
   just check
 
 # Install dependencies.
@@ -40,7 +40,7 @@ install:
 
 # Run tests.
 test which="fast":
-  poetry run pytest -m {{which}}
+  poetry run pytest -m "{{which}}"
 
 # Check quality of source code.
 check:
