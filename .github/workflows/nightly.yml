@@ -55,4 +55,3 @@ jobs:
       - uses: jayqi/failed-build-issue-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-22
