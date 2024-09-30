@@ -40,7 +40,7 @@ jobs:
       - run: |
           mkdir gh-pages
           cp paper/paper.pdf gh-pages
-      - uses: JamesIves/github-pages-deploy-action@v4.6.6
+      - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
           folder: gh-pages
