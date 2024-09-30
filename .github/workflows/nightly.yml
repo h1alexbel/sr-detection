@@ -30,7 +30,7 @@ env:
   COHERE_TESTING_TOKEN: ${{ secrets.COHERE_TESTING_TOKEN }}
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -50,7 +50,7 @@ jobs:
     name: Create issue on failure
     needs: build
     if: failure() && github.event.pull_request == null
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: jayqi/failed-build-issue-action@v1
         with:
