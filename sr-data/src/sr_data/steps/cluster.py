@@ -29,7 +29,7 @@ from pathlib import Path
 import pandas as pd
 import skfuzzy
 from loguru import logger
-from sklearn.cluster import KMeans, AgglomerativeClustering
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
 
 """
 Clustering random state.
@@ -59,6 +59,14 @@ def agglomerative(dataset, dir):
     logger.info(f"Running Agglomerative clustering for {dataset}")
     frame = pd.read_csv(dataset)
     model = AgglomerativeClustering(n_clusters=3)
+    model.fit(frame.drop(columns=["repo"]))
+    save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
+
+
+def dbscan(dataset, dir):
+    logger.info(f"Running DBSCAN for {dataset}")
+    frame = pd.read_csv(dataset)
+    model = DBSCAN(eps=0.5, min_samples=5)
     model.fit(frame.drop(columns=["repo"]))
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
@@ -119,4 +127,5 @@ def main(dataset, dir):
     """
     kmeans(dataset, f"{dir}/kmeans")
     agglomerative(dataset, f"{dir}/agglomerative")
+    dbscan(dataset, f"{dir}/dbscan")
     cmeans(dataset, f"{dir}/cmeans")
