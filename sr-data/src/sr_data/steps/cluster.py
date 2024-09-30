@@ -25,11 +25,13 @@ Cluster.
 
 import json
 from pathlib import Path
+from sys import prefix
 
 import pandas as pd
 import skfuzzy
 from loguru import logger
 from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
+from sklearn.mixture import GaussianMixture
 
 """
 Clustering random state.
@@ -69,6 +71,19 @@ def dbscan(dataset, dir):
     model = DBSCAN(eps=0.5, min_samples=5)
     model.fit(frame.drop(columns=["repo"]))
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
+
+
+def gmm(dataset, dir):
+    logger.info(f"Running GMM for {dataset}")
+    frame = pd.read_csv(dataset)
+    model = GaussianMixture(n_components=4, covariance_type="full", random_state=0)
+    drop = frame.drop(columns=["repo"])
+    model.fit(drop)
+    frame["cluster"] =  model.predict(drop)
+    prefix = f"{dir}/{Path(dataset).stem}"
+    Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
+    save_config(prefix, json.dumps(model.get_params(), indent=4), ".json")
+    to_txt(frame.groupby("cluster"), f"{prefix}/clusters")
 
 
 def cmeans(dataset, dir):
@@ -128,4 +143,5 @@ def main(dataset, dir):
     kmeans(dataset, f"{dir}/kmeans")
     agglomerative(dataset, f"{dir}/agglomerative")
     dbscan(dataset, f"{dir}/dbscan")
+    gmm(dataset, f"{dir}/gmm")
     cmeans(dataset, f"{dir}/cmeans")
