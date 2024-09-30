@@ -27,7 +27,7 @@ import unittest
 from tempfile import TemporaryDirectory
 
 import pytest
-from sr_data.steps.cluster import kmeans, cmeans
+from sr_data.steps.cluster import kmeans, cmeans, agglomerative
 
 
 class TestCluster(unittest.TestCase):
@@ -66,4 +66,25 @@ class TestCluster(unittest.TestCase):
             self.assertTrue(
                 os.path.exists(file),
                 f"C-Means results was not saved to {file}"
+            )
+
+    @pytest.mark.fast
+    def test_clusters_with_agglomerative(self):
+        with TemporaryDirectory() as temp:
+            agglomerative(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                ),
+                temp
+            )
+            path = os.path.join(temp, "to-cluster")
+            expected = f"{path}/clusters"
+            self.assertTrue(
+                os.path.exists(expected),
+                f"Directory: {expected} does not exists"
+            )
+            config = f"{path}/config.json"
+            self.assertTrue(
+                os.path.exists(config),
+                f"File {config} does not exists"
             )

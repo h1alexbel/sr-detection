@@ -23,13 +23,13 @@ Cluster.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import json
 from pathlib import Path
 
 import pandas as pd
-from loguru import logger
-from sklearn.cluster import KMeans
-import json
 import skfuzzy
+from loguru import logger
+from sklearn.cluster import KMeans, AgglomerativeClustering
 
 """
 Clustering random state.
@@ -52,11 +52,15 @@ def kmeans(dataset, dir):
         kmeans.fit(frame[["score"]])
     centroids = kmeans.cluster_centers_
     logger.info(f"Centroids: {centroids}")
-    frame["cluster"] = kmeans.labels_
-    prefix = f"{dir}/{Path(dataset).stem}"
-    Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
-    save_config(prefix, json.dumps(kmeans.get_params(), indent=4), ".json")
-    to_txt(frame.groupby("cluster"), f"{prefix}/clusters")
+    save_clustered(kmeans, frame, f"{dir}/{Path(dataset).stem}")
+
+
+def agglomerative(dataset, dir):
+    logger.info(f"Running Agglomerative clustering for {dataset}")
+    frame = pd.read_csv(dataset)
+    model = AgglomerativeClustering(n_clusters=3)
+    model.fit(frame.drop(columns=["repo"]))
+    save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
 
 def cmeans(dataset, dir):
@@ -84,6 +88,13 @@ def cmeans(dataset, dir):
     logger.info(f"Saved results to {out}")
 
 
+def save_clustered(model, frame, prefix):
+    frame["cluster"] = model.labels_
+    Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
+    save_config(prefix, json.dumps(model.get_params(), indent=4), ".json")
+    to_txt(frame.groupby("cluster"), f"{prefix}/clusters")
+
+
 def save_config(prefix, model, ext):
     full = f"{prefix}/config{ext}"
     with open(full, "w") as file:
@@ -107,4 +118,5 @@ def main(dataset, dir):
     :param dir: Output directory
     """
     kmeans(dataset, f"{dir}/kmeans")
+    agglomerative(dataset, f"{dir}/agglomerative")
     cmeans(dataset, f"{dir}/cmeans")
