@@ -138,7 +138,8 @@ class TestCluster(unittest.TestCase):
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
                 ),
-                temp
+                temp,
+                5
             )
             path = os.path.join(temp, "to-cluster")
             expected = f"{path}/clusters"
