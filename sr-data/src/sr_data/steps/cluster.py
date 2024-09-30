@@ -72,10 +72,10 @@ def dbscan(dataset, dir):
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
 
-def hdbscan(dataset, dir):
+def hdbscan(dataset, dir, size):
     logger.info(f"Running HDBSCAN for {dataset}")
     frame = pd.read_csv(dataset)
-    model = HDBSCAN(min_cluster_size=20)
+    model = HDBSCAN(min_cluster_size=size)
     model.fit(frame.drop(columns=["repo"]))
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
@@ -149,7 +149,7 @@ def main(dataset, dir):
     """
     kmeans(dataset, f"{dir}/kmeans")
     agglomerative(dataset, f"{dir}/agglomerative")
-    hdbscan(dataset, f"{dir}/hdbscan")
+    hdbscan(dataset, f"{dir}/hdbscan", 20)
     dbscan(dataset, f"{dir}/dbscan")
     gmm(dataset, f"{dir}/gmm")
     cmeans(dataset, f"{dir}/cmeans")
