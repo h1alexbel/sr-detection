@@ -25,12 +25,11 @@ Cluster.
 
 import json
 from pathlib import Path
-from sys import prefix
 
 import pandas as pd
 import skfuzzy
 from loguru import logger
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, HDBSCAN
 from sklearn.mixture import GaussianMixture
 
 """
@@ -47,7 +46,7 @@ def kmeans(dataset, dir):
     """
     logger.info(f"Running KMeans clustering for {dataset}...")
     frame = pd.read_csv(dataset)
-    kmeans = KMeans(n_clusters=8, random_state=CLUSTERING_RANDOM_STATE)
+    kmeans = KMeans(n_clusters=4, random_state=CLUSTERING_RANDOM_STATE)
     if Path(dataset).stem != "scores":
         kmeans.fit(frame.drop(columns=["repo"]))
     else:
@@ -73,13 +72,21 @@ def dbscan(dataset, dir):
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
 
+def hdbscan(dataset, dir, size):
+    logger.info(f"Running HDBSCAN for {dataset}")
+    frame = pd.read_csv(dataset)
+    model = HDBSCAN(min_cluster_size=size)
+    model.fit(frame.drop(columns=["repo"]))
+    save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
+
+
 def gmm(dataset, dir):
     logger.info(f"Running GMM for {dataset}")
     frame = pd.read_csv(dataset)
     model = GaussianMixture(n_components=4, covariance_type="full", random_state=0)
     drop = frame.drop(columns=["repo"])
     model.fit(drop)
-    frame["cluster"] =  model.predict(drop)
+    frame["cluster"] = model.predict(drop)
     prefix = f"{dir}/{Path(dataset).stem}"
     Path(f"{prefix}/clusters").mkdir(parents=True, exist_ok=True)
     save_config(prefix, json.dumps(model.get_params(), indent=4), ".json")
@@ -142,6 +149,7 @@ def main(dataset, dir):
     """
     kmeans(dataset, f"{dir}/kmeans")
     agglomerative(dataset, f"{dir}/agglomerative")
+    hdbscan(dataset, f"{dir}/hdbscan", 20)
     dbscan(dataset, f"{dir}/dbscan")
     gmm(dataset, f"{dir}/gmm")
     cmeans(dataset, f"{dir}/cmeans")
