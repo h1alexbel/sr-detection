@@ -24,9 +24,7 @@ Cluster.
 # SOFTWARE.
 
 import json
-from ast import Param
 from pathlib import Path
-from sys import prefix
 
 import pandas as pd
 import skfuzzy
