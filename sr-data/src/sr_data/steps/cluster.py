@@ -75,7 +75,7 @@ def dbscan(dataset, dir):
 def hdbscan(dataset, dir):
     logger.info(f"Running HDBSCAN for {dataset}")
     frame = pd.read_csv(dataset)
-    model = HDBSCAN(min_cluster_size=5)
+    model = HDBSCAN(min_cluster_size=20)
     model.fit(frame.drop(columns=["repo"]))
     save_clustered(model, frame, f"{dir}/{Path(dataset).stem}")
 
