@@ -35,12 +35,11 @@ class TestLabels(unittest.TestCase):
     @pytest.mark.fast
     def test_adds_label_column(self):
         with TemporaryDirectory() as temp:
-            path = os.path.join(temp, "with-labels.csv")
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
                     "scores.csv"
                 ),
-                path
+                temp
             )
-            self.assertTrue("label" in pd.read_csv(path).columns)
+            self.assertTrue("label" in pd.read_csv(os.path.join(temp, "scores-labels.csv")).columns)

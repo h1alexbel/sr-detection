@@ -121,8 +121,15 @@ cluster dir="experiment":
   cd sr-data && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
 
 # Fill in labels in repositories dataset.
-labels repos out="experiment/labels.csv":
-  cd sr-data && poetry poe labels --repos {{repos}} --out {{out}}
+labels dir="experiment":
+  cd sr-data && poetry poe labels --repos "experiment/numerical.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/sbert.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/e5.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/embedv3.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+sbert.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+e5.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+embedv3.csv" --dir {{dir}}
 
 # Build paper with LaTeX.
 paper:
