@@ -34,8 +34,6 @@ textual. For numerical we collect:
 * `pulls`, the number of pull requests.
 * `issues`, the total number of issues (opened + closed).
 * `branches`, the number of branches.
-* `actions`, the number of GitHub Actions workflow files.
-For textual: `README.md` file.
 
 To run this:
 
@@ -54,6 +52,8 @@ just test-collect
 
 You should expect to have `sr-data/tmp/test-repos.csv`, with the same structure
 as `repos.csv`, but smaller.
+
+You can run this step in GitHub Actions: [collect.yml].
 
 ### Filter
 
@@ -242,3 +242,4 @@ just full
 [Agglomerative clustering]: https://en.wikipedia.org/wiki/Hierarchical_clustering
 [DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
 [GMM]: https://en.wikipedia.org/wiki/Mixture_model
+[collect.yml]: https://github.com/h1alexbel/sr-detection/actions/workflows/collect.yml
