@@ -22,8 +22,6 @@
 
 # Install dependencies.
 install:
-  pip3 install setuptools
-  poetry update
   npm install -g ghminer@0.0.6
 
 # Full build.
