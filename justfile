@@ -131,6 +131,10 @@ labels dir="experiment":
   cd sr-data && poetry poe labels --repos "experiment/scores+e5.csv" --dir {{dir}}
   cd sr-data && poetry poe labels --repos "experiment/scores+embedv3.csv" --dir {{dir}}
 
+# Semi Supervised Learning experiment.
+ssl repos out:
+  cd sr-data && poetry poe ssl --repos {{repos}} --out {{out}}
+
 # Build paper with LaTeX.
 paper:
   latexmk --version
