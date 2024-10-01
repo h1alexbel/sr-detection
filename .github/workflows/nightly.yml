@@ -25,6 +25,8 @@ on:
   schedule:
     # Run load testing at 3:00 UTC every day
     - cron: '0 3 * * *'
+permissions:
+  issues: write
 env:
   HF_TESTING_TOKEN: ${{ secrets.HF_TESTING_TOKEN }}
   COHERE_TESTING_TOKEN: ${{ secrets.COHERE_TESTING_TOKEN }}
