@@ -37,7 +37,7 @@ markdown = "^3.6"
 requests = "^2.32.3"
 nltk = "^3.9.1"
 scikit-learn = "^1.5.1"
-cohere = "^5.9.1"
+cohere = "5.9.1"
 loguru = "^0.7.2"
 scikit-fuzzy = "^0.5.0"
 
@@ -75,6 +75,14 @@ args = [{name = "scores"}, {name = "embeddings"}, {name = "dir"}]
 [tool.poe.tasks.cluster]
 script = "sr_data.steps.cluster:main(dataset, dir)"
 args = [{name = "dataset"}, {name = "dir"}]
+
+[tool.poe.tasks.labels]
+script = "sr_data.steps.labels:main(repos, dir)"
+args = [{name = "repos"}, {name = "dir"}]
+
+[tool.poe.tasks.lpm]
+script = "sr_data.steps.label_propagation:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]
