@@ -22,6 +22,7 @@
 
 # Install dependencies.
 install:
+  pip3 install setuptools
   npm install -g ghminer@0.0.6
 
 # Full build.
