@@ -23,7 +23,7 @@
 name: nightly
 on:
   schedule:
-    # Run load testing at 3:00 UTC every day
+    # Run deep testing at 3:00 UTC every day
     - cron: '0 3 * * *'
 permissions:
   issues: write
