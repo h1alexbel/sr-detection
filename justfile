@@ -120,6 +120,10 @@ cluster dir="experiment":
   cd sr-data && poetry poe cluster --dataset "experiment/scores+e5.csv" --dir {{dir}}
   cd sr-data && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
 
+# Fill in labels in repositories dataset.
+labels repos out="experiment/labels.csv":
+  cd sr-data && poetry poe labels --repos {{repos}} --out {{out}}
+
 # Build paper with LaTeX.
 paper:
   latexmk --version
