@@ -1,3 +1,6 @@
+"""
+Test case for labels.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,41 +22,24 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
----
-name: nightly
-on:
-  schedule:
-    # Run deep testing at 3:00 UTC every day
-    - cron: '0 3 * * *'
-permissions:
-  issues: write
-env:
-  HF_TESTING_TOKEN: ${{ secrets.HF_TESTING_TOKEN }}
-  COHERE_TESTING_TOKEN: ${{ secrets.COHERE_TESTING_TOKEN }}
-jobs:
-  build:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - uses: abatilo/actions-poetry@v3
-        with:
-          poetry-version: "1.8.3"
-      - uses: extractions/setup-just@v2
-        with:
-          just-version: "1.30.1"
-      - name: Build
-        run: |
-          just install
-          just full "nightly or deep or fast"
-  report-fail:
-    name: Create issue on failure
-    needs: build
-    if: failure() && github.event.pull_request == null
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: jayqi/failed-build-issue-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+import os
+import unittest
+from tempfile import TemporaryDirectory
+
+import pandas as pd
+import pytest
+from sr_data.steps.labels import main
+
+class TestLabels(unittest.TestCase):
+
+    @pytest.mark.fast
+    def test_adds_label_column(self):
+        with TemporaryDirectory() as temp:
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "scores.csv"
+                ),
+                temp
+            )
+            self.assertTrue("label" in pd.read_csv(os.path.join(temp, "scores-labels.csv")).columns)

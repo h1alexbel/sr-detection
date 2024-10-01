@@ -120,6 +120,21 @@ cluster dir="experiment":
   cd sr-data && poetry poe cluster --dataset "experiment/scores+e5.csv" --dir {{dir}}
   cd sr-data && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
 
+# Fill in labels in repositories dataset.
+labels dir="experiment":
+  cd sr-data && poetry poe labels --repos "experiment/numerical.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/sbert.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/e5.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/embedv3.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+sbert.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+e5.csv" --dir {{dir}}
+  cd sr-data && poetry poe labels --repos "experiment/scores+embedv3.csv" --dir {{dir}}
+
+# Label Propagation model training on repos `repos`, should be saved to `out`.
+lpm repos out:
+  cd sr-data && poetry poe lpm --repos {{repos}} --out {{out}}
+
 # Build paper with LaTeX.
 paper:
   latexmk --version
