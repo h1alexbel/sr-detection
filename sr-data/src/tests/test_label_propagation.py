@@ -1,5 +1,5 @@
 """
-Label Propagation model training.
+Test case for label propagation model training.
 """
 # The MIT License (MIT)
 #
@@ -22,24 +22,26 @@ Label Propagation model training.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
+import unittest
+from tempfile import TemporaryDirectory
+
 import joblib
-import pandas as pd
-from loguru import logger
-from sklearn.preprocessing import StandardScaler
-from sklearn.semi_supervised import LabelPropagation
+import pytest
+from sr_data.steps.label_propagation import main
 
+class TestLabelPropagation(unittest.TestCase):
 
-def main(repos, out):
-    frame = pd.read_csv(repos)
-    frame['label'] = frame['label'].map({'SR': 1, 'NON': 0}).fillna(-1)
-    scaled = StandardScaler().fit_transform(
-        frame.drop(columns=["repo", "label"])
-    )
-    model = LabelPropagation()
-    model.fit(scaled, frame["label"])
-    joblib.dump(model, out)
-    logger.info(f"Model {model} saved to {out}")
-    probs = model.predict_proba(scaled)
-    for i, prob in enumerate(probs):
-        rid = frame["repo"].iloc[i]
-        logger.info(f"Repo {rid}: {prob[1]:.2f}")
+    @pytest.mark.fast
+    def test_trains_and_saves_model(self):
+        with (TemporaryDirectory() as temp):
+            path = os.path.join(temp, "trained.pkl")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "training.csv"
+                ),
+                path
+            )
+            model = joblib.load(path)
+            self.assertTrue(model is not None)
