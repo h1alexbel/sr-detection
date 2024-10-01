@@ -37,7 +37,7 @@ markdown = "^3.6"
 requests = "^2.32.3"
 nltk = "^3.9.1"
 scikit-learn = "^1.5.1"
-cohere = "^5.9.1"
+cohere = "5.9.1"
 loguru = "^0.7.2"
 scikit-fuzzy = "^0.5.0"
 
