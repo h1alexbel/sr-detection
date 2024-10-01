@@ -1,6 +1,8 @@
 """
 Labels.
 """
+from pathlib import Path
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -26,9 +28,10 @@ import pandas as pd
 from loguru import logger
 
 
-def main(repos, out):
+def main(repos, dir):
     logger.info("Filling in NULL labels...")
     frame = pd.read_csv(repos)
     frame["label"] = None
+    out = f"{dir}/{Path(repos).stem}-labels.csv"
     frame.to_csv(out, index=False)
     logger.info(f"Saved copy with labels column to {out}")
