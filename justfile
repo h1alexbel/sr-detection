@@ -23,6 +23,7 @@
 # Install dependencies.
 install:
   npm install -g ghminer@0.0.7
+  poetry self add 'poethepoet[poetry_plugin]'
 
 # Full build.
 full tests="fast":
