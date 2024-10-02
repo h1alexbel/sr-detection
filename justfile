@@ -22,7 +22,7 @@
 
 # Install dependencies.
 install:
-  npm install -g ghminer@0.0.6
+  npm install -g ghminer@0.0.7
 
 # Full build.
 full tests="fast":
@@ -64,6 +64,10 @@ collect:
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
     --filename "repos" && mv repos.csv sr-data/experiment/repos.csv
+
+# Fetch pulls count for collected repos.
+pulls repos out="experiment/with-pulls.csv":
+  cd sr-data && poetry poe pulls --repos {{repos}} --out {{out}}
 
 # Collect test repositories.
 test-collect:
