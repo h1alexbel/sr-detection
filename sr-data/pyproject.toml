@@ -85,8 +85,8 @@ script = "sr_data.steps.label_propagation:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.pulls]
-script = "sr_data.steps.pulls:main(repos, out)"
-args = [{name = "repos"}, {name = "out"}]
+script = "sr_data.steps.pulls:main(repos, out, tenv)"
+args = [{name = "repos"}, {name = "out"}, {name = "tenv"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]
