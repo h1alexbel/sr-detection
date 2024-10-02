@@ -41,6 +41,7 @@ env:
   PULLED: "${{ inputs.filename }}-with-pulls.csv"
   FILTER: "filter-${{ inputs.start }}-${{ inputs.end }}.csv"
   EXTRACT: "extract-${{ inputs.start }}-${{ inputs.end }}.csv"
+  TENV: ${{ secrets.COLLECT_GITHUB_TOKEN }}
 jobs:
   collect:
     runs-on: ubuntu-24.04
@@ -61,7 +62,7 @@ jobs:
           poetry install
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
           just collect "collection" "${{ inputs.start }}" "${{ inputs.end }}" \
-            "${{ inputs.filename }}" "COLLECT_TOKEN_1"
+            "${{ inputs.filename }}" "TENV"
           just filter "$PULLED" "$FILTER"
           just extract "$FILTER" "$EXTRACT"
           cp "$COLLECTION" collection
