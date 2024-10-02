@@ -61,15 +61,15 @@ clean:
   rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
-collect dir start end out tenv:
+collect dir start end out token:
   mkdir -p {{dir}}
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     --start "{{start}}" --end "{{end}}" --tokens "$PATS" --filename "{{out}}"
-  just pulls "../{{out}}.csv" "{{tenv}}" "../{{out}}-with-pulls.csv"
+  just pulls "../{{out}}.csv" "{{token}}" "../{{out}}-with-pulls.csv"
 
 # Fetch pulls count for collected repos.
-pulls repos tenv out="experiment/with-pulls.csv":
-  cd sr-data && poetry poe pulls --repos "{{repos}}" --tenv "{{tenv}}" \
+pulls repos token out="experiment/with-pulls.csv":
+  cd sr-data && poetry poe pulls --repos "{{repos}}" --token "{{token}}" \
     --out "{{out}}"
 
 # Collect test repositories.

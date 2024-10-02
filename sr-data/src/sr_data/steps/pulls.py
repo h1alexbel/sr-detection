@@ -22,7 +22,6 @@ Collect pulls for each repo.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-from os import environ
 
 import pandas as pd
 import requests
@@ -30,10 +29,10 @@ from loguru import logger
 from requests import Response
 
 
-def main(repos, out, tenv):
+def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
-        frame.at[idx, "pulls"] = pulls(row["repo"], environ[tenv])
+        frame.at[idx, "pulls"] = pulls(row["repo"], token)
     frame.to_csv(out, index=False)
 
 
