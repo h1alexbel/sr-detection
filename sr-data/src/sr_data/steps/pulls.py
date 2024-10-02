@@ -30,33 +30,31 @@ from loguru import logger
 from requests import Response
 
 
-def main(repos, out):
+def main(repos, out, tenv):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
-        frame.at[idx, "pulls"] = pulls(row["repo"])
+        frame.at[idx, "pulls"] = pulls(row["repo"], environ[tenv])
     frame.to_csv(out, index=False)
 
 
-def pulls(repo):
+def pulls(repo, token) -> int:
     count = 0
     next = True
     cursor = None
     ignored = ["dependabot", "renovate"]
-    with open(environ["PATS"]) as pats:
-        tokens = [token.strip() for token in pats if token.strip()]
-        while next:
-            response = request(tokens[0], repo, cursor)
-            if "message" in response:
-                logger.error(f"Error fetching data for {repo}: {response['message']}")
-            pulls = response["data"]["repository"]["pullRequests"]
-            for pull in pulls["nodes"]:
-                if pull["author"] is not None:
-                    login = pull["author"]["login"]
-                    if login not in ignored:
-                        count += 1
-            page = pulls["pageInfo"]
-            cursor = page["endCursor"]
-            next = page["hasNextPage"]
+    while next:
+        response = request(token, repo, cursor)
+        if "message" in response:
+            logger.error(f"Error fetching data for {repo}: {response['message']}")
+        pulls = response["data"]["repository"]["pullRequests"]
+        for pull in pulls["nodes"]:
+            if pull["author"] is not None:
+                login = pull["author"]["login"]
+                if login not in ignored:
+                    count += 1
+        page = pulls["pageInfo"]
+        cursor = page["endCursor"]
+        next = page["hasNextPage"]
     logger.info(f"Fetched pulls for {repo}: {count}")
     return count
 
