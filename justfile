@@ -81,7 +81,7 @@ test-collect:
 
 # Filter collected repositories.
 filter repos out="experiment/after-filter.csv":
-  cd sr-data && poetry poe filter --repos {{repos}} --out {{out}}
+  cd sr-data && poetry poe filter --repos "../{{repos}}" --out "{{out}}"
 
 # Extract headings from README files.
 extract repos out="experiment/after-extract.csv":
