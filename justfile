@@ -22,7 +22,7 @@
 
 # Install dependencies.
 install:
-  npm install -g ghminer@0.0.6
+  npm install -g ghminer@0.0.7
 
 # Full build.
 full tests="fast":
@@ -59,11 +59,15 @@ clean:
   rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
-collect:
-  mkdir -p sr-data/experiment
+collect dir start end out tenv:
+  mkdir -p {{dir}}
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
-    --start "2019-01-01" --end "2024-05-01" --tokens "$PATS" \
-    --filename "repos" && mv repos.csv sr-data/experiment/repos.csv
+    --start "{{start}}" --end "{{end}}" --tokens "$PATS" --filename "{{out}}"
+  just pulls "{{out}}.csv" "{{tenv}}" "{{out}}-with-pulls.csv"
+
+# Fetch pulls count for collected repos.
+pulls repos tenv out="experiment/with-pulls.csv":
+  cd sr-data && poetry poe pulls --repos {{repos}} --out {{out}} --tenv {{tenv}}
 
 # Collect test repositories.
 test-collect:
