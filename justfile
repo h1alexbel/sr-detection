@@ -69,7 +69,8 @@ collect dir start end out tenv:
 
 # Fetch pulls count for collected repos.
 pulls repos tenv out="experiment/with-pulls.csv":
-  cd sr-data && poetry poe pulls --repos {{repos}} --out {{out}} --tenv {{tenv}}
+  cd sr-data && poetry poe pulls --repos "{{repos}}" --tenv "{{tenv}}" \
+    --out "{{out}}"
 
 # Collect test repositories.
 test-collect:
