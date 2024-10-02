@@ -60,7 +60,6 @@ jobs:
           just install
           poetry install
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
-          ls
           just collect "collection" "${{ inputs.start }}" "${{ inputs.end }}" \
             "${{ inputs.filename }}" "${{ secrets.GITHUB_TOKEN }}"
           just filter "$PULLED" "$FILTER"
