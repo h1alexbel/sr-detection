@@ -38,6 +38,7 @@ permissions: write-all
 env:
   PATS: pats.txt
   COLLECTION: "${{ inputs.filename }}.csv"
+  PULLED: "${{ inputs.filename }}-with-pulls.csv"
   FILTER: "filter-${{ inputs.start }}-${{ inputs.end }}.csv"
   EXTRACT: "extract-${{ inputs.start }}-${{ inputs.end }}.csv"
 jobs:
@@ -59,13 +60,12 @@ jobs:
           just install
           poetry install
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
-          mkdir -p collection
-          ghminer --start "${{ inputs.start }}" --end "${{ inputs.end }}" \
-            --query "stars:>10 language:java size:>=20 mirror:false template:false" \
-              --filename "${{ inputs.filename }}" --tokens "$PATS"
-          just filter "$COLLECTION" "$FILTER"
+          just collect "collection" "${{ inputs.start }}" "${{ inputs.end }}" \
+            "${{ inputs.filename }}" "${{ secrets.GITHUB_TOKEN }}"
+          just filter "$PULLED" "$FILTER"
           just extract "$FILTER" "$EXTRACT"
           cp "$COLLECTION" collection
+          cp "$PULLED" collection
           cp "$FILTER" collection
           cp "$EXTRACT" collection
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
