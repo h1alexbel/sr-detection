@@ -58,7 +58,7 @@ jobs:
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
           just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
             "${{ inputs.end }}" "repos" "${{ secrets.GITHUB_TOKEN }}"
-          just filter "repos.csv" "after-filter.csv"
+          just filter "repos-with-pulls.csv" "after-filter.csv"
           just extract "after-filter.csv" "after-extract.csv"
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
