@@ -88,6 +88,10 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.pulls:main(repos, out, token)"
 args = [{name = "repos"}, {name = "out"}, {name = "token"}]
 
+[tool.poe.tasks.maven]
+script = "sr_data.steps.maven:main(repos, out, token)"
+args = [{name = "repos"}, {name = "out"}, {name = "token"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
