@@ -30,6 +30,13 @@ from loguru import logger
 from requests import Response
 
 
+# @todo #74:45min Exclude repositories that don't have any maven projects.
+#  We need to exclude all repositories that don't contain any 'pom.xml' inside.
+#  Don't forget to create a unit test for this.
+# @todo #74:60min Parse 'build' JSON array of maven projects into most valuable
+#  information for embedding step. We should parse all maven projects from JSON
+#  array, extract some useful information from each, and merge into single
+#  input. For pom.xml parsing we can use XPATH, and XSLT for merging.
 def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
