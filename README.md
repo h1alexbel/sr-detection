@@ -54,6 +54,7 @@ You should expect to have `sr-data/tmp/test-repos.csv`, with the same structure
 as `repos.csv`, but smaller.
 
 You can run this step in GitHub Actions: [collect.yml].
+Aggregated collects located in [collect branch].
 
 ### Filter
 
@@ -243,3 +244,4 @@ just full
 [DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
 [GMM]: https://en.wikipedia.org/wiki/Mixture_model
 [collect.yml]: https://github.com/h1alexbel/sr-detection/actions/workflows/collect.yml
+[collect branch]: https://github.com/h1alexbel/sr-detection/tree/collect
