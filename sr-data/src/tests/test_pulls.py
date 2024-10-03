@@ -41,6 +41,6 @@ class TestPulls(unittest.TestCase):
                     os.path.dirname(os.path.realpath(__file__)), "to-pull.csv"
                 ),
                 path,
-                "GH_TESTING_TOKEN"
+                os.environ["GH_TESTING_TOKEN"]
             )
             self.assertTrue("pulls" in pd.read_csv(path).columns)
