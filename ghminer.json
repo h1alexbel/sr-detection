@@ -1,5 +1,6 @@
 {
   "repo": "nameWithOwner",
+  "branch": "defaultBranchRef.name",
   "readme": "defaultBranchRef.target.repository.object.text",
   "releases": "releases.totalCount",
   "issues": "issues.totalCount",
