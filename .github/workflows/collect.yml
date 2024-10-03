@@ -31,16 +31,12 @@ name: collect
         description: "Collect repositories created up to, in YYYY-MM-DD format"
         required: false
         default: "2024-05-01"
-      filename:
-        description: "Output filename"
+      out:
+        description: "Output directory"
         required: true
 permissions: write-all
 env:
   PATS: pats.txt
-  COLLECTION: "${{ inputs.filename }}.csv"
-  PULLED: "${{ inputs.filename }}-with-pulls.csv"
-  FILTER: "filter-${{ inputs.start }}-${{ inputs.end }}.csv"
-  EXTRACT: "extract-${{ inputs.start }}-${{ inputs.end }}.csv"
 jobs:
   collect:
     runs-on: ubuntu-24.04
@@ -60,14 +56,14 @@ jobs:
           just install
           poetry install
           echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
-          just collect "collection" "${{ inputs.start }}" "${{ inputs.end }}" \
-            "${{ inputs.filename }}" "${{ secrets.GITHUB_TOKEN }}"
-          just filter "$PULLED" "$FILTER"
-          just extract "$FILTER" "$EXTRACT"
-          cp "$COLLECTION" collection
-          cp "$PULLED" collection
-          cp "$FILTER" collection
-          cp "$EXTRACT" collection
+          just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
+            "${{ inputs.end }}" "repos" "${{ secrets.GITHUB_TOKEN }}"
+          just filter "repos.csv" "after-filter.csv"
+          just extract "after-filter.csv" "after-extract.csv"
+          cp "repos.csv" "collection/${{ inputs.out }}"
+          cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
+          cp "after-filter.csv" "collection/${{ inputs.out }}"
+          cp "after-extract.csv" "collection/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: collect
