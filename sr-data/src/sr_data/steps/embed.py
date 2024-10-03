@@ -1,8 +1,6 @@
 """
 Generate embeddings.
 """
-from pathlib import Path
-
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
