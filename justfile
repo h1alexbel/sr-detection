@@ -66,6 +66,7 @@ collect dir start end out token:
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     --start "{{start}}" --end "{{end}}" --tokens "$PATS" --filename "{{out}}"
   just pulls "../{{out}}.csv" "{{token}}" "../{{out}}-with-pulls.csv"
+  just maven "../{{out}}-with-pulls.csv" "{{token}}" "../{{out}}-maven.csv"
 
 # Fetch pulls count for collected repos.
 pulls repos token out="experiment/with-pulls.csv":
