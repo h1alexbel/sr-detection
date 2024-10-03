@@ -74,8 +74,8 @@ pulls repos token out="experiment/with-pulls.csv":
 
 # Collect maven pom.xml files.
 maven repos token out="experiment/with-maven.csv":
-  cd sr-data && poetry poe maven --repos "{{repos}}" --token "{{token}}" \
-    --out "{{out}}"
+  cd sr-data && poetry poe maven --repos "../{{repos}}" --token "{{token}}" \
+    --out "../{{out}}"
 
 # Collect test repositories.
 test-collect:
