@@ -30,9 +30,6 @@ from loguru import logger
 from requests import Response
 
 
-# @todo #74:45min Exclude repositories that don't have any maven projects.
-#  We need to exclude all repositories that don't contain any 'pom.xml' inside.
-#  Don't forget to create a unit test for this.
 # @todo #74:60min Parse 'build' JSON array of maven projects into most valuable
 #  information for embedding step. We should parse all maven projects from JSON
 #  array, extract some useful information from each, and merge into single
@@ -41,7 +38,11 @@ def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
         frame.at[idx, "build"] = pom(row["repo"], row["branch"], token)
+    before = len(frame)
+    frame = frame[frame.build != "[]"]
+    logger.info(f"Skipped {before - len(frame)} repositories with 0 pom.xml files")
     frame.to_csv(out, index=False)
+
 
 def pom(repo, branch, token):
     files = request(token, repo)
@@ -60,6 +61,7 @@ def pom(repo, branch, token):
         )
     logger.info(f"Found {len(build)} pom.xml files in {repo}")
     return json.dumps(build)
+
 
 def request(token, repo) -> Response:
     return requests.get(

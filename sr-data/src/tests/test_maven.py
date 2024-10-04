@@ -30,10 +30,11 @@ import pandas as pd
 import pytest
 from sr_data.steps.maven import main
 
+
 class TestMaven(unittest.TestCase):
 
     @pytest.mark.nightly
-    def test_finds_pulls(self):
+    def test_finds_maven_projects(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "maven.csv")
             main(
@@ -46,3 +47,18 @@ class TestMaven(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertTrue("build" in frame.columns)
             self.assertTrue("content" in frame.iloc[0]["build"])
+
+    @pytest.mark.nightly
+    def test_skips_repos_without_maven(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "maven.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "to-maven-skip.csv"
+                ),
+                path,
+                os.environ["GH_TESTING_TOKEN"]
+            )
+            frame = pd.read_csv(path)
+            self.assertTrue(len(frame) == 0)
