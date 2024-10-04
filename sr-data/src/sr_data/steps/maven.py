@@ -1,6 +1,7 @@
 """
 Collect maven information for each repo.
 """
+import xml.dom.minidom
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -35,10 +36,6 @@ namespaces = {
 }
 
 
-# @todo #74:60min Parse 'build' JSON array of maven projects into most valuable
-#  information for embedding step. We should parse all maven projects from JSON
-#  array, extract some useful information from each, and merge into single
-#  input. For pom.xml parsing we can use XPATH, and XSLT for merging.
 def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
@@ -58,6 +55,10 @@ def main(repos, out, token):
     frame.to_csv(out, index=False)
 
 
+# @todo #118:35min Remove branch that returns None if found == 0.
+#  We should remove this ugly branch that now returns None if we didn't find
+#  any files. Let's handle this more elegantly. This should affect main()
+#  method, where we check `if profile is not None`.
 def pom(repo, branch, token):
     files = request(token, repo)
     poms = [file for file in files['tree'] if file['path'].endswith('pom.xml')]
@@ -89,7 +90,14 @@ def merge(build, repo):
         path = project["path"]
         logger.debug(f"Checking {repo}: {path}")
         root = ET.fromstring(project["content"])
-        print(ET.dump(root))
+        pretty = "\n".join(
+            [
+                line for line
+                in xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
+                if line.strip()
+            ]
+        )
+        logger.debug(f"{path}:\n{pretty}")
         if len(
                 root.findall(
                     ".//pom:dependency[pom:groupId='@project.groupId@']",
@@ -105,7 +113,6 @@ def merge(build, repo):
             else:
                 packgs.append("jar")
             for plugin in root.findall(".//pom:plugin", namespaces):
-                print(ET.dump(plugin))
                 group = plugin.find("./pom:groupId", namespaces)
                 artifact = plugin.find("./pom:artifactId", namespaces)
                 if group is not None:
