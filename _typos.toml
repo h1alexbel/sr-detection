@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 [default]
-[files]
-extend-exclude = ["*.csv"]
 extend-ignore-identifiers-re = [
     "packgs", # variable name
 ]
+[files]
+extend-exclude = ["*.csv"]
