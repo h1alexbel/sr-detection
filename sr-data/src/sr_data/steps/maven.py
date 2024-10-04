@@ -1,6 +1,7 @@
 """
 Collect maven information for each repo.
 """
+import xml.dom.minidom
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -22,28 +23,42 @@ Collect maven information for each repo.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import json
+import xml.etree.ElementTree as ET
 
 import pandas as pd
 import requests
 from loguru import logger
 from requests import Response
 
+# XML namespaces for Maven pom.xml file.
+namespaces = {
+    "pom": "http://maven.apache.org/POM/4.0.0"
+}
 
-# @todo #74:60min Parse 'build' JSON array of maven projects into most valuable
-#  information for embedding step. We should parse all maven projects from JSON
-#  array, extract some useful information from each, and merge into single
-#  input. For pom.xml parsing we can use XPATH, and XSLT for merging.
+
 def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
-        frame.at[idx, "build"] = pom(row["repo"], row["branch"], token)
+        profile = pom(row["repo"], row["branch"], token)
+        if profile is not None:
+            frame.at[idx, "projects"] = profile["projects"]
+            plugins = ",".join(profile["plugins"])
+            frame.at[idx, "plugins"] = f"[{plugins}]"
+            frame.at[idx, "pwars"] = profile["packages"]["wars"]
+            frame.at[idx, "pjars"] = profile["packages"]["jars"]
+            frame.at[idx, "ppoms"] = profile["packages"]["poms"]
+        else:
+            frame.at[idx, "projects"] = 0
     before = len(frame)
-    frame = frame[frame.build != "[]"]
-    logger.info(f"Skipped {before - len(frame)} repositories with 0 pom.xml files")
+    frame = frame[frame.projects != 0]
+    logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
     frame.to_csv(out, index=False)
 
 
+# @todo #118:35min Remove branch that returns None if found == 0.
+#  We should remove this ugly branch that now returns None if we didn't find
+#  any files. Let's handle this more elegantly. This should affect main()
+#  method, where we check `if profile is not None`.
 def pom(repo, branch, token):
     files = request(token, repo)
     poms = [file for file in files['tree'] if file['path'].endswith('pom.xml')]
@@ -59,8 +74,63 @@ def pom(repo, branch, token):
                 "content": content
             }
         )
-    logger.info(f"Found {len(build)} pom.xml files in {repo}")
-    return json.dumps(build)
+    found = len(build)
+    logger.info(f"Found {found} pom.xml files in {repo}")
+    if found > 0:
+        return merge(build, repo)
+    else:
+        return None
+
+
+def merge(build, repo):
+    good = []
+    plugins = []
+    packgs = []
+    for project in build:
+        path = project["path"]
+        logger.debug(f"Checking {repo}: {path}")
+        root = ET.fromstring(project["content"])
+        pretty = "\n".join(
+            [
+                line for line
+                in xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
+                if line.strip()
+            ]
+        )
+        logger.debug(f"{path}:\n{pretty}")
+        if len(
+                root.findall(
+                    ".//pom:dependency[pom:groupId='@project.groupId@']",
+                    namespaces
+                )
+        ) > 0:
+            logger.info(f"Skipping {path}, since it contains @project dependency")
+        else:
+            profile = {}
+            packaging = root.find(".//pom:packaging", namespaces)
+            if packaging is not None:
+                packgs.append(packaging.text)
+            else:
+                packgs.append("jar")
+            for plugin in root.findall(".//pom:plugin", namespaces):
+                group = plugin.find("./pom:groupId", namespaces)
+                artifact = plugin.find("./pom:artifactId", namespaces)
+                if group is not None:
+                    plugins.append(f"{group.text}:{artifact.text}")
+                else:
+                    plugins.append(artifact.text)
+            good.append(profile)
+    used = len(good)
+    logger.info(f"Found {used} good Maven projects in {repo}")
+    return {
+        "projects": used,
+        "plugins": sorted(list(set(plugins))),
+        "packages": {
+            "wars": len(list(filter(lambda p: p == "war", packgs))),
+            "jars": len(list(filter(lambda p: p == "jar", packgs))),
+            "poms": len(list(filter(lambda p: p == "pom", packgs)))
+        }
+    }
 
 
 def request(token, repo) -> Response:
