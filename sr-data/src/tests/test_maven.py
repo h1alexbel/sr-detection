@@ -80,3 +80,6 @@ class TestMaven(unittest.TestCase):
         )
         self.assertEqual(merged["projects"], 2)
         self.assertEqual(merged["plugins"], ["org.springframework.boot:spring-boot-maven-plugin"])
+        self.assertEqual(merged["packages"]["jars"], 2)
+        self.assertEqual(merged["packages"]["wars"], 0)
+        self.assertEqual(merged["packages"]["poms"], 0)
