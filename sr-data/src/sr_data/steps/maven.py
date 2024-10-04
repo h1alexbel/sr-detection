@@ -23,11 +23,17 @@ Collect maven information for each repo.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import json
+import xml.etree.ElementTree as ET
 
 import pandas as pd
 import requests
 from loguru import logger
 from requests import Response
+
+# XML namespaces for Maven pom.xml file.
+namespaces = {
+    "pom": "http://maven.apache.org/POM/4.0.0"
+}
 
 
 # @todo #74:60min Parse 'build' JSON array of maven projects into most valuable
@@ -60,7 +66,46 @@ def pom(repo, branch, token):
             }
         )
     logger.info(f"Found {len(build)} pom.xml files in {repo}")
-    return json.dumps(build)
+    return json.dumps(merge(build, repo))
+
+
+def merge(build, repo):
+    good = []
+    plugins = []
+    packgs = []
+    for project in build:
+        path = project["path"]
+        logger.debug(f"Checking {repo}: {path}")
+        root = ET.fromstring(project["content"])
+        print(ET.dump(root))
+        if len(
+                root.findall(
+                    ".//pom:dependency[pom:groupId='@project.groupId@']",
+                    namespaces
+                )
+        ) > 0:
+            logger.info(f"Skipping {path}, since it contains @project dependency")
+        else:
+            profile = {}
+            for packaging in root.findall(".//pom:packaging", namespaces):
+                packgs.append(packaging.text)
+            for plugin in root.findall(".//pom:plugin", namespaces):
+                print(ET.dump(plugin))
+                group = plugin.find("./pom:groupId", namespaces)
+                artifact = plugin.find("./pom:artifactId", namespaces)
+                plugins.append(f"{group.text}:{artifact.text}")
+            good.append(profile)
+    used = len(good)
+    logger.info(f"Found {used} good Maven projects in {repo}")
+    return {
+        "projects": used,
+        "plugins": list(set(plugins)),
+        "packages": {
+            "wars": len(list(filter(lambda p: p == "war", packgs))),
+            "jars": len(list(filter(lambda p: p == "jar", packgs))),
+            "poms": len(list(filter(lambda p: p == "pom", packgs)))
+        }
+    }
 
 
 def request(token, repo) -> Response:
