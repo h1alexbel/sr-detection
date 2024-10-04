@@ -22,3 +22,6 @@
 [default]
 [files]
 extend-exclude = ["*.csv"]
+extend-ignore-identifiers-re = [
+    "packgs", # variable name
+]
