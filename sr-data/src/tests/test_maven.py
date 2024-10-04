@@ -45,8 +45,14 @@ class TestMaven(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
-            self.assertTrue("build" in frame.columns)
-            self.assertTrue("content" in frame.iloc[0]["build"])
+            self.assertEqual(
+                frame.iloc[0]["plugins"],
+                "[com.github.volodya-lombrozo:jtcop-maven-plugin,maven-surefire-plugin,org.apache.maven.plugins:maven-checkstyle-plugin,org.apache.maven.plugins:maven-compiler-plugin,org.apache.maven.plugins:maven-gpg-plugin,org.apache.maven.plugins:maven-invoker-plugin,org.apache.maven.plugins:maven-javadoc-plugin,org.apache.maven.plugins:maven-source-plugin,org.apache.maven.plugins:maven-verifier-plugin,org.jacoco:jacoco-maven-plugin,org.sonatype.plugins:nexus-staging-maven-plugin,ru.l3r8y:sa-tan]"
+            )
+            self.assertEqual(frame.iloc[0]["projects"], 1.0)
+            self.assertEqual(frame.iloc[0]["pwars"], 0.0)
+            self.assertEqual(frame.iloc[0]["pjars"], 0.0)
+            self.assertEqual(frame.iloc[0]["ppoms"], 0.0)
 
     @pytest.mark.nightly
     def test_skips_repos_without_maven(self):

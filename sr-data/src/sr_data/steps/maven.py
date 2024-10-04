@@ -22,7 +22,6 @@ Collect maven information for each repo.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import json
 import xml.etree.ElementTree as ET
 
 import pandas as pd
@@ -43,10 +42,19 @@ namespaces = {
 def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
-        frame.at[idx, "build"] = pom(row["repo"], row["branch"], token)
+        profile = pom(row["repo"], row["branch"], token)
+        if profile is not None:
+            frame.at[idx, "projects"] = profile["projects"]
+            plugins = ",".join(profile["plugins"])
+            frame.at[idx, "plugins"] = f"[{plugins}]"
+            frame.at[idx, "pwars"] = profile["packages"]["wars"]
+            frame.at[idx, "pjars"] = profile["packages"]["jars"]
+            frame.at[idx, "ppoms"] = profile["packages"]["poms"]
+        else:
+            frame.at[idx, "projects"] = 0
     before = len(frame)
-    frame = frame[frame.build != "[]"]
-    logger.info(f"Skipped {before - len(frame)} repositories with 0 pom.xml files")
+    frame = frame[frame.projects != 0]
+    logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
     frame.to_csv(out, index=False)
 
 
@@ -65,8 +73,12 @@ def pom(repo, branch, token):
                 "content": content
             }
         )
-    logger.info(f"Found {len(build)} pom.xml files in {repo}")
-    return json.dumps(merge(build, repo))
+    found = len(build)
+    logger.info(f"Found {found} pom.xml files in {repo}")
+    if found > 0:
+        return merge(build, repo)
+    else:
+        return None
 
 
 def merge(build, repo):
@@ -93,13 +105,16 @@ def merge(build, repo):
                 print(ET.dump(plugin))
                 group = plugin.find("./pom:groupId", namespaces)
                 artifact = plugin.find("./pom:artifactId", namespaces)
-                plugins.append(f"{group.text}:{artifact.text}")
+                if group is not None:
+                    plugins.append(f"{group.text}:{artifact.text}")
+                else:
+                    plugins.append(artifact.text)
             good.append(profile)
     used = len(good)
     logger.info(f"Found {used} good Maven projects in {repo}")
     return {
         "projects": used,
-        "plugins": list(set(plugins)),
+        "plugins": sorted(list(set(plugins))),
         "packages": {
             "wars": len(list(filter(lambda p: p == "war", packgs))),
             "jars": len(list(filter(lambda p: p == "jar", packgs))),

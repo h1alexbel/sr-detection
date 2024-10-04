@@ -48,7 +48,7 @@ jobs:
       - name: Build
         run: |
           just install
-          just full "nightly or deep or fast"
+          just full "nightly or fast"
   report-fail:
     name: Create issue on failure
     needs: build
