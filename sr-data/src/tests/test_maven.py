@@ -51,7 +51,7 @@ class TestMaven(unittest.TestCase):
             )
             self.assertEqual(frame.iloc[0]["projects"], 1.0)
             self.assertEqual(frame.iloc[0]["pwars"], 0.0)
-            self.assertEqual(frame.iloc[0]["pjars"], 0.0)
+            self.assertEqual(frame.iloc[0]["pjars"], 1.0)
             self.assertEqual(frame.iloc[0]["ppoms"], 0.0)
 
     @pytest.mark.nightly

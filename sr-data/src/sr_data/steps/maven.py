@@ -99,8 +99,11 @@ def merge(build, repo):
             logger.info(f"Skipping {path}, since it contains @project dependency")
         else:
             profile = {}
-            for packaging in root.findall(".//pom:packaging", namespaces):
+            packaging = root.find(".//pom:packaging", namespaces)
+            if packaging is not None:
                 packgs.append(packaging.text)
+            else:
+                packgs.append("jar")
             for plugin in root.findall(".//pom:plugin", namespaces):
                 print(ET.dump(plugin))
                 group = plugin.find("./pom:groupId", namespaces)
