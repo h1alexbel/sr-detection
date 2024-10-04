@@ -41,6 +41,9 @@ def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
         frame.at[idx, "build"] = pom(row["repo"], row["branch"], token)
+    before = len(frame)
+    frame = frame[frame.build != "[]"]
+    logger.info(f"Skipped {before - len(frame)} repositories with 0 pom.xml files")
     frame.to_csv(out, index=False)
 
 def pom(repo, branch, token):
