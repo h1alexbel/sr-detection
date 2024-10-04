@@ -25,8 +25,7 @@ Filter repositories.
 import markdown
 import pandas as pd
 from bs4 import BeautifulSoup, ParserRejectedMarkup
-from langdetect import DetectorFactory, LangDetectException
-from langdetect import detect
+from langdetect import DetectorFactory, LangDetectException, detect_langs
 from loguru import logger
 
 
@@ -80,7 +79,8 @@ def english(text):
     Skips non-english text.
     """
     try:
-        result = detect(text) == 'en'
+        langs = detect_langs(text)
+        result = len(langs) == 1 and langs[0].lang == "en"
     except (LangDetectException, TypeError):
         result = False
     return result
