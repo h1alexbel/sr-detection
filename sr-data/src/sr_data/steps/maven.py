@@ -118,7 +118,7 @@ def merge(build, repo):
                 artifact = plugin.find("./pom:artifactId", namespaces)
                 if group is not None:
                     plugins.append(f"{group.text}:{artifact.text}")
-                else:
+                elif artifact is not None:
                     plugins.append(artifact.text)
             good.append(profile)
     used = len(good)
