@@ -53,6 +53,7 @@ def main(repos, out, token):
     frame = frame[frame.projects != 0]
     logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
     frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
 # @todo #118:35min Remove branch that returns None if found == 0.
