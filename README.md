@@ -25,7 +25,7 @@ collected metadata about GitHub repositories.
 
 ## Experiment's steps
 
-To run entire experiment in Docker:
+To run the entire experiment in Docker:
 
 ```bash
 docker run --rm -v "$(pwd)/output:/experiment" h1alexbel/sr-detection experiment
