@@ -25,6 +25,12 @@ collected metadata about GitHub repositories.
 
 ## Experiment's steps
 
+To run the entire experiment in Docker:
+
+```bash
+docker run --rm -v "$(pwd)/output:/experiment" h1alexbel/sr-detection experiment
+```
+
 ### Metadata collection
 
 We collect two-fold metadata for each GitHub repository: numerical, and
