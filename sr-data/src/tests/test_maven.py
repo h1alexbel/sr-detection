@@ -69,6 +69,25 @@ class TestMaven(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertTrue(len(frame) == 0)
 
+    @pytest.mark.nightly
+    def test_skips_plugin_without_artifact(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "maven.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "to-maven-without-artifact.csv"
+                ),
+                path,
+                os.environ["GH_TESTING_TOKEN"]
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(
+                frame.iloc[0]["plugins"],
+                "[org.jetbrains.kotlin:kotlin-maven-plugin,org.springframework.boot:spring-boot-maven-plugin]"
+            )
+
+
     @pytest.mark.fast
     def test_merges_projects_in_one_profile(self):
         merged = merge(
