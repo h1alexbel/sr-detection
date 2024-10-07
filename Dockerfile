@@ -53,10 +53,9 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y \
   && bash -c '"${HOME}/.cargo/bin/cargo" --version' \
   && bash -c '"${HOME}/.cargo/bin/cargo" install just@1.30.1'
 
-#WORKDIR /app
 COPY sr-data ./sr-data
 COPY pyproject.toml justfile ./
 RUN bash -c '"${HOME}/.cargo/bin/just" install'
 RUN poetry install --no-root
 COPY . .
-CMD ["just"]
+ENTRYPOINT ["/root/.cargo/bin/just"]
