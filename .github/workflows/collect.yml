@@ -64,6 +64,7 @@ jobs:
             just maven "after-extract.csv" "${{ secrets.GITHUB_TOKEN }}" \
               "after-maven.csv" 2>&1 | sed "s/${{ secrets.GITHUB_TOKEN }}/[REDACTED]/g"
           } 2>&1 | tee -a collect.log
+          cat collect.log
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
           cp "after-filter.csv" "collection/${{ inputs.out }}"
