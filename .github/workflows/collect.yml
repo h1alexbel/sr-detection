@@ -53,20 +53,23 @@ jobs:
           just-version: "1.30.1"
       - name: Collect
         run: |
-          just install
-          poetry install
-          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
-          just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
-            "${{ inputs.end }}" "repos" "${{ secrets.GITHUB_TOKEN }}"
-          just filter "repos-with-pulls.csv" "after-filter.csv"
-          just extract "after-filter.csv" "after-extract.csv"
-          just maven "after-extract.csv" "${{ secrets.GITHUB_TOKEN }}" \
-            "after-maven.csv"
+          {
+            just install
+            poetry install
+            echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
+            just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
+              "${{ inputs.end }}" "repos" "${{ secrets.GITHUB_TOKEN }}"
+            just filter "repos-with-pulls.csv" "after-filter.csv"
+            just extract "after-filter.csv" "after-extract.csv"
+            just maven "after-extract.csv" "${{ secrets.GITHUB_TOKEN }}" \
+              "after-maven.csv"
+          } >> collect.log 2>&1
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
           cp "after-filter.csv" "collection/${{ inputs.out }}"
           cp "after-extract.csv" "collection/${{ inputs.out }}"
           cp "after-maven.csv" "collection/${{ inputs.out }}"
+          cp "collect.log" collection/${{ inputs.out }}
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: collect
