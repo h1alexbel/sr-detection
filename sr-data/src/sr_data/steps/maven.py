@@ -1,7 +1,6 @@
 """
 Collect maven information for each repo.
 """
-import xml.dom.minidom
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,6 +23,8 @@ import xml.dom.minidom
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import xml.etree.ElementTree as ET
+import xml.dom.minidom
+from xml.etree.ElementTree import ParseError
 
 import pandas as pd
 import requests
@@ -90,37 +91,42 @@ def merge(build, repo):
     for project in build:
         path = project["path"]
         logger.debug(f"Checking {repo}: {path}")
-        root = ET.fromstring(project["content"])
-        pretty = "\n".join(
-            [
-                line for line
-                in xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
-                if line.strip()
-            ]
-        )
-        logger.debug(f"{path}:\n{pretty}")
-        if len(
-                root.findall(
-                    ".//pom:dependency[pom:groupId='@project.groupId@']",
-                    namespaces
-                )
-        ) > 0:
-            logger.info(f"Skipping {path}, since it contains @project dependency")
-        else:
-            profile = {}
-            packaging = root.find(".//pom:packaging", namespaces)
-            if packaging is not None:
-                packgs.append(packaging.text)
+        root = None
+        try:
+            root = ET.fromstring(project["content"])
+        except ParseError:
+            logger.warning(f"Failed to parse {repo}: {path}. Probably XML is broken")
+        if root is not None:
+            pretty = "\n".join(
+                [
+                    line for line
+                    in xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
+                    if line.strip()
+                ]
+            )
+            logger.debug(f"{path}:\n{pretty}")
+            if len(
+                    root.findall(
+                        ".//pom:dependency[pom:groupId='@project.groupId@']",
+                        namespaces
+                    )
+            ) > 0:
+                logger.info(f"Skipping {path}, since it contains @project dependency")
             else:
-                packgs.append("jar")
-            for plugin in root.findall(".//pom:plugin", namespaces):
-                group = plugin.find("./pom:groupId", namespaces)
-                artifact = plugin.find("./pom:artifactId", namespaces)
-                if group is not None:
-                    plugins.append(f"{group.text}:{artifact.text}")
-                elif artifact is not None:
-                    plugins.append(artifact.text)
-            good.append(profile)
+                profile = {}
+                packaging = root.find(".//pom:packaging", namespaces)
+                if packaging is not None:
+                    packgs.append(packaging.text)
+                else:
+                    packgs.append("jar")
+                for plugin in root.findall(".//pom:plugin", namespaces):
+                    group = plugin.find("./pom:groupId", namespaces)
+                    artifact = plugin.find("./pom:artifactId", namespaces)
+                    if group is not None:
+                        plugins.append(f"{group.text}:{artifact.text}")
+                    elif artifact is not None:
+                        plugins.append(artifact.text)
+                good.append(profile)
     used = len(good)
     logger.info(f"Found {used} good Maven projects in {repo}")
     return {
