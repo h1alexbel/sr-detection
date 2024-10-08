@@ -22,7 +22,7 @@
 
 # Install dependencies.
 install:
-  npm install -g ghminer@0.0.7
+  ${RULTOR:+sudo} npm install -g ghminer@0.0.7
   poetry self add 'poethepoet[poetry_plugin]'
   cd sr-data && poetry install
 
