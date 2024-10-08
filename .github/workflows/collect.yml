@@ -63,7 +63,7 @@ jobs:
             just extract "after-filter.csv" "after-extract.csv"
             just maven "after-extract.csv" "${{ secrets.GITHUB_TOKEN }}" \
               "after-maven.csv"
-          } >> collect.log 2>&1
+          } 2>&1 | tee -a collect.log
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
           cp "after-filter.csv" "collection/${{ inputs.out }}"
