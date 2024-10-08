@@ -64,8 +64,8 @@ jobs:
             just extract "after-filter.csv" "after-extract.csv"
             just maven "after-extract.csv" "$TOKEN" \
               "after-maven.csv"
-          } 2>&1 | tee -a collect.log | sed "s|$TOKEN|REDACTED|g"
-          cat collect.log
+          } 2>&1 | tee -a collect.log
+          sed -i "s|$TOKEN|REDACTED|g" collect.log
           cat collect.log
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
