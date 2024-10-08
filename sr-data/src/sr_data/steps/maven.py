@@ -23,8 +23,8 @@ Collect maven information for each repo.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import xml.etree.ElementTree as ET
-from xml.etree.ElementTree import ParseError
 import xml.dom.minidom
+from xml.etree.ElementTree import ParseError
 
 import pandas as pd
 import requests
@@ -91,8 +91,12 @@ def merge(build, repo):
     for project in build:
         path = project["path"]
         logger.debug(f"Checking {repo}: {path}")
+        root = None
         try:
             root = ET.fromstring(project["content"])
+        except ParseError:
+            logger.warning(f"Failed to parse {repo}: {path}. Probably XML is broken")
+        if root is not None:
             pretty = "\n".join(
                 [
                     line for line
@@ -123,19 +127,17 @@ def merge(build, repo):
                     elif artifact is not None:
                         plugins.append(artifact.text)
                 good.append(profile)
-            used = len(good)
-            logger.info(f"Found {used} good Maven projects in {repo}")
-            return {
-                "projects": used,
-                "plugins": sorted(list(set(plugins))),
-                "packages": {
-                    "wars": len(list(filter(lambda p: p == "war", packgs))),
-                    "jars": len(list(filter(lambda p: p == "jar", packgs))),
-                    "poms": len(list(filter(lambda p: p == "pom", packgs)))
-                }
-            }
-        except ParseError:
-            logger.warning(f"Failed to parse {repo}: {path}. Probably XML is broken")
+    used = len(good)
+    logger.info(f"Found {used} good Maven projects in {repo}")
+    return {
+        "projects": used,
+        "plugins": sorted(list(set(plugins))),
+        "packages": {
+            "wars": len(list(filter(lambda p: p == "war", packgs))),
+            "jars": len(list(filter(lambda p: p == "jar", packgs))),
+            "poms": len(list(filter(lambda p: p == "pom", packgs)))
+        }
+    }
 
 
 def request(token, repo) -> Response:
