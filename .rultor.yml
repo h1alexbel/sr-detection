@@ -31,10 +31,9 @@ install: |
   cargo install --version 1.30.1 just
   curl -sSL https://install.python-poetry.org | python3
   export PATH="$HOME/.local/bin:$PATH"
-  export RULTOR=true
-  just install
 merge:
   script: |
+    just install
     poetry install --no-root
     just test "deep or fast"
     just check
