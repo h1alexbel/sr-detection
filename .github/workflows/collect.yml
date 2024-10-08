@@ -53,16 +53,16 @@ jobs:
           just-version: "1.30.1"
       - name: Collect
         run: |
+          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
           {
             just install
             poetry install
-            echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
             just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
               "${{ inputs.end }}" "repos" "${{ secrets.GITHUB_TOKEN }}"
             just filter "repos-with-pulls.csv" "after-filter.csv"
             just extract "after-filter.csv" "after-extract.csv"
             just maven "after-extract.csv" "${{ secrets.GITHUB_TOKEN }}" \
-              "after-maven.csv"
+              "after-maven.csv" 2>&1 | sed "s/${{ secrets.GITHUB_TOKEN }}/[REDACTED]/g"
           } 2>&1 | tee -a collect.log
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
