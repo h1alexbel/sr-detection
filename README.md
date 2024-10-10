@@ -24,13 +24,13 @@ collected metadata about GitHub repositories.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
 * [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
 
-## Experiment's steps
-
-To run the entire experiment in Docker:
+You can run an entire experiment in Docker:
 
 ```bash
 docker run --rm -v "$(pwd)/output:/experiment" h1alexbel/sr-detection experiment
 ```
+
+## Experiment's steps
 
 ### Metadata collection
 
