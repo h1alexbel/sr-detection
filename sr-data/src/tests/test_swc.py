@@ -22,10 +22,14 @@ Tests for special words count in README.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
+from tempfile import TemporaryDirectory, TemporaryFile
 
+import pandas as pd
 import pytest
-from sr_data.steps.swc import word_count
+from sr_data.steps.swc import word_count, main
+
 
 class TestSwc(unittest.TestCase):
 
@@ -40,3 +44,25 @@ class TestSwc(unittest.TestCase):
             expected,
             f"Found 'example' word count: {count} does not matches with expected: {expected}"
         )
+
+    @pytest.mark.fast
+    def test_saves_counts(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "swc.csv")
+            config = "swc-config.txt"
+            with open(os.path.join(temp, config)) as f:
+                f.write("example\n")
+                f.write("sample\n")
+                f.write("demonstration\n")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "to-swc.csv"
+                ),
+                path,
+                config
+            )
+            out = pd.read_csv(path)
+            self.assertEqual(out.iloc[0]["example_wc"], 10)
+            self.assertEqual(out.iloc[0]["sample_wc"], 10)
+            self.assertEqual(out.iloc[0]["demonstration_wc"], 10)
