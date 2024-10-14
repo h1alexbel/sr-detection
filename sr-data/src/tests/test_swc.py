@@ -49,11 +49,11 @@ class TestSwc(unittest.TestCase):
     def test_saves_counts(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "swc.csv")
-            config = "swc-config.txt"
-            with open(os.path.join(temp, config)) as f:
+            config = os.path.join(temp, "swc-config.txt")
+            with open(config, "w") as f:
                 f.write("example\n")
                 f.write("sample\n")
-                f.write("demonstration\n")
+                f.write("demo\n")
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
@@ -63,6 +63,6 @@ class TestSwc(unittest.TestCase):
                 config
             )
             out = pd.read_csv(path)
-            self.assertEqual(out.iloc[0]["example_wc"], 10)
-            self.assertEqual(out.iloc[0]["sample_wc"], 10)
-            self.assertEqual(out.iloc[0]["demonstration_wc"], 10)
+            self.assertEqual(out.iloc[0]["example_wc"], 4)
+            self.assertEqual(out.iloc[0]["sample_wc"], 0)
+            self.assertEqual(out.iloc[0]["demo_wc"], 14)
