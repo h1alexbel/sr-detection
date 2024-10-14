@@ -1,6 +1,8 @@
 """
 Extract README headings (#).
 """
+import re
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -41,6 +43,10 @@ def main(repos, out, config):
 
 
 def word_count(repo, word, txt) -> int:
-    count: int = 0
-    logger.info(f"Repo {repo} contains {count} '{word}' words")
-    return count
+    logger.debug(f"Counting '{word}' in {repo}...")
+    first = word[0]
+    pattern = fr"\[{first.upper()}-{first.lower()}]{word[1:]}"
+    matches = len(re.findall(pattern, txt))
+    logger.debug(f"Found {matches} matches with {pattern}")
+    logger.info(f"Repo {repo} contains {matches} '{word}' words")
+    return matches
