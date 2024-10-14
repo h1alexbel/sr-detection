@@ -1,0 +1,232 @@
+${RULTOR:+sudo} npm install -g ghminer@0.0.7
+
+added 22 packages in 4s
+
+7 packages are looking for funding
+  run `npm fund` for details
+poetry self add 'poethepoet[poetry_plugin]'
+Using version ^0.29.0 for poethepoet
+
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 3 installs, 0 updates, 0 removals
+
+  - Installing pastel (0.2.1)
+  - Installing pyyaml (6.0.2)
+  - Installing poethepoet (0.29.0)
+
+Writing lock file
+cd sr-data && poetry install
+Creating virtualenv sr-data-iIS7NBSl-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 52 installs, 0 updates, 0 removals
+
+  - Installing six (1.16.0)
+  - Installing certifi (2024.8.30)
+  - Installing charset-normalizer (3.4.0)
+  - Installing idna (3.10)
+  - Installing jmespath (1.0.1)
+  - Installing python-dateutil (2.9.0.post0)
+  - Installing urllib3 (2.2.3)
+  - Installing botocore (1.35.39)
+  - Installing filelock (3.16.1)
+  - Installing fsspec (2024.9.0)
+  - Installing h11 (0.14.0)
+  - Installing packaging (24.1)
+  - Installing pyyaml (6.0.2)
+  - Installing requests (2.32.3)
+  - Installing sniffio (1.3.1)
+  - Installing tqdm (4.66.5)
+  - Installing typing-extensions (4.12.2)
+  - Installing annotated-types (0.7.0)
+  - Installing anyio (4.6.2)
+  - Installing httpcore (1.0.6)
+  - Installing huggingface-hub (0.25.2)
+  - Installing numpy (2.1.2)
+  - Installing pydantic-core (2.23.4)
+  - Installing s3transfer (0.10.3)
+  - Installing boto3 (1.35.39)
+  - Installing click (8.1.7)
+  - Installing fastavro (1.9.7)
+  - Installing httpx-sse (0.4.0)
+  - Installing httpx (0.27.2)
+  - Installing joblib (1.4.2)
+  - Installing iniconfig (2.0.0)
+  - Installing parameterized (0.9.0)
+  - Installing pluggy (1.5.0)
+  - Installing pydantic (2.9.2)
+  - Installing pytz (2024.2)
+  - Installing regex (2024.9.11)
+  - Installing scipy (1.14.1)
+  - Installing soupsieve (2.6)
+  - Installing threadpoolctl (3.5.0)
+  - Installing tokenizers (0.20.1)
+  - Installing types-requests (2.32.0.20240914)
+  - Installing tzdata (2024.2)
+  - Installing beautifulsoup4 (4.12.3)
+  - Installing cohere (5.9.1)
+  - Installing langdetect (1.0.9)
+  - Installing loguru (0.7.2)
+  - Installing markdown (3.7)
+  - Installing nltk (3.9.1)
+  - Installing pandas (2.2.3)
+  - Installing pytest (8.3.3)
+  - Installing scikit-fuzzy (0.5.0)
+  - Installing scikit-learn (1.5.2)
+
+Writing lock file
+
+Installing the current project: sr-data (0.0.0)
+Creating virtualenv sr-detection-n7PECBnz-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 63 installs, 0 updates, 0 removals
+
+  - Installing six (1.16.0)
+  - Installing certifi (2024.8.30)
+  - Installing charset-normalizer (3.4.0)
+  - Installing idna (3.10)
+  - Installing jmespath (1.0.1)
+  - Installing python-dateutil (2.9.0.post0)
+  - Installing urllib3 (2.2.3)
+  - Installing botocore (1.35.39)
+  - Installing filelock (3.16.1)
+  - Installing fsspec (2024.9.0)
+  - Installing h11 (0.14.0)
+  - Installing packaging (24.1)
+  - Installing requests (2.32.3)
+  - Installing sniffio (1.3.1)
+  - Installing pyyaml (6.0.2)
+  - Installing tqdm (4.66.5)
+  - Installing typing-extensions (4.12.2)
+  - Installing annotated-types (0.7.0)
+  - Installing anyio (4.6.2)
+  - Installing httpcore (1.0.6)
+  - Installing huggingface-hub (0.25.2)
+  - Installing numpy (2.1.2)
+  - Installing pydantic-core (2.23.4)
+  - Installing s3transfer (0.10.3)
+  - Installing boto3 (1.35.39)
+  - Installing click (8.1.7)
+  - Installing fastavro (1.9.7)
+  - Installing httpx (0.27.2)
+  - Installing httpx-sse (0.4.0)
+  - Installing joblib (1.4.2)
+  - Installing parameterized (0.9.0)
+  - Installing pydantic (2.9.2)
+  - Installing pytz (2024.2)
+  - Installing regex (2024.9.11)
+  - Installing scipy (1.14.1)
+  - Installing soupsieve (2.6)
+  - Installing threadpoolctl (3.5.0)
+  - Installing tokenizers (0.20.1)
+  - Installing types-requests (2.32.0.20240914)
+  - Installing tzdata (2024.2)
+  - Installing astroid (3.3.5)
+  - Installing beautifulsoup4 (4.12.3)
+  - Installing cohere (5.9.1)
+  - Installing dill (0.3.9)
+  - Installing iniconfig (2.0.0)
+  - Installing isort (5.13.2)
+  - Installing langdetect (1.0.9)
+  - Installing loguru (0.7.2)
+  - Installing markdown (3.7)
+  - Installing mccabe (0.7.0)
+  - Installing nltk (3.9.1)
+  - Installing pandas (2.2.3)
+  - Installing platformdirs (4.3.6)
+  - Installing pluggy (1.5.0)
+  - Installing pycodestyle (2.12.1)
+  - Installing pyflakes (3.2.0)
+  - Installing scikit-fuzzy (0.5.0)
+  - Installing scikit-learn (1.5.2)
+  - Installing tomlkit (0.13.2)
+  - Installing flake8 (7.1.1)
+  - Installing pylint (3.3.1)
+  - Installing pytest (8.3.3)
+  - Installing sr-data (0.0.0 /home/runner/work/sr-detection/sr-detection/sr-data)
+
+Writing lock file
+
+Installing the current project: sr-detection (0.0.0)
+mkdir -p collection/path-test
+ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" --start "2024-05-01" --end "2024-05-02" --tokens "$PATS" --filename "repos"
+Running ghminer@0.0.7
+Compiled search query: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-05-01..2024-05-02
+Total results: 9
+
+Extracted 9 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4998,
+  used: 2,
+  resetAt: '2024-10-14T12:20:32Z',
+  nodeCount: 0
+}
+hasNextPage: false
+endCursor: Y3Vyc29yOjk=
+Fetched 9 results.
+Results saved into repos.csv
+cd sr-data && poetry poe pulls --repos "../repos.csv" --token "REDACTED" --out "../repos-with-pulls.csv"
+[37mPoe =>[0m [94mpulls --repos ../repos.csv --token REDACTED --out ../repos-with-pulls.csv[0m
+[32m2024-10-14 11:20:36.278[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for retoocs007/JavaSysMonitor: 0[0m
+[32m2024-10-14 11:20:36.404[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for geoatlas-cloud/geo-atlas: 0[0m
+[32m2024-10-14 11:20:36.533[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for furkankayam/tc-validation: 0[0m
+[32m2024-10-14 11:20:36.650[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for MinBZK/woo-besluit-broncode-digid: 0[0m
+[32m2024-10-14 11:20:36.762[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for RoseTame/MusicPlayer: 0[0m
+[32m2024-10-14 11:20:37.688[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for gahogg/Leetcode-Solutions: 19[0m
+[32m2024-10-14 11:20:37.816[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for fl1906/music-city: 0[0m
+[32m2024-10-14 11:20:37.995[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for villainscode/coding-guide: 0[0m
+[32m2024-10-14 11:20:38.145[0m | [1mINFO    [0m | [36msr_data.steps.pulls[0m:[36mpulls[0m:[36m56[0m - [1mFetched pulls for Kooperlol/Blockify: 12[0m
+cd sr-data && poetry poe filter --repos "../repos-with-pulls.csv" --out "../after-filter.csv"
+[37mPoe =>[0m [94mfilter --repos ../repos-with-pulls.csv --out ../after-filter.csv[0m
+[32m2024-10-14 11:20:39.654[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m39[0m - [1mStart filtering...[0m
+[32m2024-10-14 11:20:39.658[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m43[0m - [1mRepositories in 9[0m
+[32m2024-10-14 11:20:39.659[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m47[0m - [1mSkipped 2 repositories with empty README files[0m
+[32m2024-10-14 11:20:40.248[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m52[0m - [1mSkipped 4 non-english repositories[0m
+[32m2024-10-14 11:20:40.248[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m53[0m - [1mTotal skipped: 6[0m
+[32m2024-10-14 11:20:40.248[0m | [1mINFO    [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m54[0m - [1mSaving 3 good repositories to ../after-filter.csv[0m
+[32m2024-10-14 11:20:40.248[0m | [34m[1mDEBUG   [0m | [36msr_data.steps.filter[0m:[36mmain[0m:[36m55[0m - [34m[1m                        repo  branch  ... branches  pulls
+0  retoocs007/JavaSysMonitor    main  ...        1    0.0
+4       RoseTame/MusicPlayer    main  ...        1    0.0
+8         Kooperlol/Blockify  master  ...        5   12.0
+
+[3 rows x 7 columns][0m
+cd sr-data && poetry poe swc --repos "../after-filter.csv" --out "../after-swc.csv" --config "resources/swc-words.txt"
+[37mPoe =>[0m [94mswc --repos ../after-filter.csv --out ../after-swc.csv --config resources/swc-words.txt[0m
+[32m2024-10-14 11:20:41.285[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo retoocs007/JavaSysMonitor contains 4 '[E-e]xample' words[0m
+[32m2024-10-14 11:20:41.285[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo RoseTame/MusicPlayer contains 0 '[E-e]xample' words[0m
+[32m2024-10-14 11:20:41.286[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo Kooperlol/Blockify contains 0 '[E-e]xample' words[0m
+[32m2024-10-14 11:20:41.287[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo retoocs007/JavaSysMonitor contains 0 '[S-s]ample' words[0m
+[32m2024-10-14 11:20:41.287[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo RoseTame/MusicPlayer contains 0 '[S-s]ample' words[0m
+[32m2024-10-14 11:20:41.287[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo Kooperlol/Blockify contains 0 '[S-s]ample' words[0m
+[32m2024-10-14 11:20:41.288[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo retoocs007/JavaSysMonitor contains 0 '[D-d]emonstration' words[0m
+[32m2024-10-14 11:20:41.288[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo RoseTame/MusicPlayer contains 0 '[D-d]emonstration' words[0m
+[32m2024-10-14 11:20:41.289[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mword_count[0m:[36m50[0m - [1mRepo Kooperlol/Blockify contains 0 '[D-d]emonstration' words[0m
+[32m2024-10-14 11:20:41.291[0m | [1mINFO    [0m | [36msr_data.steps.swc[0m:[36mmain[0m:[36m42[0m - [1mSaved output to ../after-swc.csv[0m
+cd sr-data && poetry poe extract --repos "../after-swc.csv" --out "../after-extract.csv"
+[37mPoe =>[0m [94mextract --repos ../after-swc.csv --out ../after-extract.csv[0m
+[nltk_data] Downloading package stopwords to /home/runner/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Downloading package wordnet to /home/runner/nltk_data...
+[nltk_data] Downloading package punkt_tab to /home/runner/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+[nltk_data] Downloading package averaged_perceptron_tagger_eng to
+[nltk_data]     /home/runner/nltk_data...
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger_eng.zip.
+[nltk_data] Downloading package omw-1.4 to /home/runner/nltk_data...
+[32m2024-10-14 11:20:45.360[0m | [1mINFO    [0m | [36msr_data.steps.extract[0m:[36mmain[0m:[36m43[0m - [1mExtracting headings from README files...[0m
+[32m2024-10-14 11:20:45.364[0m | [1mINFO    [0m | [36msr_data.steps.extract[0m:[36mmain[0m:[36m49[0m - [1mRemoved 0 repositories that don't have at least one heading (#)[0m
+[32m2024-10-14 11:20:47.649[0m | [1mINFO    [0m | [36msr_data.steps.extract[0m:[36mmain[0m:[36m61[0m - [1mRemoved 0 repositories that have 0 headings after regex filtering ('^[a-zA-Z]+$')[0m
+cd sr-data && poetry poe maven --repos "../after-extract.csv" --token "REDACTED" --out "../after-maven.csv"
+[37mPoe =>[0m [94mmaven --repos ../after-extract.csv --token REDACTED --out ../after-maven.csv[0m
+[32m2024-10-14 11:20:49.034[0m | [1mINFO    [0m | [36msr_data.steps.maven[0m:[36mpom[0m:[36m80[0m - [1mFound 0 pom.xml files in retoocs007/JavaSysMonitor[0m
+[32m2024-10-14 11:20:49.232[0m | [1mINFO    [0m | [36msr_data.steps.maven[0m:[36mpom[0m:[36m80[0m - [1mFound 0 pom.xml files in RoseTame/MusicPlayer[0m
+[32m2024-10-14 11:20:49.335[0m | [1mINFO    [0m | [36msr_data.steps.maven[0m:[36mpom[0m:[36m80[0m - [1mFound 0 pom.xml files in Kooperlol/Blockify[0m
+[32m2024-10-14 11:20:49.336[0m | [1mINFO    [0m | [36msr_data.steps.maven[0m:[36mmain[0m:[36m55[0m - [1mSkipped 3 repositories without pom.xml files[0m
+[32m2024-10-14 11:20:49.337[0m | [1mINFO    [0m | [36msr_data.steps.maven[0m:[36mmain[0m:[36m57[0m - [1mSaved 0 repositories to ../after-maven.csv[0m
