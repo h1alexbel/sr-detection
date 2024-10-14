@@ -59,16 +59,19 @@ jobs:
             just install
             poetry install
             just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
-              "${{ inputs.end }}" "repos" "$TOKEN"
-            just filter "repos-with-pulls.csv" "after-filter.csv"
-            just extract "after-filter.csv" "after-extract.csv"
-            just maven "after-extract.csv" "$TOKEN" \
-              "after-maven.csv"
+              "${{ inputs.end }}" "repos"
+            just pulls "../repos.csv" "$TOKEN" "../repos-with-pulls.csv"
+            just filter "../repos-with-pulls.csv" "../after-filter.csv"
+            just swc "../after-filter.csv" "../after-swc.csv"
+            just extract "../after-swc.csv" "../after-extract.csv"
+            just maven "../after-extract.csv" "$TOKEN" \
+              "../after-maven.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
           cp "after-filter.csv" "collection/${{ inputs.out }}"
+          cp "after-swc.csv" "collection/${{ inputs.out }}"
           cp "after-extract.csv" "collection/${{ inputs.out }}"
           cp "after-maven.csv" "collection/${{ inputs.out }}"
           cp "collect.log" collection/${{ inputs.out }}

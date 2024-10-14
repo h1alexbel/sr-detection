@@ -61,11 +61,10 @@ clean:
   rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
-collect dir start end out token:
+collect dir start end out:
   mkdir -p {{dir}}
   ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     --start "{{start}}" --end "{{end}}" --tokens "$PATS" --filename "{{out}}"
-  just pulls "../{{out}}.csv" "{{token}}" "../{{out}}-with-pulls.csv"
 
 # Fetch pulls count for collected repos.
 pulls repos token out="experiment/with-pulls.csv":
@@ -74,8 +73,8 @@ pulls repos token out="experiment/with-pulls.csv":
 
 # Collect maven pom.xml files.
 maven repos token out="experiment/with-maven.csv":
-  cd sr-data && poetry poe maven --repos "../{{repos}}" --token "{{token}}" \
-    --out "../{{out}}"
+  cd sr-data && poetry poe maven --repos "{{repos}}" --token "{{token}}" \
+    --out "{{out}}"
 
 # Collect test repositories.
 test-collect:
@@ -86,16 +85,16 @@ test-collect:
 
 # Filter collected repositories.
 filter repos out="experiment/after-filter.csv":
-  cd sr-data && poetry poe filter --repos "../{{repos}}" --out "../{{out}}"
+  cd sr-data && poetry poe filter --repos "{{repos}}" --out "{{out}}"
 
 # Extract headings from README files.
 extract repos out="experiment/after-extract.csv":
-  cd sr-data && poetry poe extract --repos "../{{repos}}" --out "../{{out}}"
+  cd sr-data && poetry poe extract --repos "{{repos}}" --out "{{out}}"
 
 # Special words count.
 swc repos out="experiment/after-swc.csv" config="resources/swc-words.txt":
-  cd sr-data && poetry poe swc --repos {{repos}} --out {{out}} \
-    --config {{config}}
+  cd sr-data && poetry poe swc --repos "{{repos}}" --out "{{out}}" \
+    --config "{{config}}"
 
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
