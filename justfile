@@ -92,6 +92,11 @@ filter repos out="experiment/after-filter.csv":
 extract repos out="experiment/after-extract.csv":
   cd sr-data && poetry poe extract --repos "../{{repos}}" --out "../{{out}}"
 
+# Special words count.
+swc repos out="experiment/after-swc.csv" config="resources/swc-words.txt":
+  cd sr-data && poetry poe swc --repos {{repos}} --out {{out}} \
+    --config {{config}}
+
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
