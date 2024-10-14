@@ -1,5 +1,5 @@
 """
-Count special words in README.
+Count of special words in README.
 """
 # The MIT License (MIT)
 #

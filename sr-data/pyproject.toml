@@ -93,7 +93,7 @@ script = "sr_data.steps.maven:main(repos, out, token)"
 args = [{name = "repos"}, {name = "out"}, {name = "token"}]
 
 [tool.poe.tasks.swc]
-script = "sr_data.steps.special_words_count:main(repos, out, config)"
+script = "sr_data.steps.swc:main(repos, out, config)"
 args = [{name = "repos"}, {name = "out"}, {name = "config"}]
 
 [build-system]
