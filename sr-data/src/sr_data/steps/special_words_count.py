@@ -41,5 +41,6 @@ def main(repos, out, config):
 
 
 def word_count(repo, word, txt) -> int:
-    logger.info(f"Counting special words '{word}' in {repo}")
-    return 0
+    count: int = 0
+    logger.info(f"Repo {repo} contains {count} '{word}' words")
+    return count
