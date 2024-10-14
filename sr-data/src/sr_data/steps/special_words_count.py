@@ -1,8 +1,6 @@
 """
-Extract README headings (#).
+Count special words in README.
 """
-import re
-
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,6 +22,7 @@ import re
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import re
 import pandas as pd
 from loguru import logger
 
