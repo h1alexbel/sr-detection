@@ -43,10 +43,9 @@ def main(repos, out, config):
 
 
 def word_count(repo, word, txt) -> int:
-    logger.debug(f"Counting '{word}' in {repo}...")
     first = word[0]
-    pattern = fr"\[{first.upper()}-{first.lower()}]{word[1:]}"
-    matches = len(re.findall(pattern, txt))
-    logger.debug(f"Found {matches} matches with {pattern}")
-    logger.info(f"Repo {repo} contains {matches} '{word}' words")
+    regex = fr"[{first.upper()}-{first.lower()}]{word[1:]}"
+    pattern = re.compile(regex)
+    matches = len(pattern.findall(txt))
+    logger.info(f"Repo {repo} contains {matches} '{regex}' words")
     return matches
