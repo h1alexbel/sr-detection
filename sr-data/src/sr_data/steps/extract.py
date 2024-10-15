@@ -45,8 +45,8 @@ def main(repos, out):
     frame["headings"] = frame["readme"].apply(headings)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
-    stops = len(frame)
-    logger.info(f"Removed {before - stops} repositories that don't have at least one heading (#)")
+    headingless = len(frame)
+    logger.info(f"Removed {before - headingless} repositories that don't have at least one heading (#)")
     frame["headings"] = frame["headings"].apply(
         lambda readme: remove_stop_words(readme, stopwords.words("english"))
     )
@@ -59,7 +59,7 @@ def main(repos, out):
     )
     frame = frame[frame["headings"].apply(bool)]
     logger.info(
-        f"Removed {stops - len(frame)} repositories that have 0 headings after regex filtering ('{rword}')"
+        f"Removed {headingless - len(frame)} repositories that have 0 headings after regex filtering ('{rword}')"
     )
     frame["top"] = frame["headings"].apply(
         lambda headings: top_words(headings, 5)

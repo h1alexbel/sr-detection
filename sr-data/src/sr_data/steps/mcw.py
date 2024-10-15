@@ -29,10 +29,18 @@ from loguru import logger
 from markdown_it import MarkdownIt
 from nltk import word_tokenize, WordNetLemmatizer
 from nltk.corpus import stopwords
-from sr_data.steps.extract import wordnet_pos
+from sr_data.steps.extract import wordnet_pos, filter
 
 
-# remove not words ['|', '--', ':', '-', ',']
+# @todo #137:35min Resolve code duplication in preprocessing methods.
+#  Ideally, we should reuse `remove_stop_words`, `lemmatize` methods from
+#  extract.py step. Now we are duplicating logic, only slightly changing it to
+#  fit the input, will be more traceable to reuse existing methods located in
+#  extract.py.
+# @todo #137:45min Stop words filtering is weak.
+#  method remove_stop_words doesn't remove such words as: ['the', 'to', 'and',
+#  'you', 'a'] and etc. We should remove such words too. Don't forget to create
+#  unit tests.
 def main(repos, out):
     logger.info("Collecting most common words...")
     frame = pd.read_csv(repos)
@@ -43,10 +51,16 @@ def main(repos, out):
         lambda words: remove_stop_words(words, stopwords.words("english"))
     )
     frame["words"] = frame["words"].apply(lemmatize)
-    # frame["rtext"] = frame["rtext"].apply(
-    #     lambda text: filter(text, r"^[a-zA-Z]+$")
-    # )
-    # frame["mcw"] = frame["rtext"].apply(most_common)
+    rword = r"^[a-zA-Z]+$"
+    frame["words"] = frame["words"].apply(
+        lambda words: filter(words, rword)
+    )
+    before = len(frame)
+    frame = frame[frame["words"].apply(bool)]
+    logger.info(
+        f"Removed {before - len(frame)} repositories that have 0 words after regex filtering ('{rword}')"
+    )
+    frame["mcw"] = frame["words"].apply(most_common)
     frame.to_csv(out, index=False)
     logger.info(f"Saved output to {out}")
 
@@ -86,5 +100,5 @@ def lemmatize(words):
 
 
 def most_common(text):
-    words = word_tokenize(text)
+    words = word_tokenize(" ".join(text))
     return [word for word, _ in Counter(words).most_common(5)]
