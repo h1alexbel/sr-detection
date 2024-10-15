@@ -24,10 +24,12 @@ import os
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import unittest
+from tempfile import TemporaryDirectory
 
+import pandas as pd
 import pytest
 from markdown_it import MarkdownIt
-from sr_data.steps.mcw import to_words
+from sr_data.steps.mcw import to_words, main
 
 
 class TestMcw(unittest.TestCase):
@@ -52,3 +54,15 @@ class TestMcw(unittest.TestCase):
                 expected,
                 f"Parsed words size: {words} don't match with expected: {expected}"
             )
+
+    @pytest.mark.fast
+    def test_finds_most_common_words_in_readme(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "mcw.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-mcw.csv"
+                ),
+                path
+            )
+            self.assertTrue("mcw" in pd.read_csv(path).columns)
