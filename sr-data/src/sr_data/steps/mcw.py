@@ -27,26 +27,40 @@ from collections import Counter
 import pandas as pd
 from loguru import logger
 from markdown_it import MarkdownIt
-from nltk import word_tokenize
+from nltk import word_tokenize, WordNetLemmatizer
+from nltk.corpus import stopwords
+from sr_data.steps.extract import wordnet_pos
 
 
+# remove not words ['|', '--', ':', '-', ',']
 def main(repos, out):
     logger.info("Collecting most common words...")
     frame = pd.read_csv(repos)
-    frame["rtext"] = frame["readme"].apply(
-        lambda readme: to_rtext(readme, MarkdownIt())
+    frame["words"] = frame["readme"].apply(
+        lambda readme: to_words(readme, MarkdownIt())
     )
-    frame["mcw"] = frame["rtext"].apply(most_common)
+    frame["words"] = frame["words"].apply(
+        lambda words: remove_stop_words(words, stopwords.words("english"))
+    )
+    frame["words"] = frame["words"].apply(lemmatize)
+    # frame["rtext"] = frame["rtext"].apply(
+    #     lambda text: filter(text, r"^[a-zA-Z]+$")
+    # )
+    # frame["mcw"] = frame["rtext"].apply(most_common)
     frame.to_csv(out, index=False)
     logger.info(f"Saved output to {out}")
 
 
-# ['the', '.', 'with', ':', 'Keycloak']
-# remove stop words
-# lemmatize
-def to_rtext(readme, mit):
+def to_words(readme, mit):
     tokens = mit.parse(readme)
-    skip = {"code_block", "fence", "table_open", "table_close", "link_open", "link_close"}
+    skip = {
+        "code_block",
+        "fence",
+        "table_open",
+        "table_close",
+        "link_open",
+        "link_close"
+    }
     text = []
     for tkn in tokens:
         if tkn.type == "inline":
@@ -55,7 +69,20 @@ def to_rtext(readme, mit):
                     text.append(child.content)
         elif tkn.type not in skip and tkn.type.endswith("_open"):
             text.append(tkn.content)
-    return " ".join(text).strip()
+    return text
+
+
+def remove_stop_words(words, stopwords):
+    return [word for word in words if word.lower() not in stopwords]
+
+
+def lemmatize(words):
+    lemmatizer = WordNetLemmatizer()
+    tokens = word_tokenize(" ".join(words))
+    return [
+        lemmatizer.lemmatize(word.lower(), wordnet_pos(word))
+        for word in tokens
+    ]
 
 
 def most_common(text):
