@@ -62,7 +62,8 @@ jobs:
               "${{ inputs.end }}" "repos"
             just pulls "../repos.csv" "$TOKEN" "../repos-with-pulls.csv"
             just filter "../repos-with-pulls.csv" "../after-filter.csv"
-            just swc "../after-filter.csv" "../after-swc.csv"
+            just mcw "../after-filter.csv" "../after-mcw.csv"
+            just swc "../after-mcw.csv" "../after-swc.csv"
             just extract "../after-swc.csv" "../after-extract.csv"
             just maven "../after-extract.csv" "$TOKEN" \
               "../after-maven.csv"
@@ -71,6 +72,7 @@ jobs:
           cp "repos.csv" "collection/${{ inputs.out }}"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
           cp "after-filter.csv" "collection/${{ inputs.out }}"
+          cp "after-mcw.csv" "collection/${{ inputs.out }}"
           cp "after-swc.csv" "collection/${{ inputs.out }}"
           cp "after-extract.csv" "collection/${{ inputs.out }}"
           cp "after-maven.csv" "collection/${{ inputs.out }}"
