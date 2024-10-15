@@ -1,6 +1,8 @@
 """
 Collection of most common words in README.
 """
+from collections import Counter
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,20 +26,38 @@ Collection of most common words in README.
 # SOFTWARE.
 import pandas as pd
 from loguru import logger
+from markdown_it import MarkdownIt
+from nltk import word_tokenize
 
 
 def main(repos, out):
     logger.info("Collecting most common words...")
     frame = pd.read_csv(repos)
-    frame["rtext"] = frame["readme"].apply(to_rast)
+    frame["rtext"] = frame["readme"].apply(
+        lambda readme: to_rtext(readme, MarkdownIt())
+    )
     frame["mcw"] = frame["rtext"].apply(most_common)
     frame.to_csv(out, index=False)
     logger.info(f"Saved output to {out}")
 
 
-def to_rast(readme):
-    return ""
+# ['the', '.', 'with', ':', 'Keycloak']
+# remove stop words
+# lemmatize
+def to_rtext(readme, mit):
+    tokens = mit.parse(readme)
+    skip = {"code_block", "fence", "table_open", "table_close", "link_open", "link_close"}
+    text = []
+    for tkn in tokens:
+        if tkn.type == "inline":
+            for child in tkn.children:
+                if child.type == "text":
+                    text.append(child.content)
+        elif tkn.type not in skip and tkn.type.endswith("_open"):
+            text.append(tkn.content)
+    return " ".join(text).strip()
 
 
-def most_common(readme):
-    return []
+def most_common(text):
+    words = word_tokenize(text)
+    return [word for word, _ in Counter(words).most_common(5)]
