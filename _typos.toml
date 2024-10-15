@@ -24,4 +24,4 @@ extend-ignore-identifiers-re = [
     "packgs", # variable name
 ]
 [files]
-extend-exclude = ["*.csv"]
+extend-exclude = ["sr-data/src/tests/*.md", "*.csv"]
