@@ -91,6 +91,10 @@ filter repos out="experiment/after-filter.csv":
 extract repos out="experiment/after-extract.csv":
   cd sr-data && poetry poe extract --repos "{{repos}}" --out "{{out}}"
 
+# Collect most common words.
+mcw repos out="experiment/after-mcw.csv":
+  cd sr-data && poetry poe mcw --repos "{{repos}}" --out "{{out}}"
+
 # Special words count.
 swc repos out="experiment/after-swc.csv" config="resources/swc-words.txt":
   cd sr-data && poetry poe swc --repos "{{repos}}" --out "{{out}}" \
