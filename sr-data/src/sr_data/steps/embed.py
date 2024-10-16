@@ -56,7 +56,7 @@ def main(repos, prefix, hf, cohere):
             embed_cohere(cohere, frame, prefix)
         else:
             logger.info(f"Inference checkpoint: {checkpoint}")
-            embeddings = pd.DataFrame(infer(frame["top"].tolist(), checkpoint, hf))
+            embeddings = pd.DataFrame(infer(frame["mcw"].tolist(), checkpoint, hf))
             embeddings.insert(0, 'repo', frame["repo"])
             embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
         logger.info(

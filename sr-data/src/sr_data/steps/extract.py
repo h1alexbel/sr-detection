@@ -61,7 +61,7 @@ def main(repos, out):
     logger.info(
         f"Removed {headingless - len(frame)} repositories that have 0 headings after regex filtering ('{rword}')"
     )
-    frame["top"] = frame["headings"].apply(
+    frame["mcw"] = frame["headings"].apply(
         lambda headings: top_words(headings, 5)
     )
     frame.to_csv(out, index=False)
