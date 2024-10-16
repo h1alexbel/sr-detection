@@ -36,8 +36,10 @@ name: collect
         required: true
       clean:
         description: "Clean branch before uploading files"
-        required: false
-        default: "false"
+        required: true
+        options:
+          - false
+          - true
 permissions: write-all
 env:
   PATS: pats.txt
