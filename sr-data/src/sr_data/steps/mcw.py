@@ -37,10 +37,6 @@ from sr_data.steps.extract import wordnet_pos, filter
 #  extract.py step. Now we are duplicating logic, only slightly changing it to
 #  fit the input, will be more traceable to reuse existing methods located in
 #  extract.py.
-# @todo #137:45min Stop words filtering is weak.
-#  method remove_stop_words doesn't remove such words as: ['the', 'to', 'and',
-#  'you', 'a'] and etc. We should remove such words too. Don't forget to create
-#  unit tests.
 def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(f"Collecting most common words in {len(frame)} repositories...")
@@ -83,7 +79,7 @@ def to_words(readme, mit):
                     text.append(child.content)
         elif tkn.type not in skip and tkn.type.endswith("_open"):
             text.append(tkn.content)
-    return text
+    return word_tokenize(" ".join(text))
 
 
 def remove_stop_words(words, stopwords):
