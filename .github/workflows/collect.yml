@@ -34,6 +34,14 @@ name: collect
       out:
         description: "Output directory"
         required: true
+      clean:
+        description: "Clean branch before uploading files"
+        required: true
+        type: choice
+        default: false
+        options:
+          - false
+          - true
 permissions: write-all
 env:
   PATS: pats.txt
@@ -81,5 +89,5 @@ jobs:
         with:
           branch: collect
           folder: collection
-          clean: false
+          clean: ${{ inputs.clean }}
         if: github.ref == 'refs/heads/master'
