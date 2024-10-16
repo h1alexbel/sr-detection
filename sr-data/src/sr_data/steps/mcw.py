@@ -62,7 +62,7 @@ def main(repos, out):
     )
     frame["mcw"] = frame["words"].apply(most_common)
     frame.to_csv(out, index=False)
-    logger.info(f"Saved output to {out}")
+    logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
 def to_words(readme, mit):
