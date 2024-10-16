@@ -48,7 +48,7 @@ class TestMcw(unittest.TestCase):
                     MarkdownIt()
                 )
             )
-            expected = 91
+            expected = 326
             self.assertEqual(
                 words,
                 expected,
@@ -65,4 +65,7 @@ class TestMcw(unittest.TestCase):
                 ),
                 path
             )
-            self.assertTrue("mcw" in pd.read_csv(path).columns)
+            self.assertEqual(
+                pd.read_csv(path).iloc[0]["mcw"],
+                "['policy', 'keycloak', 'file', 'demo', 'http']"
+            )
