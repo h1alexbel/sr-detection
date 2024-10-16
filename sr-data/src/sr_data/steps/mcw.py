@@ -1,8 +1,6 @@
 """
 Collection of most common words in README.
 """
-from collections import Counter
-
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,6 +22,8 @@ from collections import Counter
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+from collections import Counter
+
 import pandas as pd
 from loguru import logger
 from markdown_it import MarkdownIt
