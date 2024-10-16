@@ -37,6 +37,7 @@ name: collect
       clean:
         description: "Clean branch before uploading files"
         required: true
+        type: choice
         options:
           - false
           - true
