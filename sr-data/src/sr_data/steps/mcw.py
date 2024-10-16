@@ -42,8 +42,8 @@ from sr_data.steps.extract import wordnet_pos, filter
 #  'you', 'a'] and etc. We should remove such words too. Don't forget to create
 #  unit tests.
 def main(repos, out):
-    logger.info("Collecting most common words...")
     frame = pd.read_csv(repos)
+    logger.info(f"Collecting most common words in {len(frame)} repositories...")
     frame["words"] = frame["readme"].apply(
         lambda readme: to_words(readme, MarkdownIt())
     )
