@@ -44,7 +44,7 @@ def main(repos, prefix, hf, cohere):
     :param cohere Cohere token
     """
     frame = pd.read_csv(repos)
-    frame["top"] = frame["top"].apply(
+    frame["mcw"] = frame["mcw"].apply(
         lambda words:
         words.replace("[", "").replace("]", "").replace("'", "")
     )
@@ -69,7 +69,7 @@ def embed_cohere(key, texts, prefix):
     embeddings = pd.DataFrame(
         np.asarray(
             client.embed(
-                texts=texts["top"].tolist(), input_type="search_document", model="embed-english-v3.0"
+                texts=texts["mcw"].tolist(), input_type="search_document", model="embed-english-v3.0"
             ).embeddings
         )
     )
