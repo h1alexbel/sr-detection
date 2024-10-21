@@ -75,16 +75,20 @@ jobs:
             just extract "../after-swc.csv" "../after-extract.csv"
             just maven "../after-extract.csv" "$TOKEN" \
               "../after-maven.csv"
+            just lens "../after-maven.csv" "../after-lens.csv"
+            just final "../after-lens.csv" "../final.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
-          cp "repos.csv" "collection/${{ inputs.out }}"
-          cp "repos-with-pulls.csv" "collection/${{ inputs.out }}"
-          cp "after-filter.csv" "collection/${{ inputs.out }}"
-          cp "after-mcw.csv" "collection/${{ inputs.out }}"
-          cp "after-swc.csv" "collection/${{ inputs.out }}"
-          cp "after-extract.csv" "collection/${{ inputs.out }}"
-          cp "after-maven.csv" "collection/${{ inputs.out }}"
-          cp "collect.log" collection/${{ inputs.out }}
+          cp "repos.csv" "collection/${{ inputs.out }}/steps"
+          cp "repos-with-pulls.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-filter.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-mcw.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-swc.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-extract.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-maven.csv" "collection/${{ inputs.out }}/steps"
+          cp "after-lens.csv" "collection/${{ inputs.out }}/steps"
+          cp "collect.log" "collection/${{ inputs.out }}"
+          cp "final.csv" "collection/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: collect

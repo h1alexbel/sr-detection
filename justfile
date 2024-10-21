@@ -104,6 +104,10 @@ swc repos out="experiment/after-swc.csv" config="resources/swc-words.txt":
 lens repos out="experiment/after-lens.csv":
   cd sr-data && poetry poe lens --repos {{repos}} --out {{out}}
 
+# Compose all found metadata into final CSV.
+final latest out="experiment/final.csv":
+  cd sr-data && poetry poe final --latest {{latest}} --out {{out}}
+
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
