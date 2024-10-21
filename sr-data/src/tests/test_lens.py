@@ -24,7 +24,7 @@ Tests for lens.
 # SOFTWARE.
 import unittest
 
-from sr_data.steps.lens import rlen
+from sr_data.steps.lens import rlen, avg_slen
 
 
 class TestLens(unittest.TestCase):
@@ -36,4 +36,15 @@ class TestLens(unittest.TestCase):
             length,
             expected,
             f"Calculated length: {length} does not match with expected: {expected}"
+        )
+
+    def test_calculates_avg_slen(self):
+        length = avg_slen(
+            "This is another test readme. Very very long sentence. Short."
+        )
+        expected = 2
+        self.assertEqual(
+            length,
+            expected,
+            f"Calculated avg_slen: {length} does not match with expected: {expected}"
         )
