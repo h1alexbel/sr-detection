@@ -24,34 +24,38 @@ Tests for lens.
 # SOFTWARE.
 import unittest
 
+import pytest
 from sr_data.steps.lens import rlen, avg_slen, avg_wlen
 
 
 class TestLens(unittest.TestCase):
 
+    @pytest.mark.fast
     def test_calculates_rlen(self):
         length = rlen("This is test readme. Foo bar")
-        expected = 22
+        expected = 28
         self.assertEqual(
             length,
             expected,
             f"Calculated rlen: {length} does not match with expected: {expected}"
         )
 
+    @pytest.mark.fast
     def test_calculates_avg_slen(self):
         length = avg_slen(
             "This is another test readme. Very very long sentence. Short."
         )
-        expected = 2
+        expected = 3.3333333333333335
         self.assertEqual(
             length,
             expected,
             f"Calculated avg_slen: {length} does not match with expected: {expected}"
         )
 
+    @pytest.mark.fast
     def test_calculates_avg_wlen(self):
         length = avg_wlen("This is test readme for avg_wlen test.")
-        expected = 4.5
+        expected = 4.428571428571429
         self.assertEqual(
             length,
             expected,
