@@ -106,3 +106,16 @@ class TestExtract(unittest.TestCase):
                 1,
                 "Should filter repo with empty headings"
             )
+
+    @pytest.mark.fast
+    def test_calculates_hnum_in_readme(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "extracted.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-extract-hnum.csv",
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(frame.iloc[0]["hnum"],3)
