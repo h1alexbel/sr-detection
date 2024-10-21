@@ -100,6 +100,10 @@ swc repos out="experiment/after-swc.csv" config="resources/swc-words.txt":
   cd sr-data && poetry poe swc --repos "{{repos}}" --out "{{out}}" \
     --config "{{config}}"
 
+# Calculate length metrics.
+lens repos out="experiment/after-lens.csv":
+  cd sr-data && poetry poe lens --repos {{repos}} --out {{out}}
+
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
