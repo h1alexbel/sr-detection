@@ -1,7 +1,6 @@
 """
 Tests for lens.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,6 +22,7 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
@@ -76,6 +76,6 @@ class TestLens(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["rlen"],2487)
-            self.assertEqual(frame.iloc[0]["avg_slen"],24.666666666666668)
-            self.assertEqual(frame.iloc[0]["avg_wlen"],5.1567567567567565)
+            self.assertEqual(frame.iloc[0]["rlen"], 2487)
+            self.assertEqual(frame.iloc[0]["avg_slen"], 24.666666666666668)
+            self.assertEqual(frame.iloc[0]["avg_wlen"], 5.1567567567567565)
