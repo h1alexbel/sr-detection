@@ -22,6 +22,9 @@ Calculate length metrics for READMEs.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import re
+
+import nltk
 import pandas as pd
 from loguru import logger
 
@@ -35,6 +38,7 @@ def main(repos, out):
     frame["avg_slen"] = frame["readme"].apply(avg_slen)
     frame["avg_wlen"] = frame["readme"].apply(avg_wlen)
     frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
 def rlen(readme):
@@ -42,7 +46,12 @@ def rlen(readme):
 
 
 def avg_slen(readme):
-    return 0
+    sentences = nltk.sent_tokenize(readme)
+    total = sum(len(re.findall(r'\w+', sentence)) for sentence in sentences)
+    result = 0
+    if sentences:
+        result = total / len(sentences)
+    return result
 
 
 def avg_wlen(readme):
