@@ -28,10 +28,22 @@ from loguru import logger
 
 def main(repos, out):
     frame = pd.read_csv(repos)
-    logger.info(f"Calculating length metrics for {len(frame)} repositories")
+    logger.info(
+        f"Calculating `rlen`, `avg_slen`, `avg_wlen` for {len(frame)} repositories"
+    )
     frame["rlen"] = frame["readme"].apply(rlen)
+    frame["avg_slen"] = frame["readme"].apply(avg_slen)
+    frame["avg_wlen"] = frame["readme"].apply(avg_wlen)
     frame.to_csv(out, index=False)
 
 
 def rlen(readme):
     return len(readme)
+
+
+def avg_slen(readme):
+    return 0
+
+
+def avg_wlen(readme):
+    return 0
