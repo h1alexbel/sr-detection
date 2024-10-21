@@ -50,6 +50,10 @@ def main(repos, out, token):
             frame.at[idx, "ppoms"] = profile["packages"]["poms"]
         else:
             frame.at[idx, "projects"] = 0
+            frame.at[idx, "plugins"] = "[]"
+            frame.at[idx, "pwars"] = 0
+            frame.at[idx, "pjars"] = 0
+            frame.at[idx, "ppoms"] = 0
     before = len(frame)
     frame = frame[frame.projects != 0]
     logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")

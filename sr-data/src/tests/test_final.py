@@ -46,3 +46,17 @@ class TestFinal(unittest.TestCase):
             final = pd.read_csv(path)
             self.assertEqual(len(final.columns), 18)
             self.assertEqual(len(final), 1)
+
+    @pytest.mark.fast
+    def test_composes_empty(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "final.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-final-empty.csv"
+                ),
+                path
+            )
+            final = pd.read_csv(path)
+            self.assertEqual(len(final.columns), 18)
+            self.assertEqual(len(final), 0)

@@ -87,7 +87,6 @@ class TestMaven(unittest.TestCase):
                 "[org.jetbrains.kotlin:kotlin-maven-plugin,org.springframework.boot:spring-boot-maven-plugin]"
             )
 
-
     @pytest.mark.fast
     def test_merges_projects_in_one_profile(self):
         merged = merge(
@@ -108,3 +107,23 @@ class TestMaven(unittest.TestCase):
         self.assertEqual(merged["packages"]["jars"], 2)
         self.assertEqual(merged["packages"]["wars"], 0)
         self.assertEqual(merged["packages"]["poms"], 0)
+
+    @pytest.mark.nightly
+    def test_returns_default_values_for_non_maven(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "maven.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "to-maven-non-maven.csv"
+                ),
+                path,
+                os.environ["GH_TESTING_TOKEN"]
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(len(frame.columns), 7)
+            self.assertTrue("projects" in frame.columns)
+            self.assertTrue("plugins" in frame.columns)
+            self.assertTrue("pwars" in frame.columns)
+            self.assertTrue("pjars" in frame.columns)
+            self.assertTrue("ppoms" in frame.columns)
