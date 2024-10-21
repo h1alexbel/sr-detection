@@ -43,6 +43,7 @@ def main(repos, out):
     logger.info("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
+    frame["hnum"] = frame["headings"].apply(hnum)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
     headingless = len(frame)
@@ -65,6 +66,10 @@ def main(repos, out):
         lambda headings: top_words(headings, 5)
     )
     frame.to_csv(out, index=False)
+
+
+def hnum(headings):
+    return len(headings)
 
 
 def top_words(headings, amount):

@@ -105,10 +105,6 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.lens:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
-[tool.poe.tasks.hnum]
-script = "sr_data.steps.hnum:main(repos, out)"
-args = [{name = "repos"}, {name = "out"}]
-
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
