@@ -1,5 +1,5 @@
 """
-Compose all found metadata into final CSV.
+Tests for final.
 """
 # The MIT License (MIT)
 #
@@ -22,31 +22,27 @@ Compose all found metadata into final CSV.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
+import unittest
+from tempfile import TemporaryDirectory
+
 import pandas as pd
+import pytest
+from sr_data.steps.final import main
 
 
-def main(latest, out):
-    frame = pd.read_csv(latest)
-    frame = frame[
-        [
-            "repo",
-            "releases",
-            "issues",
-            "branches",
-            "pulls",
-            "projects",
-            "plugins",
-            "pwars",
-            "pjars",
-            "ppoms",
-            "mcw",
-            "example_wc",
-            "sample_wc",
-            "demonstration_wc",
-            "rlen",
-            "avg_slen",
-            "avg_wlen",
-            "hnum"
-        ]
-    ]
-    frame.to_csv(out, index=False)
+class TestFinal(unittest.TestCase):
+
+    @pytest.mark.fast
+    def test_composes_into_final_csv(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "final.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-final.csv"
+                ),
+                path
+            )
+            final = pd.read_csv(path)
+            self.assertEqual(len(final.columns), 18)
+            self.assertEqual(len(final), 1)
