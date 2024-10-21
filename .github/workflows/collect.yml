@@ -79,6 +79,7 @@ jobs:
             just final "../after-lens.csv" "../final.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
+          mkdir -p "collection/${{ inputs.out }}/steps"
           cp "repos.csv" "collection/${{ inputs.out }}/steps/"
           cp "repos-with-pulls.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-filter.csv" "collection/${{ inputs.out }}/steps/"
