@@ -1,6 +1,7 @@
 """
 Tests for lens.
 """
+import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,9 +24,11 @@ Tests for lens.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import unittest
+from tempfile import TemporaryDirectory
 
+import pandas as pd
 import pytest
-from sr_data.steps.lens import rlen, avg_slen, avg_wlen
+from sr_data.steps.lens import rlen, avg_slen, avg_wlen, main
 
 
 class TestLens(unittest.TestCase):
@@ -62,3 +65,17 @@ class TestLens(unittest.TestCase):
             f"Calculated avg_wlen: {length} does not match with expected: {expected}"
         )
 
+    @pytest.mark.fast
+    def test_calculates_all_lengths(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "lens.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-lens.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(frame.iloc[0]["rlen"],2487)
+            self.assertEqual(frame.iloc[0]["avg_slen"],24.666666666666668)
+            self.assertEqual(frame.iloc[0]["avg_wlen"],5.1567567567567565)
