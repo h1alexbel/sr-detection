@@ -55,4 +55,9 @@ def avg_slen(readme):
 
 
 def avg_wlen(readme):
-    return 0
+    words = re.findall(r'\w+', readme)
+    total = sum(len(word) for word in words)
+    result = 0
+    if words:
+        result = total / len(words)
+    return result
