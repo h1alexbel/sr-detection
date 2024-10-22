@@ -73,7 +73,7 @@ jobs:
             just mcw "../after-filter.csv" "../after-mcw.csv"
             just swc "../after-mcw.csv" "../after-swc.csv"
             just extract "../after-swc.csv" "../after-extract.csv"
-            just snippets "../after-extract.csv" "../after-snippets.csv" 
+            just snippets "../after-extract.csv" "../after-snippets.csv"
             just maven "../after-snippets.csv" "$TOKEN" \
               "../after-maven.csv"
             just lens "../after-maven.csv" "../after-lens.csv"
