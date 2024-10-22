@@ -108,6 +108,10 @@ lens repos out="experiment/after-lens.csv":
 final latest out="experiment/final.csv":
   cd sr-data && poetry poe final --latest {{latest}} --out {{out}}
 
+# Count snippets.
+snippets repos out="experiment/after-snippets.csv":
+  cd sr-data && poetry poe snippets --repos {{repos}} --out {{out}}
+
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
   cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
