@@ -1,6 +1,7 @@
 """
 Tests for snippets.
 """
+import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,9 +24,11 @@ Tests for snippets.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import unittest
+from tempfile import TemporaryDirectory
 
+import pandas as pd
 import pytest
-from sr_data.steps.snippets import snippets
+from sr_data.steps.snippets import snippets, main
 
 
 class TestSnippets(unittest.TestCase):
@@ -60,3 +63,17 @@ class TestSnippets(unittest.TestCase):
             0,
             "Found snippets should be equal to zero, but it was not"
         )
+
+    @pytest.mark.fast
+    def test_counts_snippets_for_all(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "snippets.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)), "to-snippets.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(frame.iloc[0]["snippets"], 0)
+            self.assertEqual(frame.iloc[1]["snippets"], 16)
