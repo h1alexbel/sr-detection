@@ -1,2 +1,2 @@
-repo,branch,readme,releases,issues,branches,pulls,headings,top,projects,plugins,pwars,pjars,ppoms,hnum,rlen,avg_slen,avg_wlen,mcw,example_wc,sample_wc,demonstration_wc
-foo/bar,master,# fake,1,2,3,4,"['fake']","['fake']",2,[org.springframework.boot:spring-boot-maven-plugin],0,1,1,1,2,1,2.2,"['fake']",1,2,3
+repo,branch,readme,releases,issues,branches,pulls,headings,top,projects,plugins,pwars,pjars,ppoms,hnum,rlen,avg_slen,avg_wlen,mcw,example_wc,sample_wc,demonstration_wc,snippets
+foo/bar,master,# fake,1,2,3,4,"['fake']","['fake']",2,[org.springframework.boot:spring-boot-maven-plugin],0,1,1,1,2,1,2.2,"['fake']",1,2,3,15

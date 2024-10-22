@@ -73,7 +73,8 @@ jobs:
             just mcw "../after-filter.csv" "../after-mcw.csv"
             just swc "../after-mcw.csv" "../after-swc.csv"
             just extract "../after-swc.csv" "../after-extract.csv"
-            just maven "../after-extract.csv" "$TOKEN" \
+            just snippets "../after-extract.csv" "../after-snippets.csv" 
+            just maven "../after-snippets.csv" "$TOKEN" \
               "../after-maven.csv"
             just lens "../after-maven.csv" "../after-lens.csv"
             just final "../after-lens.csv" "../final.csv"
@@ -86,6 +87,7 @@ jobs:
           cp "after-mcw.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-swc.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-extract.csv" "collection/${{ inputs.out }}/steps/"
+          cp "after-snippets.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-maven.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-lens.csv" "collection/${{ inputs.out }}/steps/"
           cp "collect.log" "collection/${{ inputs.out }}"
