@@ -30,7 +30,9 @@ def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(f"Counting snippets in READMEs for {len(frame)} repositories")
     frame["snippets"] = frame["readme"].apply(snippets)
+    frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories with snippets to {out}")
 
 
 def snippets(readme):
-    return 0
+    return len(readme.split("```")) // 2
