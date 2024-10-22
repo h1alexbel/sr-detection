@@ -52,3 +52,11 @@ class TestSnippets(unittest.TestCase):
             expected,
             f"Found {count} snippets, but it does not match with expected: {expected}"
         )
+
+    @pytest.mark.fast
+    def test_returns_zero_for_no_snippets(self):
+        self.assertEqual(
+            snippets("no snippets"),
+            0,
+            "Found snippets should be equal to zero, but it was not"
+        )
