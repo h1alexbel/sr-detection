@@ -22,6 +22,8 @@ Links count in READMEs.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import re
+
 import pandas as pd
 from loguru import logger
 
@@ -33,5 +35,17 @@ def main(repos, out):
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
+
 def links(readme):
-    return 0
+    http = re.findall(r"\[(.*?)]\((http[s]?://.*?)\)", readme)
+    links = []
+    for text, url in http:
+        if url:
+            links.append(f"{text} -> {url}")
+    aliased = re.findall(r"\[(.*?)](?!\s*\(.*?\))(?:\[\s*(.*?)\s*\]|$)", readme)
+    for text, alias in aliased:
+        if alias:
+            links.append(f"{text} -> {alias}")
+        else:
+            links.append(text)
+    return len(links)
