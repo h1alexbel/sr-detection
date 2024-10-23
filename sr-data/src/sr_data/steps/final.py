@@ -47,7 +47,9 @@ def main(latest, out):
             "avg_slen",
             "avg_wlen",
             "hnum",
-            "snippets"
+            "snippets",
+            "links_count",
+            "links"
         ]
     ]
     frame.to_csv(out, index=False)

@@ -44,7 +44,7 @@ class TestFinal(unittest.TestCase):
                 path
             )
             final = pd.read_csv(path)
-            self.assertEqual(len(final.columns), 19)
+            self.assertEqual(len(final.columns), 21)
             self.assertEqual(len(final), 1)
 
     @pytest.mark.fast
@@ -58,5 +58,5 @@ class TestFinal(unittest.TestCase):
                 path
             )
             final = pd.read_csv(path)
-            self.assertEqual(len(final.columns), 19)
+            self.assertEqual(len(final.columns), 21)
             self.assertEqual(len(final), 0)
