@@ -31,12 +31,12 @@ from loguru import logger
 def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(f"Counting links in {len(frame)} repositories")
-    frame["links"] = frame["readme"].apply(links)
+    frame["links"] = frame["readme"].apply(links_count)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
-def links(readme):
+def links_count(readme):
     http = re.findall(r"\[(.*?)]\((http[s]?://.*?)\)", readme)
     links = []
     for text, url in http:
