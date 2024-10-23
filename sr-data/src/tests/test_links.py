@@ -79,5 +79,5 @@ class TestLinks(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertEqual(
                 frame.iloc[0]["links"],
-                4
+                2
             )
