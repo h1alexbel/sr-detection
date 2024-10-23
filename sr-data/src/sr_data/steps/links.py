@@ -42,10 +42,11 @@ def links_count(readme):
     for text, url in http:
         if url:
             links.append(f"{text} -> {url}")
-    aliased = re.findall(r"\[(.*?)](?!\s*\(.*?\))(?:\[\s*(.*?)\s*\]|$)", readme)
+    aliased = re.findall(r"\[(.+?)\](?:\[\s*(.*?)\s*\]|(?!\s*\(.*?\)))", readme)
     for text, alias in aliased:
-        if alias:
-            links.append(f"{text} -> {alias}")
-        else:
-            links.append(text)
+        if re.match(r"^(?![0-9]+$)[\w\s]+$", text):
+            if alias:
+                links.append(f"{text} -> {alias}")
+            else:
+                links.append(text)
     return len(links)
