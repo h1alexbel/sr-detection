@@ -77,7 +77,8 @@ jobs:
             just maven "../after-snippets.csv" "$TOKEN" \
               "../after-maven.csv"
             just lens "../after-maven.csv" "../after-lens.csv"
-            just final "../after-lens.csv" "../final.csv"
+            just links "../after-lens.csv" "../after-links.csv"
+            just final "../after-links.csv" "../final.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
           mkdir -p "collection/${{ inputs.out }}/steps"
@@ -90,6 +91,7 @@ jobs:
           cp "after-snippets.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-maven.csv" "collection/${{ inputs.out }}/steps/"
           cp "after-lens.csv" "collection/${{ inputs.out }}/steps/"
+          cp "after-links.csv" "collection/${{ inputs.out }}/steps/"
           cp "collect.log" "collection/${{ inputs.out }}"
           cp "final.csv" "collection/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
