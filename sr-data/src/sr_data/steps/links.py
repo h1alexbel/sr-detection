@@ -31,22 +31,23 @@ from loguru import logger
 def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(f"Counting links in {len(frame)} repositories")
-    frame["links"] = frame["readme"].apply(links_count)
+    frame["links"] = frame["readme"].apply(links)
+    frame["links_count"] = frame["links"].apply(len)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
-def links_count(readme):
+def links(readme):
+    found = []
     http = re.findall(r"\[(.*?)]\((http[s]?://.*?)\)", readme)
-    links = []
     for text, url in http:
         if url:
-            links.append(f"{text} -> {url}")
-    aliased = re.findall(r"\[(.+?)\](?:\[\s*(.*?)\s*\]|(?!\s*\(.*?\)))", readme)
+            found.append(f"{text} -> {url}")
+    aliased = re.findall(r"\[(.+?)](?:\[\s*(.*?)\s*]|(?!\s*\(.*?\)))", readme)
     for text, alias in aliased:
         if re.match(r"^(?![0-9]+$)[\w\s]+$", text):
             if alias:
-                links.append(f"{text} -> {alias}")
+                found.append(f"{text} -> {alias}")
             else:
-                links.append(text)
-    return len(links)
+                found.append(text)
+    return found

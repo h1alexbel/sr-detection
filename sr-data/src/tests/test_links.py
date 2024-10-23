@@ -28,14 +28,14 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
-from sr_data.steps.links import links_count, main
+from sr_data.steps.links import links, main
 
 
 class TestLinks(unittest.TestCase):
 
     @pytest.mark.fast
     def test_counts_links(self):
-        count = links_count(
+        found = links(
             """
         [HTTP](http://test.com)
         [HTTPS](https://test.com)
@@ -43,27 +43,32 @@ class TestLinks(unittest.TestCase):
         [Inline]
         """
         )
-        expected = 4
+        expected = [
+            "HTTP -> http://test.com",
+            "HTTPS -> https://test.com",
+            "Alias -> here",
+            "Inline"
+        ]
         self.assertEqual(
-            count,
+            found,
             expected,
-            f"Links count: {count} does not match with expected: {expected}"
+            f"Links: {found} does not match with expected: {expected}"
         )
 
     @pytest.mark.fast
     def test_skips_document_level_links(self):
-        count = links_count(
+        found = links(
             """
             [Good](https://good.link)
             [Anchor in the document](#here)
             [Heading in the document](/here)
             """
         )
-        expected = 1
+        expected = ["Good -> https://good.link"]
         self.assertEqual(
-            count,
+            found,
             expected,
-            f"Links count: {count} does not match with expected: {expected}"
+            f"Links: {found} do not match with expected: {expected}"
         )
 
     @pytest.mark.fast
@@ -79,5 +84,9 @@ class TestLinks(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertEqual(
                 frame.iloc[0]["links"],
+                "['Test', 'Test2 -> ref']"
+            )
+            self.assertEqual(
+                frame.iloc[0]["links_count"],
                 2
             )
