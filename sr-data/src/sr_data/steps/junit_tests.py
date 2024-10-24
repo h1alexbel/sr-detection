@@ -31,15 +31,20 @@ TEST_FILE_SUFFIXES = (
     "Test.java", "TestCase.java", "IT.java", "ITCase.java"
 )
 
-TEST_ANNOTATIONS = (
-    "Test", "Parametrized"
+JUNIT_TEST_ANNOTATIONS = (
+    "Test", "ParameterizedTest"
 )
 
-def main(repos, out):
+
+def main(repos, out, token):
     frame = pd.read_csv(repos)
     logger.info(f"Counting JUnit tests in {len(frame)} repositories")
     for idx, row in frame.iterrows():
-        frame.at[idx, "tests"] = count_of_tests(row["repo"], row["branch"], "")
+        frame.at[idx, "tests"] = count_of_tests(
+            row["repo"],
+            row["branch"],
+            token
+        )
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
@@ -50,16 +55,15 @@ def count_of_tests(repo, branch, token) -> int:
             TEST_FILE_SUFFIXES
         )
     ]
+    logger.info(f"Found {len(files)} test files in {repo}")
     found = 0
     for file in files:
         path = file["path"]
         content = requests.get(
             f"https://raw.githubusercontent.com/{repo}/refs/heads/{branch}/{path}"
         ).text
-        logger.debug(f"Found {path}")
-        logger.debug(f"Looking for tests with {TEST_ANNOTATIONS}")
-        for annotation in TEST_ANNOTATIONS:
+        logger.debug(f"Checking {path}")
+        for annotation in JUNIT_TEST_ANNOTATIONS:
             found += content.count(f"@{annotation}")
-    # found = len(files)
-    logger.info(f"Found {found} tests in {repo}")
+    logger.info(f"Found {found} tests in {len(files)} files inside {repo}")
     return found
