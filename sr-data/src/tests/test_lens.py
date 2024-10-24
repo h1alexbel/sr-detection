@@ -71,7 +71,8 @@ class TestLens(unittest.TestCase):
             path = os.path.join(temp, "lens.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-lens.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-lens.csv"
                 ),
                 path
             )

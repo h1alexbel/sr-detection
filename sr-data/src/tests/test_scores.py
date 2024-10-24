@@ -36,7 +36,8 @@ class TestScores(unittest.TestCase):
             path = os.path.join(temp, "scores.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-score.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-score.csv"
                 ),
                 path
             )

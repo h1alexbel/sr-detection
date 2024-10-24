@@ -39,7 +39,7 @@ class TestLabelPropagation(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "training.csv"
+                    "resources/training.csv"
                 ),
                 path
             )

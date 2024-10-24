@@ -98,7 +98,8 @@ class TestEmbed(unittest.TestCase):
         with TemporaryDirectory() as temp:
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-embed.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-embed.csv"
                 ),
                 temp,
                 os.environ["HF_TESTING_TOKEN"],

@@ -37,7 +37,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             kmeans(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp
             )
@@ -58,7 +59,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             cmeans(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp
             )
@@ -73,7 +75,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             agglomerative(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp
             )
@@ -94,7 +97,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             dbscan(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp
             )
@@ -115,7 +119,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             gmm(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp
             )
@@ -136,7 +141,8 @@ class TestCluster(unittest.TestCase):
         with TemporaryDirectory() as temp:
             hdbscan(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-cluster.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-cluster.csv"
                 ),
                 temp,
                 5

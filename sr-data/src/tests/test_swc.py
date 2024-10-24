@@ -57,7 +57,7 @@ class TestSwc(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "to-swc.csv"
+                    "resources/to-swc.csv"
                 ),
                 path,
                 config

@@ -39,7 +39,8 @@ class TestMaven(unittest.TestCase):
             path = os.path.join(temp, "maven.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-maven.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-maven.csv"
                 ),
                 path,
                 os.environ["GH_TESTING_TOKEN"]
@@ -61,7 +62,7 @@ class TestMaven(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "to-maven-skip.csv"
+                    "resources/to-maven-skip.csv"
                 ),
                 path,
                 os.environ["GH_TESTING_TOKEN"]
@@ -76,7 +77,7 @@ class TestMaven(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "to-maven-without-artifact.csv"
+                    "resources/to-maven-without-artifact.csv"
                 ),
                 path,
                 os.environ["GH_TESTING_TOKEN"]
@@ -115,7 +116,7 @@ class TestMaven(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "to-maven-non-maven.csv"
+                    "resources/to-maven-non-maven.csv"
                 ),
                 path,
                 os.environ["GH_TESTING_TOKEN"]

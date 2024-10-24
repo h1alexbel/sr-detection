@@ -97,7 +97,8 @@ class TestExtract(unittest.TestCase):
             path = os.path.join(temp, "testing.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-extract.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-extract.csv"
                 ),
                 path
             )
@@ -113,7 +114,8 @@ class TestExtract(unittest.TestCase):
             path = os.path.join(temp, "extracted.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-extract-hnum.csv",
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-extract-hnum.csv",
                 ),
                 path
             )

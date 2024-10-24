@@ -38,7 +38,8 @@ class TestMcw(unittest.TestCase):
     def test_transforms_readme_to_words(self):
         with open(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-words.md"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-words.md"
                 ),
                 "r"
         ) as readme:
@@ -61,7 +62,8 @@ class TestMcw(unittest.TestCase):
             path = os.path.join(temp, "mcw.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-mcw.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-mcw.csv"
                 ),
                 path
             )

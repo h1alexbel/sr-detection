@@ -1,5 +1,5 @@
 """
-Test case for pulls.
+Tests for junit_tests.
 """
 # The MIT License (MIT)
 #
@@ -28,20 +28,43 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
-from sr_data.steps.pulls import main
+from sr_data.steps.junit_tests import count_of_tests, main
 
-class TestPulls(unittest.TestCase):
+
+class TestJunitTests(unittest.TestCase):
 
     @pytest.mark.nightly
-    def test_finds_pulls(self):
+    def test_returns_count(self):
+        tests = count_of_tests(
+            "eo-cqrs/eo-kafka",
+            "master",
+            os.environ["GH_TESTING_TOKEN"]
+        )
+        self.assertEqual(tests, 187)
+
+    @pytest.mark.nightly
+    def test_returns_zero_for_repo_without_tests(self):
+        self.assertTrue(
+            count_of_tests(
+                "h1alexbel/h1alexbel",
+                "master",
+                os.environ["GH_TESTING_TOKEN"]
+            ) == 0,
+            "Tests count should be 0"
+        )
+
+    @pytest.mark.nightly
+    def test_counts_junit_tests_in_csv(self):
         with TemporaryDirectory() as temp:
-            path = os.path.join(temp, "with-pulls.csv")
+            path = os.path.join(temp, "tests.csv")
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "resources/to-pull.csv"
+                    "resources/to-count-tests.csv"
                 ),
                 path,
                 os.environ["GH_TESTING_TOKEN"]
             )
-            self.assertTrue("pulls" in pd.read_csv(path).columns)
+            frame = pd.read_csv(path)
+            self.assertEqual(frame.iloc[0]["junit_tests"], 0)
+            self.assertEqual(frame.iloc[1]["junit_tests"], 0)

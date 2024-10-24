@@ -35,10 +35,12 @@ class TestCombination(unittest.TestCase):
         with TemporaryDirectory() as temp:
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "scores.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/scores.csv"
                 ),
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "embeddings.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/embeddings.csv"
                 ),
                 temp
             )

@@ -39,7 +39,8 @@ class TestFinal(unittest.TestCase):
             path = os.path.join(temp, "final.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-final.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-final.csv"
                 ),
                 path
             )
@@ -53,7 +54,8 @@ class TestFinal(unittest.TestCase):
             path = os.path.join(temp, "final.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-final-empty.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-final-empty.csv"
                 ),
                 path
             )

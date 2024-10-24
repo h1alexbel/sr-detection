@@ -77,7 +77,8 @@ class TestLinks(unittest.TestCase):
             path = os.path.join(temp, "links.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-links.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-links.csv"
                 ),
                 path
             )

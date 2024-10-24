@@ -1,7 +1,6 @@
 """
 Tests for snippets.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,6 +22,7 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
@@ -70,7 +70,8 @@ class TestSnippets(unittest.TestCase):
             path = os.path.join(temp, "snippets.csv")
             main(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "to-snippets.csv"
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-snippets.csv"
                 ),
                 path
             )

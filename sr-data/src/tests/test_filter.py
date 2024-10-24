@@ -43,7 +43,7 @@ class TestFilter(unittest.TestCase):
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
-                    "to-filter.csv"
+                    "resources/to-filter.csv"
                 ),
                 path
             )
