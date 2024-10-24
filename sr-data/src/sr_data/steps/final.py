@@ -49,7 +49,8 @@ def main(latest, out):
             "hnum",
             "snippets",
             "links_count",
-            "links"
+            "links",
+            "junit_tests"
         ]
     ]
     frame.to_csv(out, index=False)
