@@ -62,6 +62,8 @@ def count_of_tests(repo, branch, token) -> int:
         content = requests.get(
             f"https://raw.githubusercontent.com/{repo}/refs/heads/{branch}/{path}"
         ).text
+        if content == "404: Not Found":
+            logger.error(f"Occurred an error: {content}")
         logger.debug(f"Checking {path}")
         for annotation in TEST_ANNOTATIONS:
             found += content.count(f"@{annotation}")

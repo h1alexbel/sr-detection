@@ -66,5 +66,5 @@ class TestJunitTests(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["junit_tests"], 4)
+            self.assertEqual(frame.iloc[0]["junit_tests"], 187)
             self.assertEqual(frame.iloc[1]["junit_tests"], 0)
