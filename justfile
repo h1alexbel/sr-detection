@@ -76,9 +76,9 @@ maven repos token out="experiment/with-maven.csv":
   cd sr-data && poetry poe maven --repos "{{repos}}" --out "{{out}}" \
     --token "{{token}}"
 
-# Collect count of tests.
-tests repos token out="experiment/with-tests.csv":
-  cd sr-data && poetry poe tests --repos "{{repos}}" --out "{{out}}" \
+# Count of JUnit tests.
+junit repos token out="experiment/after-tests.csv":
+  cd sr-data && poetry poe junit --repos "{{repos}}" --out "{{out}}" \
    --token "{{token}}"
 
 # Collect test repositories.

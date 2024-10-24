@@ -117,7 +117,7 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.links:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
-[tool.poe.tasks.tests]
+[tool.poe.tasks.junit]
 script = "sr_data.steps.junit_tests:main(repos, out, token)"
 args = [{name = "repos"}, {name = "out"}, {name = "token"}]
 
