@@ -74,7 +74,7 @@ jobs:
             just swc "../after-mcw.csv" "../after-swc.csv"
             just extract "../after-swc.csv" "../after-extract.csv"
             just snippets "../after-extract.csv" "../after-snippets.csv"
-            just maven "../after-snippets.csv" "../after-maven.csv" "$TOKEN"
+            just maven "../after-snippets.csv" "$TOKEN" "../after-maven.csv"
             just junit "../after-maven.csv" "../after-junit.csv" "$TOKEN"
             just lens "../after-junit.csv" "../after-lens.csv"
             just links "../after-lens.csv" "../after-links.csv"
