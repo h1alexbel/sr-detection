@@ -117,6 +117,10 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.links:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.tests]
+script = "sr_data.steps.tests:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
