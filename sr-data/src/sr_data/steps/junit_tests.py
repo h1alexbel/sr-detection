@@ -31,8 +31,8 @@ TEST_FILE_SUFFIXES = (
     "Test.java", "TestCase.java", "IT.java", "ITCase.java"
 )
 
-JUNIT_TEST_ANNOTATIONS = (
-    "Test", "ParameterizedTest"
+TEST_ANNOTATIONS = (
+    "Test", "ParameterizedTest", "RunWith(Parameterized.class)"
 )
 
 
@@ -40,7 +40,7 @@ def main(repos, out, token):
     frame = pd.read_csv(repos)
     logger.info(f"Counting JUnit tests in {len(frame)} repositories")
     for idx, row in frame.iterrows():
-        frame.at[idx, "tests"] = count_of_tests(
+        frame.at[idx, "junit_tests"] = count_of_tests(
             row["repo"],
             row["branch"],
             token
@@ -63,7 +63,7 @@ def count_of_tests(repo, branch, token) -> int:
             f"https://raw.githubusercontent.com/{repo}/refs/heads/{branch}/{path}"
         ).text
         logger.debug(f"Checking {path}")
-        for annotation in JUNIT_TEST_ANNOTATIONS:
+        for annotation in TEST_ANNOTATIONS:
             found += content.count(f"@{annotation}")
     logger.info(f"Found {found} tests in {len(files)} files inside {repo}")
     return found
