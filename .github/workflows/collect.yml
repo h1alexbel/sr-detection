@@ -74,12 +74,10 @@ jobs:
             just swc "../after-mcw.csv" "../after-swc.csv"
             just extract "../after-swc.csv" "../after-extract.csv"
             just snippets "../after-extract.csv" "../after-snippets.csv"
-            just maven "../after-snippets.csv" "$TOKEN" "../after-maven.csv"
-            just junit "../after-maven.csv" "$TOKEN" "../after-junit.csv"
-            just lens "../after-junit.csv" "../after-lens.csv"
-            cat "after-lens.csv"
+            just junit "../after-snippets.csv" "$TOKEN" "../after-junit.csv"
+            just maven "../after-junit.csv" "$TOKEN" "../after-maven.csv"
+            just lens "../after-maven.csv" "../after-lens.csv"
             just links "../after-lens.csv" "../after-links.csv"
-            cat "after-links.csv"
             just final "../after-links.csv" "../final.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
