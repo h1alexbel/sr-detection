@@ -1,5 +1,5 @@
 """
-Tests count in repo.
+Count of JUnit tests in repo.
 """
 # The MIT License (MIT)
 #
@@ -23,18 +23,43 @@ Tests count in repo.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import pandas as pd
+import requests
 from loguru import logger
+from sr_data.steps.maven import request
 
+TEST_FILE_SUFFIXES = (
+    "Test.java", "TestCase.java", "IT.java", "ITCase.java"
+)
+
+TEST_ANNOTATIONS = (
+    "Test", "Parametrized"
+)
 
 def main(repos, out):
     frame = pd.read_csv(repos)
-    logger.info(f"Counting tests in {len(frame)} repositories")
-    for idx, row  in frame.iterrows():
-        frame.at[idx, "tests"] = count_of_tests(row["repo"], row["branch"])
+    logger.info(f"Counting JUnit tests in {len(frame)} repositories")
+    for idx, row in frame.iterrows():
+        frame.at[idx, "tests"] = count_of_tests(row["repo"], row["branch"], "")
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
-def count_of_tests(repo, branch) -> int:
+
+def count_of_tests(repo, branch, token) -> int:
+    files = [
+        file for file in request(token, repo)["tree"] if file["path"].endswith(
+            TEST_FILE_SUFFIXES
+        )
+    ]
     found = 0
+    for file in files:
+        path = file["path"]
+        content = requests.get(
+            f"https://raw.githubusercontent.com/{repo}/refs/heads/{branch}/{path}"
+        ).text
+        logger.debug(f"Found {path}")
+        logger.debug(f"Looking for tests with {TEST_ANNOTATIONS}")
+        for annotation in TEST_ANNOTATIONS:
+            found += content.count(f"@{annotation}")
+    # found = len(files)
     logger.info(f"Found {found} tests in {repo}")
     return found
