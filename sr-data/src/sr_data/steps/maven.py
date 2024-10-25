@@ -55,7 +55,7 @@ def main(repos, out, token):
             frame.at[idx, "maven_jars_count"] = 0
             frame.at[idx, "maven_poms_count"] = 0
     before = len(frame)
-    frame = frame[frame.projects != 0]
+    frame = frame[frame.maven_projects_count != 0]
     logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
