@@ -68,6 +68,6 @@ class TestMcw(unittest.TestCase):
                 path
             )
             self.assertEqual(
-                pd.read_csv(path).iloc[0]["mcw"],
+                pd.read_csv(path).iloc[0]["readme_mcw"],
                 "['policy', 'keycloak', 'file', 'demo', 'http']"
             )

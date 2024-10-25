@@ -109,7 +109,7 @@ class TestExtract(unittest.TestCase):
             )
 
     @pytest.mark.fast
-    def test_calculates_hnum_in_readme(self):
+    def test_calculates_hcount_in_readme(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "extracted.csv")
             main(
@@ -120,4 +120,4 @@ class TestExtract(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["hnum"],3)
+            self.assertEqual(frame.iloc[0]["readme_hcount"],3)

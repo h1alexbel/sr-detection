@@ -63,6 +63,6 @@ class TestSwc(unittest.TestCase):
                 config
             )
             out = pd.read_csv(path)
-            self.assertEqual(out.iloc[0]["example_wc"], 4)
-            self.assertEqual(out.iloc[0]["sample_wc"], 0)
-            self.assertEqual(out.iloc[0]["demo_wc"], 14)
+            self.assertEqual(out.iloc[0]["readme_example_count"], 4)
+            self.assertEqual(out.iloc[0]["readme_sample_count"], 0)
+            self.assertEqual(out.iloc[0]["readme_demo_count"], 14)

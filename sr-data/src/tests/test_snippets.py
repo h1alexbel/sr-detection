@@ -76,5 +76,5 @@ class TestSnippets(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["snippets"], 0)
-            self.assertEqual(frame.iloc[1]["snippets"], 16)
+            self.assertEqual(frame.iloc[0]["readme_snippets_count"], 0)
+            self.assertEqual(frame.iloc[1]["readme_snippets_count"], 16)

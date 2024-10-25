@@ -77,6 +77,6 @@ class TestLens(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["rlen"], 2487)
-            self.assertEqual(frame.iloc[0]["avg_slen"], 24.666666666666668)
-            self.assertEqual(frame.iloc[0]["avg_wlen"], 5.1567567567567565)
+            self.assertEqual(frame.iloc[0]["readme_len"], 2487)
+            self.assertEqual(frame.iloc[0]["readme_avg_slen"], 24.666666666666668)
+            self.assertEqual(frame.iloc[0]["readme_avg_wlen"], 5.1567567567567565)

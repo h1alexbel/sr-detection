@@ -31,8 +31,8 @@ from loguru import logger
 def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(f"Counting links in {len(frame)} repositories")
-    frame["links"] = frame["readme"].apply(links)
-    frame["links_count"] = frame["links"].apply(len)
+    frame["readme_links"] = frame["readme"].apply(links)
+    frame["readme_links_count"] = frame["links"].apply(len)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 

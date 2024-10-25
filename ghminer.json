@@ -2,7 +2,7 @@
   "repo": "nameWithOwner",
   "branch": "defaultBranchRef.name",
   "readme": "defaultBranchRef.target.repository.object.text",
-  "releases": "releases.totalCount",
-  "issues": "issues.totalCount",
-  "branches": "refs.totalCount"
+  "releases_count": "releases.totalCount",
+  "open_issues_count": "issues.totalCount",
+  "branches_count": "refs.totalCount"
 }

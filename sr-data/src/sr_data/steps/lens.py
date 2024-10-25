@@ -34,9 +34,9 @@ def main(repos, out):
     logger.info(
         f"Calculating `rlen`, `avg_slen`, `avg_wlen` for {len(frame)} repositories"
     )
-    frame["rlen"] = frame["readme"].apply(rlen)
-    frame["avg_slen"] = frame["readme"].apply(avg_slen)
-    frame["avg_wlen"] = frame["readme"].apply(avg_wlen)
+    frame["readme_len"] = frame["readme"].apply(rlen)
+    frame["readme_avg_slen"] = frame["readme"].apply(avg_slen)
+    frame["readme_avg_wlen"] = frame["readme"].apply(avg_wlen)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 

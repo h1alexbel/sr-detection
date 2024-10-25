@@ -43,7 +43,7 @@ def main(repos, out):
     logger.info("Extracting headings from README files...")
     frame = pd.read_csv(repos)
     frame["headings"] = frame["readme"].apply(headings)
-    frame["hnum"] = frame["headings"].apply(hnum)
+    frame["readme_hcount"] = frame["headings"].apply(readme_hcount)
     before = len(frame)
     frame = frame.dropna(subset=["headings"])
     headingless = len(frame)
@@ -68,7 +68,7 @@ def main(repos, out):
     frame.to_csv(out, index=False)
 
 
-def hnum(headings):
+def readme_hcount(headings):
     return len(headings)
 
 

@@ -1,7 +1,6 @@
 """
 Tests for links.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,6 +22,7 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
@@ -84,10 +84,10 @@ class TestLinks(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertEqual(
-                frame.iloc[0]["links"],
+                frame.iloc[0]["readme_links"],
                 "['Test', 'Test2 -> ref']"
             )
             self.assertEqual(
-                frame.iloc[0]["links_count"],
+                frame.iloc[0]["readme_links_count"],
                 2
             )

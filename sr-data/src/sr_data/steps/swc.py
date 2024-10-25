@@ -33,7 +33,7 @@ def main(repos, out, config):
     with open(config) as file:
         for line in file:
             word = line.strip()
-            stat = f"{word}_wc"
+            stat = f"readme_{word}_count"
             frame[stat] = frame.apply(
                 lambda row: word_count(row["repo"], word, row["readme"]),
                 axis=1

@@ -42,18 +42,18 @@ def main(repos, out, token):
     for idx, row in frame.iterrows():
         profile = pom(row["repo"], row["branch"], token)
         if profile is not None:
-            frame.at[idx, "projects"] = profile["projects"]
+            frame.at[idx, "maven_projects_count"] = profile["projects"]
             plugins = ",".join(profile["plugins"])
-            frame.at[idx, "plugins"] = f"[{plugins}]"
-            frame.at[idx, "pwars"] = profile["packages"]["wars"]
-            frame.at[idx, "pjars"] = profile["packages"]["jars"]
-            frame.at[idx, "ppoms"] = profile["packages"]["poms"]
+            frame.at[idx, "maven_plugins"] = f"[{plugins}]"
+            frame.at[idx, "maven_wars_count"] = profile["packages"]["wars"]
+            frame.at[idx, "maven_jars_count"] = profile["packages"]["jars"]
+            frame.at[idx, "maven_poms_count"] = profile["packages"]["poms"]
         else:
-            frame.at[idx, "projects"] = 0
-            frame.at[idx, "plugins"] = "[]"
-            frame.at[idx, "pwars"] = 0
-            frame.at[idx, "pjars"] = 0
-            frame.at[idx, "ppoms"] = 0
+            frame.at[idx, "maven_projects_count"] = 0
+            frame.at[idx, "maven_plugins"] = "[]"
+            frame.at[idx, "maven_wars_count"] = 0
+            frame.at[idx, "maven_jars_count"] = 0
+            frame.at[idx, "maven_poms_count"] = 0
     before = len(frame)
     frame = frame[frame.projects != 0]
     logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
