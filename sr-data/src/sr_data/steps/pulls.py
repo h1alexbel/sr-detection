@@ -31,7 +31,7 @@ from requests import Response
 def main(repos, out, token):
     frame = pd.read_csv(repos)
     for idx, row in frame.iterrows():
-        frame.at[idx, "pulls"] = pulls(row["repo"], token)
+        frame.at[idx, "pulls_count"] = pulls(row["repo"], token)
     frame.to_csv(out, index=False)
 
 

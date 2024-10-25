@@ -44,4 +44,4 @@ class TestPulls(unittest.TestCase):
                 path,
                 os.environ["GH_TESTING_TOKEN"]
             )
-            self.assertTrue("pulls" in pd.read_csv(path).columns)
+            self.assertTrue("pulls_count" in pd.read_csv(path).columns)
