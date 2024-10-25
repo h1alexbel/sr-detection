@@ -47,13 +47,13 @@ class TestMaven(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertEqual(
-                frame.iloc[0]["plugins"],
+                frame.iloc[0]["maven_plugins"],
                 "[com.github.volodya-lombrozo:jtcop-maven-plugin,maven-surefire-plugin,org.apache.maven.plugins:maven-checkstyle-plugin,org.apache.maven.plugins:maven-compiler-plugin,org.apache.maven.plugins:maven-gpg-plugin,org.apache.maven.plugins:maven-invoker-plugin,org.apache.maven.plugins:maven-javadoc-plugin,org.apache.maven.plugins:maven-source-plugin,org.apache.maven.plugins:maven-verifier-plugin,org.jacoco:jacoco-maven-plugin,org.sonatype.plugins:nexus-staging-maven-plugin,ru.l3r8y:sa-tan]"
             )
-            self.assertEqual(frame.iloc[0]["projects"], 1.0)
-            self.assertEqual(frame.iloc[0]["pwars"], 0.0)
-            self.assertEqual(frame.iloc[0]["pjars"], 1.0)
-            self.assertEqual(frame.iloc[0]["ppoms"], 0.0)
+            self.assertEqual(frame.iloc[0]["maven_projects_count"], 1.0)
+            self.assertEqual(frame.iloc[0]["maven_wars_count"], 0.0)
+            self.assertEqual(frame.iloc[0]["maven_jars_count"], 1.0)
+            self.assertEqual(frame.iloc[0]["maven_poms_count"], 0.0)
 
     @pytest.mark.nightly
     def test_skips_repos_without_maven(self):
@@ -84,7 +84,7 @@ class TestMaven(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertEqual(
-                frame.iloc[0]["plugins"],
+                frame.iloc[0]["maven_plugins"],
                 "[org.jetbrains.kotlin:kotlin-maven-plugin,org.springframework.boot:spring-boot-maven-plugin]"
             )
 
@@ -123,8 +123,8 @@ class TestMaven(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertEqual(len(frame.columns), 7)
-            self.assertTrue("projects" in frame.columns)
-            self.assertTrue("plugins" in frame.columns)
-            self.assertTrue("pwars" in frame.columns)
-            self.assertTrue("pjars" in frame.columns)
-            self.assertTrue("ppoms" in frame.columns)
+            self.assertTrue("maven_projects_count" in frame.columns)
+            self.assertTrue("maven_plugins" in frame.columns)
+            self.assertTrue("maven_wars_count" in frame.columns)
+            self.assertTrue("maven_jars_count" in frame.columns)
+            self.assertTrue("maven_poms_count" in frame.columns)
