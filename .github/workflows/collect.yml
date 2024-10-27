@@ -82,17 +82,24 @@ jobs:
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
           mkdir -p "collection/${{ inputs.out }}/steps"
-          cp "repos.csv" "collection/${{ inputs.out }}/steps/"
-          cp "repos-with-pulls.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-filter.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-mcw.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-swc.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-extract.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-snippets.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-maven.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-junit.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-lens.csv" "collection/${{ inputs.out }}/steps/"
-          cp "after-links.csv" "collection/${{ inputs.out }}/steps/"
+          files=(
+            "repos.csv"
+            "repos-with-pulls.csv"
+            "after-filter.csv"
+            "after-mcw.csv"
+            "after-swc.csv"
+            "after-extract.csv"
+            "after-snippets.csv"
+            "after-maven.csv"
+            "after-junit.csv"
+            "after-lens.csv"
+            "after-links.csv"
+          )
+          id=1
+          for file in "${files[@]}"; do
+            cp "$file" "collections/${{ inputs.out }}/steps/$(printf '%02d' "$id")-$file"
+            id="$((id+1))"
+          done
           cp "collect.log" "collection/${{ inputs.out }}"
           cp "final.csv" "collection/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
