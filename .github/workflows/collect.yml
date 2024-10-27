@@ -98,7 +98,7 @@ jobs:
           id=1
           for file in "${files[@]}"; do
             cp "$file" "collections/${{ inputs.out }}/steps/$(printf '%02d' $i)-$file"
-            id=$((i+1))
+            id=$((id+1))
           done
           cp "collect.log" "collection/${{ inputs.out }}"
           cp "final.csv" "collection/${{ inputs.out }}"
