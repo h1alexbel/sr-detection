@@ -78,7 +78,8 @@ jobs:
             just maven "../after-junit.csv" "$TOKEN" "../after-maven.csv"
             just lens "../after-maven.csv" "../after-lens.csv"
             just links "../after-lens.csv" "../after-links.csv"
-            just final "../after-links.csv" "../final.csv"
+            just ghmentions "../after-links.csv" "../after-ghmentions.csv"
+            just final "../after-ghmentions.csv" "../final.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
           mkdir -p "collection/${{ inputs.out }}/steps"
@@ -93,7 +94,8 @@ jobs:
             "after-maven.csv"
             "after-junit.csv"
             "after-lens.csv"
-            "after-links.csv"
+            "after-links.csv",
+            "after-ghmentions.csv"
           )
           id=1
           for file in "${files[@]}"; do
