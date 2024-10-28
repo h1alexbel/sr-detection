@@ -22,10 +22,13 @@ Tests for gh_mentions.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os
 import unittest
+from tempfile import TemporaryDirectory
 
+import pandas as pd
 import pytest
-from sr_data.steps.gh_mentions import mentions
+from sr_data.steps.gh_mentions import mentions, main
 
 
 class TestGhMentions(unittest.TestCase):
@@ -61,3 +64,18 @@ class TestGhMentions(unittest.TestCase):
             expected,
             f"Found mentions: {github} don't match with expected: {expected}"
         )
+
+    @pytest.mark.fast
+    def test_founds_mentions(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "mentions.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-ghmentions.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(frame.iloc[0]["readme_imentions"], 1)
+            self.assertEqual(frame.iloc[0]["readme_pmentions"], 1)
