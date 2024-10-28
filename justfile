@@ -117,6 +117,10 @@ snippets repos out="experiment/after-snippets.csv":
 links repos out="experiment/after-links.csv":
   cd sr-data && poetry poe links --repos {{repos}} --out {{out}}
 
+# GitHub pull requests and issues mentions
+ghmentions repos out="experiment/after-ghmentions.csv":
+  cd sr-data && poetry poe ghmentions --repos {{repos}} --out {{out}}
+
 # Compose all found metadata into final CSV.
 final latest out="experiment/final.csv":
   cd sr-data && poetry poe final --latest {{latest}} --out {{out}}
