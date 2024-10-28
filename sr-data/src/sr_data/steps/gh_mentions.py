@@ -33,8 +33,12 @@ def main(repos, out):
     logger.info(
         f"Counting GitHub pull request, and issue mentions in {len(frame)} repositories"
     )
-    frame[["readme_pmentions", "readme_imentions"]] = (
-        frame["readme"].apply(mentions)).apply(pd.Series)
+    if frame.empty:
+        frame["readme_pmentions"] = 0
+        frame["readme_imentions"] = 0
+    else:
+        frame[["readme_pmentions", "readme_imentions"]] = (
+            frame["readme"].apply(mentions)).apply(pd.Series)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
