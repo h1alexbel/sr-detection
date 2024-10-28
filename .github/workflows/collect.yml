@@ -94,7 +94,7 @@ jobs:
             "after-maven.csv"
             "after-junit.csv"
             "after-lens.csv"
-            "after-links.csv",
+            "after-links.csv"
             "after-ghmentions.csv"
           )
           id=1
