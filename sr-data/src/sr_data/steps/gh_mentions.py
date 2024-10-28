@@ -22,6 +22,8 @@ Count of mentioning GitHub pull request or issue in READMEs.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import re
+
 import pandas as pd
 from loguru import logger
 
@@ -31,15 +33,14 @@ def main(repos, out):
     logger.info(
         f"Counting GitHub pull request, and issue mentions in {len(frame)} repositories"
     )
-    frame["readme_pmentions"] = frame["readme"].apply(pull_mentions)
-    frame["readme_imentions"] = frame["readme"].apply(issue_mentions)
+    frame[["readme_pmentions", "readme_imentions"]] = (
+        frame["readme"].apply(mentions)).apply(pd.Series)
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
-def pull_mentions(readme):
-    return 0
-
-
-def issue_mentions(readme):
-    return 1
+def mentions(readme) -> [int, int]:
+    return (
+        len(re.findall(r"https://github\.com/.+/pull/\d+", readme)),
+        len(re.findall(r"https://github\.com/.+/issues/\d+", readme))
+    )
