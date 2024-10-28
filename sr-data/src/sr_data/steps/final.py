@@ -45,6 +45,8 @@ def main(latest, out):
             "readme_demonstration_count",
             "readme_links",
             "readme_links_count",
+            "readme_pmentions",
+            "readme_imentions",
             "maven_projects_count",
             "maven_plugins",
             "maven_wars_count",
