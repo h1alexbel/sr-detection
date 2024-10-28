@@ -79,3 +79,17 @@ class TestGhMentions(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertEqual(frame.iloc[0]["readme_imentions"], 1)
             self.assertEqual(frame.iloc[0]["readme_pmentions"], 1)
+
+    @pytest.mark.fast
+    def test_returns_zero_records_on_empty_input(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "mentions.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-ghmentions-empty.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertTrue(frame.empty)
