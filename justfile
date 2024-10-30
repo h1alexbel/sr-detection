@@ -89,6 +89,10 @@ test-collect:
     --start "2024-05-01" --end "2024-05-01" --tokens "$PATS" \
     --filename "tmp/test-repos"
 
+# License filter.
+license_filter repos out="experiment/after-license-filter.csv":
+  cd sr-data && poetry poe license_filter --repos "{{repos}}" --out "{{out}}"
+
 # Filter collected repositories.
 filter repos out="experiment/after-filter.csv":
   cd sr-data && poetry poe filter --repos "{{repos}}" --out "{{out}}"
