@@ -34,6 +34,9 @@ query ($searchQuery: String!, $first: Int, $after: String) {
         issues(states: [OPEN]) {
           totalCount
         }
+        licenseInfo {
+          spdxId
+        }
       }
     }
     pageInfo {

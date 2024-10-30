@@ -4,5 +4,6 @@
   "readme": "defaultBranchRef.target.repository.object.text",
   "releases_count": "releases.totalCount",
   "open_issues_count": "issues.totalCount",
-  "branches_count": "refs.totalCount"
+  "branches_count": "refs.totalCount",
+  "license": "licenseInfo.spdxId"
 }
