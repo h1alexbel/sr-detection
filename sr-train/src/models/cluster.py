@@ -1,5 +1,5 @@
 """
-Cluster.
+Clustering models.
 """
 # The MIT License (MIT)
 #

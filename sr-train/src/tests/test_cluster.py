@@ -1,5 +1,5 @@
 """
-Test case for cluster step.
+Test case for cluster models.
 """
 # The MIT License (MIT)
 #
@@ -27,7 +27,7 @@ import unittest
 from tempfile import TemporaryDirectory
 
 import pytest
-from sr_data.steps.cluster import kmeans, cmeans, agglomerative, dbscan, gmm, hdbscan
+from models.cluster import kmeans, cmeans, agglomerative, dbscan, gmm, hdbscan
 
 
 class TestCluster(unittest.TestCase):
