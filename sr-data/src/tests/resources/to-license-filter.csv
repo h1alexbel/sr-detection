@@ -1,0 +1,7 @@
+repo,license
+foo/bar,MIT
+foo/abc,mit
+foo/xyz,apache-2.0
+foo/xyz,Apache-2.0
+foo/a,WRONG
+foo/b,invalid
