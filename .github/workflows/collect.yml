@@ -68,7 +68,8 @@ jobs:
             poetry install
             just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
               "${{ inputs.end }}" "repos"
-            just pulls "../repos.csv" "$TOKEN" "../repos-with-pulls.csv"
+            just license_filter "../repos.csv" "../after-license-filter.csv"
+            just pulls "../after-license-filter.csv" "$TOKEN" "../repos-with-pulls.csv"
             just filter "../repos-with-pulls.csv" "../after-filter.csv"
             just mcw "../after-filter.csv" "../after-mcw.csv"
             just swc "../after-mcw.csv" "../after-swc.csv"
@@ -85,6 +86,7 @@ jobs:
           mkdir -p "collection/${{ inputs.out }}/steps"
           files=(
             "repos.csv"
+            "after-license-filter.csv"
             "repos-with-pulls.csv"
             "after-filter.csv"
             "after-mcw.csv"
