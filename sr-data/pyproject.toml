@@ -73,10 +73,6 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.combination:main(scores, embeddings, dir)"
 args = [{name = "scores"}, {name = "embeddings"}, {name = "dir"}]
 
-[tool.poe.tasks.cluster]
-script = "sr_data.steps.cluster:main(dataset, dir)"
-args = [{name = "dataset"}, {name = "dir"}]
-
 [tool.poe.tasks.labels]
 script = "sr_data.steps.labels:main(repos, dir)"
 args = [{name = "repos"}, {name = "dir"}]

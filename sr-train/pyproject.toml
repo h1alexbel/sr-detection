@@ -22,14 +22,19 @@
 [tool.poetry]
 name = "sr-train"
 version = "0.0.0"
-description = ""
+description = "Training of ML models in order to identify sample repositories"
 authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{ include = "models", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10 || ^3.11 || ^3.12"
+scikit-learn = "1.5.2"
 
+[tool.poe.tasks.cluster]
+script = "models.cluster:main(dataset, dir)"
+args = [{name = "dataset"}, {name = "dir"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]
