@@ -121,3 +121,16 @@ class TestExtract(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertEqual(frame.iloc[0]["readme_hcount"],3)
+
+    @pytest.mark.fast
+    def test_skips_repo_with_null_headings(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "extracted.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-extract-null-headings.csv"
+                ),
+                path
+            )
+            self.assertEqual(len(pd.read_csv(path)), 0)
