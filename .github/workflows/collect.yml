@@ -106,7 +106,7 @@ jobs:
           done
           cp "collect.log" "collection/${{ inputs.out }}"
           cp "final.csv" "collection/${{ inputs.out }}"
-      - uses: JamesIves/github-pages-deploy-action@v4.6.8
+      - uses: JamesIves/github-pages-deploy-action@v4.6.9
         with:
           branch: collect
           folder: collection
