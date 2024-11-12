@@ -132,7 +132,7 @@ final latest out="experiment/final.csv":
 
 # Create embeddings.
 embed repos prefix="experiment/embeddings":
-  cd sr-data && poetry poe embed --repos {{repos}} --prefix {{prefix}} \
+  cd sr-data && poetry poe embed --repos "{{repos}}" --prefix {{prefix}} \
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
