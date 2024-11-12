@@ -42,9 +42,10 @@ class TestCombination(unittest.TestCase):
                     os.path.dirname(os.path.realpath(__file__)),
                     "resources/embeddings.csv"
                 ),
-                temp
+                temp,
+                "1"
             )
-            out = os.path.join(temp, "scores+embeddings.csv")
+            out = os.path.join(temp, "d1-scores+embeddings.csv")
             combination = pd.read_csv(out)
             cols = 5
             self.assertEqual(
