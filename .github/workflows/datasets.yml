@@ -45,6 +45,8 @@ name: datasets
 permissions: write-all
 env:
   PATS: pats.txt
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  COHERE_TOKEN: ${{ secrets.COHERE_TOKEN }}
 jobs:
   collect:
     runs-on: ubuntu-24.04
