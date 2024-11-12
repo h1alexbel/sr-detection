@@ -48,7 +48,7 @@ env:
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
   COHERE_TOKEN: ${{ secrets.COHERE_TOKEN }}
 jobs:
-  collect:
+  create:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -78,7 +78,7 @@ jobs:
             cp "embeddings-s-bert-384.csv" "sbert.csv"
             cp "embeddings-e5-1024.csv" "e5.csv"
             cp "embeddings-embedv3-1024.csv" "embedv3.csv"
-            just datasets "../" "../after-extract.csv"
+            just datasets "../" "after-extract.csv"
           } 2>&1 | tee -a collect.log
           sed -i "s|$TOKEN|REDACTED|g" collect.log
           sed -i "s|$HF_TOKEN|REDACTED|g" collect.log
