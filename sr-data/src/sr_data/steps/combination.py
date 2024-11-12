@@ -39,7 +39,7 @@ def main(scores, embeddings, dir, identifier):
     """
     logger.info(f"Combining {scores} + {embeddings}")
     out = (
-        f"{dir}/{identifier}-{os.path.splitext(os.path.basename(scores))[0]}"
+        f"{dir}/d{identifier}-{os.path.splitext(os.path.basename(scores))[0]}"
         f"+{os.path.splitext(os.path.basename(embeddings))[0]}.csv"
     )
     pd.merge(
