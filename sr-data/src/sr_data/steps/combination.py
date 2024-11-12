@@ -28,17 +28,18 @@ import pandas as pd
 from loguru import logger
 
 
-def main(scores, embeddings, dir):
+def main(scores, embeddings, dir, identifier):
     """
     Combination of datasets.
     :param scores: Dataset with SR-score
     :param embeddings: Dataset with embeddings
     :param dir: Output directory
+    :param identifier Dataset identifier
     :return:
     """
     logger.info(f"Combining {scores} + {embeddings}")
     out = (
-        f"{dir}/{os.path.splitext(os.path.basename(scores))[0]}"
+        f"{dir}/{identifier}-{os.path.splitext(os.path.basename(scores))[0]}"
         f"+{os.path.splitext(os.path.basename(embeddings))[0]}.csv"
     )
     pd.merge(

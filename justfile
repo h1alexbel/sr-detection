@@ -136,28 +136,25 @@ embed repos prefix="experiment/embeddings":
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
-datasets dir="experiment":
-  just numerical "{{dir}}/after-extract.csv"
-  just scores "{{dir}}/after-extract.csv"
-  cp "sr-data/{{dir}}/embeddings-s-bert-384.csv" "sr-data/{{dir}}/sbert.csv"
-  cp "sr-data/{{dir}}/embeddings-e5-1024.csv" "sr-data/{{dir}}/e5.csv"
-  cp "sr-data/{{dir}}/embeddings-embedv3-1024.csv" "sr-data/{{dir}}/embedv3.csv"
-  just combination {{dir}} "{{dir}}/sbert.csv"
-  just combination {{dir}} "{{dir}}/e5.csv"
-  just combination {{dir}} "{{dir}}/embedv3.csv"
+datasets dir="experiment" numbase="after-extract.csv":
+  just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
+  just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
+  just combination "{{dir}}" "{{dir}}/sbert.csv" "{{dir}}/scores.csv" 5
+  just combination "{{dir}}" "{{dir}}/e5.csv" "{{dir}}/scores.csv" 6
+  just combination "{{dir}}" "{{dir}}/embedv3.csv" "{{dir}}/scores.csv" 7
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
-  cd sr-data && poetry poe scores --repos {{repos}} --out {{out}}
+  cd sr-data && poetry poe scores --repos "{{repos}}" --out "{{out}}"
 
 # Create all numerical dataset.
 numerical repos out="experiment/numerical.csv":
-  cd sr-data && poetry poe numerical --repos {{repos}} --out {{out}}
+  cd sr-data && poetry poe numerical --repos "{{repos}}" --out "{{out}}"
 
 # Create dataset from combination.
 combination dir embeddings scores="experiment/scores.csv":
-  cd sr-data && poetry poe combination --scores {{scores}} \
-    --embeddings {{embeddings}} --dir {{dir}}
+  cd sr-data && poetry poe combination --scores "{{scores}}" \
+    --embeddings "{{embeddings}}" --dir "{{dir}}"
 
 # Cluster repositories.
 cluster dir="experiment":

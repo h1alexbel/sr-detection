@@ -74,8 +74,13 @@ script = "sr_data.steps.scores:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
 [tool.poe.tasks.combination]
-script = "sr_data.steps.combination:main(scores, embeddings, dir)"
-args = [{name = "scores"}, {name = "embeddings"}, {name = "dir"}]
+script = "sr_data.steps.combination:main(scores, embeddings, dir, identifier)"
+args = [
+    {name = "scores"},
+    {name = "embeddings"},
+    {name = "dir"},
+    {name = "identifier"}
+]
 
 [tool.poe.tasks.labels]
 script = "sr_data.steps.labels:main(repos, dir)"
