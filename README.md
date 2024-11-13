@@ -38,7 +38,17 @@ docker run  --rm -v "$(pwd)/output:/collection" \
   -e OUT="sr-data" h1alexbel/sr-detection
 ```
 
-Or, you can download existing datasets from [gh-pages] branch.
+In the output directory you should have these files:
+
+* `d1-scores.csv`
+* `d2-sbert.csv`
+* `d3-e5.csv`
+* `d4-embedv3.csv`
+* `d5-scores+sbert.csv`
+* `d6-scores+e5.csv`
+* `d7-scores+embedv3.csv`
+
+Alternatively, you can download existing datasets from [gh-pages] branch.
 
 ### Metadata collection
 
