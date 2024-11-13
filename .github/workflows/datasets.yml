@@ -43,10 +43,6 @@ name: datasets
           - false
           - true
 permissions: write-all
-env:
-  PATS: pats.txt
-  HF_TOKEN: ${{ secrets.HF_TOKEN }}
-  COHERE_TOKEN: ${{ secrets.COHERE_TOKEN }}
 jobs:
   create:
     runs-on: ubuntu-24.04
@@ -63,53 +59,17 @@ jobs:
           just-version: "1.30.1"
       - name: Create
         run: |
-          echo "${{ secrets.COLLECT_TOKEN_1 }}" >> "$PATS"
-          TOKEN="${{ secrets.GITHUB_TOKEN }}"
-          {
-            just install
-            poetry install
-            just collect "collection/${{ inputs.out }}" "${{ inputs.start }}" \
-              "${{ inputs.end }}" "repos"
-            just license_filter "../repos.csv" "../after-license-filter.csv"
-            just pulls "../after-license-filter.csv" "$TOKEN" "../repos-with-pulls.csv"
-            just filter "../repos-with-pulls.csv" "../after-filter.csv"
-            just extract "../after-filter.csv" "../after-extract.csv"
-            just embed "../after-extract.csv" "../embeddings"
-            cp "embeddings-s-bert-384.csv" "sbert.csv"
-            cp "embeddings-e5-1024.csv" "e5.csv"
-            cp "embeddings-embedv3-1024.csv" "embedv3.csv"
-            just datasets "../" "after-extract.csv"
-          } 2>&1 | tee -a collect.log
-          sed -i "s|$TOKEN|REDACTED|g" collect.log
-          sed -i "s|$HF_TOKEN|REDACTED|g" collect.log
-          sed -i "s|$COHERE_TOKEN|REDACTED|g" collect.log
-          mkdir -p "collection/${{ inputs.out }}/steps"
-          files=(
-            "repos.csv"
-            "after-license-filter.csv"
-            "repos-with-pulls.csv"
-            "after-filter.csv"
-            "after-extract.csv"
-            "embeddings-s-bert-384.csv"
-            "embeddings-e5-1024.csv"
-            "embeddings-embedv3-1024.csv"
-          )
-          id=1
-          for file in "${files[@]}"; do
-            cp "$file" "collection/${{ inputs.out }}/steps/$(printf '%02d' "$id")-$file"
-            id="$((id+1))"
-          done
-          cp "collect.log" "collection/${{ inputs.out }}"
-          cp "scores.csv" "collection/${{ inputs.out }}/d1-scores.csv"
-          cp "sbert.csv" "collection/${{ inputs.out }}/d2-sbert.csv"
-          cp "e5.csv" "collection/${{ inputs.out }}/d3-e5.csv"
-          cp "embedv3.csv" "collection/${{ inputs.out }}/d4-embedv3.csv"
-          cp "d5-scores+sbert.csv" "collection/${{ inputs.out }}"
-          cp "d6-scores+e5.csv" "collection/${{ inputs.out }}"
-          cp "d7-scores+embedv3.csv" "collection/${{ inputs.out }}"
+          docker run  --rm -v "$(pwd)/output:/collection" \
+            -e START="${{ inputs.start }}" -e END="${{ inputs.end }}" \
+            -e COLLECT_TOKEN="${{ secrets.COLLECT_TOKEN_1 }}" \
+            -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
+            -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
+            -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
+            -e OUT="${{ inputs.out }}"
+            h1alexbel/sr-detection
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
         with:
           branch: collect
-          folder: collection
+          folder: output
           clean: ${{ inputs.clean }}
         if: github.ref == 'refs/heads/master'
