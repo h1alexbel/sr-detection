@@ -65,7 +65,7 @@ jobs:
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
-            -e OUT="${{ inputs.out }}"
+            -e OUT="${{ inputs.out }}" \
             h1alexbel/sr-detection
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
         with:
