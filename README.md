@@ -38,7 +38,7 @@ docker run  --rm -v "$(pwd)/output:/collection" \
   -e OUT="sr-data" h1alexbel/sr-detection
 ```
 
-Also, you can download existing datasets from [gh-pages] branch.
+Or, you can download existing datasets from [gh-pages] branch.
 
 ### Metadata collection
 
