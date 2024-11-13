@@ -136,7 +136,7 @@ embed repos prefix="experiment/embeddings":
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
-# @todo #134:35min: Remove run ad-hoc solution for just command resolvement.
+# @todo #134:35min: Remove run ad-hoc solution for just command resolution.
 #  Now, we passing run parameter from recipe to nested just invocations in
 #  order to resolve just command. We should refine our usage of full path in
 #  the entire justfile.
