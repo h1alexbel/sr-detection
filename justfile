@@ -140,6 +140,10 @@ embed repos prefix="experiment/embeddings":
 #  Now, we passing run parameter from recipe to nested just invocations in
 #  order to resolve just command. We should refine our usage of full path in
 #  the entire justfile.
+# @todo #134:45min: Refactor recipes to be more optimally granular.
+#  We should create more major recipes in order to reuse across the project.
+#  The example of such step is `@experiment`. Let's do similar to the script
+#  inside `data.sh`, so it can be invoked from just using datasets step.
 datasets run dir="experiment" numbase="after-extract.csv":
   "{{run}}"/just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
   "{{run}}"/just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
