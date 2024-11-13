@@ -136,12 +136,13 @@ embed repos prefix="experiment/embeddings":
     --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
 
 # Create datasets.
-datasets dir="experiment" numbase="after-extract.csv":
-  just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
-  just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
-  just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
-  just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
-  just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
+# @todo #134:35min: Remove run ad-hoc solution for just command resolvement.
+datasets run dir="experiment" numbase="after-extract.csv":
+  "{{run}}"/just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
+  "{{run}}"/just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
+  "{{run}}"/just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
+  "{{run}}"/just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
+  "{{run}}"/just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":

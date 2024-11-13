@@ -53,10 +53,16 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y \
   && bash -c '"${HOME}/.cargo/bin/cargo" --version' \
   && bash -c '"${HOME}/.cargo/bin/cargo" install just@1.30.1'
 
+# Run variables.
+ENV RUN="/root/.cargo/bin" \
+    PATS="pats.txt" \
+    OUT="data"
+
+COPY data.sh ./
 COPY sr-data ./sr-data
 COPY sr-train ./sr-train
 COPY pyproject.toml justfile ./
 RUN bash -c '"${HOME}/.cargo/bin/just" install'
 RUN poetry install --no-root
 COPY . .
-ENTRYPOINT ["/root/.cargo/bin/just"]
+ENTRYPOINT ["bash", "./data.sh"]
