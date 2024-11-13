@@ -37,4 +37,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build . -t experiment
-      - run: docker run --rm experiment install
+      - run: |
+          docker run --rm -e START="2024-01-01" -e END="2024-01-02" \
+            -e COLLECT_TOKEN="${{ secrets.COLLECT_TOKEN_1 }}" \
+            -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
+            -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
+            -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}"
+            experiment
