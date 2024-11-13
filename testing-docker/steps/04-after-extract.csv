@@ -1,0 +1,876 @@
+repo,branch,readme,releases_count,open_issues_count,branches_count,license,pulls_count,headings,readme_hcount,mcw
+CleanroomMC/Fugue,master,"# Fugue
+Fix dead mods. [Explain](https://www.etymonline.com/cn/word/fugue)
+
+Also check [The Fugue Plane](https://forgottenrealms.fandom.com/wiki/Fugue_Plane).
+
+## Download
+https://github.com/CleanroomMC/Fugue/releases/latest
+
+If you are still using 0.1.0 Cleanroom, use 0.5.4. But that's not recommended.
+
+## List
+* Charset
+* CodeChickenLib
+* Custom Main Menu
+* Hammer Lib
+* Forge Multipart
+* Project:Red
+* Solar Flux Reborn
+* Xaero Plus
+* EnderCore
+* Lag Goggles
+* Snow! Real Magic
+* Botania Tweaks
+* Advanced Rocketry
+* Entity Distance
+* FoamFix
+* Shoulder Surfing Reloaded
+* SplashAnimation
+* Logistics Pipes
+* OpenDisks
+* OpenSecurity
+* Enchantments Control
+* GregTech CE Unofficial (Before 2.8.8)
+* TFC Medicinal
+* Mcjty Core
+* LoliASM
+* Howling Moon
+* Custom NPCs
+* XNet
+* ZeroCore (ExtremeReactor)
+* Smooth Font
+* Water Power
+* Survival Inc.
+* Subauqatic (Temporary)
+* Nothirium
+* IC2C Extra
+* Simply Hot Spring
+* OpenModsLib
+* Valkyrie (Temporary)
+* ReplayMod
+* Thaumic Speedup (Temporary)
+* Astral Sorcery
+* Armourer's Workshop
+* Vampirism
+* MAGE (Graphical Tweaks)
+* Extra Utilities 2
+* In Control!
+* More Refined Storage
+* Better Formatting Code
+* 5zig
+* Ears
+* Colytra
+* Crossbow
+* Polyfrost mods
+* Carry On
+
+## Note
+Add + to start of the file if it's not there.",56,4,1,GPL-3.0,7.0,"['fugue', 'download', 'list', 'note']",4,"['fugue', 'download', 'list', 'note']"
+dnwwdwd/homieMatching,master,"# homie 匹配系统
+
+> 作者：C1own
+>
+> [Github 主页](https://github.com/dnwwdwd)
+>
+> [CSDN 主页](https://blog.csdn.net/xyendjsj?type=blog)
+
+![](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142339.png)
+
+
+
+## 项目介绍
+
+homie 匹配系统是一个移动端网页的在线云交友平台。实现了按标签匹配、查找用户，基于 Redis GEO 实现搜索附近用户，同时个人还可以建队、组队以打造个人学习队伍。除了添加好友、搜索好友外，还基于 Websocket 实现好友间私聊，方便用户寻找志同道合的学习搭子。
+
+### 线上地址
+
+[厚米匹配系统](http://hm.hejiajun.icu/)
+
+### 前端地址
+
+[homie 匹配前端地址](https://github.com/dnwwdwd/homieMatching-fronted)
+
+### 后端地址
+
+[homie 匹配后端地址](https://github.com/dnwwdwd/homieMatching)
+
+### 项目部署教程
+
+[homie 匹配部署教程](https://blog.csdn.net/xyendjsj/article/details/135921460?spm=1001.2014.3001.5501)
+
+
+
+## 技术选型
+
+### 前端
+
+| 技术       | 用途                       | 版本   |
+| ---------- | -------------------------- | ------ |
+| Vue        | 前端经典框架，方便开发页面 | 3.3.11 |
+| Vue-Router | 细致的导航控制             | 4      |
+| Axios      | 发送请求至后端             | 1.6.2  |
+| Vant       | 移动端样式组件库           | 4.8.0  |
+| Vite       | 前端构建工具               | 5.0.8  |
+
+
+
+### 后端
+
+| 技术                 | 用途                                         | 版本    |
+| -------------------- | -------------------------------------------- | ------- |
+| Spring Boot          | 快构建 Spring 应用                           | 2.7.6   |
+| JDK                  | Java 应用开发工具                            | 1.8     |
+| MyBatis              | 操作数据库的框架                             | 3.5.2   |
+| MyBatis-Plus         | MyBatis的增强框架，无需编写 SQL 语句         | 3.5.2   |
+| MySQL                | 一个关系型数据库产品，用于存储数据           | 8.0..33 |
+| Redis                | 一个非关系型数据库产品，用于存储数据         | 5.      |
+| WebSocket            | 使得客户端和服务器之间的数据交换变得更加简单 | 2.4.1   |
+| Lombok               | 实体类方法的快速生成工具                     |         |
+| knife4j              | 在线接口文档生成的库                         | 2.0.9   |
+| EasyExcel            | 快速、低占用地操作 Excel                     | 3.3.2   |
+| hutool               | 强而全的工具库                               | 5.7.17  |
+| Guava-Retrying       | 提供重试机制的库                             | 1.0.6   |
+| Apache-commons-lang3 | 工具库                                       | 3.12.0  |
+
+
+
+## 个人介绍
+
+一个普通学校的大三学生，即将大四毕业了，正在做毕设。
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142050.jpg"" alt=""597f123b20d2e350ad2916f61c377ef"" style=""zoom: 33%;"" />
+
+> 觉得项目还不错的同学可否给我项目点个 Star 呢？如果可以，小弟不胜感激，谢谢！
+
+## 功能展示
+
+登录
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143001.png"" alt=""image-20240609143001885"" style=""zoom: 67%;"" />
+
+注册
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142952.png"" alt=""image-20240609142952622"" style=""zoom: 67%;"" />
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143117.png"" alt=""image-20240609143117032"" style=""zoom: 67%;"" />
+
+首页
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145323.png"" alt=""image-20240609145323203"" style=""zoom:67%;"" />
+
+按标签匹配相似用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145335.png"" alt=""image-20240609145335696"" style=""zoom:67%;"" />
+
+按标签搜索用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145012.png"" alt=""image-20240609145012357"" style=""zoom:67%;"" />
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145002.png"" alt=""image-20240609145002577"" style=""zoom:67%;"" />
+
+按距离搜索用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145122.png"" alt=""image-20240609145122634"" style=""zoom:67%;"" />
+
+好友页面
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145434.png"" alt=""image-20240609145434695"" style=""zoom:67%;"" />
+
+搜索好友
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609171231.png"" alt=""image-20240609171231079"" style=""zoom:67%;"" />
+
+好友私聊
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145534.png"" alt=""image-20240609145534153"" style=""zoom:67%;"" />
+
+建队
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145549.png"" alt=""image-20240609145549455"" style=""zoom:67%;"" />
+
+个人页面
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143327.png"" alt=""image-20240609143327588"" style=""zoom: 67%;"" />
+
+
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143357.png"" alt=""image-20240609143357705"" style=""zoom:67%;"" />
+
+
+
+## 项目亮点
+
+1. 基于 Spring AOP + Axios 实现前端登录拦截
+2. 基于 Redis 实现分布式 Session 存储
+3. 使用 Redis List 结构配合 Vue-infinite-loading 组件实现滑动加载
+4. Spring Scheduling + Redis 分布式锁实现缓存预热
+5. 了解编辑距离算法，可用于匹配相似字符串，单词校验
+6. 基于 Redis GEO 存储用户地理微信信息，实现搜索附近用户
+7. 基于 Redis 分布式锁防止用户重复入队
+8. 通过 Guava 库实现重试机制，保证缓存数据一致性
+9. 基于 Websocket 实现用户间私聊
+10. 集成第三方库生成接口测试文档，方便测试项目接口
+11. 熟悉 EasyExcel 的使用
+12. 基于 Axios 封装请求实例，方便请求后端接口
+13. 熟悉 Vant 组件库的使用
+14. 熟悉 Vue3 setup 语法
+15. 掌握 Vue-Router 基本使用
+
+
+
+## 数据库表
+
+> 如果大家拉取了后端源码，直接找到 sql/create_sql.sql 文件直接运行即可创建相应数据库和表结构
+
+### 用户表
+
+```sql
+/*用户表*/
+create table hjj.user
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    username     varchar(256)                       null comment '用户昵称',
+    userAccount  varchar(256)                       null comment '账户',
+    avatarUrl    varchar(1024)                      null comment '用户头像' default 'https://www.keaitupian.cn/cjpic/frombd/0/253/936677050/470164789.jpg',
+    gender       tinyint                            null comment '用户性别',
+    profile      varchar(512)                       null comment '个人简介',
+    userPassword varchar(512)                       not null comment '用户密码',
+    phone        varchar(128)                       null comment '电话',
+    email        varchar(512)                       null comment '邮箱',
+    userStatus   int      default 0                 not null comment '状态 0 - 正常',
+    createTime   datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     tinyint  default 0                 not null comment '是否删除',
+    userRole     int      default 0                 not null comment '用户角色 0 - 普通用户 1 - 管理员',
+    planetCode   varchar(512)                       null comment '星球编号',
+    tags         varchar(1024)                      null comment '标签列表(json)',
+    longitude    decimal(10, 6)                     null comment '经度',
+    dimension    decimal(10, 6)                     null comment '纬度'
+)
+    comment '用户';
+```
+
+
+
+### 队伍表
+
+```sql
+/*队伍表*/
+create table if not exists hjj.team
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    teamName   		varchar(256)                        not null comment '队伍名称',
+    description 	varchar(1024)                       null comment ' 描述',
+    maxNum        	int    default 1              		null comment '最大人数',
+    expireTime      datetime							null comment '过期时间',
+    userId 			bigint                              not null comment '队伍创建者/队长id',
+    status         	tinyint default 0 		        	null comment '队伍状态 - 0 - 公开， 1 - 私有，2 - 加密
+- ',
+    password        varchar(512)                       null comment '队伍密码',
+    createTime   	datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   	datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     	tinyint  default 0                 not null comment '是否删除'
+)
+    comment '队伍信息';
+```
+
+
+
+### 用户关系表
+
+```sql
+/*用户队伍关系*/
+create table if not exists hjj.user_team
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    userId 			bigint                             	comment '用户id',
+    teamId 			bigint                             	comment '队伍id',
+    joinTime   	datetime 							    comment '加入时间',
+    createTime   	datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   	datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     	tinyint  default 0                 not null comment '是否删除'
+)
+    comment '用户队伍关系表';
+```
+
+
+
+### 好友表
+
+```sql
+/*好友表*/
+create table hjj.friend
+(
+    id         bigint auto_increment comment 'id'
+        primary key,
+    userId     bigint                             not null comment '用户id（即自己id）',
+    friendId   bigint                             not null comment '好友id',
+    createTime datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete   tinyint  default 0                 not null comment '是否删除'
+)
+    comment '好友表';
+```
+
+
+
+### 聊天表
+
+```sql
+/*聊天表*/
+CREATE TABLE `chat`  (
+                         `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '聊天记录id',
+                         `fromId` bigint(20) NOT NULL COMMENT '发送消息id',
+                         `toId` bigint(20) NULL DEFAULT NULL COMMENT '接收消息id',
+                         `text` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+                         `chatType` tinyint(4) NOT NULL COMMENT '聊天类型 1-私聊 2-群聊',
+                         `createTime` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                         `updateTime` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+                         `teamId` bigint(20) NULL DEFAULT NULL,
+                         `isDelete` tinyint(4) NULL DEFAULT 0,
+                         PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '聊天消息表' ROW_FORMAT = COMPACT;
+```
+
+
+
+## 项目初始化
+
+### 前端
+
+基础环境
+
+- 软件：WebStorm 2022.2.5 / Vscode
+- 环境：Node 版本：18.0.2
+
+1）拉取项目
+
+```bash
+git clone https://github.com/dnwwdwd/homeiMatching-frontend.git
+```
+
+2）安装依赖
+
+```bash
+npm install
+```
+
+3）运行项目
+
+```bash
+npm run dev
+```
+
+4）打包项目
+
+```bash
+npm run build
+```
+
+
+
+### 数据库
+
+1）对于拉去后端项目的同学直接运行 /sql/create_sql.ql 文件即可，前提电脑装了 MySQL（5.7 或 8.x 都可）
+
+2）完事后将 application.yml 文件中数据库的账号密码改为自己的即可，对了此项目还用了 Redis，所以还要修改 Redis 的连接配置，有密码的加上密码
+
+```yml
+spring:
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: homieMatching
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hjj?characterEncoding=UTF-8
+    username: root
+    password: 123456
+  session:
+    timeout: 86400
+    store-type: redis
+  redis:
+    port: 6379
+    host: localhost
+    database: 0
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: localhost
+        same-site: none
+        secure: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+```
+
+
+
+### 后端
+
+基础环境
+
+- 软件：IDEA 2023.1.6
+- JDK 1.8 + MySQL 8.0.33 + Redis 5.x（最好是 5.x 以上） + Spring Boot 2.7.6 
+
+> 更细的环境请看上面的技术选型，上面有具体的依赖关系和版本。
+>
+> **各位一定要注意在启动后端前，一定要先建好数据库表和安装 Redis，改好 yml 文件的连接信息再启动后端。**
+
+1）拉取项目
+
+```bash
+git clone https://github.com/dnwwdwd/homieMatching.git
+```
+
+2）点击小圆圈重新加载所有 Maven 项目 ，下载依赖。
+
+![image-20240609154936738](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609154936.png)
+
+3）启动后端
+
+找到 HomieMatchingApplication 主类，点击运行即可。
+
+![image-20240609154419326](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609154419.png)
+
+
+
+## 项目部署
+
+[homie 匹配部署教程](https://blog.csdn.net/xyendjsj/article/details/135921460?spm=1001.2014.3001.5501)
+
+跟着上面的教程一步一步来即可，不行你不会，如果中间有任何问题欢迎在这个网站，或者 CSDN 上，亦或者是微信上向我提问。觉得项目还不错的话，请给我点个 Star 呗，谢谢！
+",0,2,2,,2.0,['homie'],23,['homie']
+alegian/thaumcraft7,main,"# Thaumcraft 7 (Thavma)
+
+## Preface
+
+A complete rewrite & re-imagination of azanor's Thaumcraft for modern versions of Minecraft.
+I am in no way associated with azanor and will not use any of their assets,
+except perhaps temporarily the mod name (which I will also change upon release).
+
+What version of Thaumcraft am I rewriting? None specifically. I am going to implement what
+I enjoyed most from each version (my favorite being Thaumcraft 4.2). I plan to add
+features that did not exist in the original mod, and change old features to give them
+fresh new mechanics, visuals and names.
+
+I happen to be Greek, Thaumaturgy literally means ""the act of performing miracles"".
+Good pick azanor ;-)
+
+## Credit
+
+- Azanor, for being the original author of my favorite mod
+- The NeoForge Project discord community, for answering my questions countless times
+- Team CoFH, for allowing anyone to learn from their code. Also, modified versions of their license and their package
+  structure are used here
+- McJTy, for their minecraft modding tutorials
+- The JEI team, for being open source. Their codebase taught me how to use custom Texture Atlases
+- The https://game-icons.net/ team, for their free icons, under
+  the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) license. All icons were taken as-is
+- Reaves, for their awesome original models & textures
+- Gigaherz, for
+  their [custom core shader tutorial gist](https://gist.github.com/gigaherz/b8756ff463541f07a644ef8f14cb10f5), pretty
+  much the only resource online that describes this process
+- The Artifacts team, for being open source. Their codebase taught me how to use Attribute Modifiers and how to render
+  custom cuboids on HumanoidModels
+
+## License
+
+This repository uses a modified version of the CoFH ""Don't Be a Jerk"" License v2. [Read the file](LICENSE.md) for
+details.
+",0,0,1,NOASSERTION,1.0,"['thaumcraft', 'thavma', 'preface', 'credit', 'license']",4,"['thaumcraft', 'thavma', 'preface', 'credit', 'license']"
+d1tto/Rengar,master,"# Rengar
+
+**Rengar** is the prototype of paper ""Effective ReDoS Detection by Principled Vulnerability Modeling and Exploit Generation"" published in S&P'23.",0,1,1,,0.0,['rengar'],1,['rengar']
+begcode/begcode-admin,main,"# monolithMybatis
+
+本应用程序由BegCode8.6.3生成, 你可以在 [https://www.begcode.com](https://www.begcode.com) 找到文档和帮助。
+
+## 截图展示
+
+### 登录
+
+![登录](./doc/images/login.png)
+
+### 首页
+
+![首页](./doc/images/index.png)
+
+### 菜单列表
+
+![菜单列表](./doc/images/view_permission.png)
+
+### 角色列表
+
+![角色列表](./doc/images/authority.png)
+
+### 用户列表
+
+![用户列表](./doc/images/user-list.png)
+
+### 短信配置
+
+![短信配置](./doc/images/sms_config.png)
+
+### 图片上传
+
+![图片上传](./doc/images/upload_image.png)
+
+### 字典管理
+
+![字典管理](./doc/images/dictionary.png)
+
+### 操作日志
+
+![操作日志](./doc/images/sys_log.png)
+
+### 消息发布
+
+![消息发布](./doc/images/announcement.png)
+
+### Api列表
+
+![Api列表](./doc/images/api.png)
+
+### Icon选择参考
+
+![Icon选择参考](./doc/images/icon_picker.png)
+
+### 查看通知
+
+![查看通知](./doc/images/notice.png)
+
+## 项目结构
+
+生成时需要 Node，并建议在开发过程中使用它。package.json 文件始终会生成，以提供更好的开发体验，包括 prettier、commit hooks、脚本等等。
+
+在项目的根目录中，JHipster会生成用于配置诸如git、prettier、eslint、husky等众多常见工具的配置文件。你可以在网络上找到有关这些工具的参考文档。
+
+`/src/*` 目录结构遵循默认的Java结构。
+
+- `.yo-rc.json` - Yeoman配置文件（BegCode/JHipster配置文件）
+  BegCode的配置存储在key为generator-begcode的属性中，这里定义了BegCode生成器的全局配置。此外，你可能会在项目根目录下的.yo-rc.json文件中找到类似generator-begcode-\*的蓝图配置，它包含了项目特定的配置选项。
+- `.yo-resolve` (可选) - Yeoman 冲突解决器
+  允许在发现冲突时使用特定操作，跳过匹配模式的文件的提示。每一行应该匹配 [模式] [操作]，其中模式是一个 Minimatch 模式，操作是 skip（如果省略则为默认操作）或者 force 中的一个。以 # 开头的行被视为注释，将被忽略。
+- `.jhipster/*.json` - JHipster实体配置文件
+
+- `npmw` - 用于本地安装的npm的包装器
+  BegCode默认使用构建工具在本地安装Node和pnpm。此包装器确保本地安装pnpm并使用它，避免了不同版本可能引起的一些差异。通过使用./npmw而不是传统的npm，您可以配置一个无需Node的环境来开发或测试您的应用程序。
+- `/src/main/docker` - 应用程序及其依赖的服务的Docker配置
+
+## 开发
+
+    构建系统将自动安装推荐的Node和pnpm版本。
+    我们提供了一个包装器来启动 pnpm。
+
+仅当 [package.json](package.json) 中的依赖项发生更改时，您才需要再次运行此命令。
+
+```
+./npmw install
+```
+
+我们使用 pnpm 脚本和 [Vite][] 作为我们的构建系统。
+
+在两个单独的终端中运行以下命令，以创建更好的开发体验，其中当硬盘上的文件发生更改时您的浏览器自动刷新。
+
+```
+./mvnw
+./npmw start
+```
+
+Npm 还用于管理此应用程序中使用的 CSS 和 JavaScript 依赖项。 您可以通过以下方式升级依赖项
+在 [package.json](package.json) 中指定较新版本。 您还可以运行`pnpm update`和`pnpm install`来管理依赖项。
+在任何命令上添加`help`标志以查看如何使用它。 例如，`pnpm help update`。
+
+`./npmw run` 命令将列出可用于该项目运行的所有脚本。
+
+## 系统构建
+
+### 创建Jar包
+
+要优化monolithMybatis应用程序创建Jar包并进行生产部署，请运行：
+
+```
+./mvnw package -Pprod clean verify -DskipTests
+```
+
+这将压缩客户端和重新打包CSS和JavaScript文件。 它还将修改`index.html`，以便引用这些新文件。
+为了确保一切正常，请运行：
+
+```
+java -jar target/*.jar
+```
+
+然后在浏览器打开：[http://localhost:8080](http://localhost:8080)。
+
+请参阅[Using JHipster in production][] 了解更多详细信息。
+
+### 创建War包
+
+要将您的应用程序打包为 war 以便将其部署到应用程序服务器，请运行：
+
+```
+./mvnw package -Pprod,war clean verify
+```
+
+### JHipster Control Center
+
+JHipster Control Center 可以帮助您管理和控制您的应用程序。 您可以使用以下命令启动本地控制中心服务器（可通过 http://localhost:7419 访问）：
+
+```
+docker compose -f src/main/docker/jhipster-control-center.yml up
+```
+
+## 测试
+
+### 运行Spring Boot 测试
+
+要启动应用程序的测试，请运行：
+
+```
+./mvnw verify
+```
+
+### Client tests
+
+Unit tests are run by [Jest][]. They're located in [front/src/test/javascript/](front/src/test/javascript/) and can be run with:
+
+```
+./npmw test
+```
+
+## 其他
+
+### 使用Sonar进行代码质量控制
+
+Sonar用于分析代码质量。 您可以使用以下命令启动本地 Sonar 服务器（可通过 http://localhost:9001 访问）：
+
+```
+docker compose -f src/main/docker/sonar.yml up -d
+```
+
+Note: we have turned off forced authentication redirect for UI in [src/main/docker/sonar.yml](src/main/docker/sonar.yml) for out of the box experience while trying out SonarQube, for real use cases turn it back on.
+
+You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
+
+Then, run a Sonar analysis:
+
+```
+./mvnw -Pprod clean verify sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
+```
+
+If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
+
+```
+./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
+```
+
+Additionally, Instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
+
+```
+sonar.login=admin
+sonar.password=admin
+```
+
+For more information, refer to the [Code quality page][].
+
+### Using Docker to simplify development (optional)
+
+You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
+
+For example, to start a mysql database in a docker container, run:
+
+```
+docker compose -f src/main/docker/mysql.yml up -d
+```
+
+To stop it and remove the container, run:
+
+```
+docker compose -f src/main/docker/mysql.yml down
+```
+
+You can also fully dockerize your application and all the services that it depends on.
+To achieve this, first build a docker image of your app by running:
+
+```
+npm run java:docker
+```
+
+Or build a arm64 docker image when using an arm64 processor os like MacOS with M1 processor family running:
+
+```
+npm run java:docker:arm64
+```
+
+Then run:
+
+```
+docker compose -f src/main/docker/app.yml up -d
+```
+
+When running Docker Desktop on MacOS Big Sur or later, consider enabling experimental `Use the new Virtualization framework` for better processing performance ([disk access performance is worse](https://github.com/docker/roadmap/issues/7)).
+
+For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
+
+## Continuous Integration (optional)
+
+To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
+
+[BegCode最新文档]: https://www.begcode.com
+[Node.js]: https://nodejs.org/
+[NPM]: https://www.npmjs.com/
+[Webpack]: https://webpack.github.io/
+[BrowserSync]: https://www.browsersync.io/
+[Jest]: https://facebook.github.io/jest/
+[Leaflet]: https://leafletjs.com/
+[DefinitelyTyped]: https://definitelytyped.org/
+",0,1,1,MIT,0.0,"['monolithmybatis', 'jhipster', 'control', 'center', 'boot', 'client', 'test', 'use', 'docker', 'simplify', 'development', 'optional', 'continuous', 'integration', 'optional']",29,"['optional', 'monolithmybatis', 'jhipster', 'control', 'center']"
+mt1006/mc-ar-mod,FABRIC-1.20.1,"### This mod (especially in its current state) is more of a proof of concept than actual optimization mod!
+It has many issues and greatly reduces performance of main rendering thread (even when disabled),
+so for comparing performance use instance without mod installed.
+
+# About
+**Asynchronous Reprojection** is a Minecraft mod that creates second rendering context to asynchronously reproject frames from main rendering thread with new camera rotation and player position.
+
+It was inspired by Comrade Stinger's demo, which was also base for shader code:
+https://www.youtube.com/watch?v=VvFyOFacljg
+
+Known issues:
+- Fabric version works only on Windows and Linux (I haven't tested it on macos). Forge version works only on Windows.
+- Screenshots (F2) and world icons don't work - they're black.
+- Minor visual glitches.
+- Camera bobbing is disabled.
+- ""Fabulous"" graphics doesn't change anything compared to ""Fancy"".
+- Camera sometimes rotates itself when opening or closing GUI.
+- Forge version crashes when trying to resize window during startup.
+- It sometimes just crashes (for no particular reason).
+
+CurseForge page: https://www.curseforge.com/minecraft/mc-mods/asynchronous-reprojection
+
+Modrinth page: https://modrinth.com/mod/asynchronous-reprojection
+
+# Examples
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example1.png)
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example2.png)
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example3.png)
+",1,5,3,LGPL-3.0,0.0,"['this', 'mod', 'especially', 'current', 'state', 'proof', 'concept', 'actual', 'optimization', 'mod', 'about', 'example']",3,"['mod', 'this', 'especially', 'current', 'state']"
+ArtformGames/BungeeAuthProxy,master,"```text
+   ___                         ___       __  __   ___                   
+  / _ )__ _____  ___ ____ ___ / _ |__ __/ /_/ /  / _ \_______ __ ____ __
+ / _  / // / _ \/ _ `/ -_) -_) __ / // / __/ _ \/ ___/ __/ _ \\ \ / // /
+/____/\_,_/_//_/\_, /\__/\__/_/ |_\_,_/\__/_//_/_/  /_/  \___/_\_\\_, / 
+               /___/                                             /___/  
+```
+
+README LANGUAGES [ [**English**](README.md) | [中文](README_CN.md)  ]
+
+![CodeSize](https://img.shields.io/github/languages/code-size/ArtformGames/BungeeAuthProxy)
+[![Download](https://img.shields.io/github/downloads/ArtformGames/BungeeAuthProxy/total)](https://github.com/ArtformGames/BungeeAuthProxy/releases)
+[![Java CI with Maven](https://github.com/ArtformGames/BungeeAuthProxy/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ArtformGames//actions/workflows/maven.yml)
+![Support](https://img.shields.io/badge/Minecraft-Java%201.16--Latest-green)
+
+# **BungeeAuthProxy**
+
+Authentication proxy injector for BungeeCord servers,
+which is trying to solve the problem of inability to access the MineCraft online session and auth service in some areas.
+
+## Usage
+
+**Before using this injector, make sure that your Java version is 11 or above.**
+
+1. Download latest release from [here](https://github.com/ArtformGames/BungeeAuthProxy/releases) .
+2. Put the jar file into the folder of your BungeeCord server (same path with server jar).
+3. Add the `-javaagent:BungeeAuthProxy.jar[=<CONFIG-FILE-NAME>]` before `-jar <server-jar>.jar` to the start command of
+   your BungeeCord server.
+    - For example: `java -javaagent:BungeeAuthProxy.jar -jar BungeeCord.jar`
+    - Using custom config file name: `java -javaagent:BungeeAuthProxy.jar=auth-proxy.yml -jar BungeeCord.jar`
+4. Start your bungeecord server, and configured the proxy (Default is `auth.yml` in server folder).
+
+## Configurations
+
+Will be generated on the first boot up.
+
+```yaml
+debug: false
+
+# MineCraft service settings
+service:
+  # Timeout duration for single request in milliseconds.
+  time-out: 5000
+  # Authentication url dns-cache expire duration in milliseconds
+  # If this value ≤0, will disable dns-cache.
+  dns-cache-expire: 60000
+
+# Proxy server settings
+proxy:
+  # Proxy protocol, -1 = NO_PROXY ,0 = HTTP/HTTPS, 1 = SOCKS4, 2 = SOCKS5
+  protocol: -1
+  # Proxy host
+  host: 127.0.0.1
+  # Proxy port
+  port: 7890
+  # Proxy authentication settings
+  auth:
+    # Whether to enable proxy authentication
+    enabled: false
+    username: proxy-username
+    password: proxy-password
+
+advance:
+   # Remove unused field after injection.
+   # If any 'NoSuchFieldException' or 'IllegalAccessException' occurred, try to set this to false.
+   remove-unused-field: true
+```
+
+## Open Source Licence
+
+The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
+
+## Supports
+
+This project is mainly developed by the [Artfrom Games](https://github.com/ArtformGames/) .
+
+Many thanks to Jetbrains for kindly providing a license for us to work on this and other open-source projects.  
+[![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/ArtformGames/BungeeAuthProxy)
+
+",5,0,1,GPL-3.0,0.0,"['bungeeauthproxy', 'usage', 'configuration', 'minecraft', 'service', 'setting', 'timeout', 'duration', 'single', 'request', 'millisecond', 'authentication', 'url', 'expire', 'duration', 'millisecond', 'if', 'value', 'disable', 'proxy', 'server', 'setting', 'proxy', 'protocol', 'proxy', 'host', 'proxy', 'port', 'proxy', 'authentication', 'setting', 'whether', 'enable', 'proxy', 'authentication', 'remove', 'unused', 'field', 'injection', 'if', 'occur', 'try', 'set', 'false', 'open', 'source', 'licence', 'support']",17,"['proxy', 'setting', 'authentication', 'duration', 'millisecond']"
+simasch/cqrs-meets-modern-java,main,"# CQRS Meets Modern Java
+
+This project is used as an example for my
+talk [CQRS meets modern Java](https://speakerdeck.com/simas/cqrs-meets-modern-java)
+
+## Prerequisite: jOOQ Build
+
+The CQRS project uses jOOQ and therefore the database model classes must be created with Maven.
+
+Change into the cqrs directory and run:
+
+    ./mvnw compile
+
+## Running the applications
+
+Both applications use Testcontainers support of Spring Boot. Run the TestCqrsApplication and the
+TestTraditionalApplication in src/test
+
+## Testing
+
+The file requests.http contains the http test requests to test the endpoints.",0,0,2,,0.0,"['cqrs', 'meet', 'modern', 'java', 'prerequisite', 'jooq', 'build', 'run', 'application', 'test']",4,"['cqrs', 'meet', 'modern', 'java', 'prerequisite']"

@@ -1,0 +1,150 @@
+${RULTOR:+sudo} npm install -g ghminer@0.0.7
+
+changed 7 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+poetry self add 'poethepoet[poetry_plugin]'
+Using version ^0.30.0 for poethepoet
+
+Updating dependencies
+Resolving dependencies...
+
+No dependencies to install or update
+cd sr-data && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-data (0.0.0)
+cd sr-train && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-train (0.0.0)
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-detection (0.0.0)
+mkdir -p collection/testing-docker
+ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" --start "2024-01-01" --end "2024-01-02" --tokens "$PATS" --filename "repos"
+Running ghminer@0.0.7
+Compiled search query: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-01-01..2024-01-02
+Total results: 16
+
+Extracted 10 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4992,
+  used: 8,
+  resetAt: '2024-11-13T13:05:33Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEw
+
+Extracted 16 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4991,
+  used: 9,
+  resetAt: '2024-11-13T13:05:33Z',
+  nodeCount: 0
+}
+hasNextPage: false
+endCursor: Y3Vyc29yOjE2
+Fetched 16 results.
+Results saved into repos.csv
+cd sr-data && poetry poe pulls --repos "../repos.csv" --token "REDACTED" --out "../repos-with-pulls.csv"
+Poe => pulls --repos ../repos.csv --token REDACTED --out ../repos-with-pulls.csv
+2024-11-13 12:16:07.449 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for jocrugon/Pokedex: 0
+2024-11-13 12:16:07.708 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for CleanroomMC/Fugue: 7
+2024-11-13 12:16:07.912 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for dnwwdwd/homieMatching: 2
+2024-11-13 12:16:09.283 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for GDSC-Hongik/gdsc-server: 398
+2024-11-13 12:16:09.896 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for ttoklip/BackEnd: 137
+2024-11-13 12:16:10.090 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for alegian/thaumcraft7: 1
+2024-11-13 12:16:10.352 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for Eanya-Tonic/CCTV_Viewer: 14
+2024-11-13 12:16:10.550 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for d1tto/Rengar: 0
+2024-11-13 12:16:10.823 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for wuchubuzai2018/lantu-pay-sdk: 1
+2024-11-13 12:16:11.064 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for dromara/warm-flow: 14
+2024-11-13 12:16:11.282 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for begcode/begcode-admin: 0
+2024-11-13 12:16:11.530 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for youdeyunke/app: 0
+2024-11-13 12:16:11.728 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for mt1006/mc-ar-mod: 0
+2024-11-13 12:16:11.966 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for ArtformGames/BungeeAuthProxy: 0
+2024-11-13 12:16:12.281 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for ProgrammerLMS/mini-git: 1
+2024-11-13 12:16:12.456 | INFO     | sr_data.steps.pulls:pulls:56 - Fetched pulls for simasch/cqrs-meets-modern-java: 0
+cd sr-data && poetry poe filter --repos "../repos-with-pulls.csv" --out "../after-filter.csv"
+Poe => filter --repos ../repos-with-pulls.csv --out ../after-filter.csv
+2024-11-13 12:16:13.613 | INFO     | sr_data.steps.filter:main:39 - Start filtering...
+2024-11-13 12:16:13.617 | INFO     | sr_data.steps.filter:main:43 - Repositories in 16
+2024-11-13 12:16:13.618 | INFO     | sr_data.steps.filter:main:47 - Skipped 2 repositories with empty README files
+2024-11-13 12:16:14.108 | INFO     | sr_data.steps.filter:main:52 - Skipped 6 non-english repositories
+2024-11-13 12:16:14.108 | INFO     | sr_data.steps.filter:main:53 - Total skipped: 8
+2024-11-13 12:16:14.108 | INFO     | sr_data.steps.filter:main:54 - Saving 8 good repositories to ../after-filter.csv
+2024-11-13 12:16:14.108 | DEBUG    | sr_data.steps.filter:main:55 -                               repo         branch  ...      license  pulls_count
+1                CleanroomMC/Fugue         master  ...      GPL-3.0          7.0
+2            dnwwdwd/homieMatching         master  ...          NaN          2.0
+5              alegian/thaumcraft7           main  ...  NOASSERTION          1.0
+7                     d1tto/Rengar         master  ...          NaN          0.0
+10           begcode/begcode-admin           main  ...          MIT          0.0
+12                mt1006/mc-ar-mod  FABRIC-1.20.1  ...     LGPL-3.0          0.0
+13    ArtformGames/BungeeAuthProxy         master  ...      GPL-3.0          0.0
+15  simasch/cqrs-meets-modern-java           main  ...          NaN          0.0
+
+[8 rows x 8 columns]
+cd sr-data && poetry poe extract --repos "../after-filter.csv" --out "../after-extract.csv"
+Poe => extract --repos ../after-filter.csv --out ../after-extract.csv
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+[nltk_data] Downloading package averaged_perceptron_tagger_eng to
+[nltk_data]     /root/nltk_data...
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger_eng.zip.
+[nltk_data] Downloading package omw-1.4 to /root/nltk_data...
+2024-11-13 12:16:18.191 | INFO     | sr_data.steps.extract:main:43 - Extracting headings from README files...
+2024-11-13 12:16:18.196 | INFO     | sr_data.steps.extract:main:49 - Removed 0 repositories that don't have at least one heading (#)
+2024-11-13 12:16:20.451 | INFO     | sr_data.steps.extract:main:64 - Removed 0 repositories that have 0 headings after regex filtering ('^[a-zA-Z]+$')
+cd sr-data && poetry poe embed --repos "../after-extract.csv" --prefix ../embeddings --hf "$HF_TOKEN" --cohere "$COHERE_TOKEN"
+Poe => embed --repos ../after-extract.csv --prefix ../embeddings --hf REDACTED --cohere REDACTED
+2024-11-13 12:16:22.902 | INFO     | sr_data.steps.embed:main:52 - Generating s-bert-384 embeddings for ../after-extract.csv (8r x 11c)
+2024-11-13 12:16:22.902 | INFO     | sr_data.steps.embed:main:58 - Inference checkpoint: sentence-transformers/all-MiniLM-L6-v2
+2024-11-13 12:16:23.060 | INFO     | sr_data.steps.embed:main:62 - Generated embeddings saved to ../embeddings-s-bert-384.csv (8r x 385c)
+2024-11-13 12:16:23.061 | INFO     | sr_data.steps.embed:main:52 - Generating e5-1024 embeddings for ../after-extract.csv (8r x 11c)
+2024-11-13 12:16:23.061 | INFO     | sr_data.steps.embed:main:58 - Inference checkpoint: intfloat/e5-large
+2024-11-13 12:16:23.261 | INFO     | sr_data.steps.embed:main:62 - Generated embeddings saved to ../embeddings-e5-1024.csv (8r x 1025c)
+2024-11-13 12:16:23.261 | INFO     | sr_data.steps.embed:main:52 - Generating cohere embeddings for ../after-extract.csv (8r x 11c)
+2024-11-13 12:16:23.570 | INFO     | sr_data.steps.embed:main:62 - Generated embeddings saved to ../embeddings-cohere.csv (8r x 1025c)
+"/root/.cargo/bin"/just numerical "..//after-extract.csv" "..//numerical.csv"
+cd sr-data && poetry poe numerical --repos "..//after-extract.csv" --out "..//numerical.csv"
+Poe => numerical --repos ..//after-extract.csv --out ..//numerical.csv
+2024-11-13 12:16:24.545 | INFO     | sr_data.steps.numerical:main:30 - Creating dataset with all numerical data...
+2024-11-13 12:16:24.549 | INFO     | sr_data.steps.numerical:main:42 - Numerical dataset created in ..//numerical.csv
+"/root/.cargo/bin"/just scores "..//after-extract.csv" "..//scores.csv"
+cd sr-data && poetry poe scores --repos "..//after-extract.csv" --out "..//scores.csv"
+Poe => scores --repos ..//after-extract.csv --out ..//scores.csv
+2024-11-13 12:16:25.466 | INFO     | sr_data.steps.scores:main:33 - Creating dataset with scores...
+2024-11-13 12:16:25.471 | INFO     | sr_data.steps.scores:main:43 - Scores dataset created in ..//scores.csv
+"/root/.cargo/bin"/just combination "../" 5 "..//sbert.csv" "..//scores.csv"
+cd sr-data && poetry poe combination --scores "..//scores.csv" --embeddings "..//sbert.csv" --dir "../" --identifier "5"
+Poe => combination --scores ..//scores.csv --embeddings ..//sbert.csv --dir ../ --identifier 5
+2024-11-13 12:16:26.377 | INFO     | sr_data.steps.combination:main:40 - Combining ..//scores.csv + ..//sbert.csv
+2024-11-13 12:16:26.397 | INFO     | sr_data.steps.combination:main:51 - Output dataset saved to ..//d5-scores+sbert.csv
+"/root/.cargo/bin"/just combination "../" 6 "..//e5.csv" "..//scores.csv"
+cd sr-data && poetry poe combination --scores "..//scores.csv" --embeddings "..//e5.csv" --dir "../" --identifier "6"
+Poe => combination --scores ..//scores.csv --embeddings ..//e5.csv --dir ../ --identifier 6
+2024-11-13 12:16:27.299 | INFO     | sr_data.steps.combination:main:40 - Combining ..//scores.csv + ..//e5.csv
+2024-11-13 12:16:27.344 | INFO     | sr_data.steps.combination:main:51 - Output dataset saved to ..//d6-scores+e5.csv
+"/root/.cargo/bin"/just combination "../" 7 "..//embedv3.csv" "..//scores.csv"
+cd sr-data && poetry poe combination --scores "..//scores.csv" --embeddings "..//embedv3.csv" --dir "../" --identifier "7"
+Poe => combination --scores ..//scores.csv --embeddings ..//embedv3.csv --dir ../ --identifier 7
+2024-11-13 12:16:28.259 | INFO     | sr_data.steps.combination:main:40 - Combining ..//scores.csv + ..//embedv3.csv
+2024-11-13 12:16:28.296 | INFO     | sr_data.steps.combination:main:51 - Output dataset saved to ..//d7-scores+embedv3.csv

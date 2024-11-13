@@ -1,0 +1,1766 @@
+repo,branch,readme,releases_count,open_issues_count,branches_count,license
+jocrugon/Pokedex,main,"# Pokedex
+API desarrollado en java con spring boot, usando arquitectura hexagonal, swagger, manejador de excepciones y 2 bases de datos MySQL y MongoDB
+las bases de datos están en el archivo docker-compose, también la creación de la imagen del API indicado en el Dockerfile
+
+- SWAGGER
+
+![imagen](https://github.com/jocrugon/Pokedex/assets/93726141/5ddeaab8-61ac-41cb-b435-452ebdf30091)
+
+- Arquitectura Hexagonal
+
+![imagen](https://github.com/jocrugon/Pokedex/assets/93726141/b692b471-88d9-43e6-9a75-4e8732a4cf4e)
+
+- Docker
+
+![imagen](https://github.com/jocrugon/Pokedex/assets/93726141/49cfcd81-be7a-4594-88db-892525dd5bd2)
+
+",0,0,1,
+CleanroomMC/Fugue,master,"# Fugue
+Fix dead mods. [Explain](https://www.etymonline.com/cn/word/fugue)
+
+Also check [The Fugue Plane](https://forgottenrealms.fandom.com/wiki/Fugue_Plane).
+
+## Download
+https://github.com/CleanroomMC/Fugue/releases/latest
+
+If you are still using 0.1.0 Cleanroom, use 0.5.4. But that's not recommended.
+
+## List
+* Charset
+* CodeChickenLib
+* Custom Main Menu
+* Hammer Lib
+* Forge Multipart
+* Project:Red
+* Solar Flux Reborn
+* Xaero Plus
+* EnderCore
+* Lag Goggles
+* Snow! Real Magic
+* Botania Tweaks
+* Advanced Rocketry
+* Entity Distance
+* FoamFix
+* Shoulder Surfing Reloaded
+* SplashAnimation
+* Logistics Pipes
+* OpenDisks
+* OpenSecurity
+* Enchantments Control
+* GregTech CE Unofficial (Before 2.8.8)
+* TFC Medicinal
+* Mcjty Core
+* LoliASM
+* Howling Moon
+* Custom NPCs
+* XNet
+* ZeroCore (ExtremeReactor)
+* Smooth Font
+* Water Power
+* Survival Inc.
+* Subauqatic (Temporary)
+* Nothirium
+* IC2C Extra
+* Simply Hot Spring
+* OpenModsLib
+* Valkyrie (Temporary)
+* ReplayMod
+* Thaumic Speedup (Temporary)
+* Astral Sorcery
+* Armourer's Workshop
+* Vampirism
+* MAGE (Graphical Tweaks)
+* Extra Utilities 2
+* In Control!
+* More Refined Storage
+* Better Formatting Code
+* 5zig
+* Ears
+* Colytra
+* Crossbow
+* Polyfrost mods
+* Carry On
+
+## Note
+Add + to start of the file if it's not there.",56,4,1,GPL-3.0
+dnwwdwd/homieMatching,master,"# homie 匹配系统
+
+> 作者：C1own
+>
+> [Github 主页](https://github.com/dnwwdwd)
+>
+> [CSDN 主页](https://blog.csdn.net/xyendjsj?type=blog)
+
+![](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142339.png)
+
+
+
+## 项目介绍
+
+homie 匹配系统是一个移动端网页的在线云交友平台。实现了按标签匹配、查找用户，基于 Redis GEO 实现搜索附近用户，同时个人还可以建队、组队以打造个人学习队伍。除了添加好友、搜索好友外，还基于 Websocket 实现好友间私聊，方便用户寻找志同道合的学习搭子。
+
+### 线上地址
+
+[厚米匹配系统](http://hm.hejiajun.icu/)
+
+### 前端地址
+
+[homie 匹配前端地址](https://github.com/dnwwdwd/homieMatching-fronted)
+
+### 后端地址
+
+[homie 匹配后端地址](https://github.com/dnwwdwd/homieMatching)
+
+### 项目部署教程
+
+[homie 匹配部署教程](https://blog.csdn.net/xyendjsj/article/details/135921460?spm=1001.2014.3001.5501)
+
+
+
+## 技术选型
+
+### 前端
+
+| 技术       | 用途                       | 版本   |
+| ---------- | -------------------------- | ------ |
+| Vue        | 前端经典框架，方便开发页面 | 3.3.11 |
+| Vue-Router | 细致的导航控制             | 4      |
+| Axios      | 发送请求至后端             | 1.6.2  |
+| Vant       | 移动端样式组件库           | 4.8.0  |
+| Vite       | 前端构建工具               | 5.0.8  |
+
+
+
+### 后端
+
+| 技术                 | 用途                                         | 版本    |
+| -------------------- | -------------------------------------------- | ------- |
+| Spring Boot          | 快构建 Spring 应用                           | 2.7.6   |
+| JDK                  | Java 应用开发工具                            | 1.8     |
+| MyBatis              | 操作数据库的框架                             | 3.5.2   |
+| MyBatis-Plus         | MyBatis的增强框架，无需编写 SQL 语句         | 3.5.2   |
+| MySQL                | 一个关系型数据库产品，用于存储数据           | 8.0..33 |
+| Redis                | 一个非关系型数据库产品，用于存储数据         | 5.      |
+| WebSocket            | 使得客户端和服务器之间的数据交换变得更加简单 | 2.4.1   |
+| Lombok               | 实体类方法的快速生成工具                     |         |
+| knife4j              | 在线接口文档生成的库                         | 2.0.9   |
+| EasyExcel            | 快速、低占用地操作 Excel                     | 3.3.2   |
+| hutool               | 强而全的工具库                               | 5.7.17  |
+| Guava-Retrying       | 提供重试机制的库                             | 1.0.6   |
+| Apache-commons-lang3 | 工具库                                       | 3.12.0  |
+
+
+
+## 个人介绍
+
+一个普通学校的大三学生，即将大四毕业了，正在做毕设。
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142050.jpg"" alt=""597f123b20d2e350ad2916f61c377ef"" style=""zoom: 33%;"" />
+
+> 觉得项目还不错的同学可否给我项目点个 Star 呢？如果可以，小弟不胜感激，谢谢！
+
+## 功能展示
+
+登录
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143001.png"" alt=""image-20240609143001885"" style=""zoom: 67%;"" />
+
+注册
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609142952.png"" alt=""image-20240609142952622"" style=""zoom: 67%;"" />
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143117.png"" alt=""image-20240609143117032"" style=""zoom: 67%;"" />
+
+首页
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145323.png"" alt=""image-20240609145323203"" style=""zoom:67%;"" />
+
+按标签匹配相似用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145335.png"" alt=""image-20240609145335696"" style=""zoom:67%;"" />
+
+按标签搜索用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145012.png"" alt=""image-20240609145012357"" style=""zoom:67%;"" />
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145002.png"" alt=""image-20240609145002577"" style=""zoom:67%;"" />
+
+按距离搜索用户
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145122.png"" alt=""image-20240609145122634"" style=""zoom:67%;"" />
+
+好友页面
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145434.png"" alt=""image-20240609145434695"" style=""zoom:67%;"" />
+
+搜索好友
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609171231.png"" alt=""image-20240609171231079"" style=""zoom:67%;"" />
+
+好友私聊
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145534.png"" alt=""image-20240609145534153"" style=""zoom:67%;"" />
+
+建队
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609145549.png"" alt=""image-20240609145549455"" style=""zoom:67%;"" />
+
+个人页面
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143327.png"" alt=""image-20240609143327588"" style=""zoom: 67%;"" />
+
+
+
+<img src=""https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609143357.png"" alt=""image-20240609143357705"" style=""zoom:67%;"" />
+
+
+
+## 项目亮点
+
+1. 基于 Spring AOP + Axios 实现前端登录拦截
+2. 基于 Redis 实现分布式 Session 存储
+3. 使用 Redis List 结构配合 Vue-infinite-loading 组件实现滑动加载
+4. Spring Scheduling + Redis 分布式锁实现缓存预热
+5. 了解编辑距离算法，可用于匹配相似字符串，单词校验
+6. 基于 Redis GEO 存储用户地理微信信息，实现搜索附近用户
+7. 基于 Redis 分布式锁防止用户重复入队
+8. 通过 Guava 库实现重试机制，保证缓存数据一致性
+9. 基于 Websocket 实现用户间私聊
+10. 集成第三方库生成接口测试文档，方便测试项目接口
+11. 熟悉 EasyExcel 的使用
+12. 基于 Axios 封装请求实例，方便请求后端接口
+13. 熟悉 Vant 组件库的使用
+14. 熟悉 Vue3 setup 语法
+15. 掌握 Vue-Router 基本使用
+
+
+
+## 数据库表
+
+> 如果大家拉取了后端源码，直接找到 sql/create_sql.sql 文件直接运行即可创建相应数据库和表结构
+
+### 用户表
+
+```sql
+/*用户表*/
+create table hjj.user
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    username     varchar(256)                       null comment '用户昵称',
+    userAccount  varchar(256)                       null comment '账户',
+    avatarUrl    varchar(1024)                      null comment '用户头像' default 'https://www.keaitupian.cn/cjpic/frombd/0/253/936677050/470164789.jpg',
+    gender       tinyint                            null comment '用户性别',
+    profile      varchar(512)                       null comment '个人简介',
+    userPassword varchar(512)                       not null comment '用户密码',
+    phone        varchar(128)                       null comment '电话',
+    email        varchar(512)                       null comment '邮箱',
+    userStatus   int      default 0                 not null comment '状态 0 - 正常',
+    createTime   datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     tinyint  default 0                 not null comment '是否删除',
+    userRole     int      default 0                 not null comment '用户角色 0 - 普通用户 1 - 管理员',
+    planetCode   varchar(512)                       null comment '星球编号',
+    tags         varchar(1024)                      null comment '标签列表(json)',
+    longitude    decimal(10, 6)                     null comment '经度',
+    dimension    decimal(10, 6)                     null comment '纬度'
+)
+    comment '用户';
+```
+
+
+
+### 队伍表
+
+```sql
+/*队伍表*/
+create table if not exists hjj.team
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    teamName   		varchar(256)                        not null comment '队伍名称',
+    description 	varchar(1024)                       null comment ' 描述',
+    maxNum        	int    default 1              		null comment '最大人数',
+    expireTime      datetime							null comment '过期时间',
+    userId 			bigint                              not null comment '队伍创建者/队长id',
+    status         	tinyint default 0 		        	null comment '队伍状态 - 0 - 公开， 1 - 私有，2 - 加密
+- ',
+    password        varchar(512)                       null comment '队伍密码',
+    createTime   	datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   	datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     	tinyint  default 0                 not null comment '是否删除'
+)
+    comment '队伍信息';
+```
+
+
+
+### 用户关系表
+
+```sql
+/*用户队伍关系*/
+create table if not exists hjj.user_team
+(
+    id           bigint auto_increment comment 'id'
+        primary key,
+    userId 			bigint                             	comment '用户id',
+    teamId 			bigint                             	comment '队伍id',
+    joinTime   	datetime 							    comment '加入时间',
+    createTime   	datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime   	datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete     	tinyint  default 0                 not null comment '是否删除'
+)
+    comment '用户队伍关系表';
+```
+
+
+
+### 好友表
+
+```sql
+/*好友表*/
+create table hjj.friend
+(
+    id         bigint auto_increment comment 'id'
+        primary key,
+    userId     bigint                             not null comment '用户id（即自己id）',
+    friendId   bigint                             not null comment '好友id',
+    createTime datetime default CURRENT_TIMESTAMP null comment '创建时间',
+    updateTime datetime default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间',
+    isDelete   tinyint  default 0                 not null comment '是否删除'
+)
+    comment '好友表';
+```
+
+
+
+### 聊天表
+
+```sql
+/*聊天表*/
+CREATE TABLE `chat`  (
+                         `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '聊天记录id',
+                         `fromId` bigint(20) NOT NULL COMMENT '发送消息id',
+                         `toId` bigint(20) NULL DEFAULT NULL COMMENT '接收消息id',
+                         `text` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+                         `chatType` tinyint(4) NOT NULL COMMENT '聊天类型 1-私聊 2-群聊',
+                         `createTime` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                         `updateTime` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+                         `teamId` bigint(20) NULL DEFAULT NULL,
+                         `isDelete` tinyint(4) NULL DEFAULT 0,
+                         PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '聊天消息表' ROW_FORMAT = COMPACT;
+```
+
+
+
+## 项目初始化
+
+### 前端
+
+基础环境
+
+- 软件：WebStorm 2022.2.5 / Vscode
+- 环境：Node 版本：18.0.2
+
+1）拉取项目
+
+```bash
+git clone https://github.com/dnwwdwd/homeiMatching-frontend.git
+```
+
+2）安装依赖
+
+```bash
+npm install
+```
+
+3）运行项目
+
+```bash
+npm run dev
+```
+
+4）打包项目
+
+```bash
+npm run build
+```
+
+
+
+### 数据库
+
+1）对于拉去后端项目的同学直接运行 /sql/create_sql.ql 文件即可，前提电脑装了 MySQL（5.7 或 8.x 都可）
+
+2）完事后将 application.yml 文件中数据库的账号密码改为自己的即可，对了此项目还用了 Redis，所以还要修改 Redis 的连接配置，有密码的加上密码
+
+```yml
+spring:
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: homieMatching
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hjj?characterEncoding=UTF-8
+    username: root
+    password: 123456
+  session:
+    timeout: 86400
+    store-type: redis
+  redis:
+    port: 6379
+    host: localhost
+    database: 0
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: localhost
+        same-site: none
+        secure: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+```
+
+
+
+### 后端
+
+基础环境
+
+- 软件：IDEA 2023.1.6
+- JDK 1.8 + MySQL 8.0.33 + Redis 5.x（最好是 5.x 以上） + Spring Boot 2.7.6 
+
+> 更细的环境请看上面的技术选型，上面有具体的依赖关系和版本。
+>
+> **各位一定要注意在启动后端前，一定要先建好数据库表和安装 Redis，改好 yml 文件的连接信息再启动后端。**
+
+1）拉取项目
+
+```bash
+git clone https://github.com/dnwwdwd/homieMatching.git
+```
+
+2）点击小圆圈重新加载所有 Maven 项目 ，下载依赖。
+
+![image-20240609154936738](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609154936.png)
+
+3）启动后端
+
+找到 HomieMatchingApplication 主类，点击运行即可。
+
+![image-20240609154419326](https://hejiajun-img-bucket.oss-cn-wuhan-lr.aliyuncs.com/img/20240609154419.png)
+
+
+
+## 项目部署
+
+[homie 匹配部署教程](https://blog.csdn.net/xyendjsj/article/details/135921460?spm=1001.2014.3001.5501)
+
+跟着上面的教程一步一步来即可，不行你不会，如果中间有任何问题欢迎在这个网站，或者 CSDN 上，亦或者是微信上向我提问。觉得项目还不错的话，请给我点个 Star 呗，谢谢！
+",0,2,2,
+GDSC-Hongik/gdsc-server,develop,,35,30,11,
+ttoklip/BackEnd,Refactor/15-change-to-multi-module,,2,2,8,
+alegian/thaumcraft7,main,"# Thaumcraft 7 (Thavma)
+
+## Preface
+
+A complete rewrite & re-imagination of azanor's Thaumcraft for modern versions of Minecraft.
+I am in no way associated with azanor and will not use any of their assets,
+except perhaps temporarily the mod name (which I will also change upon release).
+
+What version of Thaumcraft am I rewriting? None specifically. I am going to implement what
+I enjoyed most from each version (my favorite being Thaumcraft 4.2). I plan to add
+features that did not exist in the original mod, and change old features to give them
+fresh new mechanics, visuals and names.
+
+I happen to be Greek, Thaumaturgy literally means ""the act of performing miracles"".
+Good pick azanor ;-)
+
+## Credit
+
+- Azanor, for being the original author of my favorite mod
+- The NeoForge Project discord community, for answering my questions countless times
+- Team CoFH, for allowing anyone to learn from their code. Also, modified versions of their license and their package
+  structure are used here
+- McJTy, for their minecraft modding tutorials
+- The JEI team, for being open source. Their codebase taught me how to use custom Texture Atlases
+- The https://game-icons.net/ team, for their free icons, under
+  the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) license. All icons were taken as-is
+- Reaves, for their awesome original models & textures
+- Gigaherz, for
+  their [custom core shader tutorial gist](https://gist.github.com/gigaherz/b8756ff463541f07a644ef8f14cb10f5), pretty
+  much the only resource online that describes this process
+- The Artifacts team, for being open source. Their codebase taught me how to use Attribute Modifiers and how to render
+  custom cuboids on HumanoidModels
+
+## License
+
+This repository uses a modified version of the CoFH ""Don't Be a Jerk"" License v2. [Read the file](LICENSE.md) for
+details.
+",0,0,1,NOASSERTION
+Eanya-Tonic/CCTV_Viewer,master,"<p align=""center""> <img src=""https://github.com/Eanya-Tonic/CCTV_Viewer/blob/master/app/src/main/res/drawable/icon.png"" style=""width:200px;"" /> </p>  <h1 align=""center"">电视浏览器</h1>  <p align=""center"">一个电视机顶盒及Android TV收看网页视频的浏览器 </p>
+
+
+## 下载安装包
+从Github Release下载：https://github.com/Eanya-Tonic/CCTV_Viewer/releases/latest
+<br>
+从百度网盘下载：https://pan.baidu.com/s/1e5wMCorJIp9oi5yN8mJ1KA?pwd=qozp 提取码：qozp
+<br>
+从 VoidTech 实验室下载（X5 内核 1.7.4 测试版）：https://void-tech.cn/wp-content/uploads/2024/10/CCTV_Viewer_1.7.4-X5Beta.zip
+
+## 演示视频
+**B站：**
+
+[央视浏览器v1.2更新——支持遥控器的电视直播观看软件](https://www.bilibili.com/video/BV1Gc41187D6)
+
+[央视浏览器——一款支持遥控器的便捷电视直播观看软件](https://www.bilibili.com/video/BV1Cg4y1r7Hv)
+
+## 使用方法
+**电视盒子：**
+
+![2024-10-03_23-09-27](https://github.com/user-attachments/assets/9dbda531-1976-438a-b293-fd5b5fa002e6#pic_center)
+
+<div align=center><p>频道切换列表界面</p></div>
+
+![2024-10-03_23-09-43](https://github.com/user-attachments/assets/0771c85a-9957-4554-bb98-ebab6f49dba8#pic_center)
+
+<div align=center><p>菜单键功能菜单</p></div>
+
+![2024-10-03_23-09-51](https://github.com/user-attachments/assets/bca3b30b-7ca4-4fa3-a975-05230011ff2f#pic_center)
+
+![2024-10-03_23-09-59](https://github.com/user-attachments/assets/a9f3b5a8-5546-4e95-9eef-ba0e389fd22d#pic_center)
+
+<div align=center><p>设置界面</p></div>
+
+使用上下键切换频道，使用确认键显示当前频道和节目信息、并打开频道切换列表，单击菜单键打开功能菜单，输入数字键换到指定台，双击返回键退出程序。
+
+**其他设备：**
+
+使用键盘方向键上下控制切换频道，使用Enter键显示当前频道和节目信息、并打开频道切换列表，单击键盘M键打开功能菜单，单击键盘B键触发返回，输入数字键换到指定台。
+
+## 目前可看网页
+
+1 CCTV-1 综合
+
+2 CCTV-2 财经
+
+3 CCTV-3 综艺
+
+4 CCTV-4 中文国际（亚）
+
+5 CCTV-5 体育
+
+6 CCTV-6 电影
+
+7 CCTV-7 国防军事
+
+8 CCTV-8 电视剧
+
+9 CCTV-9 纪录
+
+10 CCTV-10 科教
+
+11 CCTV-11 戏曲
+
+12 CCTV-12 社会与法
+
+13 CCTV-13 新闻
+
+14 CCTV-14 少儿
+
+15 CCTV-15 音乐
+
+16 CCTV-16 奥林匹克
+
+17 CCTV-17 农业农村
+
+18 CCTV-5+ 体育赛事
+
+19 CCTV-4 中文国际（欧）
+
+20 CCTV-4 中文国际（美）
+
+21 北京卫视
+
+22 江苏卫视
+
+23 东方卫视
+
+24 浙江卫视
+
+25 湖南卫视
+
+26 湖北卫视
+
+27 广东卫视
+
+28 广西卫视
+
+29 黑龙江卫视
+
+30 海南卫视
+
+31 重庆卫视
+
+32 深圳卫视
+
+33 四川卫视
+
+34 河南卫视
+
+35 福建东南卫视
+
+36 贵州卫视
+
+37 江西卫视
+
+38 辽宁卫视
+
+39 安徽卫视
+
+40 河北卫视
+
+41 山东卫视
+
+## 更新日志
+**v1.7.3 更新日志（2024.10.09）**
+
+1.【紧急】修复安卓5以下设备设置闪退导致无法安装X5内核
+
+2.在安卓4.4.2测试X5内核可正常安装启动和播放网页视频
+
+**v1.7.2 更新日志（2024.10.06）**
+
+1.尝试修复本地X5内核安装问题，修改内核包存储目录
+
+2.修改设置中启用X5按钮的用户交互，提升使用体验
+
+3.增加一个X5安装界面，尝试安装X5内核直至安装完成（可能导致app无限重启，如出现无限app重启，清除全部数据或卸载重装app即可恢复系统WebView）
+
+4.默认关闭双缓冲加载
+
+5.降低安装限制到SDK 17
+
+6.64位设备需要46XXX版本的X5内核，但32位设备需要45XXX版本的内核，考虑到大多数需要X5内核的设备都是32位机器，故在apk集成32位X5内核，并在64位设备暂时禁用X5安装（经测试，在64位设备安装32位X5内核会导致闪退和无限重启）
+
+**v1.7.1 更新日志（2024.10.03）**
+
+1.修复应用程序版本号未更新
+
+2.允许用户设置是否按上下键时直接换台，而不是弹出换台抽屉
+
+3.允许用户设置是否在换台抽屉中按返回键时直接关闭抽屉，而不是返回上一级
+
+4.设置界面布局优化
+
+5.尝试修复低网速环境下页面无法正常加载问题
+
+**v1.7 更新日志（2024.09.22）**
+
+_体验调整_
+
+1.精简Android Studio创建Android TV项目时产生的无用模板文件
+
+2.增加一个设置二级界面，增加可自定义换台抽屉字体大小、可定义是否开启双缓冲、可自主决定是否启用X5（仅可用一次）三个选项
+
+3.换台抽屉布局文件调整，提供较小、适中（默认）、偏大、特大四种字体大小可自定义
+
+4.加入双标签页缓冲加载，使用两个WebView分别加载，换台时继续收看上一个频道等待加载；性能较弱设备可在设置中关闭该功能，提升使用体验
+
+5.加入系统webview开关，可自主决定是否启用X5，如系统Webview可以播放则无需关闭该开关（关闭后无法重新开启，关闭后重启后即进入尝试加载X5内核模式）
+
+6.上下键打开换台抽屉，再按确认后换台，避免误触
+
+7.优化换台体验，修改js代码，提高换台速度
+
+8优化央视网换台速度，精简网页元素
+
+9.尝试启用X5无图模式，提高网页加载速度
+
+10.尝试启用硬件加速
+
+11.底部菜单最后一个按钮由“退出程序”修改为“打开设置”
+
+12.取消自动开始播放定时任务，降低程序运行资源占用
+
+_修复Bug_
+
+1.修复x5内核下异常暂停
+
+2.修复WebView抢占焦点
+
+3.修正双击返回逻辑错误
+
+4.修复后台错误驻留
+
+5.启动白屏颜色降低
+
+6.精简换台抽屉布局文件，改为程序生成内容，边框设为自适应
+
+**建议卸载旧版后重新安装，避免出现无法安装、闪退等可能的错误；安卓版本较低的机器，如果已经能够正常使用旧版本，不建议卸载旧版更新，避免新版本无法运行，请以稳定使用优先**
+
+**v1.6.1 更新日志 (2024.06.17)**
+
+1.修复闪退的问题
+
+**v1.6.1 更新日志 (2024.06.06)**
+
+1.修复无限全屏的问题
+
+**v1.6 更新日志 (2024.06.06)**
+
+1.【严重】无法打开地方频道
+
+2.修复无法在程序内修改音量的问题
+
+3.不再自动切换清晰度
+
+4.启用网页缓存（仅系统 WebView）
+
+5.显示系统 WebView 版本号（安卓 7及以上版本才能显示）
+
+6.支持在 GitHub Action 构建，方便调试发版，或者魔改
+
+7.加载网页时禁用自动加载图片，减少卡顿（仅系统 WebView）
+
+**v1.5 更新日志（2024.01.27）**
+
+1.更新菜单键事件逻辑，加入一个底部菜单，并取消原本复杂的双击、单击等机制，使程序更加易用。
+
+2.修改换台菜单逻辑，将原本的弹出界面调整为二级抽屉式菜单，同时改为按确认键触发，更加符合用户的使用习惯；在打开换台界面时，自动切换到目前正在播放的频道。
+
+3.增加一个提示，在换台时会提示目前调用的是系统Webview内核还是腾讯X5内核。
+
+4.修复偶发性的卫视频道播放静音问题。
+
+5.额外更新一个调用系统WebView的版本
+
+**v1.4 更新日志（2024.01.21）**
+
+1.增加央视频的北京卫视、江苏卫视等21个地方卫视频道。
+
+2.尝试修复视频播放暂停的问题，暂时恢复确认键的暂停功能，但是暂停后会自动重新开始播放，仅用于增强兼容性。
+
+3.增加双击确认键可以调整全屏/退出全屏的功能。
+
+4.遥控器左右键可以缩放网页，增强应用兼容性。
+
+5.修改图标、应用名称、增加leanback设置，在原生Android TV启动器上也可以正常显示图标。
+
+6.增加频道选择界面的台号显示，方便数字键换台使用。
+
+7.最低安装限制调整为安卓4.4，API 19。
+
+8.本次更新中，出现了偶发性的卫视频道缩放不正常问题，经测试退出应用再重新打开后可以解决；由于较难复现，我目前不知道问题产生的原因。
+
+**v1.3 更新日志（2024.01.20）**
+
+1.调用本地x5内核，将x5内核集成到安装包中，提高x5内核调用的成功率。
+
+2.自动播放视频，并且禁用确认键暂停功能。
+
+3.修复清晰度选择导致的无法全屏和播放的问题，解决CCTV-6、CCTV-3两个频道由于没有超清清晰度无法选择导致不能全屏和正常播放的问题。 
+
+4.增加频道选择菜单，按菜单键激活后可直接选择需要切换的频道。 
+
+5.修改操作逻辑，按确定键显示当前频道信息、单击菜单键显示频道列表、双击菜单键刷新当前网页。 
+
+**v1.2 更新日志（2024.01.05）**
+
+1.在换台时显示一个“正在切换频道”覆盖层，优化使用体验
+
+2.增加换台后当前频道和当前频道节目预告提示
+
+3.修改按键逻辑，单击菜单键改为显示当前频道和节目信息，长按菜单键改为刷新当前页面
+
+4.改为使用腾讯x5内核，提高程序兼容性
+
+> 下载并安装本软件，即代表您已阅读并同意[腾讯浏览服务X5网页引擎隐私保护规则](https://rule.tencent.com/rule/preview/1c4e2b4b-d0f6-4a75-a5c6-1cfce00a390d)
+
+**v1.1 更新日志（2024.01.04）**
+
+1.优化返回退出逻辑，需要按两次返回键才会退出，避免误触
+
+2.增加数字键换台功能，用户可以通过遥控器上的数字键直接输入台号换台。备注：18号 CCTV-5+ 体育赛事、19号 CCTV-4 中文国际（欧）、20号 CCTV-4 中文国际（美）
+
+",14,54,1,
+d1tto/Rengar,master,"# Rengar
+
+**Rengar** is the prototype of paper ""Effective ReDoS Detection by Principled Vulnerability Modeling and Exploit Generation"" published in S&P'23.",0,1,1,
+wuchubuzai2018/lantu-pay-sdk,master,"# 蓝兔支付SDK：lantu-pay-sdk
+
+# 一、项目介绍
+
+支持个人用户签约使用的蓝兔支付平台的Java SDK项目。API接口来源：https://www.ltzf.cn/doc
+
+我的邀请注册链接：https://www.ltzf.cn/?invite=owbryg
+
+蓝兔支付申请教程：https://juejin.cn/post/7312273015873732649
+
+# 二、项目内容
+
+针对支持个人签约的蓝兔支付平台的提供的Java SDK工具包，SDK设计思想可以参考开源项目wxjava中相关的类设计，抽取了其中的核心设计。通过这个项目你可以学习到：
+
+1、统一抽象的HTTP请求框架的设计与实现
+
+2、多个模板方法模式、策略模式、建造者设计与实现
+
+3、请求三方时的@Require注解校验设计与实现
+
+4、错误重试的设计与实现
+
+5、泛型的设计与实现
+
+6、请求参数的签名的设计与实现
+
+# 三、工程结构
+
+docs：工程的相关文档
+
+SDK支付的Demo工程：lantu-sdk-demo
+
+SDK的JAVA工程：lantu-sdk-java
+
+Spring Boot Starter工程：lantu-sdk-spring-boot-starter
+
+
+# 四、功能列表
+
+1、目前正在develop分支进行开发，定期合并到主分支
+
+2、开发进度如下：
+
+- 20231218：开发Starter：Lantu SDK Spring Starter
+- 20231229：开发HTTP请求框架：HTTP请求框架与存储层配置
+- 20231231：开发PC端二维码下单接口：PC下单支付请求流程
+- 20240102：开发订单退款接口：订单退款API
+- 20240103：开发订单查询接口：订单查询API
+
+3、目前实现功能如下：
+
+- PC端扫码支付API(LantuWxPayNativeOrderRequest)
+- 订单退款API(LantuWxPayRefundOrderRequest)
+- 订单查询API(LantuWxPayQueryOrderRequest)
+- 查询微信授权连接API(LantuWxPayGetWechatOpenIdRequest)
+
+# 五、使用步骤
+
+1、在业务项目工程中，引入maven依赖，目前需要手动导入，后续会上传到maven仓库:
+
+```
+<dependency>
+    <groupId>cn.ltzf</groupId>
+    <artifactId>lantu-sdk-spring-boot-starter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
+2、在配置文件中，配置需要的商户号、回调地址、秘钥等信息：
+
+```
+ltzf:
+  wx:
+    mch-id: """"
+    secret-key: """"
+    notify-url: """"
+```
+
+3、在业务代码中，注入Service类，并定义PC端下单生成接口：
+
+```java
+@RestController
+@RequestMapping(""/demo"")
+public class DemoController {
+    
+    /**
+    * 注入蓝兔支付Service
+    */
+    @Autowired
+    private LantuWxPayService lantuWxPayService;
+    
+    /**
+     * 测试蓝兔支付 PC端扫描请求
+     *
+     * @return
+     */
+    @GetMapping(""/native"")
+    public LantuWxPayNativeOrderResult nativeOrder() {
+        // 定义蓝兔支付二维码生成请求
+        LantuWxPayNativeOrderRequest request = new LantuWxPayNativeOrderRequest();
+        String tradeNo = ""2023"" + System.currentTimeMillis();
+        request.setOutTradeNo(tradeNo);
+        request.setTotalFee(""0.01"");
+        request.setBody(""测试商品"");
+        LantuWxPayNativeOrderResult result = lantuWxPayService.createNativeOrder(request);
+        return result;
+    }
+    
+}
+```
+
+# 六、参与贡献
+
+1、工程中采用checkstyle.xml文件作为代码风格的统一与质量检测，在开发时需要导入项目中的该文件进行检测，需要使用maven的validate进行参数的校验
+
+2、fork当前仓库到自己的仓库，然后在develop分支上进行开发，然后提交PR
+
+3、加入知识星球，与作者沟通交流自己的想法
+
+
+# 七、知识星球
+
+知识星球：觉醒的新世界程序员
+",0,0,2,
+dromara/warm-flow,master,"<p align=""center"">
+	<img alt=""logo"" src=""https://foruda.gitee.com/images/1726820610127990120/c8c5f3a4_2218307.png"" width=""100"">
+</p>
+<h1 align=""center"" style=""margin: 30px 0 30px; font-weight: bold;"">Warm-Flow工作流</h1>
+<p align=""center"">
+	<a href=""https://gitee.com/dromara/warm-flow/stargazers""><img src=""https://gitee.com/dromara/warm-flow/badge/star.svg?theme=dark""></a>
+        <a href='https://gitee.com/dromara/warm-flow/members'><img src='https://gitee.com/dromara/warm-flow/badge/fork.svg?theme=dark' alt='fork'> 
+        </img></a>
+</p>
+
+
+
+## 介绍
+
+Warm-Flow国产工作流引擎🎉，其特点简洁轻量，五脏俱全，可扩展，是一个可通过jar引入设计器的工作流。
+
+1. 简洁易用：只有7张表，代码量少，可快速上手和集成
+2. 审批功能：支持通过、退回、任意跳转、转办、终止、会签、票签、委派和加减签、互斥和并行网关
+3. 监听器与流程变量：支持四种监听器，可应对不同场景，灵活可扩展，参数传递，动态权限
+4. 流程图：流程引擎自带流程图，可在不集成流程设计器情况下使用
+5. 流程设计器：可通过jar包形式快速集成到项目，减少繁琐代码搬运和适配
+6. 条件表达式：内置常见的和spel条件表达式，并且支持自定义扩展
+7. 办理人变量表达式：内置${handler}和spel格式的表达式，可满足不同场景，灵活可扩展
+8. orm框架扩展：目前支持MyBatis、Mybatis-Plus、Mybatis-Flex和Jpa，后续会由社区提供其他支持，扩展方便
+9. 数据库支持：目前支持MySQL 、Oracle 和PostgreSQL，后续会继续支持其他数据库或者国产数据库
+10. 多租户与软删除：流程引擎自身维护多租户和软删除实现，也可使用对应orm框架的实现方式
+11. 同时支持spring和solon
+12. 兼容java8和java17,理论11也可以
+13. 官方提供基于ruoyi-vue封装实战项目，很实用
+
+```shell
+希望一键三连，你的⭐️ Star ⭐️是我持续开发的动力，项目也活的更长
+```
+
+>   **[github地址](https://github.com/dromara/warm-flow.git)** | **[gitee地址](https://gitee.com/dromara/warm-flow.git)** | **[gitCode地址](https://gitcode.com/dromara/warm-flow)**
+
+## 演示地址
+
+- admin/admin123
+
+演示地址：http://www.hhzai.top
+
+## 使用文档与联系方式
+
+http://warm-flow.cn
+
+## 组件所需脚本
+
+- 首次导入，先创建数据库，找到对应数据库的全量脚本[warm-flow-all.sql](https://gitee.com/dromara/warm-flow/tree/master/sql/mysql)，执行
+- 如果版本更新，找到对应数据库的更新版本，比如xx-upgrade，[warm-flow_x.x.x.sql](https://gitee.com/dromara/warm-flow/tree/master/sql/mysql/v1-upgrade)，执行
+
+## 官网流程定义案例xml
+
+[官网流程定义案例xml](https://gitee.com/dromara/warm-flow-test/tree/master/warm-flow-core-test/src/main/resources)
+
+## 测试代码
+
+> 测试代码[warm-flow-test](https://gitee.com/dromara/warm-flow-test)项目中，warm-flow-xxx-test模块的测类
+
+## 支持数据库类型
+
+* [x] mysql
+* [x] oracle
+* [x] postgresql
+* [ ] 达梦
+* [ ] 人大金仓
+* [ ] GaussDB
+* [ ] oceanbase
+* [ ] sqlserver
+* [ ] ......
+
+## orm扩展包
+
+* [x] mybatis
+* [x] mybatis-plus
+* [x] jpa
+* [x] mybatis-flex
+* [x] easy-query
+* [ ] ......
+
+
+
+
+> **有想扩展其他orm框架和数据库的可加qq群联系群主**
+
+
+## 推荐
+
+大家在使用本项目时，推荐结合贺波老师的书
+[《深入Flowable流程引擎：核心原理与高阶实战》](https://item.jd.com/14804836.html)学习。这本书得到了Flowable创始人Tijs Rademakers亲笔作序推荐，对系统学习和深入掌握Flowable的用法非常有帮助。
+
+<img src=""https://gitee.com/cai_xiao_feng/lowflow-design/raw/main/public%2Fflowable.jpg"" width=""500px""/>
+
+## 你可以请作者喝杯咖啡表示鼓励
+
+![输入图片说明](https://foruda.gitee.com/images/1697770422557390406/7efa04d6_2218307.png ""屏幕截图"")
+
+## 特别感谢JetBrains对开源项目支持
+
+
+<a href=""https://jb.gg/OpenSourceSupport"">
+  <img src=""https://user-images.githubusercontent.com/8643542/160519107-199319dc-e1cf-4079-94b7-01b6b8d23aa6.png"" align=""left"" height=""100"" width=""100""  alt=""JetBrains"">
+</a>
+<br>
+<br>
+<br>
+
+
+## git提交规范
+
+    [init] 初始化  
+    [feat] 增加新功能  
+    [fix] 修复问题/BUG  
+    [perf] 优化/性能提升  
+    [refactor] 重构  
+    [revert] 撤销修改  
+    [style] 代码风格相关无影响运行结果的  
+    [update] 其他修改  
+    [upgrade] 升级版本  
+    
+",4,0,10,Apache-2.0
+begcode/begcode-admin,main,"# monolithMybatis
+
+本应用程序由BegCode8.6.3生成, 你可以在 [https://www.begcode.com](https://www.begcode.com) 找到文档和帮助。
+
+## 截图展示
+
+### 登录
+
+![登录](./doc/images/login.png)
+
+### 首页
+
+![首页](./doc/images/index.png)
+
+### 菜单列表
+
+![菜单列表](./doc/images/view_permission.png)
+
+### 角色列表
+
+![角色列表](./doc/images/authority.png)
+
+### 用户列表
+
+![用户列表](./doc/images/user-list.png)
+
+### 短信配置
+
+![短信配置](./doc/images/sms_config.png)
+
+### 图片上传
+
+![图片上传](./doc/images/upload_image.png)
+
+### 字典管理
+
+![字典管理](./doc/images/dictionary.png)
+
+### 操作日志
+
+![操作日志](./doc/images/sys_log.png)
+
+### 消息发布
+
+![消息发布](./doc/images/announcement.png)
+
+### Api列表
+
+![Api列表](./doc/images/api.png)
+
+### Icon选择参考
+
+![Icon选择参考](./doc/images/icon_picker.png)
+
+### 查看通知
+
+![查看通知](./doc/images/notice.png)
+
+## 项目结构
+
+生成时需要 Node，并建议在开发过程中使用它。package.json 文件始终会生成，以提供更好的开发体验，包括 prettier、commit hooks、脚本等等。
+
+在项目的根目录中，JHipster会生成用于配置诸如git、prettier、eslint、husky等众多常见工具的配置文件。你可以在网络上找到有关这些工具的参考文档。
+
+`/src/*` 目录结构遵循默认的Java结构。
+
+- `.yo-rc.json` - Yeoman配置文件（BegCode/JHipster配置文件）
+  BegCode的配置存储在key为generator-begcode的属性中，这里定义了BegCode生成器的全局配置。此外，你可能会在项目根目录下的.yo-rc.json文件中找到类似generator-begcode-\*的蓝图配置，它包含了项目特定的配置选项。
+- `.yo-resolve` (可选) - Yeoman 冲突解决器
+  允许在发现冲突时使用特定操作，跳过匹配模式的文件的提示。每一行应该匹配 [模式] [操作]，其中模式是一个 Minimatch 模式，操作是 skip（如果省略则为默认操作）或者 force 中的一个。以 # 开头的行被视为注释，将被忽略。
+- `.jhipster/*.json` - JHipster实体配置文件
+
+- `npmw` - 用于本地安装的npm的包装器
+  BegCode默认使用构建工具在本地安装Node和pnpm。此包装器确保本地安装pnpm并使用它，避免了不同版本可能引起的一些差异。通过使用./npmw而不是传统的npm，您可以配置一个无需Node的环境来开发或测试您的应用程序。
+- `/src/main/docker` - 应用程序及其依赖的服务的Docker配置
+
+## 开发
+
+    构建系统将自动安装推荐的Node和pnpm版本。
+    我们提供了一个包装器来启动 pnpm。
+
+仅当 [package.json](package.json) 中的依赖项发生更改时，您才需要再次运行此命令。
+
+```
+./npmw install
+```
+
+我们使用 pnpm 脚本和 [Vite][] 作为我们的构建系统。
+
+在两个单独的终端中运行以下命令，以创建更好的开发体验，其中当硬盘上的文件发生更改时您的浏览器自动刷新。
+
+```
+./mvnw
+./npmw start
+```
+
+Npm 还用于管理此应用程序中使用的 CSS 和 JavaScript 依赖项。 您可以通过以下方式升级依赖项
+在 [package.json](package.json) 中指定较新版本。 您还可以运行`pnpm update`和`pnpm install`来管理依赖项。
+在任何命令上添加`help`标志以查看如何使用它。 例如，`pnpm help update`。
+
+`./npmw run` 命令将列出可用于该项目运行的所有脚本。
+
+## 系统构建
+
+### 创建Jar包
+
+要优化monolithMybatis应用程序创建Jar包并进行生产部署，请运行：
+
+```
+./mvnw package -Pprod clean verify -DskipTests
+```
+
+这将压缩客户端和重新打包CSS和JavaScript文件。 它还将修改`index.html`，以便引用这些新文件。
+为了确保一切正常，请运行：
+
+```
+java -jar target/*.jar
+```
+
+然后在浏览器打开：[http://localhost:8080](http://localhost:8080)。
+
+请参阅[Using JHipster in production][] 了解更多详细信息。
+
+### 创建War包
+
+要将您的应用程序打包为 war 以便将其部署到应用程序服务器，请运行：
+
+```
+./mvnw package -Pprod,war clean verify
+```
+
+### JHipster Control Center
+
+JHipster Control Center 可以帮助您管理和控制您的应用程序。 您可以使用以下命令启动本地控制中心服务器（可通过 http://localhost:7419 访问）：
+
+```
+docker compose -f src/main/docker/jhipster-control-center.yml up
+```
+
+## 测试
+
+### 运行Spring Boot 测试
+
+要启动应用程序的测试，请运行：
+
+```
+./mvnw verify
+```
+
+### Client tests
+
+Unit tests are run by [Jest][]. They're located in [front/src/test/javascript/](front/src/test/javascript/) and can be run with:
+
+```
+./npmw test
+```
+
+## 其他
+
+### 使用Sonar进行代码质量控制
+
+Sonar用于分析代码质量。 您可以使用以下命令启动本地 Sonar 服务器（可通过 http://localhost:9001 访问）：
+
+```
+docker compose -f src/main/docker/sonar.yml up -d
+```
+
+Note: we have turned off forced authentication redirect for UI in [src/main/docker/sonar.yml](src/main/docker/sonar.yml) for out of the box experience while trying out SonarQube, for real use cases turn it back on.
+
+You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
+
+Then, run a Sonar analysis:
+
+```
+./mvnw -Pprod clean verify sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
+```
+
+If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
+
+```
+./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
+```
+
+Additionally, Instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
+
+```
+sonar.login=admin
+sonar.password=admin
+```
+
+For more information, refer to the [Code quality page][].
+
+### Using Docker to simplify development (optional)
+
+You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
+
+For example, to start a mysql database in a docker container, run:
+
+```
+docker compose -f src/main/docker/mysql.yml up -d
+```
+
+To stop it and remove the container, run:
+
+```
+docker compose -f src/main/docker/mysql.yml down
+```
+
+You can also fully dockerize your application and all the services that it depends on.
+To achieve this, first build a docker image of your app by running:
+
+```
+npm run java:docker
+```
+
+Or build a arm64 docker image when using an arm64 processor os like MacOS with M1 processor family running:
+
+```
+npm run java:docker:arm64
+```
+
+Then run:
+
+```
+docker compose -f src/main/docker/app.yml up -d
+```
+
+When running Docker Desktop on MacOS Big Sur or later, consider enabling experimental `Use the new Virtualization framework` for better processing performance ([disk access performance is worse](https://github.com/docker/roadmap/issues/7)).
+
+For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
+
+## Continuous Integration (optional)
+
+To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
+
+[BegCode最新文档]: https://www.begcode.com
+[Node.js]: https://nodejs.org/
+[NPM]: https://www.npmjs.com/
+[Webpack]: https://webpack.github.io/
+[BrowserSync]: https://www.browsersync.io/
+[Jest]: https://facebook.github.io/jest/
+[Leaflet]: https://leafletjs.com/
+[DefinitelyTyped]: https://definitelytyped.org/
+",0,1,1,MIT
+youdeyunke/app,master,"![友得云客房产小程序-社区版](https://tcdn.udeve.net/fang2021/4bbe636b-e0e8-4580-8bb0-66bbf61f11bd.png)
+
+<div align=""center"">
+
+[产品官网](https://www.youdeyunke.com/?statId=6) | [帮助文档](https://youdeyunke.yuque.com/r/organizations/homepage) | [加入群聊](https://tcdn.udeve.net/udyk/66064f7e8ecade73b2385bb3.jpg)
+
+</div>
+
+# 友得云客房产小程序【社区版】<span>💯开源</span>
+
+
+## 系统简介
+友得云客房产小程序是一款专为房产行业打造的线上营销获客小程序系统，致力于帮助房产企业搭建私域流量平台，以数字化精准营销提升销售效果，驱动业绩增长。作为行业先行者，我们深谙互联网线上营销的要义，将多年的经验与技术融汇于一身，为您提供完善的、已成型的房产小程序系统。基于此【社区版】您无需授权即可获取全部源代码，并进行二次开发，允许用于商业用途，但需要保留版权信息。
+
+
+## 安装教程
+
+*   [从宝塔面板docker应用商店一键安装服务端教程](https://youdeyunke.yuque.com/fbxh1v/install/bt)
+*  [小程序端搭建教程](https://youdeyunke.yuque.com/fbxh1v/install/dt57os0gz4dk8h5b)
+
+
+## 在线演示
+
+| 内容 | 社区版|  专业版   |
+| --- | --- | --- |
+| 管理端演示地址 | https://demo2.youdeyunke.com/ | https://demo.youdeyunke.com/admin/index.html |
+| 管理端演示用户名 | 	`gitee@youdeyunke.com` | `gitee@youdeyunke.com` |
+| 管理端演示用户密码 | `88888888` | [咨询客服获取密码](https://work.weixin.qq.com/kfid/kfc8a0f8817daf2ec01) |
+| 网站端演示地址 | `不支持` | https://demo.youdeyunke.com |
+| 小程序演示 | ![](https://tcdn.udeve.net/udyk/672eec7ae4b07694cf4cb409.png) |  ![](https://tcdn.udeve.net/udyk/65a0d469b33aac0d968a3529.jpg) |
+
+
+## 商用须知
+
+社区版允许用于商业用途，而无需取得授权。但需要在小程序首页底部保留“友得云客”品牌露出，未经允许不可移除此标志，否则将构成侵权，我公司将委托律师事务所进行维权。
+
+* 示例：
+![](https://tcdn.udeve.net/udyk/672eebbfe4b07694cf4cb408.png)
+
+* 素材图片:https://tcdn.udeve.net/udyk/65ae2b4db33ac5e0e29f7ccf.png
+* 尺寸规范：宽度不少于120rpx，高度不少于60rpx
+* 显示位置：小程序首页底部居中显示
+
+
+
+## 界面截图
+![友得云客房产小程序界面截图](https://demo-1255998955.cos.ap-shanghai.myqcloud.com/udyk/screens.png)
+
+
+## 成功案例
+
+以下成功案例均基于【友得云客】进行构建，案例中的业务类型包括：线上售楼部、海外房产、房产自媒体、房产分销等多种不同业务类型
+
+| ![](https://tcdn.udeve.net/fang2021/2fb1dc49-a444-4d66-8de2-7dac4221f166.jpg?imageView2/2/w/400) | ![](https://tcdn.udeve.net/fang2021/2a013aa5-466e-436a-85fc-aa1c8f62e6d9.jpg?imageView2/2/w/400) | ![](https://tcdn.udeve.net/fang2021/783455da-f320-4ade-bf8a-bc8fbb265236.jpg?imageView2/2/w/400) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                            汉普顿                            |                          青特云置业                          |                            巧房子                            |
+| ![](https://tcdn.udeve.net/fang2021/0fada889-b400-4b29-bc14-bf2e2202490d.jpg?imageView2/2/w/400) | ![](https://tcdn.udeve.net/fang2021/25eee934-77d9-4492-900f-c2d4259226d7.jpg?imageView2/2/w/400) | ![](https://tcdn.udeve.net/fang2021/58e662ca-e7af-4e57-bed3-d2280831127f.jpg?imageView5/2/w/400) |
+|                           宁波甬房                           |                          特变e享家                           |                         学长看房笔记                         |
+
+
+
+## 参与贡献
+
+1. Fork 本仓库
+2. 新建 feature-xxx 分支
+3. 提交代码
+4. 新建 Merge Request
+
+
+## 特别鸣谢
+特别感谢以下开源项目
+
+ * vant-ui
+ * ElementUI
+ * mysql
+ * docker
+ * 宝塔面板
+ 
+
+## 版权须知
+
+Apache License 2.0 许可的主要内容包括：
+
+授权：允许任何人以任何目的使用、复制、修改和分发该软件。
+
+版权声明：要求在软件和相关文档中包含原始版权声明和许可证声明。
+
+保证免责：表明该软件是按现状提供的，没有任何明示或暗示的担保或保证。作者不承担任何赔偿责任。
+
+贡献者授权：要求所有贡献者授予 Apache 软件基金会永久性的、免费的、不可撤销的许可，以使用、复制、修改和分发其贡献。
+
+专利许可：为了保护使用该软件的用户，该许可要求贡献者授权任何必要的专利许可，以便将其用于 Apache 软件基金会的项目。
+
+Apache License 2.0 是一种宽松的开源许可，允许人们自由使用、修改和分发软件。
+
+本项目包含的第三方源码和二进制文件之版权信息另行标注。
+
+*友得云客®* 商标和著作权所有者为优得（西安）信息科技有限公司。侵权必究
+
+**本软件已登记软著，必须保留原始版权文字信息，违者将依法追究法律责任。**
+
+
+![](https://tcdn.udeve.net/udyk/672eef97e4b07694cf4cb40a.png)
+",1,0,1,Apache-2.0
+mt1006/mc-ar-mod,FABRIC-1.20.1,"### This mod (especially in its current state) is more of a proof of concept than actual optimization mod!
+It has many issues and greatly reduces performance of main rendering thread (even when disabled),
+so for comparing performance use instance without mod installed.
+
+# About
+**Asynchronous Reprojection** is a Minecraft mod that creates second rendering context to asynchronously reproject frames from main rendering thread with new camera rotation and player position.
+
+It was inspired by Comrade Stinger's demo, which was also base for shader code:
+https://www.youtube.com/watch?v=VvFyOFacljg
+
+Known issues:
+- Fabric version works only on Windows and Linux (I haven't tested it on macos). Forge version works only on Windows.
+- Screenshots (F2) and world icons don't work - they're black.
+- Minor visual glitches.
+- Camera bobbing is disabled.
+- ""Fabulous"" graphics doesn't change anything compared to ""Fancy"".
+- Camera sometimes rotates itself when opening or closing GUI.
+- Forge version crashes when trying to resize window during startup.
+- It sometimes just crashes (for no particular reason).
+
+CurseForge page: https://www.curseforge.com/minecraft/mc-mods/asynchronous-reprojection
+
+Modrinth page: https://modrinth.com/mod/asynchronous-reprojection
+
+# Examples
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example1.png)
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example2.png)
+
+![](https://raw.githubusercontent.com/mt1006/mc-ar-mod/_common/screenshots/example3.png)
+",1,5,3,LGPL-3.0
+ArtformGames/BungeeAuthProxy,master,"```text
+   ___                         ___       __  __   ___                   
+  / _ )__ _____  ___ ____ ___ / _ |__ __/ /_/ /  / _ \_______ __ ____ __
+ / _  / // / _ \/ _ `/ -_) -_) __ / // / __/ _ \/ ___/ __/ _ \\ \ / // /
+/____/\_,_/_//_/\_, /\__/\__/_/ |_\_,_/\__/_//_/_/  /_/  \___/_\_\\_, / 
+               /___/                                             /___/  
+```
+
+README LANGUAGES [ [**English**](README.md) | [中文](README_CN.md)  ]
+
+![CodeSize](https://img.shields.io/github/languages/code-size/ArtformGames/BungeeAuthProxy)
+[![Download](https://img.shields.io/github/downloads/ArtformGames/BungeeAuthProxy/total)](https://github.com/ArtformGames/BungeeAuthProxy/releases)
+[![Java CI with Maven](https://github.com/ArtformGames/BungeeAuthProxy/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/ArtformGames//actions/workflows/maven.yml)
+![Support](https://img.shields.io/badge/Minecraft-Java%201.16--Latest-green)
+
+# **BungeeAuthProxy**
+
+Authentication proxy injector for BungeeCord servers,
+which is trying to solve the problem of inability to access the MineCraft online session and auth service in some areas.
+
+## Usage
+
+**Before using this injector, make sure that your Java version is 11 or above.**
+
+1. Download latest release from [here](https://github.com/ArtformGames/BungeeAuthProxy/releases) .
+2. Put the jar file into the folder of your BungeeCord server (same path with server jar).
+3. Add the `-javaagent:BungeeAuthProxy.jar[=<CONFIG-FILE-NAME>]` before `-jar <server-jar>.jar` to the start command of
+   your BungeeCord server.
+    - For example: `java -javaagent:BungeeAuthProxy.jar -jar BungeeCord.jar`
+    - Using custom config file name: `java -javaagent:BungeeAuthProxy.jar=auth-proxy.yml -jar BungeeCord.jar`
+4. Start your bungeecord server, and configured the proxy (Default is `auth.yml` in server folder).
+
+## Configurations
+
+Will be generated on the first boot up.
+
+```yaml
+debug: false
+
+# MineCraft service settings
+service:
+  # Timeout duration for single request in milliseconds.
+  time-out: 5000
+  # Authentication url dns-cache expire duration in milliseconds
+  # If this value ≤0, will disable dns-cache.
+  dns-cache-expire: 60000
+
+# Proxy server settings
+proxy:
+  # Proxy protocol, -1 = NO_PROXY ,0 = HTTP/HTTPS, 1 = SOCKS4, 2 = SOCKS5
+  protocol: -1
+  # Proxy host
+  host: 127.0.0.1
+  # Proxy port
+  port: 7890
+  # Proxy authentication settings
+  auth:
+    # Whether to enable proxy authentication
+    enabled: false
+    username: proxy-username
+    password: proxy-password
+
+advance:
+   # Remove unused field after injection.
+   # If any 'NoSuchFieldException' or 'IllegalAccessException' occurred, try to set this to false.
+   remove-unused-field: true
+```
+
+## Open Source Licence
+
+The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
+
+## Supports
+
+This project is mainly developed by the [Artfrom Games](https://github.com/ArtformGames/) .
+
+Many thanks to Jetbrains for kindly providing a license for us to work on this and other open-source projects.  
+[![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/ArtformGames/BungeeAuthProxy)
+
+",5,0,1,GPL-3.0
+ProgrammerLMS/mini-git,master,"目录
+
+- [mini-git：用Java实现一个简易版Git](#mini-git用java实现一个简易版git)
+  - [0. 介绍与说明](#0-介绍与说明)
+  - [1. 内部数据结构](#1-内部数据结构)
+    - [1.1 blob](#11-blob)
+    - [1.2 tree](#12-tree)
+    - [1.3 commit](#13-commit)
+    - [1.4 stage](#14-stage)
+  - [2. 支持的指令](#2-支持的指令)
+    - [2.1 init](#21-init)
+    - [2.2 add](#22-add)
+    - [2.3 commit](#23-commit)
+    - [2.4 status](#24-status)
+    - [2.5 log](#25-log)
+    - [2.6 rm](#26-rm)
+    - [2.7 branch](#27-branch)
+    - [2.8 checkout](#28-checkout)
+  - [3. 额外功能](#3-额外功能)
+  - [4. 文件目录](#4-文件目录)
+  - [5. 运行截图](#5-运行截图)
+# mini-git：用Java实现一个简易版Git
+
+特此鸣谢`UCB`提供的`skeleton code`！
+
+![](image/icon.png)
+
+## 0. 介绍与说明
+
+本玩具项目基于作者对`Git`的理解与`Git`操作，基本实现了`Git`部分指令的底层运行原理。在技术上只使用到了`Java 8 `官方库，包括序列化、文件、集合等，适合对`Git`或`Java`基础不够熟悉的计算机新手进行源码阅读或调试。
+
+本系统已实现的指令在下方，由于代码量小及水平有限，部分命令和`Git`软件的真实使用效果并不相同，并对一些复杂指令作出简化，请阅读下方指令的**注意事项**，避免运行中由于人工误操作出现Bug。
+
+同时，该系统不能完全代表`Git`内部真正的工作流程，**仅仅代表**本人理解与对`Git`实操的认识，借此抛砖引玉。（另外安利一个可视化学习`Git`的网站，[Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
+
+## 1. 内部数据结构
+
+### 1.1 blob
+
+存在于`.git/object`文件夹，`blob`表示保存的文件内容。由于 `Git `会保存多个版本的文件，因此一个文件可能对应多个 `blob`：每个 `blob `在不同的`commit`中被跟踪。
+
+### 1.2 tree
+
+存在于`.git/object`文件夹，`tree`表示文件目录，即将名称映射为 `blob` 和其他子`tree`（子目录）引用的目录结构。在本项目中为了简化，没有包含实际的`tree`对象，而是直接通过文件路径。具体原理可见：[Git基础 — 16、Tree对象详解 - 繁华似锦Fighting - 博客园 ](https://www.cnblogs.com/liuyuelinfighting/p/16194504.html)
+
+### 1.3 commit
+
+存在于`.git/object`文件夹。`commit`包含了日志信息、元数据（提交日期、作者等）、对`tree`对象的引用以及对父`commit`的引用等。同时`Git`还会维护从分支头部到提交引用的映射。
+
+### 1.4 stage
+
+暂存区，对应`.git`中的`index`文件，在本项目中，`stage`包含了**新增文件暂存区**和**删除文件暂存区**。在下文中，我们称之为“**暂存-新增区**”与“**暂存-删除区**”。
+
+## 2. 支持的指令
+
+### 2.1 init
+
+指令
+
+- ##### `git init`
+
+说明
+
+- 该指令会在当前目录下创建一个新的 `mini-git` 版本控制系统。该系统将自动从一个`commit`开始：并且该提交不包含任何文件。初始状态下只有一个默认当前分支：`master`。由于 `mini-git`创建的所有版本库的初始提交内容完全相同，因此所有版本库都会自动共享该`commit`（它们都有相同的 `UID`），所有版本库中的所有`commit`都会追溯到该次提交。
+
+### 2.2 add
+
+指令
+
+- ##### `git add .`
+
+- ##### `git add [file/folder] [file/folder] ...`
+
+说明
+
+- 将当前存在的文件副本添加到暂存区。因此，被添加文件也称为暂存文件。重新暂存已暂存的文件会用新内容覆盖暂存区域中的前一个条目。如果文件的当前工作版本与当前提交的版本相同，则不要将其添加到暂存区；如果文件已经在暂存区，则应将其从暂存区移除（这可能发生在文件被修改、添加，然后又改回原始版本的情况下）。如果该文件在执行`git rm`命令时已在暂存区，则不会再被暂存。
+- 具体原理同上。
+
+注意事项
+
+- 其中，`folder`为工作目录下的相对路径，如`git add a/b.txt`，如果你的路径包含空格，请加入**双引号**，如`git add ""a b""`，表示名为`a b`的文件夹。由于本系统无`vim`编辑模式，**请不要只输入一个引号**。
+
+### 2.3 commit
+
+指令
+
+- ##### `git commit -m [message]`
+
+说明
+
+- 该操作会保存当前`commit`和暂存-新增区中跟踪文件的快照，并创建一个新的`commit`,新的`commit`的父`commit`为当前`commit`。在默认情况下，每个`commit`的文件快照与其父`commit`的文件快照完全相同；它将保持文件版本的原样。新`commit`只会更新已经被添加到暂存-新增区的文件，在这种情况下，新`commit`将包含在暂存区的文件版本，而不是从父`commit`中获得的版本。同时，新`commit`将保存并开始跟踪任何父`commit`没有跟踪的文件。最后，在当前`commit`中被跟踪的文件可能会在新`commit`中被取消跟踪，因为这些文件已被 `rm `命令删除。
+
+
+### 2.4 status
+
+指令
+
+- ##### `git status`
+
+说明
+
+- 表示当前工作目录的状态，包含的内容信息如下：
+
+  ```markdown
+  === Staged Files ===
+  
+    
+  === Removed Files ===
+  
+    
+  === Modifications Not Staged For Commit ===
+  
+    
+  === Untracked Files ===
+  
+  ```
+
+### 2.5 log
+
+指令
+
+- ##### `git log`
+
+- ##### `git log -[number]`
+
+- ##### `git log --grep=[message]`
+
+说明
+
+- 按时间先后，展示所有`commit`记录
+- 展示给定数量的`commit`记录
+- 展示包含`message`信息的`commit`记录
+
+### 2.6 rm
+
+指令
+
+- ##### `git rm [file/folder] [file/folder] ...`
+
+- ##### `git rm -f [file/folder] [file/folder] ...`
+
+- ##### `git rm -cached [file/folder] [file/folder] ...`
+
+说明
+
+- 从暂存区和工作目录，删除文件或文件夹
+- 强制删除
+- 只删除暂存区的文件或文件夹，保留工作目录的文件或文件夹
+
+### 2.7 branch
+
+指令
+
+- ##### `git branch`
+
+- ##### `git branch [branch name]`
+
+- ##### `git branch -d [branch name]`
+
+说明
+
+- 查看当前所有本地分支
+
+- 创建分支
+
+- 删除分支
+
+### 2.8 checkout
+
+指令
+
+- ##### `git checkout [branch name]`
+
+- ##### `git checkout -b [branch name]`
+
+- ##### `git checkout -- [file] [file] ...`
+
+- ##### `git checkout [commit id] -- [file] [file] ...`
+
+说明
+
+- 所有文件切换到给定分支
+- 创建分支，并切换到该分支
+- 使用当前`head commit`的文件版本覆写该文件
+- 根据指定commit的文件版本覆写该文件
+
+## 3. 额外功能
+
+- 支持`git [command] -h`查看指令帮助
+- 支持八位`commit id`检索，如`d2ee103f`
+- 系统会缓存上一次最近打开的工作目录
+- 系统会缓存指令，通过键盘上的`↑`与`↓`按键，即可切换指令
+
+## 4. 文件目录
+
+```
+├─src
+    │  Main.java
+    │
+    ├─command
+    │      AddCommand.java
+    │      BranchCommand.java
+    │      CheckoutCommand.java
+    │      CommitCommand.java
+    │      ICommand.java
+    │      InitCommand.java
+    │      LogCommand.java
+    │      MergeCommand.java
+    │      ResetCommand.java
+    │      RmCommand.java
+    │      StatusCommand.java
+    │
+    ├─engine
+    │      Engine.java
+    │      Repository.java
+    │
+    ├─object
+    │      Blob.java
+    │      Commit.java
+    │      Stage.java
+    │
+    ├─utils
+    │      FileTreeUtils.java
+    │      PersistanceUtils.java
+    │
+    └─view
+            CommandPromptGUI.java
+            ViewResponseEntity.java
+            ViewResponseEnum.java
+```
+
+## 5. 运行截图
+
+![](image/running.png)
+
+如有疑问，欢迎`emali`至programmerlms@163.com；如有`bug`，那是正常的:)",0,1,1,
+simasch/cqrs-meets-modern-java,main,"# CQRS Meets Modern Java
+
+This project is used as an example for my
+talk [CQRS meets modern Java](https://speakerdeck.com/simas/cqrs-meets-modern-java)
+
+## Prerequisite: jOOQ Build
+
+The CQRS project uses jOOQ and therefore the database model classes must be created with Maven.
+
+Change into the cqrs directory and run:
+
+    ./mvnw compile
+
+## Running the applications
+
+Both applications use Testcontainers support of Spring Boot. Run the TestCqrsApplication and the
+TestTraditionalApplication in src/test
+
+## Testing
+
+The file requests.http contains the http test requests to test the endpoints.",0,0,2,
