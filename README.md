@@ -29,7 +29,7 @@ collected metadata about GitHub repositories.
 First, prepare datasets for the models:
 
 ```bash
-docker run  --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
+docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
   -e END="<end date>" -e COLLECT_TOKEN="<GitHub PAT to collect repositories>" \
   -e GH_TOKEN="<GitHub PAT>" -e HF_TOKEN="<Huggingface PAT>" \
   -e COHERE_TOKEN="<Cohere API token>" -e OUT="sr-data" h1alexbel/sr-detection
