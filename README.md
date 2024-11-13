@@ -26,7 +26,7 @@ collected metadata about GitHub repositories.
 
 ## Experiment's steps
 
-First, prepare datasets for the models:
+First, prepare datasets:
 
 ```bash
 docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
