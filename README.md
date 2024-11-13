@@ -31,8 +31,9 @@ First, prepare datasets:
 ```bash
 docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
   -e END="<end date>" -e COLLECT_TOKEN="<GitHub PAT to collect repositories>" \
-  -e GH_TOKEN="<GitHub PAT>" -e HF_TOKEN="<Huggingface PAT>" \
-  -e COHERE_TOKEN="<Cohere API token>" -e OUT="sr-data" h1alexbel/sr-detection
+  -e METADATA_TOKEN="<GitHub PAT to fetch metadata>" \
+  -e HF_TOKEN="<Huggingface PAT>" -e COHERE_TOKEN="<Cohere API token>" \
+  -e OUT="sr-data" h1alexbel/sr-detection
 ```
 
 In the output directory you should have these files:
