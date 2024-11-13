@@ -26,11 +26,19 @@ collected metadata about GitHub repositories.
 
 ## Experiment's steps
 
-To run the entire experiment in Docker:
+First, prepare datasets for the models:
 
 ```bash
-docker run --rm -v "$(pwd)/output:/experiment" h1alexbel/sr-detection experiment
+docker run  --rm -v "$(pwd)/output:/collection" \
+  -e START="<start date>" -e END="<end date>" \
+  -e COLLECT_TOKEN="<GitHub PAT to collect repositories>" \
+  -e GH_TOKEN="<GitHub PAT>" \
+  -e HF_TOKEN="<Huggingface PAT>" \
+  -e COHERE_TOKEN="<Cohere API token>" \
+  -e OUT="sr-data" h1alexbel/sr-detection
 ```
+
+Also, you can download existing datasets from [gh-pages] branch.
 
 ### Metadata collection
 
@@ -251,4 +259,4 @@ just full
 [DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
 [GMM]: https://en.wikipedia.org/wiki/Mixture_model
 [collect.yml]: https://github.com/h1alexbel/sr-detection/actions/workflows/collect.yml
-[collect branch]: https://github.com/h1alexbel/sr-detection/tree/collect
+[gh-pages]: https://github.com/h1alexbel/sr-detection/tree/collect
