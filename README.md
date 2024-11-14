@@ -24,14 +24,14 @@ collected metadata about GitHub repositories.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
 * [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
 
-## Experiment's steps
+## Run experiments
 
 First, prepare datasets:
 
 ```bash
 docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
   -e END="<end date>" -e COLLECT_TOKEN="<GitHub PAT to collect repositories>" \
-  -e METADATA_TOKEN="<GitHub PAT to fetch metadata>" \
+  -e COLLECT_TOKEN="<GitHub PAT to fetch metadata>" \
   -e HF_TOKEN="<Huggingface PAT>" -e COHERE_TOKEN="<Cohere API token>" \
   -e OUT="sr-data" h1alexbel/sr-detection
 ```
@@ -48,197 +48,7 @@ In the output directory you should have these files:
 
 Alternatively, you can download existing datasets from [gh-pages] branch.
 
-### Metadata collection
-
-We collect two-fold metadata for each GitHub repository: numerical, and
-textual. For numerical we collect:
-
-* `releases`, the number of releases.
-* `pulls`, the number of pull requests.
-* `issues`, the total number of issues (opened + closed).
-* `branches`, the number of branches.
-
-To run this:
-
-```bash
-just collect
-```
-
-You should expect to have `sr-data/experiment/repos.csv` with collected
-repositories and their metadata.
-
-To capture smaller amount of repositories you can run this:
-
-```bash
-just test-collect
-```
-
-You should expect to have `sr-data/tmp/test-repos.csv`, with the same structure
-as `repos.csv`, but smaller.
-
-You can run this step in GitHub Actions: [collect.yml].
-Aggregated collections located in [collect branch].
-
-### Filter
-
-We filter collected repositories. We remove repositories with empty README
-file. Then, we convert README file to plain text and check in which languages
-file is written. We remove repositories with README file that is not fully
-written in English.
-
-To run this:
-
-```bash
-just filter repos.csv
-```
-
-You should expect to have `sr-data/experiment/after-filter.csv`.
-
-### Extract headings
-
-From each README file we extract it's all headings (text after `#`).
-We remove English stop words from each heading. Then, we apply
-lemmatization for each word, filter words with `^[a-zA-Z]+$` regex,
-and calculate up to 5 most common words across README headings.
-
-For instance, this README:
-
-```markdown
-# Building web applications in Java with Spring Boot 3
-...
-
-## Agenda
-...
-
-## Who am I?
-...
-
-## Prerequisites
-...
-
-## Outcomes
-...
-
-## What is Spring?
-...
-
-## Resources
-...
-
-### Dan Vega
-...
-
-### Spring
-... 
-
-### Documentation
-...
-
-### Books
-...
-
-### Podcasts
-...
-
-### YouTube
-...
-```
-
-Will be transformed to:
-
-```text
-['spring', 'build', 'web', 'application', 'java']
-```
-
-To run this:
-
-```bash
-just extract after-filter.csv
-```
-
-You should expect to have `sr-data/experiment/after-extract.csv`.
-
-### Generate embeddings
-
-For each repo, we aggregate all [top words](#extract-headings) from README file
-headings into string. We convert each string to three variants of embeddings:
-[S-BERT], [E5], [Embedv3].
-
-To run this:
-
-```bash
-just embed after-extract.csv
-```
-
-You should expect to have three files:
-
-* `sr-data/experiment/embeddings-s-bert-384.csv`
-* `sr-data/experiment/embeddings-e5-1024.csv`
-* `sr-data/experiment/embeddings-embedv3-1024.csv`
-
-### Create datasets
-
-We calculate SR-score from numerical metadata for each repository, and create
-seven datasets from prepared data:
-
-* `scores.csv`, dataset with SR-scores;
-* `sbert.csv`, dataset from S-BERT-384 embeddings;
-* `e5.csv`, dataset from E5-1024 embeddings;
-* `embedv3.csv`, dataset from Embedv3 embeddings;
-* `scores+sbert.csv`, combination of SR-score and S-BERT-384 embeddings;
-* `scores+e5.csv`, combination of SR-score and E5-1024 embeddings;
-* `scores+embedv3.csv`, combination of SR-score and Embedv3-1024 embeddings;
-
-To run this:
-
-```bash
-just datasets
-```
-
-You should expect to have all seven files in `sr-data/experiment` directory.
-
-### Cluster
-
-We apply [clustering][Cluster analysis] on our previously
-[created datasets](#create-datasets). We use the following algorithms:
-
-* [KMeans]
-* [Agglomerative clustering]
-* [DBSCAN]
-* [GMM]
-
-Each algorithm generates set of clusters for each dataset.
-
-To run this:
-
-```bash
-just cluster
-```
-
-You should expect to have the following directories inside `experiment`
-directory:
-
-* `kmeans`
-* `agglomerative`
-* `dbscan`
-* `gmm`
-
-Each directory have its subs named after dataset name: `e5`, `embedv3`,
-`scores+sbert`, etc. In each subdirectory you should have `config.json|txt`
-file with used model parameters, and `clusters` directory with files containing
-clustered repositories. Each file, for instance `0.txt`, where `0` is cluster
-identifier, hosts list of repositories in `OWNER/REPO` format, separated by new
-line:
-
-```text
-Faceplugin-ltd/FaceRecognition-LivenessDetection-Android
-LxxxSec/CTF-Java-Gadget
-flutter-youni/flutter_youni_gromore
-ax1sX/RouteCheck-Alpha
-darksolopic/PasswordManagerGUI
-borjavb/bq-lineage-tool
-...
-```
+TBD..
 
 ## How to contribute
 
@@ -266,5 +76,4 @@ just full
 [Agglomerative clustering]: https://en.wikipedia.org/wiki/Hierarchical_clustering
 [DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
 [GMM]: https://en.wikipedia.org/wiki/Mixture_model
-[collect.yml]: https://github.com/h1alexbel/sr-detection/actions/workflows/collect.yml
 [gh-pages]: https://github.com/h1alexbel/sr-detection/tree/collect
