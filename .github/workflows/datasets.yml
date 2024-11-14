@@ -60,7 +60,7 @@ jobs:
       - name: Create
         run: |
           docker run  --rm -v "$(pwd)/output:/collection" \
-            -e QUERY="stars:>10 size:>=20 mirror:false template:false NOT android" \
+            -e QUERY="stars:>10 language:java,rust size:>=20 mirror:false template:false NOT android" \
             -e START="${{ inputs.start }}" -e END="${{ inputs.end }}" \
             -e COLLECT_TOKEN="${{ secrets.COLLECT_TOKEN_1 }}" \
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
