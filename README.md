@@ -68,12 +68,4 @@ just full
 [Python 3.10+]: https://www.python.org/downloads/release/python-3100
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [just]: https://just.systems/man/en/chapter_4.html
-[S-BERT]: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-[E5]: https://huggingface.co/intfloat/e5-large
-[Embedv3]: https://cohere.com/blog/introducing-embed-v3
-[KMeans]: https://en.wikipedia.org/wiki/K-means_clustering
-[Cluster analysis]: https://en.wikipedia.org/wiki/Cluster_analysis
-[Agglomerative clustering]: https://en.wikipedia.org/wiki/Hierarchical_clustering
-[DBSCAN]: https://en.wikipedia.org/wiki/DBSCAN
-[GMM]: https://en.wikipedia.org/wiki/Mixture_model
 [gh-pages]: https://github.com/h1alexbel/sr-detection/tree/collect
