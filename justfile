@@ -62,10 +62,10 @@ clean:
   rm sr-data/experiment/* && rmdir sr-data/experiment
 
 # Collect repositories.
-collect dir start end out:
+collect dir query start end out:
   mkdir -p {{dir}}
-  ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
-    --start "{{start}}" --end "{{end}}" --tokens "$PATS" --filename "{{out}}"
+  ghminer --query "{{query}}" --start "{{start}}" --end "{{end}}" \
+   --tokens "$PATS" --filename "{{out}}"
 
 # Fetch pulls count for collected repos.
 pulls repos token out="experiment/with-pulls.csv":

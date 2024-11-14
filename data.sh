@@ -24,7 +24,7 @@ echo "$COLLECT_TOKEN" >> "$PATS"
 {
   "$RUN"/just install
   poetry install
-  "$RUN"/just collect "collection/$OUT" "$START" "$END" "repos"
+  "$RUN"/just collect "collection/$OUT" "$QUERY" "$START" "$END" "repos"
   "$RUN"/just pulls "../repos.csv" "$GH_TOKEN" "../repos-with-pulls.csv"
   "$RUN"/just filter "../repos-with-pulls.csv" "../after-filter.csv"
   "$RUN"/just extract "../after-filter.csv" "../after-extract.csv"

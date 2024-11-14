@@ -55,6 +55,7 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y \
 
 # Run variables.
 ENV RUN="/root/.cargo/bin" \
+    QUERY="stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
     PATS="pats.txt" \
     OUT="data"
 
