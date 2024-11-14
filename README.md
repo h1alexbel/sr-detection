@@ -68,4 +68,4 @@ just full
 [Python 3.10+]: https://www.python.org/downloads/release/python-3100
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [just]: https://just.systems/man/en/chapter_4.html
-[gh-pages]: https://github.com/h1alexbel/sr-detection/tree/collect
+[gh-pages]: https://github.com/h1alexbel/sr-detection/tree/gh-pages
