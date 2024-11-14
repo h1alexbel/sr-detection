@@ -60,3 +60,5 @@ cp "embedv3.csv" "collection/$OUT/d4-embedv3.csv"
 cp "d5-scores+sbert.csv" "collection/$OUT"
 cp "d6-scores+e5.csv" "collection/$OUT"
 cp "d7-scores+embedv3.csv" "collection/$OUT"
+
+echo "Found repositories: $(rg 'Total results: \w+' -g collect.log | awk '{print $0}' | cut -d ':' -f3)"
