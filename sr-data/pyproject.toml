@@ -130,6 +130,14 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.junit_tests:main(repos, out, token)"
 args = [{name = "repos"}, {name = "out"}, {name = "token"}]
 
+[tool.poe.tasks.no_readme]
+script = "sr_data.steps.no_readme:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
+[tool.poe.tasks.sentiments]
+script = "sr_data.steps.sentiments:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
