@@ -71,3 +71,13 @@ class TestSentiments(unittest.TestCase):
             expected,
             f"Extracted description: {extracted}, has size: {size}, but should: {expected}"
         )
+
+    @pytest.mark.fast
+    def test_returns_words_for_empty_sections(self):
+        expected = "There is no sections at all"
+        extracted = top(expected)
+        self.assertEqual(
+            extracted,
+            expected,
+            f"Extracted description: {extracted} does not match with expected: {expected}"
+        )
