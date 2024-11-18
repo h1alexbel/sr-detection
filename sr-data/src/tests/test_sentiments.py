@@ -44,7 +44,7 @@ class TestSentiments(unittest.TestCase):
         )
 
     @pytest.mark.fast
-    def test_returns_first_30_words_when_top_is_big(self):
+    def test_returns_first_512_chars_when_top_is_big(self):
         extracted = top(
             """
             # Top Lorem Ipsum is simply dummy text of the printing and
@@ -69,7 +69,7 @@ class TestSentiments(unittest.TestCase):
             """
         )
         size = len(extracted.split())
-        expected = 30
+        expected = 512
         self.assertEqual(
             size,
             expected,
@@ -94,7 +94,7 @@ class TestSentiments(unittest.TestCase):
             "Sentiment result should be negative, but it wasn't!"
         )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_runs_sentiments_for_all(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "sentiments.csv")

@@ -41,20 +41,25 @@ def main(repos, out):
 
 
 def sentiment(readme):
-    return stask(top(readme))
+    description = top(readme)
+    try:
+        return stask(description)
+    except RuntimeError:
+        logger.error(
+            f"Can't parse input description ({len(description)} length)"
+        )
+        logger.debug(f"Erroneous description: {description}")
 
 
 def top(readme) -> str:
-    print(readme)
     sections = readme.split("\n#")
     stripped = [section.strip() for section in sections if section.strip()]
     if not stripped:
         result = " ".join(readme.split()[:31])
     else:
         first = stripped[0].strip()
-        print(first)
         if len(first) > 512:
-            result = " ".join(first.split()[:31])
+            result = " ".join(first)[:512]
         else:
             result = first
     return result.replace("#", "").strip()
