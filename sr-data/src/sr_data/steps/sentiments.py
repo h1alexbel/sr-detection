@@ -42,12 +42,12 @@ def top(readme) -> str:
     sections = readme.split("\n#")
     stripped = [section.strip() for section in sections if section.strip()]
     if not stripped:
-        result = " ".join(readme.split()[:64])
+        result = " ".join(readme.split()[:31])
     else:
         first = stripped[0].strip()
         print(first)
         if len(first) > 512:
-            result = " ".join(first.split()[:64])
+            result = " ".join(first.split()[:31])
         else:
             result = first
     return result.replace("#", "").strip()
