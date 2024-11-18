@@ -1,6 +1,7 @@
 """
 Tests for sentiments.
 """
+import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,9 +24,11 @@ Tests for sentiments.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import unittest
+from tempfile import TemporaryDirectory
 
+import pandas as pd
 import pytest
-from sr_data.steps.sentiments import top, sentiment
+from sr_data.steps.sentiments import top, sentiment, main
 
 
 class TestSentiments(unittest.TestCase):
@@ -90,3 +93,20 @@ class TestSentiments(unittest.TestCase):
             "negative" in result[0]["label"],
             "Sentiment result should be negative, but it wasn't!"
         )
+
+    @pytest.mark.fast
+    def test_runs_sentiments_for_all(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "sentiments.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-sentiments.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertTrue(
+                not frame["sentiment"].tolist(),
+                "Sentiments are empty, but they should not be!"
+            )
