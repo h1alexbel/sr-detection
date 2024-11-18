@@ -1,7 +1,6 @@
 """
 Tests for sentiments.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,6 +22,7 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
