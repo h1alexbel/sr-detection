@@ -52,6 +52,6 @@ jobs:
       - name: Build
         run: |
           poetry env use python${{ matrix.python-version }}
-          poetry install
+          poetry install -vvv
           just install
           just full "deep or fast"
