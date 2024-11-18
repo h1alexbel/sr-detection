@@ -31,8 +31,8 @@ class TestSentiments(unittest.TestCase):
 
     @pytest.mark.fast
     def test_returns_top_description_for_readme(self):
-        description = top("# Top description # The latter...")
-        expected = "Top description"
+        description = top("# Top\n# The latter")
+        expected = "Top"
         self.assertEqual(
             description,
             expected,

@@ -33,9 +33,21 @@ def main(repos, out):
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
-def sentiment(description):
-    return ""
+def sentiment(readme):
+    return top(readme)
 
 
 def top(readme) -> str:
-    return ""
+    print(readme)
+    sections = readme.split("\n#")
+    stripped = [section.strip() for section in sections if section.strip()]
+    if not stripped:
+        result = " ".join(readme.split()[:64])
+    else:
+        first = stripped[0].strip()
+        print(first)
+        if len(first) > 512:
+            result = " ".join(first.split()[:64])
+        else:
+            result = first
+    return result.replace("#", "").strip()
