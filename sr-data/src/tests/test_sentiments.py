@@ -1,5 +1,5 @@
 """
-Sentiment analysis for a top description of README file.
+Tests for sentiments.
 """
 # The MIT License (MIT)
 #
@@ -22,20 +22,19 @@ Sentiment analysis for a top description of README file.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import pandas as pd
-from loguru import logger
+import unittest
 
+import pytest
+from sr_data.steps.sentiments import top
 
-def main(repos, out):
-    frame = pd.read_csv(repos)
-    frame["sentiment"] = frame["readme"].apply(sentiment)
-    frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+class TestSentiments(unittest.TestCase):
 
-
-def sentiment(description):
-    return ""
-
-
-def top(readme) -> str:
-    return ""
+    @pytest.mark.fast
+    def test_returns_top_description_for_readme(self):
+        description = top("# Top description # The latter...")
+        expected = "Top description"
+        self.assertEqual(
+            description,
+            expected,
+            f"Extracted description: {description} does not match with expected: {expected}"
+        )
