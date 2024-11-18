@@ -46,11 +46,15 @@ jobs:
       - uses: abatilo/actions-poetry@v3
         with:
           poetry-version: ${{ matrix.poetry-version }}
+      - name: Reset Python version on MacOS
+        if: ${{ runner.os == 'macOS' }}
+        run: |
+          poetry env remove python || true
+          poetry env use python${{ matrix.python-version }}
       - uses: extractions/setup-just@v2
         with:
           just-version: ${{ matrix.just-version }}
       - name: Build
         run: |
-          poetry env info
           just install
           just full "deep or fast"
