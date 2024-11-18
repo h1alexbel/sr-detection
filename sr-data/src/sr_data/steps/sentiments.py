@@ -24,6 +24,13 @@ Sentiment analysis for a top description of README file.
 # SOFTWARE.
 import pandas as pd
 from loguru import logger
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, \
+    pipeline
+
+checkpoint = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
+stask = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
 
 def main(repos, out):
@@ -34,7 +41,7 @@ def main(repos, out):
 
 
 def sentiment(readme):
-    return top(readme)
+    return stask(top(readme))
 
 
 def top(readme) -> str:

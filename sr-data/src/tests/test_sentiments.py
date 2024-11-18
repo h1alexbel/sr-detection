@@ -25,7 +25,7 @@ Tests for sentiments.
 import unittest
 
 import pytest
-from sr_data.steps.sentiments import top
+from sr_data.steps.sentiments import top, sentiment
 
 class TestSentiments(unittest.TestCase):
 
@@ -81,3 +81,12 @@ class TestSentiments(unittest.TestCase):
             expected,
             f"Extracted description: {extracted} does not match with expected: {expected}"
         )
+
+    @pytest.mark.fast
+    def test_runs_sentiment(self):
+        result = sentiment("There is a problem!")
+        self.assertEqual(
+            result,
+            ""
+        )
+
