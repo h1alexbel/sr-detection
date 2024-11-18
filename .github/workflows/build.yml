@@ -57,5 +57,5 @@ jobs:
           just-version: ${{ matrix.just-version }}
       - name: Build
         run: |
-          just install
+          just install python${{ matrix.python-version }}
           just full "deep or fast"
