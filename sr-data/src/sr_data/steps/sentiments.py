@@ -51,6 +51,9 @@ def sentiment(readme):
         logger.debug(f"Erroneous description: {description}")
 
 
+# @todo #153:35min: Extract first 15-20 words from first heading.
+#  Instead of extracting just n characters, we should extract an amount of
+#  words from the heading that contains not more than n characters.
 def top(readme) -> str:
     sections = readme.split("\n#")
     stripped = [section.strip() for section in sections if section.strip()]
