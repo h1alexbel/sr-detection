@@ -62,7 +62,7 @@ def top(readme) -> str:
     else:
         first = stripped[0].strip()
         if len(first) > 512:
-            result = " ".join(first)[:512]
+            result = first[:512]
         else:
             result = first
     return result.replace("#", "").strip()

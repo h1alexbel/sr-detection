@@ -46,8 +46,8 @@ class TestSentiments(unittest.TestCase):
     @pytest.mark.fast
     def test_returns_first_512_chars_when_top_is_big(self):
         extracted = top(
-            """
-            # Top Lorem Ipsum is simply dummy text of the printing and
+            """# Top
+            Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's standard
             dummy text ever since the 1500s, when an unknown printer took a
             galley of type and scrambled it to make a type specimen book.
@@ -66,10 +66,14 @@ class TestSentiments(unittest.TestCase):
             'lorem ipsum' will uncover many web sites still in their infancy.
             Various versions have evolved over the years, sometimes by
             accident, sometimes on purpose (injected humour and the like).
-            """
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don't look even slightly
+            believable.
+"""
         )
-        size = len(extracted.split())
-        expected = 512
+        size = len(extracted)
+        expected = 510
         self.assertEqual(
             size,
             expected,
