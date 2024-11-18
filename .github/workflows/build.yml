@@ -51,6 +51,5 @@ jobs:
           just-version: ${{ matrix.just-version }}
       - name: Build
         run: |
-          pip3 install torch
           just install
           just full "deep or fast"
