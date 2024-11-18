@@ -27,6 +27,7 @@ import unittest
 import pytest
 from sr_data.steps.sentiments import top, sentiment
 
+
 class TestSentiments(unittest.TestCase):
 
     @pytest.mark.fast
@@ -85,8 +86,7 @@ class TestSentiments(unittest.TestCase):
     @pytest.mark.fast
     def test_runs_sentiment(self):
         result = sentiment("There is a problem!")
-        self.assertEqual(
-            result,
-            ""
+        self.assertTrue(
+            "negative" in result,
+            "Sentiment result should be negative, but it wasn't!"
         )
-
