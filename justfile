@@ -21,10 +21,9 @@
 # SOFTWARE.
 
 # Install dependencies.
-install python:
+install:
   ${RULTOR:+sudo} npm install -g ghminer@0.0.7
   poetry self add 'poethepoet[poetry_plugin]'
-  poetry env use {{python}}
   cd sr-data && poetry install
   cd sr-train && poetry install
 
