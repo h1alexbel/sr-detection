@@ -41,8 +41,8 @@ cohere = "5.11.3"
 loguru = "0.7.2"
 scikit-fuzzy = "0.5.0"
 markdown-it-py = "3.0.0"
-torch = "2.5.1"
-transformers = "4.46.2"
+torch = "^2.5.1"
+transformers = "^4.46.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
