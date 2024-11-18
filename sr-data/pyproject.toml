@@ -29,7 +29,7 @@ readme = "README.md"
 packages = [{include = "sr_data", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.10 || ^3.11 || ^3.12"
+python = "==3.10.* || ==3.11.* || ==3.12.*"
 langdetect = "1.0.9"
 pandas = "2.2.3"
 beautifulsoup4 = "4.12.3"
@@ -41,6 +41,8 @@ cohere = "5.11.4"
 loguru = "0.7.2"
 scikit-fuzzy = "0.5.0"
 markdown-it-py = "3.0.0"
+torch = "2.2.2"
+transformers = "4.41.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -129,6 +131,14 @@ args = [{name = "repos"}, {name = "out"}]
 [tool.poe.tasks.junit]
 script = "sr_data.steps.junit_tests:main(repos, out, token)"
 args = [{name = "repos"}, {name = "out"}, {name = "token"}]
+
+[tool.poe.tasks.no_readme]
+script = "sr_data.steps.no_readme:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
+[tool.poe.tasks.sentiments]
+script = "sr_data.steps.sentiments:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
 
 [build-system]
 requires = ["setuptools", "wheel"]

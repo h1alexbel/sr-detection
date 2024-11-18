@@ -1,3 +1,6 @@
+"""
+Remove README file from CSV file.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,26 +22,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-detection"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{ include = "sr-data" }, { include = "sr-train" }]
+import pandas as pd
 
-[tool.poetry.dependencies]
-python = "==3.10.* || ==3.11.* || ==3.12.*"
-sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-
-[tool.poetry.group.dev.dependencies]
-sr-data = { path = "./sr-data" }
-pytest = "^8.2.2"
-pylint = "^3.2.5"
-flake8 = "^7.1.0"
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+def main(repos, out):
+    frame = pd.read_csv(repos)
+    frame.drop(columns=["readme"]).to_csv(out, index=False)

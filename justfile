@@ -24,7 +24,7 @@
 install:
   ${RULTOR:+sudo} npm install -g ghminer@0.0.7
   poetry self add 'poethepoet[poetry_plugin]'
-  cd sr-data && poetry install
+  cd sr-data && poetry install -vvv
   cd sr-train && poetry install
 
 # Full build.
@@ -126,6 +126,10 @@ links repos out="experiment/after-links.csv":
 ghmentions repos out="experiment/after-ghmentions.csv":
   cd sr-data && poetry poe ghmentions --repos {{repos}} --out {{out}}
 
+# Run sentiment analysis on READMEs
+sentiments repos out="experiment/after-sentiments.csv":
+ cd sr-data && poetry poe sentiments --repos {{repos}} --out {{out}}
+
 # Compose all found metadata into final CSV.
 final latest out="experiment/final.csv":
   cd sr-data && poetry poe final --latest {{latest}} --out {{out}}
@@ -189,6 +193,11 @@ labels dir="experiment":
 # Label Propagation model training on repos `repos`, should be saved to `out`.
 lpm repos out:
   cd sr-data && poetry poe lpm --repos {{repos}} --out {{out}}
+
+# Remove readme from CSV file.
+# Can be useful for inspecting large files.
+noreadme repos out="experiment/no-readme.csv":
+  cd sr-data && poetry poe no_readme --repos {{repos}} --out {{out}}
 
 # Build paper with LaTeX.
 paper:
