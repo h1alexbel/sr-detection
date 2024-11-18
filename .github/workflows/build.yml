@@ -51,6 +51,7 @@ jobs:
         run: |
           poetry env remove python || true
           poetry env use python${{ matrix.python-version }}
+          poetry env info
       - uses: extractions/setup-just@v2
         with:
           just-version: ${{ matrix.just-version }}
