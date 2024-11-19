@@ -32,8 +32,7 @@ install: |
   curl -sSL https://install.python-poetry.org | python3
   export PATH="$HOME/.local/bin:$PATH"
   export RULTOR=true
-  pip3 install torch==2.2.2
-  pip3 install transformers==4.41.2
+  export POETRY_MAX_PARALLEL=1
   just install
 merge:
   script: |
