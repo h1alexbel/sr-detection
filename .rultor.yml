@@ -22,8 +22,6 @@
 ---
 architect:
   - h1alexbel
-ec2:
-  type: t2.2xlarge
 docker:
   image: yegor256/rultor-image:1.23.1
 assets:
@@ -34,7 +32,7 @@ install: |
   curl -sSL https://install.python-poetry.org | python3
   export PATH="$HOME/.local/bin:$PATH"
   export RULTOR=true
-  export POETRY_MAX_PARALLEL=1
+  poetry install --no-dev
   just install
 merge:
   script: |
