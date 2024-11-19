@@ -24,7 +24,7 @@
 install:
   ${RULTOR:+sudo} npm install -g ghminer@0.0.7
   poetry self add 'poethepoet[poetry_plugin]'
-  cd sr-data && poetry install -vvv
+  cd sr-data && poetry install
   cd sr-train && poetry install
 
 # Full build.
