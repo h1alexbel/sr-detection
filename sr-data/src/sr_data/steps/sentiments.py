@@ -1,6 +1,7 @@
 """
 Sentiment analysis for a top description of README file.
 """
+import numpy
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -44,9 +45,6 @@ def sentiment(readme):
     description = top(readme)
     result = None
     try:
-        logger.info(f"Tokenizer: {tokenizer}")
-        logger.info(f"Model: {model}")
-        logger.info(f"Stask: {stask}")
         result = stask(description)
     except RuntimeError:
         logger.error(
