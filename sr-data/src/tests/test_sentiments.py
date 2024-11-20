@@ -92,7 +92,7 @@ class TestSentiments(unittest.TestCase):
 
     @pytest.mark.fast
     def test_runs_sentiment(self):
-        result = sentiment("There is a problem!")
+        result = sentiment("# Testing")
         self.assertTrue(
             result[0] is not None,
             "Sentiment result is NULL, but it should not!"
