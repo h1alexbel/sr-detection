@@ -90,7 +90,7 @@ class TestSentiments(unittest.TestCase):
             f"Extracted description: {extracted} does not match with expected: {expected}"
         )
 
-    @pytest.mark.nightly
+    @pytest.mark.fast
     def test_runs_sentiment(self):
         result = sentiment("There is a problem!")
         self.assertTrue(
