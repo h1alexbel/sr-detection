@@ -37,6 +37,7 @@ def main(repos, out):
     frame = pd.read_csv(repos)
     frame["sentiment"] = frame["readme"].apply(sentiment)
     frame.to_csv(out, index=False)
+    logger.info(frame)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
