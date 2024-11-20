@@ -42,13 +42,15 @@ def main(repos, out):
 
 def sentiment(readme):
     description = top(readme)
+    result = None
     try:
-        return stask(description)
+        result = stask(description)
     except RuntimeError:
         logger.error(
             f"Can't parse input description ({len(description)} length)"
         )
         logger.debug(f"Erroneous description: {description}")
+    return result
 
 
 # @todo #153:35min: Extract first 15-20 words from first heading.

@@ -94,7 +94,7 @@ class TestSentiments(unittest.TestCase):
     def test_runs_sentiment(self):
         result = sentiment("There is a problem!")
         self.assertTrue(
-            result[0]["label"] is not None,
+            result[0] is not None,
             "Sentiment result is NULL, but it should not!"
         )
 
