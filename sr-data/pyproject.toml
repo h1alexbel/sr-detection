@@ -32,7 +32,7 @@ packages = [{include = "sr_data", from = "src"}]
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 langdetect = "1.0.9"
 pandas = "2.2.2"
-numpy = "<2"
+numpy = "<3"
 beautifulsoup4 = "4.12.3"
 markdown = "3.7"
 requests = "2.32.3"
