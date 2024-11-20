@@ -37,7 +37,6 @@ def main(repos, out):
     frame = pd.read_csv(repos)
     frame["sentiment"] = frame["readme"].apply(sentiment)
     frame.to_csv(out, index=False)
-    logger.info(frame)
     logger.info(f"Saved {len(frame)} repositories to {out}")
 
 
@@ -45,6 +44,9 @@ def sentiment(readme):
     description = top(readme)
     result = None
     try:
+        logger.info(f"Tokenizer: {tokenizer}")
+        logger.info(f"Model: {model}")
+        logger.info(f"Stask: {stask}")
         result = stask(description)
     except RuntimeError:
         logger.error(

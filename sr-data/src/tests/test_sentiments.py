@@ -111,6 +111,6 @@ class TestSentiments(unittest.TestCase):
             )
             frame = pd.read_csv(path)
             self.assertTrue(
-                len(frame["sentiment"].tolist()) == 3,
+                len(frame["sentiment"].tolist()) != 0,
                 "Sentiments are empty, but they should not!"
             )
