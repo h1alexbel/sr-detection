@@ -1,0 +1,407 @@
+repo,branch,readme,releases_count,open_issues_count,branches_count,license,workflows
+move-language/move-on-aptos,main,"
+[![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
+
+![Move logo](assets/color/PNG/MoveOnAptos.png)
+
+# The Move Language 
+
+Move is a programming language for writing safe smart contracts originally developed at Facebook to power the Diem blockchain. Move is designed to be a platform-agnostic language to enable common libraries, tooling, and developer communities across diverse blockchains with vastly different data and execution models.
+
+This repository is a mirror of *Move on Aptos*, a natural evolution of the Move language how it was originally designed. The repository contains the generic part of the Move language and implementation as it is used on the [Aptos Network](https://aptosfoundation.org/) and on other networks. Major components of the implementation include 
+the Move virtual machine, bytecode verifier, compiler, prover, and package manager.
+
+For an introduction into the Move language, please check out the following resources:
+
+- The [Move Landing Page](https://aptos.dev/move/move-on-aptos) in the Aptos developer documentation
+- TODO: more resources
+
+> *NOTE* If you have an issue with Move on Aptos while working with Aptos, please open it [here](https://github.com/aptos-labs/aptos-core/issues/new/choose) and not in this repo.
+
+# Consuming and Contributing to Move
+
+The repository mirrors the content of the `aptos-core` repo, subtree [`third_party/move`](https://github.com/aptos-labs/aptos-core/tree/main/third_party/move). By consuming this repo, one can avoid cloning the large aptos-core repo. The repo is updated on a monthly basis with the newest changes from aptos-core.
+
+> TODO: we plan to automate the update with a nightly schedule
+
+For contributions, we ask for now to submit those to the [aptos-core](https://github.com/aptos-labs/aptos-core/tree/main/third_party/move) repo. 
+
+> TODO: come up with a workflow to allow contributions downstream and upstream
+
+
+## License
+
+Move is licensed as [Apache 2.0](https://github.com/move-language/move/blob/main/LICENSE).
+",0,0,2,Apache-2.0,"README.md,ci-post-land.yml,ci-pre-land.yml,daily.yml,release_asset.yml"
+pseXperiments/cuda-sumcheck,main,"# Overview
+
+This project aims to implement Sumcheck protocol to run on GPU via CUDA, following the algorithms described in the [paper](https://eprint.iacr.org/2024/1046.pdf).
+Currently algorithm 1 is implemented and tested with bn254 scalar field. Future plan is to implement algorithm 3 and support small prime fields such as Goldilocks.
+
+Only kernels are written in C++ and uses Rust to launch kernels and handle device datas by using [bindgen](https://github.com/rust-lang/rust-bindgen) and [cudarc](https://github.com/coreylowman/cudarc).
+
+## Environment
+
+The implementation has been tested on the following spec.
+
+### OS
+
+Ubuntu 22.04.4 LTS
+
+### GPU
+
+1 NVIDIA A10G Tensor GPU, 24GB Ram
+
+### CUDA version
+
+- nvcc version: 12.1
+- C++ compiler version: clang-16
+- C++ language standard: C++20
+
+## Architecture
+
+![cuda-sumcheck-architecture](https://github.com/pseXperiments/cuda-sumcheck/assets/59155248/d288b9d3-4fbd-4789-ba4b-de684efc3f4f)
+",1,7,7,MIT,
+junyu-w/genson-rs,master,"# genson-rs
+
+[![CodSpeed Badge](https://img.shields.io/endpoint?url=https://codspeed.io/badge.json)](https://codspeed.io/junyu-w/genson-rs)
+[![crates.io](https://img.shields.io/crates/v/genson-rs.svg)](https://crates.io/crates/genson-rs)
+[![CI](https://github.com/junyu-w/genson-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/junyu-w/genson-rs/actions/workflows/rust.yml)
+
+*-- 🔥 Generate JSON Schema from Gigabytes of JSON data in seconds*
+
+`genson-rs` is a Rust rewrite of the [GenSON](https://github.com/wolverdude/genson/) Python library , which can be used to generate [JSON schema](https://json-schema.org/) (Draft-04 and after) from one or multiple JSON objects.
+
+While not having full feature parity yet, `genson-rs` focuses on **speed** ⚡️. It offers MUCH better performance (**25x ~ 75x faster**) compared to the Python `GenSON` library, and is generally a lot faster than other open source schema inference tools as well. Its high performance makes it a viable choice for online schema inference for large JSON dataset at scale. Check out the [benchmark](#benchmark) section for performance benchmark comparisons.
+
+## Install
+Installation via [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) is the easiest. If you don't have it already, follow the link to set up Cargo (one simple command), then run:
+```
+cargo install genson-rs
+```
+Installing via `brew` will be supported soon.
+
+## Usage
+```
+genson-rs <OPTION> <FILE(S)>
+```
+
+e.g. If you have a large JSON file full of request logs in JSON format
+```
+genson-rs request_logs.json
+```
+
+Additionally, if each request log is a JSON object in its own line, you can specify the delimiter which will slightly improve the performance
+```
+genson-rs --delimiter newline request_logs.json 
+```
+
+## Benchmark
+
+The following benchmarks are executed manually on my local `2023 Macbook Pro with the M2 Pro Chip (10 cores, 4 high-efficiency + 6 high-performance), 16GB RAM, running macOS 13.0`. Each of the test JSON files is generated using the `json_gen.py` script inside of the `tests/data` folder, and each test was executed 3 times. The median was used out of the 3 runs.
+
+| Library         | File Size               | Time               |
+|-----------------|-------------------------|--------------------|
+| GenSON (Python) | 50 MB                   | 1.61s              |
+| genson-rs       | 50 MB                   | 🔥 **0.07s**       |
+| GenSON (Python) | 500 MB                  | 16.07s             |
+| genson-rs       | 500 MB                  | 🔥 **0.61s**       |
+| GenSON (Python) | 1 GB                    | 34.21s             |
+| genson-rs       | 1 GB                    | 🔥 **1.19s**       |
+| GenSON (Python) | 3 GB                    | 107.86s (1min 47s) |
+| genson-rs       | 3 GB                    | 🔥 **4.56s**       |
+| GenSON (Python) | 3 GB (Large JSON Array) | 443.83s (7min 23s) |
+| genson-rs       | 3 GB (Large JSON Array) | 🔥 **7.06s**       |
+
+As you can see, `genson-rs` is *extremely* fast, and might be the fastest schema inference engine out there based on my rudimentary benchmarks against other tools (that I'm aware of) as well.
+
+## Optimization Techniques 
+
+The `genson-rs` library leverages the following techniques to greatly speed up the schema generation process:
+- ⚡️ **Rust being blazingly fast itself** -- without any GC or interpreter overhead, a 1-to-1 port in Rust running on a single CPU core runs 2x faster than the Python version already
+- ⚡️ **Parallel processing leveraging all available CPU cores** -- whie Python has the limitation of the GIL that prevents it from leveraging multiple CPU cores efficiently, `genson-rs` parallelizes [Map-Reduce](https://en.wikipedia.org/wiki/MapReduce) type of workload whenever possible (e.g. when processing gigantic arrays), maxing out all the available CPU cores
+- ⚡️ **Extremely fast JSON parsing powered by SIMD instructions** -- instead of fully parsing out the whole JSON dataset, we use the `simd-json` library (a Rust port of the C++ `simdjson` library) that leverages SIMD (Single Instruction/Multiple Data) instructions to only parse out the ""tape"" of the JSON dataset, which is sufficient enough to build the schema on top of without fully deserializing the whole dataset
+- ⚡️ **Efficient memory management using the MiMalloc allocator** -- this is recommended by the `simd-json` library itself, `genson-rs` opts to use the `MiMalloc` allocator instead of the default global allocator which made the code run faster by a decent amount
+",0,1,1,Apache-2.0,"codspeed_bench.yml,rust.yml"
+obhq/kernel-dumper,main,"# Kernel Dumper
+[![CI](https://github.com/obhq/kernel-dumper/actions/workflows/ci.yml/badge.svg)](https://github.com/obhq/kernel-dumper/actions/workflows/ci.yml)
+
+Kernel Dumper is a payload for PS4 kernel to dump the kernel. Only 11.00 is supported.
+
+## Setup
+
+Plug a USB drive to the PS4 and make sure the PS4 can write some files to it. You can test this by copy some game screenshots to it to see if it success without any errors.
+
+## Running
+
+You need to use TheFloW [PPPwn](https://github.com/TheOfficialFloW/PPPwn) with `--stage2` pointed to `kernel-dumper.bin` like the following:
+
+```sh
+sudo python3 pppwn.py --interface=enp0s3 --fw=1100 --stage2=kernel-dumper.bin
+```
+
+Wait for a notification `Dump completed!`. This may take a couple of minutes depend on how fast is your USB drive. Then shutdown the PS4 (not putting it into rest mode). Once the PS4 completely shutdown unplug the USB drive to grab `kernel.elf`.
+
+To load this dump in Ghidra you need to load as a `Raw Binary` with a correct `Base Address` and `x86:default:64:little:gcc` as a `Language`. Use `readelf` to find a value for `Base Address`:
+
+```sh
+readelf -l kernel.elf
+```
+
+It will output something like:
+
+```
+Elf file type is EXEC (Executable file)
+Entry point 0xffffffff9b68c8b0
+There are 6 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0xffffffff9b480040 0xffffffff9b480040
+                 0x0000000000000150 0x0000000000000150  R      0x8
+  INTERP         0x0000000000000190 0xffffffff9b480190 0xffffffff9b480190
+                 0x0000000000000007 0x0000000000000007  R      0x1
+      [Requesting program interpreter: /DUMMY]
+  LOAD           0x0000000000000000 0xffffffff9b480000 0xffffffff9b480000
+                 0x0000000000cfe6d8 0x0000000000cfe6d8  R E    0x200000
+  LOOS+0x1000010 0x0000000000cff000 0xffffffff9c57f000 0xffffffff9c57f000
+                 0x0000000000020c70 0x0000000000200000  R      0x200000
+  LOAD           0x0000000000d20000 0xffffffff9c9a0000 0xffffffff9c9a0000
+                 0x0000000000605280 0x00000000012fda10  RW     0x200000
+  DYNAMIC        0x0000000000cfe5c8 0xffffffff9c17e5c8 0xffffffff9c17e5c8
+                 0x0000000000000110 0x0000000000000110  RW     0x8
+```
+
+The value for `Base Address` is `VirtAddr` of the first `LOAD` program (e.g. `0xffffffff9b480000` for the above dump). Each dump will have a different address due to ASLR so you can't use the above information with your dump.
+
+## Building from source
+
+### Prerequisites
+
+- Rust on nightly channel
+
+### Install additional Rust component
+
+```sh
+rustup component add rust-src llvm-tools
+```
+
+### Build
+
+```sh
+./build.py
+```
+
+## License
+
+MIT
+",0,0,1,MIT,ci.yml
+init4tech/zenith-rs,main,"# zenith-rs
+
+Rust utilites for working with [Zenith](https://github.com/init4tech/zenith).
+
+![rust](https://github.com/init4tech/zenith-rs/actions/workflows/rust-ci.yml/badge.svg) ![ecr](https://github.com/init4tech/zenith-rs/actions/workflows/ecr-cd.yml/badge.svg)
+
+## Crates
+
+- `zenith-types`: Common types used by other crates.
+- `zenith-builder-example`: a block building example that uses the `builder` library.
+
+## Development
+
+This crate contains an example block builder in the Signet ecosystem.
+
+### Requirements
+
+- Rust 1.79.0
+- Cargo [Lambda](https://www.cargo-lambda.info/)
+- AWS CLI and credentials
+
+### Environment
+
+The following environment variables are exposed to configure the Builder:
+
+```bash
+# Builder Configs
+HOST_CHAIN_ID=""17000"" # Holesky Testnet
+RU_CHAIN_ID=""17001""
+HOST_RPC_URL=""http://host.url.here""
+ZENITH_ADDRESS=""ZENITH_ADDRESS_HERE""
+QUINCEY_URL=""http://signer.url.here""
+BUILDER_PORT=""8080""
+BUILDER_KEY=""YOUR_BUILDER_KEY_HERE""
+INCOMING_TRANSACTIONS_BUFFER=""10""
+BLOCK_CONFIRMATION_BUFFER=""10""
+BUILDER_REWARDS_ADDRESS=""BUILDER_REWARDS_ADDRESS_HERE""
+ROLLUP_BLOCK_GAS_LIMIT=""30000000""
+# Transaction Pool Configs
+TX_POOL_URL=""http://pool.url.here/"" # trailing slash is required
+TX_POOL_POLL_INTERVAL=""5"" # seconds
+TX_POOL_CACHE_DURATION=""600"" # seconds
+```
+
+## API
+
+### SignRequest
+
+Sign request example payload:
+
+```json
+{
+  ""hostBlockNumber"": ""0x0"",
+  ""hostChainId"": ""0x1"",
+  ""ruChainId"": ""0x2"",
+  ""gasLimit"": ""0x5"",
+  ""ruRewardAddress"": ""0x0606060606060606060606060606060606060606"",
+  ""contents"": ""0x0707070707070707070707070707070707070707070707070707070707070707""
+}
+```
+",3,1,35,,rust-ci.yml
+LevBeta/Agil,master,"# Agil: High-Performance Trading Base [WIP FOR FIRST RELEASE]
+
+# DO NOT USE IT YET, READ THIS TWEET ABOUT IT: https://x.com/levbeta/status/1786453984921694617
+
+Agil is a high-performance trading base designed for high-frequency (HFT) and medium-frequency (MFT) trading. It prioritizes speed, modularity, and user-friendliness to excel in the fast-paced trading landscape. Key features include:
+
+- **Performance**: Agil is engineered for lightning-fast execution, giving you a competitive edge in trading.
+  
+- **Modularity**: Its modular design allows for easy customization to suit specific trading strategies.
+  
+- **User Experience**: Agil offers an intuitive interface suitable for both seasoned traders and newcomers, ensuring quick comprehension and smooth operation.
+
+Agil originated as a fork of [Barter-Data](https://github.com/barter-rs/barter-data-rs), with credit to the original [author](https://github.com/just-a-stream) and contributors. This led to the development of [Agil-Data](https://github.com/LevBeta/Agil/tree/master/crates/agil-data), a faster and more robust solution.
+
+## Current TODO
+
+Currently there is some parts of the code that already have a tag of ""TODO:"", so it's easier to find someparts
+
+* **HIGH IMPORTANCE**: (Since this happend kek, the lib file and the ExchangeWsStream can be the first to be lookped up and rewritten)
+* Look into the shit of [`TransformerSelector`] which should be deleted, it was some tests that i had made before
+* move the fast-websockets parts into their respective and better locations.
+* Clean placeholder code, unused deps, move things to their correct locations, add docs etc.
+
+* **Mid/high importance**: Start working on a better solution/ rewrite some parts of the private feed implementation 
+",0,3,1,,
+dcodesdev/rustfinity.com,main,"![Rustfinity.com](/images/rustfinity-header.png)
+
+# Rustfinity
+
+A repository for all the publicly available content for Rustfinity.
+
+## Crates
+
+- [CLI](crates/cli/)
+
+## Challenges
+
+- [Challenges](challenges/)
+",0,4,2,,"ci.yaml,rustfinity-runner.yaml"
+gordnzhou/imnes-emulator,main,"# ImNES = NES Emulator + Rust + ImGui
+
+![cover](images/cover.png)
+
+**ImNES** is NES emulator implemented in Rust. It includes a debugging UI made using ImGui for desktop. The desktop UI has various features such as:
+- Inspect the CPU, PPU, and APU state, which includes registers, pattern tables and code disassembly
+- View, and enable/disable individual audio channels
+- View iNES cartridge details 
+- Pause, stop, or restart the emulation, as well as adjust the game speed
+- Change key bindings for the joypad
+
+This emulator currently supports the following mappers from iNES 1.0: 
+| Mapper | Other Names(s) | Example Games |
+|--------|------------|---------------|
+| 000    | NROM       | Super Mario Bros., Donkey Kong |
+| 001    | SxROM/MMC1 | The Legend of Zelda, Metroid |
+| 002    | UxROM      | Mega Man, Duck Tales |
+| 003    | CNROM      | Arkanoid, Gradius |
+| 004    | TxROM/MMC3 | Super Mario Bros. 3, Kirby's Adventure |
+| 007    | AxROM      | Battletoads, Marble Madness |
+| 066    | GxROM      | Doraemon, Dragon Power |
+
+This repository also includes a binary in `nes-emulator-sdl2` which is a standalone emulator that does not contain any UI. Running it will require [SDL](https://www.libsdl.org/) to be installed and linked on your local machine.
+
+
+## Desktop Application Setup 
+Before starting, make sure you have [Rust](https://www.rust-lang.org/tools/install) installed and make sure the version is at least **1.79.0-nightly**. 
+
+- Add ROMs to the `/roms` folder. Save data will be automatically placed in the `/saves` folder with the same name as its ROM file, with a `.sav` extension.
+
+- To run the application:
+```
+cargo run -p imnes-desktop --release
+```
+
+By default, the joypad bindings are set to:
+- **Left, Right, Up, Down** - Arrow Keys
+- **Start** - Enter Key
+- **Select** - Left Shift Key
+- **A Button** - X Key
+- **B Button** - Z Key
+
+## Screenshots
+
+![smb3](images/smb3.png)
+
+![dk](images/dk.png)
+
+![mm3](images/mm3.png)
+
+![nestest](images/nestest.png)  
+
+![smb](images/smb.png)
+
+## Credits
+This project wouldn't have been possible without reference from these amazing sources. Thank you!!
+
+- [the NESdev Wiki](https://www.nesdev.org/wiki/Nesdev_Wiki)
+- [6502 Reference Guide](http://www.6502.org/users/obelisk/6502/reference.html#JSR) for the CPU implementation
+- javidx9's [NES Emulator Series on YouTube](https://www.youtube.com/watch?v=nViZg02IMQo&list=PLrOv9FMX8xJHqMvSGB_9G9nZZ_4IgteYf) (Big shoutout to [OneLoneCoder](https://github.com/OneLoneCoder) for his amazing series!)
+- [rust-nes-emulator](https://github.com/kamiyaowl/rust-nes-emulator/tree/master)
+- and many more...
+
+## Future TODOs
+- [ ] 2 Player Joypad Support
+- [ ] Game Save States
+- [ ] Controller Input Support
+- Implementations for more mappers
+
+
+
+",0,0,1,MIT,
+lanylow/honkai-dumper,main,"# Honkai: Star Rail Dumper [![License](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/lanylow/honkai-dumper/blob/main/LICENSE) ![OS](https://img.shields.io/badge/OS-Windows-yellow.svg) [![Discord](https://img.shields.io/badge/chat-discord-informational)](https://discord.gg/MrtJvV5tKv)
+
+Free and open-source tool for Honkai: Star Rail that allows you to dump offsets for almost all methods found in `GameAssembly.dll` in the json format. The program is developed as an internal module that's being loaded into the game process. Compatible only with the global version of the game.
+
+## FAQ
+
+### How to load the tool?
+I am not providing any builds of this program, so if you want to try it out you will have to compile it yourself. Once you do that, you can use the loader from my other program, [Genshin Utility](https://github.com/lanylow/genshin-utility), to load this tool into the game.
+
+### How do I know if it worked?
+About 10 seconds after injecting the tool into the game a console should show up. Once you see a message saying `done` in it, a file called `methods.json` should appear in the same folder where the game (`StarRail.exe`) is installed.
+
+### Why are some methods just random characters?
+Many methods inside the game are obfuscated by developers in order to make reverse engineering harder. There is very little you can do about it, and it's not the purpose of this program.
+
+## Example output
+
+Here are a few lines from the file generated by this tool.
+```json
+{
+  ...
+  ""RPG.Client.AutoPlayable::OnLightweightActivate"": ""0x3867ac0"",
+  ""RPG.Client.AutoPlayable::OnLightweightDeactivate"": ""0x3867b60"",
+  ""RPG.Client.AutoScrollRect::.ctor"": ""0x34b1280"",
+  ""RPG.Client.AutoScrollRect::HDMOCEMAKBC"": ""0x34b0bc0"",
+  ""RPG.Client.AutoScrollRect::NPHMCMMFMIB"": ""0x34b0c50"",
+  ""RPG.Client.AutoScrollRect::SetItemSelectCallback"": ""0x34b0ca0"",
+  ""RPG.Client.AutoScrollRect::SnapTo"": ""0x34b0e60"",
+  ...
+}
+```
+
+## License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](https://github.com/lanylow/honkai-dumper/blob/master/LICENSE) file for details.
+",0,0,1,GPL-3.0,
