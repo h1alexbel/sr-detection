@@ -28,14 +28,14 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
-from sr_data.steps.workflows import workflow_info, main
+from sr_data.steps.workflows import workflow_info, main, fetch
 
 
 class TestWorkflows(unittest.TestCase):
 
     @pytest.mark.fast
-    def test_outputs_workflow_information(self):
-        info = workflow_info(
+    def test_fetches_workflow_information(self):
+        info = fetch(
             "h1alexbel/h1alexbel/refs/heads/main/.github/workflows/update-readme.yml"
         )
         expected = "jobs:"
