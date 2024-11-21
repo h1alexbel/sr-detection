@@ -1,7 +1,6 @@
 """
 Tests for workflows.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,25 +22,70 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
-from sr_data.steps.workflows import workflow_info, main
+from sr_data.steps.workflows import workflow_info, main, fetch
 
 
 class TestWorkflows(unittest.TestCase):
 
     @pytest.mark.fast
-    def test_outputs_workflow_information(self):
-        info = workflow_info(
+    def test_fetches_workflow_information(self):
+        info = fetch(
             "h1alexbel/h1alexbel/refs/heads/main/.github/workflows/update-readme.yml"
         )
         expected = "jobs:"
         self.assertTrue(
             expected in info,
             f"Fetched workflow information: {info} does not contain expected string: {expected}"
+        )
+
+    @pytest.mark.fast
+    def test_outputs_workflow_info_correctly(self):
+        info = workflow_info(
+            """
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-22.04, macos-13, windows-2022, ubuntu-latest, ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+            """
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_oss"],
+            4,
+            f"OSs count in workflow: '{info}' does not match with expected"
+        ),
+        self.assertEqual(
+            info["w_steps"],
+            4,
+            f"Steps count in workflow: '{info}' does not match with expected"
         )
 
     @pytest.mark.nightly
@@ -56,10 +100,7 @@ class TestWorkflows(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            collected = len(frame["workflows"])
-            expected = 9
-            self.assertEqual(
-                collected,
-                expected,
-                f"Length of collected workflows: {collected} don't match with expected: {expected}"
+            self.assertTrue(
+                all(col in frame.columns for col in ["w_jobs", "w_oss", "w_steps"]),
+                f"Frame {frame.columns} doesn't have expected columns"
             )
