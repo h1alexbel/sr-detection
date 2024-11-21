@@ -43,16 +43,23 @@ def main(repos, out):
                 for file in workflows.split(",")
                 if file.endswith((".yml", ".yaml"))
             ]
-        logger.info(f"Repo {repo} has {len(ymls)} *.yml|*.yaml workflows inside .github/workflows")
+        logger.info(
+            f"Repo {repo} has {len(ymls)} *.yml|*.yaml workflows inside .github/workflows")
         for yml in ymls:
             infos.append(
                 workflow_info(
-                    f"{repo}/refs/heads/{branch}/.github/workflows/{yml}"
+                    fetch(
+                        f"{repo}/refs/heads/{branch}/.github/workflows/{yml}"
+                    )
                 )
             )
         frame.at[idx, "workflows"] = infos
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
+
+
+def fetch(path) -> str:
+    return requests.get(f"https://raw.githubusercontent.com/{path}").text
 
 
 # @todo #75:60min Parse fetched YAML files, and calculate their complexity/strictness.
@@ -63,8 +70,22 @@ def main(repos, out):
 #  We should find workflow that releases the repo artifacts to some target platform.
 #  After we got parsed workflows, we can try to find one that makes releases. Probably,
 #  it can be one, that uses on:push:tags. For instance: <a href="https://github.com/objectionary/eo/blob/master/.github/workflows/telegram.yml">telegram.yml</a>.
-def workflow_info(path) -> str:
-    content = requests.get(f"https://raw.githubusercontent.com/{path}")
-    if content.status_code == 200:
-        yml = yaml.safe_load(content.text)
-        print(yml)
+def workflow_info(content):
+    yml = yaml.safe_load(content)
+    jobs = yml["jobs"].items()
+    jcount = len(jobs)
+    oss = []
+    for job, jdetails in jobs:
+        runs = jdetails.get("runs-on")
+        if runs is not None and runs.startswith("$"):
+            for matrixed in jdetails.get("strategy").get("matrix").get("platform"):
+                oss.append(matrixed)
+        elif runs is not None:
+           oss.append(runs)
+    oss = set(oss)
+    if len(oss) == 1:
+        oss = list(map(lambda x: x.split("-")[0], oss))
+    return {
+        "w_jobs": jcount,
+        "w_doss": len(oss)
+    }
