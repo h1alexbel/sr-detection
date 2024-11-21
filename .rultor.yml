@@ -32,7 +32,7 @@ install: |
   curl -sSL https://install.python-poetry.org | python3
   export PATH="$HOME/.local/bin:$PATH"
   export RULTOR=true
-  poetry install --no-dev
+  poetry install
   just install
 merge:
   script: |
