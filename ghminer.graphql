@@ -34,6 +34,18 @@ query ($searchQuery: String!, $first: Int, $after: String) {
         issues(states: [OPEN]) {
           totalCount
         }
+        object(expression: "HEAD:.github/workflows/") {
+          ... on Tree {
+            entries {
+              name
+              object {
+                ... on Blob {
+                  byteSize
+                }
+              }
+            }
+          }
+        }
         licenseInfo {
           spdxId
         }

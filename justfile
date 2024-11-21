@@ -128,7 +128,11 @@ ghmentions repos out="experiment/after-ghmentions.csv":
 
 # Run sentiment analysis on READMEs
 sentiments repos out="experiment/after-sentiments.csv":
- cd sr-data && poetry poe sentiments --repos {{repos}} --out {{out}}
+  cd sr-data && poetry poe sentiments --repos {{repos}} --out {{out}}
+
+# GitHub workflows info.
+workflows repos out="experiment/after-workflows.csv":
+  cd sr-data && poetry poe workflows --repos {{repos}} --out {{out}}
 
 # Compose all found metadata into final CSV.
 final latest out="experiment/final.csv":

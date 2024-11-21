@@ -141,6 +141,10 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.sentiments:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.workflows]
+script = "sr_data.steps.workflows:main(repos, out)"
+args = [{name = "repos"}, {name = "out"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
