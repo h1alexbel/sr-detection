@@ -141,3 +141,36 @@ jobs:
             ),
             "Workflow should be used for releases, but it wasn't"
         )
+
+    @pytest.mark.fast
+    def test_returns_true_when_workflow_has_push_on_version(self):
+        self.assertTrue(
+            used_for_releases(
+                yaml.safe_load(
+                    """
+                    on:
+                      push:
+                        tags:
+                          - v*
+                    """
+                )
+            ),
+            "Workflow should be used for releases, but it wasn't"
+        )
+
+
+    @pytest.mark.fast
+    def test_returns_false_when_no_release(self):
+        self.assertFalse(
+            used_for_releases(
+                yaml.safe_load(
+                    """
+                    on:
+                      push:
+                        branches:
+                          - master
+                    """
+                )
+            ),
+            "Workflow shouldn't be used for releases, but it was"
+        )
