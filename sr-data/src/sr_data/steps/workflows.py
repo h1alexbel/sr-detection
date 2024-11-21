@@ -54,14 +54,15 @@ def main(repos, out):
                 )
             )
         tjobs = 0
-        oss = 0
+        oss = []
         steps = 0
         for info in infos:
             tjobs += info["w_jobs"]
-            oss += info["w_oss"]
             steps += info["w_steps"]
+            for os in info["w_oss"]:
+                oss.append(os)
         frame.at[idx, "w_jobs"] = tjobs
-        frame.at[idx, "w_oss"] = oss
+        frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
@@ -97,10 +98,8 @@ def workflow_info(content):
         if steps is not None:
             scount = len(steps)
     oss = set(oss)
-    if len(oss) == 1:
-        oss = list(map(lambda x: x.split("-")[0], oss))
     return {
         "w_jobs": jcount,
         "w_steps": scount,
-        "w_oss": len(oss)
+        "w_oss": sorted(oss)
     }

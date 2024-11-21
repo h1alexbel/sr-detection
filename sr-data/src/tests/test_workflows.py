@@ -79,14 +79,33 @@ jobs:
         )
         self.assertEqual(
             info["w_oss"],
-            4,
-            f"OSs count in workflow: '{info}' does not match with expected"
+            ["macos-13", "ubuntu-22.04", "ubuntu-latest", "windows-2022"],
+            f"Workflow OSs: '{info}' does not match with expected"
         ),
         self.assertEqual(
             info["w_steps"],
             4,
             f"Steps count in workflow: '{info}' does not match with expected"
         )
+
+    @pytest.mark.fast
+    def test_collects_unique_oss_across_all_files(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "workflows.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-unique-oss.csv"
+                ),
+                path
+            )
+            oss = pd.read_csv(path).iloc[0]["w_oss"]
+            expected = 3
+            self.assertEqual(
+                oss,
+                expected,
+                f"OSS count: {oss} does not match with expected: {expected}"
+            )
 
     @pytest.mark.nightly
     def test_collects_workflows_for_all(self):
@@ -101,6 +120,7 @@ jobs:
             )
             frame = pd.read_csv(path)
             self.assertTrue(
-                all(col in frame.columns for col in ["w_jobs", "w_oss", "w_steps"]),
+                all(col in frame.columns for col in
+                    ["w_jobs", "w_oss", "w_steps"]),
                 f"Frame {frame.columns} doesn't have expected columns"
             )
