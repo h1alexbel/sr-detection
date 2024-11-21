@@ -98,8 +98,6 @@ def workflow_info(content):
         if steps is not None:
             scount = len(steps)
     oss = set(oss)
-    if len(oss) == 1:
-        oss = list(map(lambda x: x.split("-")[0], oss))
     return {
         "w_jobs": jcount,
         "w_steps": scount,
