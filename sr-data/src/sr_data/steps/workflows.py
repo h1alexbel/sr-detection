@@ -23,6 +23,7 @@ Collect information about GitHub workflows in the repo.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import pandas as pd
+import requests
 from loguru import logger
 
 
@@ -44,12 +45,14 @@ def main(repos, out):
         logger.info(f"Repo {repo} has {len(ymls)} *.yml|*.yaml workflows inside .github/workflows")
         for yml in ymls:
             infos.append(
-                workflow_info(f"{repo}/{branch}/.github/workflows/{yml}")
+                workflow_info(
+                    f"{repo}/refs/heads/{branch}/.github/workflows/{yml}"
+                )
             )
         frame.at[idx, "workflows"] = infos
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
 
 
-def workflow_info(path):
-    return path
+def workflow_info(path) -> str:
+    return requests.get(f"https://raw.githubusercontent.com/{path}").text
