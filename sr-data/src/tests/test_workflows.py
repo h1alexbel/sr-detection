@@ -81,6 +81,11 @@ jobs:
             info["w_oss"],
             4,
             f"OSs count in workflow: '{info}' does not match with expected"
+        ),
+        self.assertEqual(
+            info["w_steps"],
+            4,
+            f"Steps count in workflow: '{info}' does not match with expected"
         )
 
     @pytest.mark.nightly

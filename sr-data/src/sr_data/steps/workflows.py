@@ -62,10 +62,6 @@ def fetch(path) -> str:
     return requests.get(f"https://raw.githubusercontent.com/{path}").text
 
 
-# @todo #75:60min Parse fetched YAML files, and calculate their complexity/strictness.
-#  We should retrieve the following information from fetched workflow: 1) number of
-#  jobs, 2) number of OSs, 3) number of steps in each job, 4) number of versions in
-#  ${{ matrix }}.
 # @todo #75:60min Find release workflow from collected workflows.
 #  We should find workflow that releases the repo artifacts to some target platform.
 #  After we got parsed workflows, we can try to find one that makes releases. Probably,
@@ -75,6 +71,7 @@ def workflow_info(content):
     jobs = yml["jobs"].items()
     jcount = len(jobs)
     oss = []
+    scount = 0
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
         if runs is not None and runs.startswith("$"):
@@ -87,10 +84,14 @@ def workflow_info(content):
                 oss.append(matrixed)
         elif runs is not None:
             oss.append(runs)
+        steps = jdetails.get("steps")
+        if steps is not None:
+            scount = len(steps)
     oss = set(oss)
     if len(oss) == 1:
         oss = list(map(lambda x: x.split("-")[0], oss))
     return {
         "w_jobs": jcount,
+        "w_steps": scount,
         "w_oss": len(oss)
     }
