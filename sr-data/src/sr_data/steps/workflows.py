@@ -24,6 +24,7 @@ Collect information about GitHub workflows in the repo.
 # SOFTWARE.
 import pandas as pd
 import requests
+import yaml
 from loguru import logger
 
 
@@ -63,4 +64,7 @@ def main(repos, out):
 #  After we got parsed workflows, we can try to find one that makes releases. Probably,
 #  it can be one, that uses on:push:tags. For instance: <a href="https://github.com/objectionary/eo/blob/master/.github/workflows/telegram.yml">telegram.yml</a>.
 def workflow_info(path) -> str:
-    return requests.get(f"https://raw.githubusercontent.com/{path}").text
+    content = requests.get(f"https://raw.githubusercontent.com/{path}")
+    if content.status_code == 200:
+        yml = yaml.safe_load(content.text)
+        print(yml)
