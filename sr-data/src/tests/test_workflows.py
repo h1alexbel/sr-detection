@@ -44,6 +44,45 @@ class TestWorkflows(unittest.TestCase):
             f"Fetched workflow information: {info} does not contain expected string: {expected}"
         )
 
+    @pytest.mark.fast
+    def test_outputs_workflow_info_correctly(self):
+        info = workflow_info(
+            """
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-22.04, macos-13, windows-2022, ubuntu-latest, ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+            """
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_oss"],
+            4,
+            f"OSs count in workflow: '{info}' does not match with expected"
+        )
+
     @pytest.mark.nightly
     def test_collects_workflows_for_all(self):
         with TemporaryDirectory() as temp:

@@ -92,5 +92,5 @@ def workflow_info(content):
         oss = list(map(lambda x: x.split("-")[0], oss))
     return {
         "w_jobs": jcount,
-        "w_doss": len(oss)
+        "w_oss": len(oss)
     }
