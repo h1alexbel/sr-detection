@@ -78,10 +78,15 @@ def workflow_info(content):
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
         if runs is not None and runs.startswith("$"):
-            for matrixed in jdetails.get("strategy").get("matrix").get("platform"):
+            for matrixed in jdetails.get("strategy").get("matrix").get(
+                    runs.strip()
+                            .replace("${{", "")
+                            .replace("}}", "")
+                            .split(".")[1].strip()
+            ):
                 oss.append(matrixed)
         elif runs is not None:
-           oss.append(runs)
+            oss.append(runs)
     oss = set(oss)
     if len(oss) == 1:
         oss = list(map(lambda x: x.split("-")[0], oss))
