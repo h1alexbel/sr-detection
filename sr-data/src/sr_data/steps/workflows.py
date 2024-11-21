@@ -82,6 +82,12 @@ def workflow_info(content):
     jcount = len(jobs)
     oss = []
     scount = 0
+    release = False
+    on = yml[True]
+    if on is not None:
+        if on.get("release"):
+            for type in on.get("release").get("types"):
+                print(type)
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
         if runs is not None and runs.startswith("$"):
@@ -101,5 +107,10 @@ def workflow_info(content):
     return {
         "w_jobs": jcount,
         "w_steps": scount,
-        "w_oss": sorted(oss)
+        "w_oss": sorted(oss),
+        "w_release": release
     }
+
+
+def used_for_releases() -> bool:
+    return False
