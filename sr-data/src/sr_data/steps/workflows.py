@@ -54,5 +54,13 @@ def main(repos, out):
     logger.info(f"Saved repositories to {out}")
 
 
+# @todo #75:60min Parse fetched YAML files, and calculate their complexity/strictness.
+#  We should retrieve the following information from fetched workflow: 1) number of
+#  jobs, 2) number of OSs, 3) number of steps in each job, 4) number of versions in
+#  ${{ matrix }}.
+# @todo #75:60min Find release workflow from collected workflows.
+#  We should find workflow that releases the repo artifacts to some target platform.
+#  After we got parsed workflows, we can try to find one that makes releases. Probably,
+#  it can be one, that uses on:push:tags. For instance: <a href="https://github.com/objectionary/eo/blob/master/.github/workflows/telegram.yml">telegram.yml</a>
 def workflow_info(path) -> str:
     return requests.get(f"https://raw.githubusercontent.com/{path}").text
