@@ -28,7 +28,9 @@ from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
-from sr_data.steps.workflows import workflow_info, main, fetch
+import yaml
+from sr_data.steps.workflows import workflow_info, main, fetch, \
+    used_for_releases
 
 
 class TestWorkflows(unittest.TestCase):
@@ -124,3 +126,18 @@ jobs:
                     ["w_jobs", "w_oss", "w_steps"]),
                 f"Frame {frame.columns} doesn't have expected columns"
             )
+
+    @pytest.mark.fast
+    def test_returns_true_when_workflow_has_type_published(self):
+        self.assertTrue(
+            used_for_releases(
+                yaml.safe_load(
+                    """
+                    on:
+                      release:
+                        types: [published]
+                    """
+                )
+            ),
+            "Workflow should be used for releases, but it wasn't"
+        )
