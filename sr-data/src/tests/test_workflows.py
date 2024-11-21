@@ -79,8 +79,8 @@ jobs:
         )
         self.assertEqual(
             info["w_oss"],
-            4,
-            f"OSs count in workflow: '{info}' does not match with expected"
+            ["macos-13", "ubuntu-22.04", "ubuntu-latest", "windows-2022"],
+            f"Workflow OSs: '{info}' does not match with expected"
         ),
         self.assertEqual(
             info["w_steps"],
