@@ -56,14 +56,18 @@ def main(repos, out):
         tjobs = 0
         oss = []
         steps = 0
+        releases = False
         for info in infos:
             tjobs += info["w_jobs"]
             steps += info["w_steps"]
             for os in info["w_oss"]:
                 oss.append(os)
+            if info["w_release"]:
+                releases = True
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
+        frame.at[idx, "w_has_releases"] = releases
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
 
@@ -72,10 +76,6 @@ def fetch(path) -> str:
     return requests.get(f"https://raw.githubusercontent.com/{path}").text
 
 
-# @todo #75:60min Find release workflow from collected workflows.
-#  We should find workflow that releases the repo artifacts to some target platform.
-#  After we got parsed workflows, we can try to find one that makes releases. Probably,
-#  it can be one, that uses on:push:tags. For instance: <a href="https://github.com/objectionary/eo/blob/master/.github/workflows/telegram.yml">telegram.yml</a>.
 def workflow_info(content):
     yml = yaml.safe_load(content)
     jobs = yml["jobs"].items()
@@ -101,5 +101,21 @@ def workflow_info(content):
     return {
         "w_jobs": jcount,
         "w_steps": scount,
-        "w_oss": sorted(oss)
+        "w_oss": sorted(oss),
+        "w_release": used_for_releases(yml)
     }
+
+
+def used_for_releases(yml) -> bool:
+    result = False
+    on = yml[True]
+    if on:
+        if on.get("release"):
+            for type in on.get("release").get("types"):
+                if type == "published":
+                    result = True
+        elif on.get("push"):
+            if on.get("push").get("tags"):
+                if len(on.get("push").get("tags")) >= 1:
+                    result = True
+    return result
