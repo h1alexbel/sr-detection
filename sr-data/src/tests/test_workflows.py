@@ -1,7 +1,6 @@
 """
 Tests for workflows.
 """
-import os.path
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -23,6 +22,7 @@ import os.path
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os.path
 import unittest
 from tempfile import TemporaryDirectory
 
@@ -100,10 +100,7 @@ jobs:
                 path
             )
             frame = pd.read_csv(path)
-            collected = len(frame["workflows"])
-            expected = 9
-            self.assertEqual(
-                collected,
-                expected,
-                f"Length of collected workflows: {collected} don't match with expected: {expected}"
+            self.assertTrue(
+                all(col in frame.columns for col in ["w_jobs", "w_oss", "w_steps"]),
+                f"Frame {frame.columns} doesn't have expected columns"
             )

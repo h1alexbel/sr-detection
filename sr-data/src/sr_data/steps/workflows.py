@@ -53,7 +53,16 @@ def main(repos, out):
                     )
                 )
             )
-        frame.at[idx, "workflows"] = infos
+        tjobs = 0
+        oss = 0
+        steps = 0
+        for info in infos:
+            tjobs += info["w_jobs"]
+            oss += info["w_oss"]
+            steps += info["w_steps"]
+        frame.at[idx, "w_jobs"] = tjobs
+        frame.at[idx, "w_oss"] = oss
+        frame.at[idx, "w_steps"] = steps
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
 
