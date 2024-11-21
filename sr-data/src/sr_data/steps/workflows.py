@@ -22,8 +22,10 @@ def main(repos, out):
             infos.append(
                 workflow_info(f"{repo}/{branch}/.github/workflows/{yml}")
             )
-        print(infos)
+        frame.at[idx, "workflows"] = infos
+    frame.to_csv(out, index=False)
+    logger.info(f"Saved repositories to {out}")
 
 
 def workflow_info(path):
-    return ""
+    return path
