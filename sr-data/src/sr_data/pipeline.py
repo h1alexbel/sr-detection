@@ -34,6 +34,10 @@ def main(steps, pipes, out):
     with open("resources/pipeline.json", "r") as meta:
         origin = json.load(meta)
     for step in steps.split(","):
+        if step == "embed":
+            files.append("embeddings-s-bert-384.csv")
+            files.append("embeddings-embedv3-1024.csv")
+            files.append("embeddings-e5-1024.csv")
         params = origin[step]
         command = f"just {step}"
         if "repos" in params:

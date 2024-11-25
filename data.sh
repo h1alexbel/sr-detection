@@ -25,28 +25,20 @@ echo "$COLLECT_TOKEN" >> "$PATS"
   "$RUN"/just install
   poetry install
   "$RUN"/just collect "collection/$OUT" "$QUERY" "$START" "$END" "repos"
-  "$RUN"/just pulls "../repos.csv" "$GH_TOKEN" "../repos-with-pulls.csv"
-  "$RUN"/just filter "../repos-with-pulls.csv" "../after-filter.csv"
-  "$RUN"/just extract "../after-filter.csv" "../after-extract.csv"
-  "$RUN"/just embed "../after-extract.csv" "../embeddings"
-  cp "embeddings-s-bert-384.csv" "sbert.csv"
-  cp "embeddings-e5-1024.csv" "e5.csv"
-  cp "embeddings-embedv3-1024.csv" "embedv3.csv"
-  "$RUN"/just datasets "$RUN" "../" "after-extract.csv"
+  "$RUN"/just pipeline "$STEPS" "../steps.txt" "../files.txt"
+  while IFS= read -r step; do
+      eval "$RUN/$step"
+  done < steps.txt
+  "$RUN"/just datasets "$RUN" "../" "$NUMBASE"
 } 2>&1 | tee -a collect.log
 sed -i "s|$GH_TOKEN|REDACTED|g" collect.log
 sed -i "s|$HF_TOKEN|REDACTED|g" collect.log
 sed -i "s|$COHERE_TOKEN|REDACTED|g" collect.log
 mkdir -p "collection/$OUT/steps"
-files=(
-  "repos.csv"
-  "repos-with-pulls.csv"
-  "after-filter.csv"
-  "after-extract.csv"
-  "embeddings-s-bert-384.csv"
-  "embeddings-e5-1024.csv"
-  "embeddings-embedv3-1024.csv"
-)
+files=()
+while IFS= read -r line || [[ -n "$line" ]]; do
+  files+=("$line")
+done < files.txt
 id=1
 for file in "${files[@]}"; do
   cp "$file" "collection/$OUT/steps/$(printf '%02d' "$id")-$file"
