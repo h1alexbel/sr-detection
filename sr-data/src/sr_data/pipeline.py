@@ -64,7 +64,7 @@ def main(representation, steps, pipes, out):
         if "extras" in params:
             for extra in params["extras"]:
                 commands.append(extra)
-        logger.info(f"Built pipe: {command}")
+        logger.info(f"Built step: {command}")
     with open(pipes, "w") as f:
         f.write("\n".join(commands))
     with open(out, "w") as f:

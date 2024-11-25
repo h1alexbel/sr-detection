@@ -1,7 +1,6 @@
 """
 Sentiment analysis for a top description of README file.
 """
-import numpy
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -25,13 +24,12 @@ import numpy
 # SOFTWARE.
 import pandas as pd
 from loguru import logger
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, \
-    pipeline
 
-checkpoint = "cardiffnlp/twitter-roberta-base-sentiment-latest"
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
-stask = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+
+# checkpoint = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+# tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+# model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
+# stask = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
 
 def main(repos, out):
@@ -45,7 +43,8 @@ def sentiment(readme):
     description = top(readme)
     result = None
     try:
-        result = stask(description)
+        # result = stask(description)
+        result = ""
     except RuntimeError:
         logger.error(
             f"Can't parse input description ({len(description)} length)"

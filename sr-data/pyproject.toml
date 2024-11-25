@@ -42,8 +42,6 @@ cohere = "5.11.4"
 loguru = "0.7.2"
 scikit-fuzzy = "0.5.0"
 markdown-it-py = "3.0.0"
-torch = "2.2.2"
-transformers = "4.41.2"
 pyyaml = "6.0.1"
 
 [tool.poetry.group.dev.dependencies]
