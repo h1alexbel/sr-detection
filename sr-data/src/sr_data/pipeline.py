@@ -62,6 +62,9 @@ def main(steps, pipes, out):
             lout = output
             files.append(output.replace("../", ""))
         commands.append(command)
+        if "extras" in params:
+            for extra in params["extras"]:
+                commands.append(extra)
         logger.info(f"Built pipe: {command}")
     with open(pipes, "w") as f:
         f.write("\n".join(commands))
