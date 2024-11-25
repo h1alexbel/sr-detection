@@ -28,6 +28,7 @@ from loguru import logger
 
 def main(steps):
     commands = []
+    lout = None
     with open("resources/pipeline.json", "r") as meta:
         origin = json.load(meta)
     for step in steps.split(","):
@@ -36,7 +37,12 @@ def main(steps):
         if "repos" in params:
             repos = params["repos"]
             if repos == "@in":
-                repos = "test"
+                if lout is not None:
+                    repos = lout
+                else:
+                    raise ValueError(
+                        "We can't decode @in attribute, as there is no previous output"
+                    )
             command += f" \"{repos}\""
         if "token" in params:
             token = params["token"]
@@ -46,5 +52,6 @@ def main(steps):
         if "out" in params:
             output = params["out"]
             command += f" \"{output}\""
+            lout = output
         commands.append(command)
     print(commands)
