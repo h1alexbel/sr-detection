@@ -54,4 +54,5 @@ def main(steps):
             command += f" \"{output}\""
             lout = output
         commands.append(command)
-    print(commands)
+    with open("pipeline.txt", "w") as f:
+        f.write("\n".join(commands))
