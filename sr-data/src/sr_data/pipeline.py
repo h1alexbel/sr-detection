@@ -1,6 +1,7 @@
 """
 SR Pipeline.
 """
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -22,8 +23,28 @@ SR Pipeline.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import json
 from loguru import logger
 
-def main(args):
-    logger.info("Test!")
-    return args
+def main(steps):
+    commands = []
+    with open("resources/pipeline.json", "r") as meta:
+        origin = json.load(meta)
+    for step in steps.split(","):
+        params = origin[step]
+        command = f"just {step}"
+        if "repos" in params:
+            repos = params["repos"]
+            if repos == "@in":
+                repos = "test"
+            command += f" \"{repos}\""
+        if "token" in params:
+            token = params["token"]
+            if token.startswith("$"):
+                token = "token"
+            command += f" {token}"
+        if "out" in params:
+            output = params["out"]
+            command += f" \"{output}\""
+        commands.append(command)
+    print(commands)
