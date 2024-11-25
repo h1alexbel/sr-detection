@@ -43,4 +43,6 @@ jobs:
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
+            -e STEPS="pulls,filter,extract,embed" \
+            -e NUMBASE="after-extract.csv"
             experiment
