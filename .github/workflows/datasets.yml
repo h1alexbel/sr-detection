@@ -42,6 +42,9 @@ name: datasets
         options:
           - false
           - true
+      numbase:
+        description: "CSV file with numerical features, considered as base for other datasets"
+        required: true
 permissions: write-all
 jobs:
   create:
@@ -66,7 +69,8 @@ jobs:
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
-            -e OUT="${{ inputs.out }}" h1alexbel/sr-detection
+            -e OUT="${{ inputs.out }}" -e STEPS="" \
+            -e NUMBASE="${{ inputs.numbase }}" h1alexbel/sr-detection
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
         with:
           branch: gh-pages
