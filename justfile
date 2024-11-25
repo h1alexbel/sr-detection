@@ -56,6 +56,10 @@ check:
   just datasets
   just cluster
 
+# Build datasets for the experiments.
+pipeline steps:
+  cd sr-data && poetry poe pipeline --steps {{steps}}
+
 # Clean up experiment.
 clean:
   echo "Cleaning up sr-data/experiment..."

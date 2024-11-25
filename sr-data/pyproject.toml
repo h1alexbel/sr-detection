@@ -49,6 +49,10 @@ pyyaml = "6.0.1"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
 
+[tool.poe.tasks.pipeline]
+script = "sr_data.pipeline:main(steps)"
+args = [{name = "steps"}]
+
 [tool.poe.tasks.filter]
 script = "sr_data.steps.filter:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
