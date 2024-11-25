@@ -44,5 +44,4 @@ jobs:
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
             -e STEPS="pulls,filter,extract,embed" \
-            -e NUMBASE="after-extract.csv"
-            experiment
+            -e NUMBASE="after-extract.csv" experiment
