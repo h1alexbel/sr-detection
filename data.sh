@@ -26,10 +26,13 @@ echo "$COLLECT_TOKEN" >> "$PATS"
   poetry install
   "$RUN"/just collect "collection/$OUT" "$QUERY" "$START" "$END" "repos"
   "$RUN"/just pipeline "$STEPS" "../steps.txt" "../files.txt"
+  cat files.txt
   while IFS= read -r step; do
     if [[ "$step" == just* ]]; then
+      echo "$RUN/$step"
       eval "$RUN/$step"
     else
+      echo "$step"
       eval "$step"
     fi
   done < steps.txt
