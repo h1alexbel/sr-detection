@@ -56,9 +56,9 @@ check:
   just datasets
   just cluster
 
-# Build datasets for the experiments.
-pipeline steps:
-  cd sr-data && poetry poe pipeline --steps {{steps}}
+# SR-data pipeline for the experiments.
+pipeline steps pipes:
+  cd sr-data && poetry poe pipeline --steps {{steps}} --pipes {{pipes}}
 
 # Clean up experiment.
 clean:

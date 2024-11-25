@@ -28,7 +28,7 @@ import json
 from loguru import logger
 
 
-def main(steps):
+def main(steps, pipes):
     commands = []
     lout = None
     with open("resources/pipeline.json", "r") as meta:
@@ -58,5 +58,5 @@ def main(steps):
             lout = output
         commands.append(command)
         logger.info(f"Built pipe: {command}")
-    with open("../pipeline.txt", "w") as f:
+    with open(pipes, "w") as f:
         f.write("\n".join(commands))
