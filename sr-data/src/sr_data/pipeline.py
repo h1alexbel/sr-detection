@@ -24,7 +24,9 @@ SR Pipeline.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import json
+
 from loguru import logger
+
 
 def main(steps):
     commands = []
@@ -49,13 +51,12 @@ def main(steps):
             command += f" \"{pref}\""
         if "token" in params:
             token = params["token"]
-            if token.startswith("$"):
-                token = "token"
             command += f" {token}"
         if "out" in params:
             output = params["out"]
             command += f" \"{output}\""
             lout = output
         commands.append(command)
-    with open("pipeline.txt", "w") as f:
+        logger.info(f"Built pipe: {command}")
+    with open("../pipeline.txt", "w") as f:
         f.write("\n".join(commands))
