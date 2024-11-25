@@ -1,0 +1,24 @@
+{
+  "pulls": {
+    "repos": "../repos.csv",
+    "token": "$GH_TOKEN",
+    "out": "../repos-with-pulls.csv"
+  },
+  "filter": {
+    "repos": "@in",
+    "out": "../after-filter.csv"
+  },
+  "extract": {
+    "repos": "@in",
+    "out": "../after-extract.csv"
+  },
+  "embed": {
+    "repos": "@in",
+    "prefix": "../embeddings",
+    "extras": [
+      "cp \"embeddings-s-bert-384.csv\" \"sbert.csv\"",
+      "cp \"embeddings-e5-1024.csv\" \"e5.csv\"",
+      "cp \"embeddings-embedv3-1024.csv\" \"embedv3.csv\""
+    ]
+  }
+}
