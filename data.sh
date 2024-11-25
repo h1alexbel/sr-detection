@@ -27,7 +27,11 @@ echo "$COLLECT_TOKEN" >> "$PATS"
   "$RUN"/just collect "collection/$OUT" "$QUERY" "$START" "$END" "repos"
   "$RUN"/just pipeline "$STEPS" "../steps.txt" "../files.txt"
   while IFS= read -r step; do
+    if [[ "$step" == just* ]]; then
       eval "$RUN/$step"
+    else
+      eval "$step"
+    fi
   done < steps.txt
   "$RUN"/just datasets "$RUN" "../" "$NUMBASE"
 } 2>&1 | tee -a collect.log
