@@ -44,6 +44,9 @@ def main(steps):
                         "We can't decode @in attribute, as there is no previous output"
                     )
             command += f" \"{repos}\""
+        if "prefix" in params:
+            pref = params["prefix"]
+            command += f" \"{pref}\""
         if "token" in params:
             token = params["token"]
             if token.startswith("$"):
