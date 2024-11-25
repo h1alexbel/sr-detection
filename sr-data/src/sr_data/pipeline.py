@@ -27,10 +27,10 @@ import json
 
 from loguru import logger
 
-
-def main(steps, pipes):
+def main(steps, pipes, out):
     commands = []
     lout = None
+    files = ["repos.csv"]
     with open("resources/pipeline.json", "r") as meta:
         origin = json.load(meta)
     for step in steps.split(","):
@@ -56,7 +56,10 @@ def main(steps, pipes):
             output = params["out"]
             command += f" \"{output}\""
             lout = output
+            files.append(output.replace("../", ""))
         commands.append(command)
         logger.info(f"Built pipe: {command}")
     with open(pipes, "w") as f:
         f.write("\n".join(commands))
+    with open(out, "w") as f:
+        f.write("\n".join(files))
