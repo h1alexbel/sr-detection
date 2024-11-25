@@ -57,9 +57,9 @@ check:
   just cluster
 
 # SR-data pipeline for the experiments.
-pipeline steps pipes out:
-  cd sr-data && poetry poe pipeline --steps {{steps}} --pipes "{{pipes}}" \
-   --out "{{out}}"
+pipeline steps pipes out representation="resources/pipeline.json":
+  cd sr-data && poetry poe pipeline --representation {{representation}} \
+   --steps {{steps}} --pipes "{{pipes}}" --out "{{out}}"
 
 # Clean up experiment.
 clean:

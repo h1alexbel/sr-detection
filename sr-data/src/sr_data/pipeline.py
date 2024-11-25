@@ -1,7 +1,6 @@
 """
 SR Pipeline.
 """
-
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -27,11 +26,11 @@ import json
 
 from loguru import logger
 
-def main(steps, pipes, out):
+def main(representation, steps, pipes, out):
     commands = []
     lout = None
     files = ["repos.csv"]
-    with open("resources/pipeline.json", "r") as meta:
+    with open(representation, "r") as meta:
         origin = json.load(meta)
     for step in steps.split(","):
         if step == "embed":

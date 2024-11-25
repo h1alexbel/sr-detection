@@ -50,8 +50,13 @@ pyyaml = "6.0.1"
 pytest = "^8.2.2"
 
 [tool.poe.tasks.pipeline]
-script = "sr_data.pipeline:main(steps, pipes, out)"
-args = [{name = "steps"}, { name = "pipes" }, { name = "out" }]
+script = "sr_data.pipeline:main(representation, steps, pipes, out)"
+args = [
+    { name = "representation" },
+    { name = "steps" },
+    { name = "pipes" },
+    { name = "out" }
+]
 
 [tool.poe.tasks.filter]
 script = "sr_data.steps.filter:main(repos, out)"
