@@ -38,7 +38,11 @@ loguru = "0.7.2"
 
 [tool.poe.tasks.cluster]
 script = "models.cluster:main(dataset, dir)"
-args = [{name = "dataset"}, {name = "dir"}]
+args = [{ name = "dataset" }, { name = "dir" }]
+
+[tool.poe.tasks.clusterstat]
+script = "models.clusterstat:main(dir, out)"
+args = [{ name = "dir" }, { name = "out" }]
 
 [build-system]
 requires = ["setuptools", "wheel"]
