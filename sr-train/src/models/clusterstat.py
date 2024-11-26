@@ -29,8 +29,14 @@ from loguru import logger
 def main(dir):
     logger.info(f"Inspecting dir '{dir}'")
     for model in os.listdir(dir):
-        deep = f"{dir}/{model}"
-        if os.path.isdir(deep):
-            for nested in os.listdir(deep):
-                if nested in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
-                    print(f"dataset result: '{nested}' for model {model}")
+        if model in ["kmeans", "agglomerative", "dbscan", "gmm"]:
+            deep = f"{dir}/{model}"
+            if os.path.isdir(deep):
+                clusters = []
+                for dataset in os.listdir(deep):
+                    if dataset in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
+                        result = f"{dir}/{model}/{dataset}/clusters"
+                        if os.path.isdir(result):
+                            for cluster in os.listdir(result):
+                                clusters.append(cluster)
+                    print(f"{model} -> {dataset}: {len(clusters)} clusters")
