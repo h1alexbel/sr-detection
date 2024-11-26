@@ -39,4 +39,4 @@ def main(dir):
                         if os.path.isdir(result):
                             for cluster in os.listdir(result):
                                 clusters.append(cluster)
-                    print(f"{model} -> {dataset}: {len(clusters)} clusters")
+                    print(f"{model} -> {dataset}: {len(clusters)} generated clusters")
