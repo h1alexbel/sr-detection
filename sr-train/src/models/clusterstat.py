@@ -37,7 +37,6 @@ def main(dir, out):
                 clusters = []
                 noisy = None
                 for dataset in os.listdir(deep):
-                    print(dataset)
                     if dataset in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
                         result = f"{dir}/{model}/{dataset}/clusters"
                         if os.path.isdir(result):
