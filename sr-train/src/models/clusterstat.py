@@ -38,5 +38,9 @@ def main(dir, out):
                         result = f"{dir}/{model}/{dataset}/clusters"
                         if os.path.isdir(result):
                             for cluster in os.listdir(result):
-                                clusters.append(cluster)
-                    print(f"{model} -> {dataset}: {len(clusters)} clusters")
+                                path = f"{result}/{cluster}"
+                                if os.path.isfile(path) and not cluster == "-1.txt":
+                                    with open(path, 'r') as c:
+                                        clusters.append(sum(1 for _ in c))
+                    lines = ", ".join(map(str, clusters))
+                    print(f"{model} -> {dataset}: {len(clusters)} clusters ({lines})")
