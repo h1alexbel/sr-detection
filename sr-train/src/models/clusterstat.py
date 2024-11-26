@@ -31,12 +31,13 @@ def main(dir, out):
     logger.info(f"Inspecting dir '{dir}'")
     facts = []
     for model in os.listdir(dir):
-        if model in ["kmeans", "agglomerative", "dbscan", "gmm"]:
+        if model in ["kmeans", "agglomerative", "dbscan", "gmm", "to-cluster"]:
             deep = f"{dir}/{model}"
             if os.path.isdir(deep):
                 clusters = []
                 noisy = None
                 for dataset in os.listdir(deep):
+                    print(dataset)
                     if dataset in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
                         result = f"{dir}/{model}/{dataset}/clusters"
                         if os.path.isdir(result):
@@ -45,15 +46,16 @@ def main(dir, out):
                                 if os.path.isfile(path):
                                     with open(path, "r") as c:
                                         count = sum(1 for _ in c)
-                                        if not cluster == "-1.txt":
+                                        if not cluster == "-1.txt" and not cluster == "config.json":
                                             clusters.append(count)
                                         else:
                                             noisy = count
-                    lines = ", ".join(map(str, clusters))
-                    fact = f"{model} -> {dataset}: {len(clusters)} clusters ({lines})"
-                    if noisy:
-                        fact += f" , +{noisy} noisy repos"
-                    facts.append(fact)
+                    if not dataset == "config.json":
+                        lines = ", ".join(map(str, clusters))
+                        fact = f"{model} -> {dataset}: {len(clusters)} clusters ({lines})"
+                        if noisy:
+                            fact += f" , +{noisy} noisy repos"
+                        facts.append(fact)
     with open(out, "w") as r:
         for fact in facts:
             r.write(fact + "\n")
