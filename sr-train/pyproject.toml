@@ -34,7 +34,11 @@ scikit-learn = "1.5.2"
 
 [tool.poe.tasks.cluster]
 script = "models.cluster:main(dataset, dir)"
-args = [{name = "dataset"}, {name = "dir"}]
+args = [{ name = "dataset" }, { name = "dir" }]
+
+[tool.poe.tasks.clusterstat]
+script = "models.clusterstat:main(dir)"
+args = [{ name = "dir" }]
 
 [build-system]
 requires = ["setuptools", "wheel"]

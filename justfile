@@ -179,14 +179,19 @@ combination dir identifier embeddings scores="experiment/scores.csv":
 
 # Cluster repositories.
 cluster dir="experiment":
-  cd sr-train && poetry poe cluster --dataset "experiment/numerical.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/scores.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/sbert.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/e5.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/embedv3.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/scores+sbert.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/scores+e5.csv" --dir {{dir}}
-  cd sr-train && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
+  cd sr-train && poetry poe cluster --dataset "experiment/d5-scores+sbert.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/d2-sbert.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/d1-scores.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/sbert.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/e5.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/embedv3.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/scores+sbert.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/scores+e5.csv" --dir {{dir}}
+#  cd sr-train && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
+
+# Statistics about generated clusters.
+clusterstat dir="experiment":
+  cd sr-train && poetry poe clusterstat --dir {{dir}}
 
 # Fill in labels in repositories dataset.
 labels dir="experiment":
