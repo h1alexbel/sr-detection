@@ -34,6 +34,10 @@ from models.clusterstat import main
 class TestClusterstat(unittest.TestCase):
 
     @pytest.mark.fast
+    # @todo #240:30min Add test case when clusters are not empty.
+    #  We should add one more test case when clustering model generates clusters.
+    #  To do so, we need to prepare a bigger dataset for model in order to find
+    #  useful centroids and distributed entries close to them.
     def test_generates_report(self):
         with TemporaryDirectory() as temp:
             dbscan(
