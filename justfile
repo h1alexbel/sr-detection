@@ -190,8 +190,8 @@ cluster dir="experiment":
 #  cd sr-train && poetry poe cluster --dataset "experiment/scores+embedv3.csv" --dir {{dir}}
 
 # Statistics about generated clusters.
-clusterstat dir="experiment":
-  cd sr-train && poetry poe clusterstat --dir {{dir}}
+clusterstat out dir="experiment":
+  cd sr-train && poetry poe clusterstat --dir {{dir}} --out {{out}}
 
 # Fill in labels in repositories dataset.
 labels dir="experiment":

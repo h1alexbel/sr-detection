@@ -26,7 +26,7 @@ import os
 
 from loguru import logger
 
-def main(dir):
+def main(dir, out):
     logger.info(f"Inspecting dir '{dir}'")
     for model in os.listdir(dir):
         if model in ["kmeans", "agglomerative", "dbscan", "gmm"]:
