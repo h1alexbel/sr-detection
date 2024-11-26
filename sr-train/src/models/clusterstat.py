@@ -33,14 +33,22 @@ def main(dir, out):
             deep = f"{dir}/{model}"
             if os.path.isdir(deep):
                 clusters = []
+                noisy = None
                 for dataset in os.listdir(deep):
                     if dataset in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
                         result = f"{dir}/{model}/{dataset}/clusters"
                         if os.path.isdir(result):
                             for cluster in os.listdir(result):
                                 path = f"{result}/{cluster}"
-                                if os.path.isfile(path) and not cluster == "-1.txt":
+                                if os.path.isfile(path):
                                     with open(path, 'r') as c:
-                                        clusters.append(sum(1 for _ in c))
+                                        count = sum(1 for _ in c)
+                                        if not cluster == "-1.txt":
+                                            clusters.append(count)
+                                        else:
+                                            noisy = count
                     lines = ", ".join(map(str, clusters))
-                    print(f"{model} -> {dataset}: {len(clusters)} clusters ({lines})")
+                    report = f"{model} -> {dataset}: {len(clusters)} clusters ({lines})"
+                    if noisy:
+                        report += f" , +{noisy} noisy repos"
+                    print(report)
