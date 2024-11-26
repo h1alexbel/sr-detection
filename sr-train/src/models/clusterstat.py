@@ -26,8 +26,10 @@ import os
 
 from loguru import logger
 
+
 def main(dir, out):
     logger.info(f"Inspecting dir '{dir}'")
+    facts = []
     for model in os.listdir(dir):
         if model in ["kmeans", "agglomerative", "dbscan", "gmm"]:
             deep = f"{dir}/{model}"
@@ -41,14 +43,17 @@ def main(dir, out):
                             for cluster in os.listdir(result):
                                 path = f"{result}/{cluster}"
                                 if os.path.isfile(path):
-                                    with open(path, 'r') as c:
+                                    with open(path, "r") as c:
                                         count = sum(1 for _ in c)
                                         if not cluster == "-1.txt":
                                             clusters.append(count)
                                         else:
                                             noisy = count
                     lines = ", ".join(map(str, clusters))
-                    report = f"{model} -> {dataset}: {len(clusters)} clusters ({lines})"
+                    fact = f"{model} -> {dataset}: {len(clusters)} clusters ({lines})"
                     if noisy:
-                        report += f" , +{noisy} noisy repos"
-                    print(report)
+                        fact += f" , +{noisy} noisy repos"
+                    facts.append(fact)
+    with open(out, "w") as r:
+        for fact in facts:
+            r.write(fact + "\n")
