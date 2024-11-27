@@ -24,6 +24,17 @@ collected metadata about GitHub repositories.
 * [sr-detector](sr-detector), trained and reusable model for SR detection.
 * [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
 
+## Hypotheses
+
+Our research based on the following hypotheses:
+
+* `SR`s usually don't have release pipeline inside `.github/workflows`
+* `SR`s usually have less strict build pipeline inside `.github/workflows`
+* `SR`s usually don't have releases
+* `SR`s have less pull requests
+* `SR`s don't have section about how to use it
+* `SR`s have more disconnected directories/files
+
 ## Run experiments
 
 First, prepare datasets:
@@ -36,7 +47,7 @@ docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
   -e OUT="sr-data" h1alexbel/sr-detection
 ```
 
-In the output directory you should have these files:
+In the output directory you should have these datasets:
 
 * `d1-scores.csv`
 * `d2-sbert.csv`
@@ -47,6 +58,12 @@ In the output directory you should have these files:
 * `d7-scores+embedv3.csv`
 
 Alternatively, you can download existing datasets from [gh-pages] branch.
+
+Then, you should run models against collected datasets:
+
+```bash
+just cluster
+```
 
 TBD..
 
