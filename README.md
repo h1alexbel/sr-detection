@@ -47,7 +47,7 @@ docker run --rm -v "$(pwd)/output:/collection" -e START="<start date>" \
   -e OUT="sr-data" h1alexbel/sr-detection
 ```
 
-In the output directory you should have these files:
+In the output directory you should have these datasets:
 
 * `d1-scores.csv`
 * `d2-sbert.csv`
