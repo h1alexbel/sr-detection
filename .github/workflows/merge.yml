@@ -47,11 +47,15 @@ jobs:
           just-version: "1.30.1"
       - name: Create
         run: |
-          just install
-          just merge "${{ inputs.datasets }}" "${{ inputs.out }}"
+          mkdir -p "merged/${{ inputs.out }}"
+          {
+            just install
+            just merge "${{ inputs.datasets }}" "merged/${{ inputs.out }}"
+          } 2>&1 | tee -a merge.log
+          cp "merge.log" "merged/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
         with:
           branch: datasets
-          folder: output
+          folder: merged
           clean: false
         if: github.ref == 'refs/heads/master'
