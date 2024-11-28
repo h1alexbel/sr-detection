@@ -50,7 +50,7 @@ jobs:
           mkdir -p "merged/${{ inputs.out }}"
           {
             just install
-            just merge "${{ inputs.datasets }}" "merged/${{ inputs.out }}"
+            just merge "${{ inputs.datasets }}" "../merged/${{ inputs.out }}"
           } 2>&1 | tee -a merge.log
           cp "merge.log" "merged/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
