@@ -71,7 +71,7 @@ jobs:
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
             -e OUT="${{ inputs.out }}" -e STEPS="pulls,filter,extract,embed" \
             -e NUMBASE="${{ inputs.numbase }}" h1alexbel/sr-detection
-      - uses: JamesIves/github-pages-deploy-action@v4.6.9
+      - uses: JamesIves/github-pages-deploy-action@v4.7.1
         with:
           branch: gh-pages
           folder: output
