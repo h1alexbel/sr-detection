@@ -152,6 +152,10 @@ args = [{name = "repos"}, {name = "out"}]
 script = "sr_data.steps.workflows:main(repos, out)"
 args = [{name = "repos"}, {name = "out"}]
 
+[tool.poe.tasks.merge]
+script = "sr_data.steps.merge:main(datasets, out)"
+args = [{name = "datasets"}, {name = "out"}]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
