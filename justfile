@@ -177,7 +177,7 @@ combination dir identifier embeddings scores="experiment/scores.csv":
   cd sr-data && poetry poe combination --scores "{{scores}}" \
     --embeddings "{{embeddings}}" --dir "{{dir}}" --identifier "{{identifier}}"
 
-# Merge datasets into one.
+# Merge dataset folders into one.
 merge datasets out:
   cd sr-data && poetry poe merge --datasets "{{datasets}}" --out "{{out}}"
 
