@@ -49,8 +49,8 @@ jobs:
         run: |
           mkdir -p "clustered/${{ inputs.out }}"
           {
-            just install
             poetry install
+            just install
             just dataset "${{ inputs.folder }}" "../${{ inputs.folder }}"
             just cluster "../${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
             just clusterstat "../clustered/${{ inputs.out }}" "../results.txt"
