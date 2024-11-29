@@ -161,9 +161,9 @@ datasets embeddings run dir="experiment" numbase="after-extract.csv":
   "{{run}}"/just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
   "{{run}}"/just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
   if embeddings; then
-    "{{run}}"/just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
-    "{{run}}"/just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
-    "{{run}}"/just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
+   "{{run}}"/just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
+   "{{run}}"/just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
+   "{{run}}"/just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
   fi
 
 # Create scores dataset.
