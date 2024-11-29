@@ -1,3 +1,6 @@
+"""
+Fetch dataset and save it locally.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,35 +22,14 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-train"
-version = "0.0.0"
-description = "Training of ML models in order to identify sample repositories"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{ include = "models", from = "src" }]
+import os.path
 
-[tool.poetry.dependencies]
-python = "==3.10.* || ==3.11.* || ==3.12.*"
-scikit-learn = "1.5.2"
-pandas = "2.2.3"
-scikit-fuzzy = "0.5.0"
-packaging = "24.2"
-loguru = "0.7.2"
+from loguru import logger
+from sr_data.steps.merge import contents
 
-[tool.poe.tasks.cluster]
-script = "models.cluster:main(dataset, dir)"
-args = [{ name = "dataset" }, { name = "dir" }]
 
-[tool.poe.tasks.clusterstat]
-script = "models.clusterstat:main(dir, out)"
-args = [{ name = "dir" }, { name = "out" }]
-
-[tool.poe.tasks.dataset]
-script = "models.dataset:main(folder, out)"
-args = [{ name = "folder" }, { name = "out" }]
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+def main(folder, out):
+    for file, frame in contents(folder, "datasets").items():
+        path = os.path.join(out, file)
+        frame.to_csv(path, index=False)
+        logger.info(f"Saved '{file}' to {path}")

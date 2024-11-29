@@ -24,6 +24,9 @@ name: cluster
 'on':
   workflow_dispatch:
     inputs:
+      folder:
+        description: "Folder with datasets"
+        required: true
       out:
         description: "Output folder"
         required: true
@@ -47,7 +50,8 @@ jobs:
           mkdir -p "clustered/${{ inputs.out }}"
           {
             just install
-            just cluster "../clustered/${{ inputs.out }}"
+            just dataset "${{ inputs.folder }}" "../${{ inputs.folder }}"
+            just cluster "../${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
             just clusterstat "../clustered/${{ inputs.out }}" "../${{ inputs.out }}.txt"
           } 2>&1 | tee -a cluster.log
           cp "cluster.log" "clustered/${{ inputs.out }}"

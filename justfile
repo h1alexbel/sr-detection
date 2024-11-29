@@ -182,6 +182,10 @@ merge datasets out branch:
   cd sr-data && poetry poe merge --datasets "{{datasets}}" --out "{{out}}" \
    --branch "{{branch}}"
 
+# Download datasets.
+dataset folder out:
+  cd sr-train && poetry poe dataset --folder "{{folder}}" --out "{{out}}"
+
 # Cluster repositories.
 cluster dir="experiment":
   cd sr-train && poetry poe cluster --dataset "experiment/d1-scores.csv" --dir {{dir}}
