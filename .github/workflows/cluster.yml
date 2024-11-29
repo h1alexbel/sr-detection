@@ -29,7 +29,7 @@ name: cluster
         required: true
 permissions: write-all
 jobs:
-  run:
+  generate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
