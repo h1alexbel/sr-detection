@@ -1,0 +1,7 @@
+effector/swc-plugin
+iondodon/i3-switcher-x11
+Michael-F-Bryan/wit-lsp
+mainmatter/cargo-autoinherit
+Glistix/glistix
+guywaldman/magic-cli
+fglock/PerlOnJava

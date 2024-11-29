@@ -1,0 +1,9 @@
+viridia/bevy_reactor
+zed-extensions/java
+TannerReynolds/Helldivers2-Macro-Engine
+CleanroomMC/Scalar
+crisidev/bacon-ls
+douglasmakey/shelldon
+xeruvimov/jproblem
+etkecc/baibot
+matthunz/voxy

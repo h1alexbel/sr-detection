@@ -1,0 +1,6 @@
+MEEPofFaith/hallucinogen
+jon-mil-92/DisplayHotKeys
+cptpiepmatz/nu-jupyter-kernel
+qianxiao996/BurpSuite-FrameScan
+romis2012/mongojet
+DJ-Raven/swing-modal-dialog

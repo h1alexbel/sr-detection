@@ -1,0 +1,6 @@
+ACEnglish/kanpig
+abstractqqq/polars_istr
+michael-ameri/gemini-api
+0PandaDEV/Qopy
+pixlie/PixlieAI
+laperlej/zellij-choose-tree

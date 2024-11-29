@@ -1,0 +1,7 @@
+0vercl0k/kdmp-parser-rs
+linux-packaging-rs/flatpak-ext
+rust-bitcoin/rust-bitcoind-json-rpc
+foundry-rs/foundry-fork-db
+shopware/sw-sync-cli
+galister/motoc
+syncliteio/SyncLite

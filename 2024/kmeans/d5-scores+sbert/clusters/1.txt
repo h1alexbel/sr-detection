@@ -1,0 +1,11 @@
+quarylabs/quary
+iotaledger/iota
+spiraldb/vortex
+movementlabsxyz/movement
+block-mesh/block-mesh-monorepo
+yetanotherco/aligned_layer
+stacks-network/sbtc
+getgrit/gritql
+worldcoin/iris-mpc
+mediar-ai/screenpipe
+lambdaclass/ethrex

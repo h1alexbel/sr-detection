@@ -1,0 +1,7 @@
+gamedolphin/speakwith
+rerun-io/revy
+embassy-rs/bt-hci
+mostafaqanbaryan/zellij-switch
+Bram1903/TotemGuard
+yazaldefilimone/stella
+EndlessReform/fish-speech.rs

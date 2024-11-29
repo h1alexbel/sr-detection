@@ -1,0 +1,822 @@
+Creating virtualenv sr-detection-n7PECBnz-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 62 installs, 0 updates, 0 removals
+
+  - Installing certifi (2024.8.30)
+  - Installing charset-normalizer (3.4.0)
+  - Installing idna (3.10)
+  - Installing urllib3 (2.2.3)
+  - Installing filelock (3.16.1)
+  - Installing fsspec (2024.10.0)
+  - Installing h11 (0.14.0)
+  - Installing pyyaml (6.0.2)
+  - Installing requests (2.32.3)
+  - Installing packaging (24.2)
+  - Installing tqdm (4.67.1)
+  - Installing sniffio (1.3.1)
+  - Installing typing-extensions (4.12.2)
+  - Installing annotated-types (0.7.0)
+  - Installing anyio (4.6.2.post1)
+  - Installing httpcore (1.0.7)
+  - Installing huggingface-hub (0.26.3)
+  - Installing pydantic-core (2.27.1)
+  - Installing six (1.16.0)
+  - Installing click (8.1.7)
+  - Installing fastavro (1.9.7)
+  - Installing httpx (0.28.0)
+  - Installing httpx-sse (0.4.0)
+  - Installing joblib (1.4.2)
+  - Installing mdurl (0.1.2)
+  - Installing numpy (1.26.4)
+  - Installing parameterized (0.9.0)
+  - Installing pydantic (2.10.2)
+  - Installing python-dateutil (2.9.0.post0)
+  - Installing pytz (2024.2)
+  - Installing regex (2024.11.6)
+  - Installing soupsieve (2.6)
+  - Installing tokenizers (0.21.0)
+  - Installing types-requests (2.32.0.20241016)
+  - Installing tzdata (2024.2)
+  - Installing beautifulsoup4 (4.12.3)
+  - Installing cohere (5.12.0)
+  - Installing langdetect (1.0.9)
+  - Installing loguru (0.7.2)
+  - Installing markdown (3.7)
+  - Installing markdown-it-py (3.0.0)
+  - Installing nltk (3.9.1)
+  - Installing pandas (2.2.3)
+  - Installing scikit-fuzzy (0.5.0)
+  - Installing scipy (1.13.1)
+  - Installing threadpoolctl (3.5.0)
+  - Installing astroid (3.3.5)
+  - Installing dill (0.3.9)
+  - Installing iniconfig (2.0.0)
+  - Installing isort (5.13.2)
+  - Installing mccabe (0.7.0)
+  - Installing platformdirs (4.3.6)
+  - Installing pluggy (1.5.0)
+  - Installing pycodestyle (2.12.1)
+  - Installing pyflakes (3.2.0)
+  - Installing scikit-learn (1.5.2)
+  - Installing sr-data (0.0.0 /home/runner/work/sr-detection/sr-detection/sr-data)
+  - Installing tomlkit (0.13.2)
+  - Installing flake8 (7.1.1)
+  - Installing pylint (3.3.1)
+  - Installing pytest (8.3.3)
+  - Installing sr-train (0.0.0 /home/runner/work/sr-detection/sr-detection/sr-train)
+Installing /home/runner/.cache/pypoetry/virtualenvs/sr-detection-n7PECBnz-py3.12/lib/python3.12/site-packages/UNKNOWN-0.0.0.dist-info/METADATA over existing file
+Installing /home/runner/.cache/pypoetry/virtualenvs/sr-detection-n7PECBnz-py3.12/lib/python3.12/site-packages/UNKNOWN-0.0.0.dist-info/WHEEL over existing file
+Installing /home/runner/.cache/pypoetry/virtualenvs/sr-detection-n7PECBnz-py3.12/lib/python3.12/site-packages/UNKNOWN-0.0.0.dist-info/top_level.txt over existing file
+Installing /home/runner/.cache/pypoetry/virtualenvs/sr-detection-n7PECBnz-py3.12/lib/python3.12/site-packages/UNKNOWN-0.0.0.dist-info/INSTALLER over existing file
+Installing /home/runner/.cache/pypoetry/virtualenvs/sr-detection-n7PECBnz-py3.12/lib/python3.12/site-packages/UNKNOWN-0.0.0.dist-info/RECORD over existing file
+
+Writing lock file
+
+Installing the current project: sr-detection (0.0.0)
+${RULTOR:+sudo} npm install -g ghminer@0.0.7
+
+added 7 packages in 3s
+
+1 package is looking for funding
+  run `npm fund` for details
+poetry self add 'poethepoet[poetry_plugin]'
+Using version ^0.31.1 for poethepoet
+
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 3 installs, 0 updates, 0 removals
+
+  - Installing pastel (0.2.1)
+  - Installing pyyaml (6.0.2)
+  - Installing poethepoet (0.31.1)
+
+Writing lock file
+cd sr-data && poetry install
+Creating virtualenv sr-data-iIS7NBSl-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 47 installs, 0 updates, 0 removals
+
+  - Installing certifi (2024.8.30)
+  - Installing charset-normalizer (3.4.0)
+  - Installing idna (3.10)
+  - Installing urllib3 (2.2.3)
+  - Installing filelock (3.16.1)
+  - Installing fsspec (2024.10.0)
+  - Installing h11 (0.14.0)
+  - Installing packaging (24.2)
+  - Installing pyyaml (6.0.2)
+  - Installing requests (2.32.3)
+  - Installing sniffio (1.3.1)
+  - Installing tqdm (4.67.1)
+  - Installing typing-extensions (4.12.2)
+  - Installing annotated-types (0.7.0)
+  - Installing anyio (4.6.2.post1)
+  - Installing httpcore (1.0.7)
+  - Installing huggingface-hub (0.26.3)
+  - Installing pydantic-core (2.27.1)
+  - Installing six (1.16.0)
+  - Installing click (8.1.7)
+  - Installing fastavro (1.9.7)
+  - Installing httpx (0.28.0)
+  - Installing httpx-sse (0.4.0)
+  - Installing iniconfig (2.0.0)
+  - Installing joblib (1.4.2)
+  - Installing mdurl (0.1.2)
+  - Installing numpy (1.26.4)
+  - Installing parameterized (0.9.0)
+  - Installing pluggy (1.5.0)
+  - Installing pydantic (2.10.2)
+  - Installing python-dateutil (2.9.0.post0)
+  - Installing pytz (2024.2)
+  - Installing regex (2024.11.6)
+  - Installing soupsieve (2.6)
+  - Installing tokenizers (0.21.0)
+  - Installing types-requests (2.32.0.20241016)
+  - Installing tzdata (2024.2)
+  - Installing beautifulsoup4 (4.12.3)
+  - Installing cohere (5.12.0)
+  - Installing langdetect (1.0.9)
+  - Installing loguru (0.7.2)
+  - Installing markdown (3.7)
+  - Installing markdown-it-py (3.0.0)
+  - Installing nltk (3.9.1)
+  - Installing pandas (2.2.3)
+  - Installing pytest (8.3.3)
+  - Installing scikit-fuzzy (0.5.0)
+
+Writing lock file
+
+Installing the current project: sr-data (0.0.0)
+cd sr-train && poetry install
+Creating virtualenv sr-train-6xMOtEND-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 48 installs, 0 updates, 0 removals
+
+  - Installing certifi (2024.8.30)
+  - Installing charset-normalizer (3.4.0)
+  - Installing idna (3.10)
+  - Installing urllib3 (2.2.3)
+  - Installing filelock (3.16.1)
+  - Installing fsspec (2024.10.0)
+  - Installing h11 (0.14.0)
+  - Installing packaging (24.2)
+  - Installing pyyaml (6.0.2)
+  - Installing requests (2.32.3)
+  - Installing sniffio (1.3.1)
+  - Installing tqdm (4.67.1)
+  - Installing typing-extensions (4.12.2)
+  - Installing annotated-types (0.7.0)
+  - Installing anyio (4.6.2.post1)
+  - Installing httpcore (1.0.7)
+  - Installing huggingface-hub (0.26.3)
+  - Installing pydantic-core (2.27.1)
+  - Installing six (1.16.0)
+  - Installing click (8.1.7)
+  - Installing fastavro (1.9.7)
+  - Installing httpx (0.28.0)
+  - Installing httpx-sse (0.4.0)
+  - Installing joblib (1.4.2)
+  - Installing mdurl (0.1.2)
+  - Installing numpy (1.26.4)
+  - Installing parameterized (0.9.0)
+  - Installing pydantic (2.10.2)
+  - Installing python-dateutil (2.9.0.post0)
+  - Installing pytz (2024.2)
+  - Installing regex (2024.11.6)
+  - Installing soupsieve (2.6)
+  - Installing tokenizers (0.21.0)
+  - Installing types-requests (2.32.0.20241016)
+  - Installing tzdata (2024.2)
+  - Installing beautifulsoup4 (4.12.3)
+  - Installing cohere (5.12.0)
+  - Installing langdetect (1.0.9)
+  - Installing loguru (0.7.2)
+  - Installing markdown (3.7)
+  - Installing markdown-it-py (3.0.0)
+  - Installing nltk (3.9.1)
+  - Installing pandas (2.2.3)
+  - Installing scikit-fuzzy (0.5.0)
+  - Installing scipy (1.13.1)
+  - Installing threadpoolctl (3.5.0)
+  - Installing scikit-learn (1.5.2)
+  - Installing sr-data (0.0.0 /home/runner/work/sr-detection/sr-detection/sr-data)
+
+Writing lock file
+
+Installing the current project: sr-train (0.0.0)
+cd sr-train && poetry poe dataset --folder "2024" --out "../clustered/2024"
+[37mPoe =>[0m [94mdataset --folder 2024 --out ../clustered/2024[0m
+[32m2024-11-29 10:22:14.733[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d1-scores.csv (3484 rows)[0m
+[32m2024-11-29 10:22:15.212[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d2-sbert.csv (3484 rows)[0m
+[32m2024-11-29 10:22:16.217[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d3-e5.csv (3484 rows)[0m
+[32m2024-11-29 10:22:16.947[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d4-embedv3.csv (3484 rows)[0m
+[32m2024-11-29 10:22:17.360[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d5-scores+sbert.csv (3484 rows)[0m
+[32m2024-11-29 10:22:18.371[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d6-scores+e5.csv (3484 rows)[0m
+[32m2024-11-29 10:22:19.041[0m | [1mINFO    [0m | [36msr_data.steps.merge[0m:[36mcontents[0m:[36m77[0m - [1mFetched @datasets/2024/d7-scores+embedv3.csv (3484 rows)[0m
+[32m2024-11-29 10:22:19.048[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd1-scores.csv' to ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:20.288[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd2-sbert.csv' to ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:23.896[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd3-e5.csv' to ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:22:26.632[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd4-embedv3.csv' to ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:22:27.931[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd5-scores+sbert.csv' to ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:22:31.510[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd6-scores+e5.csv' to ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:22:34.219[0m | [1mINFO    [0m | [36mmodels.dataset[0m:[36mmain[0m:[36m35[0m - [1mSaved 'd7-scores+embedv3.csv' to ../clustered/2024/d7-scores+embedv3.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d1-scores.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d1-scores.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:22:37.079[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d1-scores.csv...[0m
+[32m2024-11-29 10:22:37.109[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[  314.92199568]
+ [15445.        ]
+ [ 3355.57446809]
+ [59160.        ]][0m
+[32m2024-11-29 10:22:37.111[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d1-scores/config.json[0m
+[32m2024-11-29 10:22:37.113[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:37.113[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:37.113[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:37.114[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:37.114[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:37.275[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d1-scores/config.json[0m
+[32m2024-11-29 10:22:37.276[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:37.276[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:37.277[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:37.277[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:37.353[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d1-scores/config.json[0m
+[32m2024-11-29 10:22:37.355[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:22:37.355[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:37.355[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:37.356[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:37.356[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:37.356[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:22:37.357[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:22:37.357[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:22:37.357[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 7 members were saved to 7.txt[0m
+[32m2024-11-29 10:22:37.357[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 8 members were saved to 8.txt[0m
+[32m2024-11-29 10:22:37.358[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 9 members were saved to 9.txt[0m
+[32m2024-11-29 10:22:37.358[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 10 members were saved to 10.txt[0m
+[32m2024-11-29 10:22:37.358[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 11 members were saved to 11.txt[0m
+[32m2024-11-29 10:22:37.359[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 12 members were saved to 12.txt[0m
+[32m2024-11-29 10:22:37.359[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 13 members were saved to 13.txt[0m
+[32m2024-11-29 10:22:37.359[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 14 members were saved to 14.txt[0m
+[32m2024-11-29 10:22:37.359[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 15 members were saved to 15.txt[0m
+[32m2024-11-29 10:22:37.360[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 16 members were saved to 16.txt[0m
+[32m2024-11-29 10:22:37.360[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 17 members were saved to 17.txt[0m
+[32m2024-11-29 10:22:37.360[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 18 members were saved to 18.txt[0m
+[32m2024-11-29 10:22:37.361[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 19 members were saved to 19.txt[0m
+[32m2024-11-29 10:22:37.361[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 20 members were saved to 20.txt[0m
+[32m2024-11-29 10:22:37.361[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 21 members were saved to 21.txt[0m
+[32m2024-11-29 10:22:37.361[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 22 members were saved to 22.txt[0m
+[32m2024-11-29 10:22:37.362[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 23 members were saved to 23.txt[0m
+[32m2024-11-29 10:22:37.362[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 24 members were saved to 24.txt[0m
+[32m2024-11-29 10:22:37.362[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 25 members were saved to 25.txt[0m
+[32m2024-11-29 10:22:37.363[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 26 members were saved to 26.txt[0m
+[32m2024-11-29 10:22:37.363[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 27 members were saved to 27.txt[0m
+[32m2024-11-29 10:22:37.363[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 28 members were saved to 28.txt[0m
+[32m2024-11-29 10:22:37.364[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 29 members were saved to 29.txt[0m
+[32m2024-11-29 10:22:37.364[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 30 members were saved to 30.txt[0m
+[32m2024-11-29 10:22:37.364[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 31 members were saved to 31.txt[0m
+[32m2024-11-29 10:22:37.365[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 32 members were saved to 32.txt[0m
+[32m2024-11-29 10:22:37.365[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 33 members were saved to 33.txt[0m
+[32m2024-11-29 10:22:37.365[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 34 members were saved to 34.txt[0m
+[32m2024-11-29 10:22:37.366[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 35 members were saved to 35.txt[0m
+[32m2024-11-29 10:22:37.366[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 36 members were saved to 36.txt[0m
+[32m2024-11-29 10:22:37.366[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 37 members were saved to 37.txt[0m
+[32m2024-11-29 10:22:37.367[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 38 members were saved to 38.txt[0m
+[32m2024-11-29 10:22:37.367[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:37.381[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d1-scores/config.json[0m
+[32m2024-11-29 10:22:37.382[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:22:37.383[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:37.383[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:37.383[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:37.384[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:37.384[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:22:37.384[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:22:37.385[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:22:37.385[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 7 members were saved to 7.txt[0m
+[32m2024-11-29 10:22:37.385[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 8 members were saved to 8.txt[0m
+[32m2024-11-29 10:22:37.386[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 9 members were saved to 9.txt[0m
+[32m2024-11-29 10:22:37.386[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 10 members were saved to 10.txt[0m
+[32m2024-11-29 10:22:37.386[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 11 members were saved to 11.txt[0m
+[32m2024-11-29 10:22:37.387[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 12 members were saved to 12.txt[0m
+[32m2024-11-29 10:22:37.387[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 13 members were saved to 13.txt[0m
+[32m2024-11-29 10:22:37.387[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 14 members were saved to 14.txt[0m
+[32m2024-11-29 10:22:37.387[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 15 members were saved to 15.txt[0m
+[32m2024-11-29 10:22:37.388[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 16 members were saved to 16.txt[0m
+[32m2024-11-29 10:22:37.388[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 17 members were saved to 17.txt[0m
+[32m2024-11-29 10:22:37.388[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 18 members were saved to 18.txt[0m
+[32m2024-11-29 10:22:37.389[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 19 members were saved to 19.txt[0m
+[32m2024-11-29 10:22:37.389[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 20 members were saved to 20.txt[0m
+[32m2024-11-29 10:22:37.389[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 21 members were saved to 21.txt[0m
+[32m2024-11-29 10:22:37.390[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 22 members were saved to 22.txt[0m
+[32m2024-11-29 10:22:37.390[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 23 members were saved to 23.txt[0m
+[32m2024-11-29 10:22:37.390[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 24 members were saved to 24.txt[0m
+[32m2024-11-29 10:22:37.391[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 25 members were saved to 25.txt[0m
+[32m2024-11-29 10:22:37.391[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 26 members were saved to 26.txt[0m
+[32m2024-11-29 10:22:37.391[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 27 members were saved to 27.txt[0m
+[32m2024-11-29 10:22:37.391[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 28 members were saved to 28.txt[0m
+[32m2024-11-29 10:22:37.392[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 29 members were saved to 29.txt[0m
+[32m2024-11-29 10:22:37.392[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 30 members were saved to 30.txt[0m
+[32m2024-11-29 10:22:37.392[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 31 members were saved to 31.txt[0m
+[32m2024-11-29 10:22:37.393[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 32 members were saved to 32.txt[0m
+[32m2024-11-29 10:22:37.393[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 33 members were saved to 33.txt[0m
+[32m2024-11-29 10:22:37.393[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 34 members were saved to 34.txt[0m
+[32m2024-11-29 10:22:37.394[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 35 members were saved to 35.txt[0m
+[32m2024-11-29 10:22:37.394[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 36 members were saved to 36.txt[0m
+[32m2024-11-29 10:22:37.394[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 37 members were saved to 37.txt[0m
+[32m2024-11-29 10:22:37.394[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 38 members were saved to 38.txt[0m
+[32m2024-11-29 10:22:37.395[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 39 members were saved to 39.txt[0m
+[32m2024-11-29 10:22:37.395[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 40 members were saved to 40.txt[0m
+[32m2024-11-29 10:22:37.395[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 41 members were saved to 41.txt[0m
+[32m2024-11-29 10:22:37.395[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 42 members were saved to 42.txt[0m
+[32m2024-11-29 10:22:37.396[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 43 members were saved to 43.txt[0m
+[32m2024-11-29 10:22:37.396[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 44 members were saved to 44.txt[0m
+[32m2024-11-29 10:22:37.396[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 45 members were saved to 45.txt[0m
+[32m2024-11-29 10:22:37.396[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 46 members were saved to 46.txt[0m
+[32m2024-11-29 10:22:37.397[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 47 members were saved to 47.txt[0m
+[32m2024-11-29 10:22:37.397[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 48 members were saved to 48.txt[0m
+[32m2024-11-29 10:22:37.397[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 49 members were saved to 49.txt[0m
+[32m2024-11-29 10:22:37.397[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 50 members were saved to 50.txt[0m
+[32m2024-11-29 10:22:37.398[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 51 members were saved to 51.txt[0m
+[32m2024-11-29 10:22:37.398[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 52 members were saved to 52.txt[0m
+[32m2024-11-29 10:22:37.398[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 53 members were saved to 53.txt[0m
+[32m2024-11-29 10:22:37.398[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 54 members were saved to 54.txt[0m
+[32m2024-11-29 10:22:37.399[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 55 members were saved to 55.txt[0m
+[32m2024-11-29 10:22:37.399[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 56 members were saved to 56.txt[0m
+[32m2024-11-29 10:22:37.399[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 57 members were saved to 57.txt[0m
+[32m2024-11-29 10:22:37.399[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 58 members were saved to 58.txt[0m
+[32m2024-11-29 10:22:37.400[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 59 members were saved to 59.txt[0m
+[32m2024-11-29 10:22:37.400[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 60 members were saved to 60.txt[0m
+[32m2024-11-29 10:22:37.400[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 61 members were saved to 61.txt[0m
+[32m2024-11-29 10:22:37.400[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 62 members were saved to 62.txt[0m
+[32m2024-11-29 10:22:37.401[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 63 members were saved to 63.txt[0m
+[32m2024-11-29 10:22:37.401[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 64 members were saved to 64.txt[0m
+[32m2024-11-29 10:22:37.401[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 65 members were saved to 65.txt[0m
+[32m2024-11-29 10:22:37.402[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 66 members were saved to 66.txt[0m
+[32m2024-11-29 10:22:37.402[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 67 members were saved to 67.txt[0m
+[32m2024-11-29 10:22:37.402[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 68 members were saved to 68.txt[0m
+[32m2024-11-29 10:22:37.402[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 69 members were saved to 69.txt[0m
+[32m2024-11-29 10:22:37.403[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 70 members were saved to 70.txt[0m
+[32m2024-11-29 10:22:37.403[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 71 members were saved to 71.txt[0m
+[32m2024-11-29 10:22:37.403[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 72 members were saved to 72.txt[0m
+[32m2024-11-29 10:22:37.403[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 73 members were saved to 73.txt[0m
+[32m2024-11-29 10:22:37.404[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 74 members were saved to 74.txt[0m
+[32m2024-11-29 10:22:37.404[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 75 members were saved to 75.txt[0m
+[32m2024-11-29 10:22:37.404[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 76 members were saved to 76.txt[0m
+[32m2024-11-29 10:22:37.404[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 77 members were saved to 77.txt[0m
+[32m2024-11-29 10:22:37.405[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 78 members were saved to 78.txt[0m
+[32m2024-11-29 10:22:37.405[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 79 members were saved to 79.txt[0m
+[32m2024-11-29 10:22:37.405[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 80 members were saved to 80.txt[0m
+[32m2024-11-29 10:22:37.405[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 81 members were saved to 81.txt[0m
+[32m2024-11-29 10:22:37.406[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 82 members were saved to 82.txt[0m
+[32m2024-11-29 10:22:37.406[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 83 members were saved to 83.txt[0m
+[32m2024-11-29 10:22:37.406[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 84 members were saved to 84.txt[0m
+[32m2024-11-29 10:22:37.406[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 85 members were saved to 85.txt[0m
+[32m2024-11-29 10:22:37.407[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 86 members were saved to 86.txt[0m
+[32m2024-11-29 10:22:37.407[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 87 members were saved to 87.txt[0m
+[32m2024-11-29 10:22:37.407[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 88 members were saved to 88.txt[0m
+[32m2024-11-29 10:22:37.407[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 89 members were saved to 89.txt[0m
+[32m2024-11-29 10:22:37.408[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 90 members were saved to 90.txt[0m
+[32m2024-11-29 10:22:37.408[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 91 members were saved to 91.txt[0m
+[32m2024-11-29 10:22:37.408[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 92 members were saved to 92.txt[0m
+[32m2024-11-29 10:22:37.408[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 93 members were saved to 93.txt[0m
+[32m2024-11-29 10:22:37.409[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 94 members were saved to 94.txt[0m
+[32m2024-11-29 10:22:37.409[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 95 members were saved to 95.txt[0m
+[32m2024-11-29 10:22:37.409[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 96 members were saved to 96.txt[0m
+[32m2024-11-29 10:22:37.409[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 97 members were saved to 97.txt[0m
+[32m2024-11-29 10:22:37.410[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 98 members were saved to 98.txt[0m
+[32m2024-11-29 10:22:37.410[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 99 members were saved to 99.txt[0m
+[32m2024-11-29 10:22:37.410[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 100 members were saved to 100.txt[0m
+[32m2024-11-29 10:22:37.410[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 101 members were saved to 101.txt[0m
+[32m2024-11-29 10:22:37.411[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 102 members were saved to 102.txt[0m
+[32m2024-11-29 10:22:37.411[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 103 members were saved to 103.txt[0m
+[32m2024-11-29 10:22:37.411[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 104 members were saved to 104.txt[0m
+[32m2024-11-29 10:22:37.411[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 105 members were saved to 105.txt[0m
+[32m2024-11-29 10:22:37.412[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 106 members were saved to 106.txt[0m
+[32m2024-11-29 10:22:37.412[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 107 members were saved to 107.txt[0m
+[32m2024-11-29 10:22:37.412[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 108 members were saved to 108.txt[0m
+[32m2024-11-29 10:22:37.412[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 109 members were saved to 109.txt[0m
+[32m2024-11-29 10:22:37.413[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 110 members were saved to 110.txt[0m
+[32m2024-11-29 10:22:37.413[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 111 members were saved to 111.txt[0m
+[32m2024-11-29 10:22:37.413[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 112 members were saved to 112.txt[0m
+[32m2024-11-29 10:22:37.413[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 113 members were saved to 113.txt[0m
+[32m2024-11-29 10:22:37.414[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 114 members were saved to 114.txt[0m
+[32m2024-11-29 10:22:37.414[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 115 members were saved to 115.txt[0m
+[32m2024-11-29 10:22:37.414[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 116 members were saved to 116.txt[0m
+[32m2024-11-29 10:22:37.414[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 117 members were saved to 117.txt[0m
+[32m2024-11-29 10:22:37.415[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 118 members were saved to 118.txt[0m
+[32m2024-11-29 10:22:37.415[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 119 members were saved to 119.txt[0m
+[32m2024-11-29 10:22:37.415[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 120 members were saved to 120.txt[0m
+[32m2024-11-29 10:22:37.415[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 121 members were saved to 121.txt[0m
+[32m2024-11-29 10:22:37.416[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 122 members were saved to 122.txt[0m
+[32m2024-11-29 10:22:37.416[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 123 members were saved to 123.txt[0m
+[32m2024-11-29 10:22:37.416[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 124 members were saved to 124.txt[0m
+[32m2024-11-29 10:22:37.417[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 125 members were saved to 125.txt[0m
+[32m2024-11-29 10:22:37.417[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 126 members were saved to 126.txt[0m
+[32m2024-11-29 10:22:37.417[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 127 members were saved to 127.txt[0m
+[32m2024-11-29 10:22:37.418[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 128 members were saved to 128.txt[0m
+[32m2024-11-29 10:22:37.418[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 129 members were saved to 129.txt[0m
+[32m2024-11-29 10:22:37.418[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 130 members were saved to 130.txt[0m
+[32m2024-11-29 10:22:37.419[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 131 members were saved to 131.txt[0m
+[32m2024-11-29 10:22:37.419[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 132 members were saved to 132.txt[0m
+[32m2024-11-29 10:22:37.419[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 133 members were saved to 133.txt[0m
+[32m2024-11-29 10:22:37.419[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 134 members were saved to 134.txt[0m
+[32m2024-11-29 10:22:37.420[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 135 members were saved to 135.txt[0m
+[32m2024-11-29 10:22:37.420[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 136 members were saved to 136.txt[0m
+[32m2024-11-29 10:22:37.420[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 137 members were saved to 137.txt[0m
+[32m2024-11-29 10:22:37.421[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 138 members were saved to 138.txt[0m
+[32m2024-11-29 10:22:37.421[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 139 members were saved to 139.txt[0m
+[32m2024-11-29 10:22:37.422[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 140 members were saved to 140.txt[0m
+[32m2024-11-29 10:22:37.422[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 141 members were saved to 141.txt[0m
+[32m2024-11-29 10:22:37.422[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 142 members were saved to 142.txt[0m
+[32m2024-11-29 10:22:37.423[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 143 members were saved to 143.txt[0m
+[32m2024-11-29 10:22:37.423[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 144 members were saved to 144.txt[0m
+[32m2024-11-29 10:22:37.423[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 145 members were saved to 145.txt[0m
+[32m2024-11-29 10:22:37.423[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 146 members were saved to 146.txt[0m
+[32m2024-11-29 10:22:37.424[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 147 members were saved to 147.txt[0m
+[32m2024-11-29 10:22:37.424[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 148 members were saved to 148.txt[0m
+[32m2024-11-29 10:22:37.424[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 149 members were saved to 149.txt[0m
+[32m2024-11-29 10:22:37.424[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 150 members were saved to 150.txt[0m
+[32m2024-11-29 10:22:37.425[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 151 members were saved to 151.txt[0m
+[32m2024-11-29 10:22:37.425[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 152 members were saved to 152.txt[0m
+[32m2024-11-29 10:22:37.425[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 153 members were saved to 153.txt[0m
+[32m2024-11-29 10:22:37.426[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 154 members were saved to 154.txt[0m
+[32m2024-11-29 10:22:37.426[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 155 members were saved to 155.txt[0m
+[32m2024-11-29 10:22:37.426[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 156 members were saved to 156.txt[0m
+[32m2024-11-29 10:22:37.426[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 157 members were saved to 157.txt[0m
+[32m2024-11-29 10:22:37.427[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 158 members were saved to 158.txt[0m
+[32m2024-11-29 10:22:37.427[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 159 members were saved to 159.txt[0m
+[32m2024-11-29 10:22:37.427[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 160 members were saved to 160.txt[0m
+[32m2024-11-29 10:22:37.427[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 161 members were saved to 161.txt[0m
+[32m2024-11-29 10:22:37.428[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 162 members were saved to 162.txt[0m
+[32m2024-11-29 10:22:37.428[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 163 members were saved to 163.txt[0m
+[32m2024-11-29 10:22:37.428[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 164 members were saved to 164.txt[0m
+[32m2024-11-29 10:22:37.428[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 165 members were saved to 165.txt[0m
+[32m2024-11-29 10:22:37.429[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 166 members were saved to 166.txt[0m
+[32m2024-11-29 10:22:37.429[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:37.497[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d1-scores/config.json[0m
+[32m2024-11-29 10:22:37.499[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:37.500[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:37.500[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:37.501[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:37.501[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d1-scores.csv[0m
+[32m2024-11-29 10:22:37.575[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d1-scores/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d2-sbert.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d2-sbert.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:22:38.989[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d2-sbert.csv...[0m
+[32m2024-11-29 10:22:39.326[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[-0.01557577 -0.01516947 -0.02606425 ...  0.03149479  0.04218583
+   0.00663216]
+ [-0.0894041   0.00520659 -0.00866441 ... -0.00078132  0.03172158
+   0.03416474]
+ [-0.03296489  0.00313519 -0.03152451 ...  0.02991279  0.029219
+   0.01704636]
+ [-0.02040711 -0.01050868 -0.0021468  ...  0.05899796  0.03898852
+   0.01554091]][0m
+[32m2024-11-29 10:22:39.327[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d2-sbert/config.json[0m
+[32m2024-11-29 10:22:39.331[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:39.332[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:39.332[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:39.333[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:39.333[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:40.451[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d2-sbert/config.json[0m
+[32m2024-11-29 10:22:40.455[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:40.455[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:40.456[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:40.457[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:48.823[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d2-sbert/config.json[0m
+[32m2024-11-29 10:22:48.826[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:22:48.827[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:49.138[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d2-sbert/config.json[0m
+[32m2024-11-29 10:22:49.141[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:22:49.141[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:49.141[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:49.142[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:49.142[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:49.142[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:22:49.144[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:51.323[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d2-sbert/config.json[0m
+[32m2024-11-29 10:22:51.329[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:51.330[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:51.330[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:51.331[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:51.333[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d2-sbert.csv[0m
+[32m2024-11-29 10:22:51.585[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d2-sbert/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d3-e5.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d3-e5.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:22:53.030[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d3-e5.csv...[0m
+[32m2024-11-29 10:22:53.764[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[-0.0057725  -0.05288445  0.01312791 ... -0.00032794  0.00747364
+   0.00858459]
+ [ 0.0076052  -0.05427293  0.02395046 ...  0.00130551  0.00901609
+   0.01044296]
+ [-0.0055722  -0.05283259  0.01643118 ...  0.00227997  0.00592121
+   0.00819869]
+ [ 0.00513151 -0.05110958  0.00866221 ... -0.00258413  0.00944069
+   0.0072107 ]][0m
+[32m2024-11-29 10:22:53.765[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d3-e5/config.json[0m
+[32m2024-11-29 10:22:53.773[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:53.774[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:53.775[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:53.775[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:22:53.776[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:22:56.514[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d3-e5/config.json[0m
+[32m2024-11-29 10:22:56.518[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:22:56.519[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:22:56.519[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:22:56.520[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:23:19.358[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d3-e5/config.json[0m
+[32m2024-11-29 10:23:19.362[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:23:19.363[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:23:20.196[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d3-e5/config.json[0m
+[32m2024-11-29 10:23:20.200[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:23:20.201[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:20.201[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:20.202[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:20.202[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:20.202[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:23:20.203[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:23:20.204[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:23:24.469[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d3-e5/config.json[0m
+[32m2024-11-29 10:23:24.480[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:24.481[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:24.482[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:24.482[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:24.484[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d3-e5.csv[0m
+[32m2024-11-29 10:23:25.129[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d3-e5/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d4-embedv3.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d4-embedv3.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:23:26.577[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d4-embedv3.csv...[0m
+[32m2024-11-29 10:23:27.178[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[ 0.01871533 -0.00082013 -0.01442772 ...  0.00569883 -0.01803712
+   0.00574632]
+ [ 0.01893826 -0.02508058 -0.03044358 ...  0.02273662 -0.03671311
+   0.0058219 ]
+ [ 0.00475546 -0.02171079 -0.05949486 ...  0.03843368 -0.03859011
+   0.00898362]
+ [ 0.01951472 -0.02561527 -0.02833555 ...  0.03035693 -0.04911553
+   0.00686588]][0m
+[32m2024-11-29 10:23:27.180[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d4-embedv3/config.json[0m
+[32m2024-11-29 10:23:27.188[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:27.189[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:27.189[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:27.190[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:27.191[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:23:29.818[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d4-embedv3/config.json[0m
+[32m2024-11-29 10:23:29.825[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:29.826[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:29.827[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:29.827[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:23:52.566[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d4-embedv3/config.json[0m
+[32m2024-11-29 10:23:52.571[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:23:52.572[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:23:53.280[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d4-embedv3/config.json[0m
+[32m2024-11-29 10:23:53.285[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:23:53.285[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:53.286[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:53.286[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:53.286[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:53.287[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:23:53.287[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:23:53.287[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:23:53.288[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:23:57.291[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d4-embedv3/config.json[0m
+[32m2024-11-29 10:23:57.304[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:57.304[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:57.305[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:57.306[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:57.308[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d4-embedv3.csv[0m
+[32m2024-11-29 10:23:57.814[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d4-embedv3/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d5-scores+sbert.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d5-scores+sbert.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:23:59.232[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d5-scores+sbert.csv...[0m
+[32m2024-11-29 10:23:59.535[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[ 3.14921996e+02 -2.83658848e-02 -4.29186592e-03 ...  3.33200505e-02
+   3.48080979e-02  1.40113839e-02]
+ [ 1.54450000e+04 -2.30080805e-02 -1.47397548e-02 ...  4.30690533e-02
+   3.55739214e-02  1.03317837e-02]
+ [ 3.35557447e+03 -3.07584231e-02 -8.91146891e-03 ...  2.49915819e-02
+   3.71492957e-02  1.90180404e-02]
+ [ 5.91600000e+04 -1.54182792e-01 -5.77570051e-02 ... -1.01587139e-02
+   1.45480689e-02 -1.17836138e-02]][0m
+[32m2024-11-29 10:23:59.537[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d5-scores+sbert/config.json[0m
+[32m2024-11-29 10:23:59.545[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:23:59.545[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:23:59.545[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:23:59.545[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:23:59.546[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:24:00.637[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d5-scores+sbert/config.json[0m
+[32m2024-11-29 10:24:00.641[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:00.642[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:00.643[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:00.644[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:24:03.462[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d5-scores+sbert/config.json[0m
+[32m2024-11-29 10:24:03.464[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:03.465[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:03.465[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:03.465[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:03.466[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:03.466[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:24:03.466[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:24:03.466[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:24:03.467[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 7 members were saved to 7.txt[0m
+[32m2024-11-29 10:24:03.467[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 8 members were saved to 8.txt[0m
+[32m2024-11-29 10:24:03.467[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 9 members were saved to 9.txt[0m
+[32m2024-11-29 10:24:03.468[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 10 members were saved to 10.txt[0m
+[32m2024-11-29 10:24:03.468[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 11 members were saved to 11.txt[0m
+[32m2024-11-29 10:24:03.468[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 12 members were saved to 12.txt[0m
+[32m2024-11-29 10:24:03.468[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 13 members were saved to 13.txt[0m
+[32m2024-11-29 10:24:03.469[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 14 members were saved to 14.txt[0m
+[32m2024-11-29 10:24:03.469[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 15 members were saved to 15.txt[0m
+[32m2024-11-29 10:24:03.469[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 16 members were saved to 16.txt[0m
+[32m2024-11-29 10:24:03.469[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 17 members were saved to 17.txt[0m
+[32m2024-11-29 10:24:03.470[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 18 members were saved to 18.txt[0m
+[32m2024-11-29 10:24:03.470[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 19 members were saved to 19.txt[0m
+[32m2024-11-29 10:24:03.470[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 20 members were saved to 20.txt[0m
+[32m2024-11-29 10:24:03.471[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 21 members were saved to 21.txt[0m
+[32m2024-11-29 10:24:03.471[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 22 members were saved to 22.txt[0m
+[32m2024-11-29 10:24:03.471[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 23 members were saved to 23.txt[0m
+[32m2024-11-29 10:24:03.471[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 24 members were saved to 24.txt[0m
+[32m2024-11-29 10:24:03.472[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 25 members were saved to 25.txt[0m
+[32m2024-11-29 10:24:03.472[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 26 members were saved to 26.txt[0m
+[32m2024-11-29 10:24:03.472[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 27 members were saved to 27.txt[0m
+[32m2024-11-29 10:24:03.472[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 28 members were saved to 28.txt[0m
+[32m2024-11-29 10:24:03.473[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 29 members were saved to 29.txt[0m
+[32m2024-11-29 10:24:03.473[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 30 members were saved to 30.txt[0m
+[32m2024-11-29 10:24:03.473[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 31 members were saved to 31.txt[0m
+[32m2024-11-29 10:24:03.473[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 32 members were saved to 32.txt[0m
+[32m2024-11-29 10:24:03.474[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 33 members were saved to 33.txt[0m
+[32m2024-11-29 10:24:03.474[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 34 members were saved to 34.txt[0m
+[32m2024-11-29 10:24:03.474[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 35 members were saved to 35.txt[0m
+[32m2024-11-29 10:24:03.474[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 36 members were saved to 36.txt[0m
+[32m2024-11-29 10:24:03.475[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 37 members were saved to 37.txt[0m
+[32m2024-11-29 10:24:03.475[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 38 members were saved to 38.txt[0m
+[32m2024-11-29 10:24:03.477[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:24:03.796[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d5-scores+sbert/config.json[0m
+[32m2024-11-29 10:24:03.799[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:03.800[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:24:05.042[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d5-scores+sbert/config.json[0m
+[32m2024-11-29 10:24:05.049[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:05.049[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:05.050[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:05.050[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:05.053[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d5-scores+sbert.csv[0m
+[32m2024-11-29 10:24:05.455[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d5-scores+sbert/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d6-scores+e5.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d6-scores+e5.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:24:06.874[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d6-scores+e5.csv...[0m
+[32m2024-11-29 10:24:07.520[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[ 3.14921996e+02 -2.31363464e-03 -5.30717344e-02 ...  8.39421335e-04
+   7.37434769e-03  8.63092402e-03]
+ [ 1.54450000e+04  3.14647187e-03 -4.93432434e-02 ... -5.02701972e-03
+   3.01557836e-03  1.33829954e-02]
+ [ 3.35557447e+03 -1.53452753e-03 -5.03497890e-02 ... -1.22195018e-03
+   7.34299977e-03  7.51128979e-03]
+ [ 5.91600000e+04 -2.65504397e-03 -6.19643591e-02 ... -1.95617322e-02
+  -5.65051625e-04  1.92229487e-02]][0m
+[32m2024-11-29 10:24:07.522[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d6-scores+e5/config.json[0m
+[32m2024-11-29 10:24:07.534[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:07.534[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:07.535[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:07.535[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:07.536[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:24:10.245[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d6-scores+e5/config.json[0m
+[32m2024-11-29 10:24:10.251[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:10.251[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:10.252[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:10.253[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:24:17.943[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d6-scores+e5/config.json[0m
+[32m2024-11-29 10:24:17.948[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:17.948[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:17.949[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:17.949[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:17.950[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:17.950[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:24:17.950[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:24:17.951[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:24:17.951[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 7 members were saved to 7.txt[0m
+[32m2024-11-29 10:24:17.951[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 8 members were saved to 8.txt[0m
+[32m2024-11-29 10:24:17.952[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 9 members were saved to 9.txt[0m
+[32m2024-11-29 10:24:17.952[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 10 members were saved to 10.txt[0m
+[32m2024-11-29 10:24:17.952[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 11 members were saved to 11.txt[0m
+[32m2024-11-29 10:24:17.953[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 12 members were saved to 12.txt[0m
+[32m2024-11-29 10:24:17.953[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 13 members were saved to 13.txt[0m
+[32m2024-11-29 10:24:17.953[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 14 members were saved to 14.txt[0m
+[32m2024-11-29 10:24:17.954[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 15 members were saved to 15.txt[0m
+[32m2024-11-29 10:24:17.954[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 16 members were saved to 16.txt[0m
+[32m2024-11-29 10:24:17.954[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 17 members were saved to 17.txt[0m
+[32m2024-11-29 10:24:17.955[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 18 members were saved to 18.txt[0m
+[32m2024-11-29 10:24:17.955[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 19 members were saved to 19.txt[0m
+[32m2024-11-29 10:24:17.955[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 20 members were saved to 20.txt[0m
+[32m2024-11-29 10:24:17.956[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 21 members were saved to 21.txt[0m
+[32m2024-11-29 10:24:17.956[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 22 members were saved to 22.txt[0m
+[32m2024-11-29 10:24:17.956[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 23 members were saved to 23.txt[0m
+[32m2024-11-29 10:24:17.956[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 24 members were saved to 24.txt[0m
+[32m2024-11-29 10:24:17.957[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 25 members were saved to 25.txt[0m
+[32m2024-11-29 10:24:17.957[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 26 members were saved to 26.txt[0m
+[32m2024-11-29 10:24:17.957[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 27 members were saved to 27.txt[0m
+[32m2024-11-29 10:24:17.958[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 28 members were saved to 28.txt[0m
+[32m2024-11-29 10:24:17.958[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 29 members were saved to 29.txt[0m
+[32m2024-11-29 10:24:17.958[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 30 members were saved to 30.txt[0m
+[32m2024-11-29 10:24:17.958[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 31 members were saved to 31.txt[0m
+[32m2024-11-29 10:24:17.959[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 32 members were saved to 32.txt[0m
+[32m2024-11-29 10:24:17.959[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 33 members were saved to 33.txt[0m
+[32m2024-11-29 10:24:17.959[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 34 members were saved to 34.txt[0m
+[32m2024-11-29 10:24:17.960[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 35 members were saved to 35.txt[0m
+[32m2024-11-29 10:24:17.960[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 36 members were saved to 36.txt[0m
+[32m2024-11-29 10:24:17.960[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 37 members were saved to 37.txt[0m
+[32m2024-11-29 10:24:17.960[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 38 members were saved to 38.txt[0m
+[32m2024-11-29 10:24:17.961[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 39 members were saved to 39.txt[0m
+[32m2024-11-29 10:24:17.962[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:24:18.795[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d6-scores+e5/config.json[0m
+[32m2024-11-29 10:24:18.800[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:18.801[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:18.801[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:18.801[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:18.801[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:18.802[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:24:18.802[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:24:18.802[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:24:18.804[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:24:23.899[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d6-scores+e5/config.json[0m
+[32m2024-11-29 10:24:23.911[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:23.912[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:23.912[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:23.912[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:23.915[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d6-scores+e5.csv[0m
+[32m2024-11-29 10:24:25.006[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d6-scores+e5/clusters/srs.csv[0m
+cd sr-train && poetry poe cluster --dataset "../clustered/2024/d7-scores+embedv3.csv" --dir ../clustered/2024
+[37mPoe =>[0m [94mcluster --dataset ../clustered/2024/d7-scores+embedv3.csv --dir ../clustered/2024[0m
+[32m2024-11-29 10:24:26.438[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m47[0m - [1mRunning KMeans clustering for ../clustered/2024/d7-scores+embedv3.csv...[0m
+[32m2024-11-29 10:24:26.959[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mkmeans[0m:[36m55[0m - [1mCentroids: [[ 3.14921996e+02  1.49410651e-02 -2.26630260e-02 ...  2.86114382e-02
+  -3.94810731e-02  6.96517308e-03]
+ [ 1.54450000e+04  1.28863942e-02 -2.34208540e-02 ...  4.31562767e-02
+  -4.12236995e-02  1.16643038e-02]
+ [ 3.35557447e+03  8.59288258e-03 -2.22567487e-02 ...  3.12148353e-02
+  -4.00818926e-02  9.12878896e-03]
+ [ 5.91600000e+04 -3.27453600e-02 -2.30255130e-02 ...  2.35939030e-03
+  -3.10516360e-02 -4.85992430e-03]][0m
+[32m2024-11-29 10:24:26.960[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/kmeans/d7-scores+embedv3/config.json[0m
+[32m2024-11-29 10:24:26.972[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:26.973[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:26.974[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:26.974[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:26.975[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36magglomerative[0m:[36m60[0m - [1mRunning Agglomerative clustering for ../clustered/2024/d7-scores+embedv3.csv[0m
+[32m2024-11-29 10:24:29.548[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/agglomerative/d7-scores+embedv3/config.json[0m
+[32m2024-11-29 10:24:29.557[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:29.557[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:29.558[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:29.559[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mhdbscan[0m:[36m76[0m - [1mRunning HDBSCAN for ../clustered/2024/d7-scores+embedv3.csv[0m
+[32m2024-11-29 10:24:37.109[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/hdbscan/d7-scores+embedv3/config.json[0m
+[32m2024-11-29 10:24:37.114[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:37.115[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:37.115[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:37.115[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:37.115[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:37.116[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 4 members were saved to 4.txt[0m
+[32m2024-11-29 10:24:37.116[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 5 members were saved to 5.txt[0m
+[32m2024-11-29 10:24:37.116[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 6 members were saved to 6.txt[0m
+[32m2024-11-29 10:24:37.117[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 7 members were saved to 7.txt[0m
+[32m2024-11-29 10:24:37.117[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 8 members were saved to 8.txt[0m
+[32m2024-11-29 10:24:37.117[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 9 members were saved to 9.txt[0m
+[32m2024-11-29 10:24:37.118[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 10 members were saved to 10.txt[0m
+[32m2024-11-29 10:24:37.118[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 11 members were saved to 11.txt[0m
+[32m2024-11-29 10:24:37.118[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 12 members were saved to 12.txt[0m
+[32m2024-11-29 10:24:37.119[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 13 members were saved to 13.txt[0m
+[32m2024-11-29 10:24:37.119[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 14 members were saved to 14.txt[0m
+[32m2024-11-29 10:24:37.119[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 15 members were saved to 15.txt[0m
+[32m2024-11-29 10:24:37.119[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 16 members were saved to 16.txt[0m
+[32m2024-11-29 10:24:37.120[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 17 members were saved to 17.txt[0m
+[32m2024-11-29 10:24:37.120[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 18 members were saved to 18.txt[0m
+[32m2024-11-29 10:24:37.120[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 19 members were saved to 19.txt[0m
+[32m2024-11-29 10:24:37.121[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 20 members were saved to 20.txt[0m
+[32m2024-11-29 10:24:37.121[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 21 members were saved to 21.txt[0m
+[32m2024-11-29 10:24:37.121[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 22 members were saved to 22.txt[0m
+[32m2024-11-29 10:24:37.121[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 23 members were saved to 23.txt[0m
+[32m2024-11-29 10:24:37.122[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 24 members were saved to 24.txt[0m
+[32m2024-11-29 10:24:37.122[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 25 members were saved to 25.txt[0m
+[32m2024-11-29 10:24:37.122[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 26 members were saved to 26.txt[0m
+[32m2024-11-29 10:24:37.123[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 27 members were saved to 27.txt[0m
+[32m2024-11-29 10:24:37.123[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 28 members were saved to 28.txt[0m
+[32m2024-11-29 10:24:37.123[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 29 members were saved to 29.txt[0m
+[32m2024-11-29 10:24:37.123[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 30 members were saved to 30.txt[0m
+[32m2024-11-29 10:24:37.124[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 31 members were saved to 31.txt[0m
+[32m2024-11-29 10:24:37.124[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 32 members were saved to 32.txt[0m
+[32m2024-11-29 10:24:37.124[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 33 members were saved to 33.txt[0m
+[32m2024-11-29 10:24:37.125[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 34 members were saved to 34.txt[0m
+[32m2024-11-29 10:24:37.125[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 35 members were saved to 35.txt[0m
+[32m2024-11-29 10:24:37.125[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 36 members were saved to 36.txt[0m
+[32m2024-11-29 10:24:37.125[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 37 members were saved to 37.txt[0m
+[32m2024-11-29 10:24:37.126[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 38 members were saved to 38.txt[0m
+[32m2024-11-29 10:24:37.128[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mdbscan[0m:[36m68[0m - [1mRunning DBSCAN for ../clustered/2024/d7-scores+embedv3.csv[0m
+[32m2024-11-29 10:24:37.845[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/dbscan/d7-scores+embedv3/config.json[0m
+[32m2024-11-29 10:24:37.849[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster -1 members were saved to -1.txt[0m
+[32m2024-11-29 10:24:37.850[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mgmm[0m:[36m84[0m - [1mRunning GMM for ../clustered/2024/d7-scores+embedv3.csv[0m
+[32m2024-11-29 10:24:42.853[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36msave_config[0m:[36m132[0m - [1mModel settings saved to ../clustered/2024/gmm/d7-scores+embedv3/config.json[0m
+[32m2024-11-29 10:24:42.867[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 0 members were saved to 0.txt[0m
+[32m2024-11-29 10:24:42.868[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 1 members were saved to 1.txt[0m
+[32m2024-11-29 10:24:42.869[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 2 members were saved to 2.txt[0m
+[32m2024-11-29 10:24:42.870[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mto_txt[0m:[36m141[0m - [1mCluster 3 members were saved to 3.txt[0m
+[32m2024-11-29 10:24:42.879[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m102[0m - [1mRunning Fuzzy C-Means for ../clustered/2024/d7-scores+embedv3.csv[0m
+[32m2024-11-29 10:24:43.821[0m | [1mINFO    [0m | [36mmodels.cluster[0m:[36mcmeans[0m:[36m118[0m - [1mSaved results to ../clustered/2024/cmeans/d7-scores+embedv3/clusters/srs.csv[0m
+cd sr-train && poetry poe clusterstat --dir ../clustered/2024 --out ../results.txt
+[37mPoe =>[0m [94mclusterstat --dir ../clustered/2024 --out ../results.txt[0m
+[32m2024-11-29 10:24:44.554[0m | [1mINFO    [0m | [36mmodels.clusterstat[0m:[36mmain[0m:[36m31[0m - [1mInspecting dir '../clustered/2024'[0m

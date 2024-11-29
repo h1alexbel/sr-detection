@@ -1,0 +1,9 @@
+jkallio/pomodoro-cli
+anonymous123-code/quilt-bisect
+robinvandernoord/uvenv
+kpcyrd/what-the-src
+open-web3-stack/XCQ
+Nul-led/bevy_web_keepalive
+handy-sun/rcheat
+wakatime/zed-wakatime
+seapagan/bundle-repo

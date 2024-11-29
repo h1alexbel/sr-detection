@@ -1,0 +1,10 @@
+JustAlittleWolf/ModDetectionPreventer
+PaperMC/SectorTool
+jasonjmcghee/xrem
+al8n/skipdb
+zed-industries/create-gpui-app
+enlomy/pump.fun
+Cr0a3/ygen
+Sevii77/aetherment
+yzsvdu/RedTrainer
+Benojir/Fogplix-Anime

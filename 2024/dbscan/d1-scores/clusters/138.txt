@@ -1,0 +1,10 @@
+GodOfAvacyn/gdshader-lsp
+xxxbrian/cserun
+Araykal/Open-Karhu
+merwaaan/bevy_spritesheet_animation
+Ben-PH/SimpleFOC-rs
+racoonframework/racoon
+JustPretender/discovery-rs
+lichuang/replited
+starobot/StaroEventSystem
+Zaedus/spider

@@ -1,0 +1,10 @@
+MythicalCow/vayu
+chenhunghan/mlx-training-rs
+soundvibe/ha-danfoss
+TwentyTwoHW/portal-software
+warpy-ai/rustubble
+akenshaw/iced-trade
+botahamec/happylock
+sharph/s-rack
+ranjeethmahankali/alum
+Sorrow446/Yandex-Music-Downloader

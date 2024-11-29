@@ -1,0 +1,9 @@
+solidquant/sandooo
+JeroenGar/jagua-rs
+villor/bevy_lookup_curve
+cosmic-utils/forecast
+nilsiker/godam
+jeremychone/rust-genai
+ohkami-rs/serdev
+TimJentzsch/bevy_mod_bbcode
+rerun-io/egui_table

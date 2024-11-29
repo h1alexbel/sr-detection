@@ -1,0 +1,13 @@
+MercuryWorkshop/epoxy-tls
+nwtgck/stacklover-rust
+YPares/nih-faust-jit
+mariofusco/quarkus-drools-llm
+rustreleaser-org/rustreleaser
+jake-low/osmx-rs
+Moonsong-Labs/cairo-bootloader
+kixelated/moq-gst
+cosmic-utils/cosmic-ext-applet-ollama
+DBCDK/ha-registry
+zmitchell/proctrace
+NotAShelf/microfetch
+cpsdqs/cohost-dl

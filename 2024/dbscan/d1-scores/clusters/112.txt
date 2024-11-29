@@ -1,0 +1,5 @@
+dexie-space/splash
+ratatui/crates-tui
+k3ii/qdir
+hoangtien2k3/reactify
+bitwarden/sdk-internal

@@ -1,0 +1,10 @@
+{
+    "compute_distances": false,
+    "compute_full_tree": "auto",
+    "connectivity": null,
+    "distance_threshold": null,
+    "linkage": "ward",
+    "memory": null,
+    "metric": "euclidean",
+    "n_clusters": 3
+}
