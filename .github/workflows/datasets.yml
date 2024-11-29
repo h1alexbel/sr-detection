@@ -24,6 +24,9 @@ name: datasets
 'on':
   workflow_dispatch:
     inputs:
+      steps:
+        description: "Comma-separated names of steps to be executed"
+        required: true
       start:
         description: "Collect repositories created from, in YYYY-MM-D format"
         required: true
@@ -69,7 +72,7 @@ jobs:
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
-            -e OUT="${{ inputs.out }}" -e STEPS="pulls,filter,extract,embed" \
+            -e OUT="${{ inputs.out }}" -e STEPS="${{ inputs.steps }}" \
             -e NUMBASE="${{ inputs.numbase }}" h1alexbel/sr-detection
       - uses: JamesIves/github-pages-deploy-action@v4.7.1
         with:
