@@ -178,8 +178,9 @@ combination dir identifier embeddings scores="experiment/scores.csv":
     --embeddings "{{embeddings}}" --dir "{{dir}}" --identifier "{{identifier}}"
 
 # Merge dataset folders into one.
-merge datasets out:
-  cd sr-data && poetry poe merge --datasets "{{datasets}}" --out "{{out}}"
+merge datasets out branch:
+  cd sr-data && poetry poe merge --datasets "{{datasets}}" --out "{{out}}" \
+   --branch "{{branch}}"
 
 # Cluster repositories.
 cluster dir="experiment":
