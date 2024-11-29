@@ -24,9 +24,16 @@ name: merge
 'on':
   workflow_dispatch:
     inputs:
-      datasets:
-        description: "List of dataset names to be merged, in a comma-separated format"
+      folders:
+        description: "List of folder names to be merged, in a comma-separated format"
         required: true
+      branch:
+        description: "Branch to check for datasets"
+        required: true
+        type: choice
+        options:
+          - gh-pages
+          - datasets
       out:
         description: "Output dataset name"
         required: true
@@ -50,7 +57,7 @@ jobs:
           mkdir -p "merged/${{ inputs.out }}"
           {
             just install
-            just merge "${{ inputs.datasets }}" "../merged/${{ inputs.out }}"
+            just merge "${{ inputs.folders }}" "../merged/${{ inputs.out }}" "${{ inputs.branch }}"
           } 2>&1 | tee -a merge.log
           cp "merge.log" "merged/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.7.1
