@@ -55,7 +55,7 @@ jobs:
             just cluster "../clustered/${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
             just clusterstat "../results.txt" "../clustered/${{ inputs.out }}"
           } 2>&1 | tee -a cluster.log
-          cp "results.txt" "clustered/results.txt"
+          cp "results.txt" "clustered/${{ inputs.out }}"
           cp "cluster.log" "clustered/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.7.1
         with:
