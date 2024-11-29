@@ -52,6 +52,7 @@ jobs:
             poetry install
             just install
             just dataset "${{ inputs.folder }}" "../clustered/${{ inputs.folder }}"
+            ls
             just cluster "../${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
             just clusterstat "../clustered/${{ inputs.out }}" "../results.txt"
           } 2>&1 | tee -a cluster.log
