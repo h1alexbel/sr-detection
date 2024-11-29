@@ -31,7 +31,6 @@ name: merge
         description: "Branch to check for datasets"
         required: true
         type: choice
-        default: false
         options:
           - gh-pages
           - datasets
