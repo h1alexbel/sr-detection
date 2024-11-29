@@ -1,0 +1,12 @@
+cppcoffee/netguard
+defi-wonderland/aztec-patterns
+TayebsouiniYcode/CoffeeWithDeveloper
+AnyiLin/Pedro-Pathing-Quickstart
+mukel/llama3.java
+MeadowlarkDAW/Yarrow
+twvd/snow
+jonas089/L2-sequencer
+Syaw0/term_tools
+graalvm/graal-languages-demos
+Schachte/kaffe-rs
+NoelToy/automatic-relationship-finder

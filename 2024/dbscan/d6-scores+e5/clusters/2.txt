@@ -1,0 +1,6 @@
+kousen/springaiexamples
+crystoll/musashi
+alina-yur/native-spring-ai
+marcushellberg/spring-ai-examples
+tzolov/spring-ai-cli-chatbot
+danvega/java-rag

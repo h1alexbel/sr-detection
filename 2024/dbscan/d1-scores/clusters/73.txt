@@ -1,0 +1,14 @@
+IamTheCarl/CommandCAD
+darosior/ledger_installer
+NicKoehler/mediafire_rs
+vacekj/air-fried-gyatt
+hopter-project/hopter
+ndr3www/rustii
+cortesi/misanthropy
+lalakii/LaLauncher
+iamcharankumar/playwright_test_framework
+cosad3s/salsa
+palpo-matrix-server/palpo
+eshrh/inori
+rustp2p/rustp2p
+orlowskilp/evm-signer-kms

@@ -1,0 +1,11 @@
+SilinMeng0510/imgcatr
+gwen-lg/subtile-ocr
+sensorial-systems/stable-diffusion
+OmniOneID/did-cli-tool-server
+factorio-rivets/rivets-rs
+e-tho/iwmenu
+t94j0/adexplorersnapshot-rs
+jsnli/Samira
+chainreactors/malefic
+Relacibo/typst-as-lib
+asterinas/hyperenclave

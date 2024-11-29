@@ -1,0 +1,7 @@
+microcks/microcks-testcontainers-java-spring-demo
+pavlospt/ergani-rust-sdk
+anitalakhadze/multiple-auth-api
+tonyke-bot/ore-miner
+tranxuanthang/lrclib
+kindsecret/rust-HackerRank
+parkerdgabel/quackML

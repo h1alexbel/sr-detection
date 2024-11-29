@@ -1,0 +1,7 @@
+bitcoin-dev-project/bitcoiner-intro-to-rust
+NguyenDuck/blocktopograph
+krukah/robopoker
+wfxr/rlt
+ServerlessDevelopers/serverless-rust
+z-jxy/rpkl
+soehrl/tracing-tape

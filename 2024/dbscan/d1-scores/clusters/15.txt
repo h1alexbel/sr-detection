@@ -1,0 +1,16 @@
+orhun/rust-stdout-vs-stderr
+w1th4d/JarPlant
+AbdelStark/majin-blob
+Kehrlann/spring-boot-testing
+wiseaidev/openpilot
+tomsanbear/candle-einops
+Hunterdii/GeeksforGeeks-POTD
+CrazyCraftix/tsyncs
+StellateHQ/graphql-query
+oracle-devrel/springai-rag-db23ai
+danvega/spring-ai-workshop
+hnz1102/timeleapcam
+spikespaz/allfollow
+quambene/eric-rs
+swstarlab-infolab/ldbc-complex-benchmark
+Kelvin-1013/Solana-Arbitrage-Bot

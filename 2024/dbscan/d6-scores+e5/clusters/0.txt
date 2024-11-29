@@ -1,0 +1,5 @@
+utilForever/2024-SNU-Rust-Application
+utilForever/2024-MatKor-Rust-Blog
+utilForever/2024-Hyundai-NGV-Rust
+utilForever/2024-DEVCON-Rust-Safety
+maeddes/hft-24-winter
