@@ -1,9 +1,0 @@
-std-microblock/TGStickerProvider
-Fuzzyzilla/octotablet
-SNPGuard/snp-guard
-nathansbradshaw/zed-angular
-dtolnay/typeid
-damus-io/noteguard
-devops-kung-fu/trustier
-denzylegacy/keyripper
-OmniOneID/did-demo-server

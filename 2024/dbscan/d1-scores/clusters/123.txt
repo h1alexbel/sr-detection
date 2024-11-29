@@ -1,6 +1,0 @@
-rzukic/zed-latex
-anusikh/jvem
-leb-kuchen/cosmic-ext-applet-emoji-selector
-lapce/tiron
-MasatoDev/boostest
-yobix-ai/extractous

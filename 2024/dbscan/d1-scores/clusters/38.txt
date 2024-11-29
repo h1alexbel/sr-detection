@@ -1,7 +1,0 @@
-MirnaGama/hospital-management-api
-PoOnesNerfect/bevy_bsml
-gaucho-labs/tailwind-fuse
-vishalmysore/Tools4AI
-orhun/ratatui-splash-screen
-raphaelsty/LeNLP
-anaconda875/reactive-hibernate-spring-boot-starter

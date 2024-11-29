@@ -1,9 +1,0 @@
-ThomasVitale/llm-apps-java-spring-ai
-dounine/wechat-pay-rust-sdk
-sunfishcode/hello-embedded
-Vaibhavs10/fast-llm.rs
-yours-org/pow20-miner
-Cheukting/py03_101
-paradigmxyz/tbl
-sigma0-dev/polymath
-nyxpsi/nyxpsi

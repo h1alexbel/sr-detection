@@ -1,5 +1,0 @@
-jinganix/guess
-aws/amazon-gamelift-agent
-bitcoinOS/bitcoinOS
-romancitodev/simple-commits
-fioncat/otree

@@ -1,6 +1,0 @@
-cameron-martin/bazel-lsp
-fedimint/fedimint-clientd
-appujet/jiosaavn-plugin
-deven96/ahnlich
-oxc-project/oxc-browserslist
-josueBarretogit/manga-tui

@@ -1,6 +1,0 @@
-tracyspacy/yacht
-prawnydagrate/rschess
-ewen-lbh/zed-wakatime
-Evian-Zhang/static-keys
-JackKelly/hypergrib
-danielbeach/datahobbit

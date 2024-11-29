@@ -1,6 +1,0 @@
-AdinAck/cargo-embassy
-VulnPlanet/l3x
-ihciah/rust2go
-JanNeuendorf/lorevault
-pieterdd/RcloneShuttle
-AbdelStark/askeladd

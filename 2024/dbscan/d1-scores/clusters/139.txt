@@ -1,5 +1,0 @@
-chiyuki0325/lyrica
-chancehudson/ashlang
-emilk/egui_plot
-LlamaEdge/sd-api-server
-lita-xyz/rust-examples

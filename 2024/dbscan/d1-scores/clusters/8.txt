@@ -1,5 +1,0 @@
-Leafwing-Studios/leafwing_manifest
-bluenote-1577/fairy
-Noxyntious/meower
-nullstalgia/iron-heart
-apache/datafusion-ray

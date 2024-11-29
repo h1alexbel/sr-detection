@@ -1,5 +1,0 @@
-OmniOneID/did-core-sdk-server
-OmniOneID/did-blockchain-sdk-server
-OmniOneID/did-crypto-sdk-server
-OmniOneID/did-datamodel-sdk-server
-OmniOneID/did-wallet-sdk-server

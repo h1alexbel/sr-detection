@@ -1,6 +1,0 @@
-Ralith/sieve-tree
-joshka/tui-markdown
-embassy-rs/bt-hci
-rust-osdev/endian-num
-rust-osdev/virtio-spec-rs
-joshka/tui-widgets

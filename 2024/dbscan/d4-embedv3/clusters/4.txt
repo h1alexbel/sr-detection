@@ -1,7 +1,0 @@
-joshka/ratatui-widgets
-orhun/ratatui-splash-screen
-08820048/untools
-catppuccin/catwalk
-thewh1teagle/vad-rs
-thewh1teagle/pyannote-rs
-alexpasmantier/rust-devicons

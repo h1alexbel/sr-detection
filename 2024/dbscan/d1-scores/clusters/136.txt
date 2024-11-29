@@ -1,7 +1,0 @@
-i18n-site/rust
-hackclub/easel
-memfault/memfaultd
-rust-osdev/endian-num
-evilsocket/cake
-lucianosrp/rye-uv
-SwiftServicesX/FulfillSpigot

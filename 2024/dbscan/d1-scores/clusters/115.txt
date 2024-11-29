@@ -1,6 +1,0 @@
-N1nn1/dye_depot
-geph-official/geph5
-microsoft/verismo
-elmfrain/cnmcu
-Blooym/xlm
-decipher3114/Capter

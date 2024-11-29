@@ -1,5 +1,0 @@
-swan-io/react-native-browser
-codyduong/hitokage
-Thoroldvix/youtube-transcript-api
-esp-rs/esp-generate
-MeteorClientPlus/MeteorPlus

@@ -1,8 +1,0 @@
-floris-xlx/supabase_rs
-BREAD5940/2024-Onseason
-pinterest/tiered-storage
-electronstudio/jaylib-ffm
-FedericoBruzzone/tdlib-rs
-croakexciting/forfun-os
-LilyFoote/django-rusty-templates
-cosmic-utils/gui-scale-applet

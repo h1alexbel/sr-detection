@@ -1,5 +1,0 @@
-G2-Games/cross-usb
-szaffarano/wofi-power-menu
-SofusA/roslyn-language-server
-tedsteen/Spotiamp
-lyric-project/lyric

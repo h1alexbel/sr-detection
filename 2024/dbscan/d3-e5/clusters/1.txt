@@ -1,4 +1,0 @@
-JeroenGar/jagua-rs
-Dwlad90/stylex-swc-plugin
-succinctlabs/kzg-rs
-levkk/rwf

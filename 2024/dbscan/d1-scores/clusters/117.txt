@@ -1,6 +1,0 @@
-silence-laboratories/silent-shard-dkls23-ll
-aurora-is-near/aurora-forwarder-contracts
-patternhelloworld/spring-security-oauth2-password-jpa-implementation
-itsJohnCnstn/service-template
-carderne/upid
-LaurenzV/krilla

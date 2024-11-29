@@ -1,5 +1,0 @@
-oviva-ag/ehealthid-relying-party
-solana-program/address-lookup-table
-puma314/verified-logs
-TaceoLabs/co-snarks
-danilowhk/swiftness-sp1

@@ -1,6 +1,0 @@
-vidhanio/hypertext
-marsupialtail/rottnest
-seregamorph/spring-test-smart-context
-arcuru/headjack
-WizardOfMenlo/whir
-Stef16Robbe/harper_zed

@@ -1,7 +1,0 @@
-N1nn1/dye_depot
-xiaoshicae/easy-extension
-evilsocket/mini-rag
-spastorino/dynosaur
-foundry-rs/foundry-fork-db
-Arnavion/riscv
-aalowlevel/typestate-builder

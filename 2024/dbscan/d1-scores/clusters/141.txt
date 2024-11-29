@@ -1,5 +1,0 @@
-AmrDeveloper/FileQL
-nishuzumi/collider
-ZihanType/predawn
-conjure-cp/uniplate
-datafusion-contrib/orc-rust
