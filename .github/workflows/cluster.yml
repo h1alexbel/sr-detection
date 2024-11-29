@@ -52,8 +52,9 @@ jobs:
             just install
             just dataset "${{ inputs.folder }}" "../${{ inputs.folder }}"
             just cluster "../${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
-            just clusterstat "../clustered/${{ inputs.out }}" "../${{ inputs.out }}.txt"
+            just clusterstat "../clustered/${{ inputs.out }}" "../results.txt"
           } 2>&1 | tee -a cluster.log
+          cp "results.txt" "clustered/results.txt"
           cp "cluster.log" "clustered/${{ inputs.out }}"
       - uses: JamesIves/github-pages-deploy-action@v4.7.1
         with:
