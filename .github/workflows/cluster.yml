@@ -53,7 +53,7 @@ jobs:
             just install
             just dataset "${{ inputs.folder }}" "../clustered/${{ inputs.folder }}"
             just cluster "../clustered/${{ inputs.folder }}" "../clustered/${{ inputs.out }}"
-            just clusterstat "../clustered/${{ inputs.out }}" "../results.txt"
+            just clusterstat "../results.txt" "../clustered/${{ inputs.out }}"
           } 2>&1 | tee -a cluster.log
           cp "results.txt" "clustered/results.txt"
           cp "cluster.log" "clustered/${{ inputs.out }}"
