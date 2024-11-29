@@ -76,3 +76,41 @@ class TestPipeline(unittest.TestCase):
                 ],
                 f"Found files: {files} don't match with expected"
             )
+
+    @pytest.mark.fast
+    def test_outputs_pipeline_with_workflows(self):
+        with TemporaryDirectory() as temp:
+            steps = os.path.join(temp, "steps.txt")
+            files = os.path.join(temp, "files.txt")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "../../resources/pipeline.json",
+                ),
+                "pulls,filter,workflows",
+                steps,
+                files
+            )
+            with open(steps, "r") as f:
+                steps = f.readlines()
+            with open(files, "r") as f:
+                files = f.readlines()
+            self.assertEqual(
+                steps,
+                [
+                    'just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"\n',
+                    'just filter "../repos-with-pulls.csv" "../after-filter.csv"\n',
+                    'just workflows "../after-filter.csv" "../after-workflows.csv"',
+                ],
+                f"Resulted steps: {steps} don't match with expected"
+            )
+            self.assertEqual(
+                files,
+                [
+                    'repos.csv\n',
+                    'repos-with-pulls.csv\n',
+                    'after-filter.csv\n',
+                    'after-workflows.csv'
+                ],
+                f"Found files: {files} don't match with expected"
+            )
