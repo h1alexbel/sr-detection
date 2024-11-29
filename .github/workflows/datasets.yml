@@ -73,7 +73,8 @@ jobs:
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
             -e OUT="${{ inputs.out }}" -e STEPS="${{ inputs.steps }}" \
-            -e NUMBASE="${{ inputs.numbase }}" h1alexbel/sr-detection
+            -e NUMBASE="${{ inputs.numbase }}" -e EMBEDDINGS=false \
+            h1alexbel/sr-detection
       - uses: JamesIves/github-pages-deploy-action@v4.7.1
         with:
           branch: gh-pages

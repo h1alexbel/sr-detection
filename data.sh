@@ -33,7 +33,7 @@ echo "$COLLECT_TOKEN" >> "$PATS"
       eval "$step"
     fi
   done < steps.txt
-  "$RUN"/just datasets "$RUN" "../" "$NUMBASE"
+  "$RUN"/just datasets "$EMBEDDINGS" "$RUN" "../" "$NUMBASE"
 } 2>&1 | tee -a collect.log
 sed -i "s|$GH_TOKEN|REDACTED|g" collect.log
 sed -i "s|$HF_TOKEN|REDACTED|g" collect.log

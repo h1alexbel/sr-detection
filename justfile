@@ -157,12 +157,14 @@ embed repos prefix="experiment/embeddings":
 #  We should create more major recipes in order to reuse across the project.
 #  The example of such step is `@experiment`. Let's do similar to the script
 #  inside `data.sh`, so it can be invoked from just using datasets step.
-datasets run dir="experiment" numbase="after-extract.csv":
+datasets embeddings run dir="experiment" numbase="after-extract.csv":
   "{{run}}"/just numerical "{{dir}}/{{numbase}}" "{{dir}}/numerical.csv"
   "{{run}}"/just scores "{{dir}}/{{numbase}}" "{{dir}}/scores.csv"
-  "{{run}}"/just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
-  "{{run}}"/just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
-  "{{run}}"/just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
+  if embeddings; then
+    "{{run}}"/just combination "{{dir}}" 5 "{{dir}}/sbert.csv" "{{dir}}/scores.csv"
+    "{{run}}"/just combination "{{dir}}" 6 "{{dir}}/e5.csv" "{{dir}}/scores.csv"
+    "{{run}}"/just combination "{{dir}}" 7 "{{dir}}/embedv3.csv" "{{dir}}/scores.csv"
+  fi
 
 # Create scores dataset.
 scores repos out="experiment/scores.csv":
