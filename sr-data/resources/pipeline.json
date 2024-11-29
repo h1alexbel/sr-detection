@@ -20,5 +20,9 @@
       "cp \"embeddings-e5-1024.csv\" \"e5.csv\"",
       "cp \"embeddings-embedv3-1024.csv\" \"embedv3.csv\""
     ]
+  },
+  "workflows": {
+    "repos": "@in",
+    "out": "../after-workflows.csv"
   }
 }
