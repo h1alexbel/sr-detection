@@ -40,12 +40,12 @@ DATASETS = [
 ]
 
 
-def main(datasets, out):
+def main(datasets, out, branch):
     logger.info("Start merging...")
     logger.info(f"Folders={datasets}")
     candidates = {}
     for folder in datasets.split(","):
-        candidates[folder] = contents(folder)
+        candidates[folder] = contents(folder, branch)
     merged = merge(candidates)
     for file, df in merged.items():
         path = os.path.join(out, file)
@@ -67,12 +67,12 @@ def merge(candidates):
     return merged
 
 
-def contents(folder):
+def contents(folder, branch):
     result = {}
     for file in DATASETS:
         content = requests.get(
-            f"https://raw.githubusercontent.com/h1alexbel/sr-detection/refs/heads/gh-pages/{folder}/{file}"
+            f"https://raw.githubusercontent.com/h1alexbel/sr-detection/refs/heads/{branch}/{folder}/{file}"
         ).text
         result[file] = pd.read_csv(StringIO(content), sep=",")
-        logger.info(f"Fetched {folder}/{file} ({len(result[file])} rows)")
+        logger.info(f"Fetched @{branch}/{folder}/{file} ({len(result[file])} rows)")
     return result
