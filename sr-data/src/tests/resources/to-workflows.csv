@@ -9,3 +9,4 @@ dcodesdev/rustfinity.com,main,"ci.yaml,rustfinity-runner.yaml"
 gordnzhou/imnes-emulator,main,
 lanylow/honkai-dumper,main,
 BillyDM/vitalium-verb,main,"build.yml"
+polespinasa/bitcoin-grouphug,main,"ci.yml"
