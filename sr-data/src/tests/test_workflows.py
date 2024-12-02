@@ -109,7 +109,7 @@ jobs:
                 f"OSS count: {oss} does not match with expected: {expected}"
             )
 
-    @pytest.mark.nightly
+    @pytest.mark.fast
     def test_collects_workflows_for_all(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")

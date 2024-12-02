@@ -85,13 +85,21 @@ def workflow_info(content):
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
         if runs is not None and runs.startswith("$"):
-            for matrixed in jdetails.get("strategy").get("matrix").get(
-                    runs.strip()
+            matrix = jdetails.get("strategy").get("matrix")
+            key = runs.strip().replace("${{", "").replace("}}", "").split(".")[1].strip()
+            if matrix.get(key):
+                for matrixed in matrix.get(key):
+                    oss.append(matrixed)
+            elif matrix.get("include"):
+                for include in matrix.get("include"):
+                    oss.append(
+                        include.get(
+                            runs.strip()
                             .replace("${{", "")
                             .replace("}}", "")
                             .split(".")[1].strip()
-            ):
-                oss.append(matrixed)
+                        )
+                    )
         elif runs is not None:
             oss.append(runs)
         steps = jdetails.get("steps")
