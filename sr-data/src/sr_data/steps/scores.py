@@ -33,10 +33,10 @@ def main(repos, out):
     logger.info("Creating dataset with scores...")
     frame = pd.read_csv(repos)
     frame["score"] = (
-            frame["releases_count"] * 50 +
-            frame["pulls_count"] * 7.5 +
-            frame["open_issues_count"] * 12.5 +
-            frame["branches_count"] * 30
+            frame["releases"] * 50 +
+            frame["pulls"] * 7.5 +
+            frame["open_issues"] * 12.5 +
+            frame["branches"] * 30
     )
     scores = frame[["repo", "score"]]
     scores.to_csv(out, index=False)

@@ -49,6 +49,7 @@ for file in "${files[@]}"; do
   id="$((id+1))"
 done
 cp "collect.log" "collection/$OUT"
+cp "numerical.csv" "collection/$OUT/d0-numerical.csv"
 cp "scores.csv" "collection/$OUT/d1-scores.csv"
 cp "sbert.csv" "collection/$OUT/d2-sbert.csv"
 cp "e5.csv" "collection/$OUT/d3-e5.csv"

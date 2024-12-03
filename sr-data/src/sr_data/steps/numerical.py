@@ -32,10 +32,11 @@ def main(repos, out):
     frame = frame[
         [
             "repo",
-            "releases_count",
-            "pulls_count",
-            "open_issues_count",
-            "branches_count"
+            "releases",
+            "pulls",
+            "open_issues",
+            "branches",
+            "workflows"
         ]
     ]
     frame.to_csv(out, index=False)

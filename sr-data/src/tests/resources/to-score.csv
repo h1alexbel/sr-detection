@@ -1,2 +1,2 @@
-repo,releases_count,pulls_count,open_issues_count,branches_count,workflows
+repo,releases,pulls,open_issues,branches,workflows
 jeff/foo,0,0,1,3,1
