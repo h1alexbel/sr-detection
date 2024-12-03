@@ -187,3 +187,51 @@ jobs:
             ),
             "Workflow shouldn't be used for releases, but it was"
         )
+
+    @pytest.mark.fast
+    def test_outputs_workflow_info_with_nested_expression(self):
+        info = workflow_info(
+            """
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform:
+          - runner: ubuntu-latest
+            target: x86_64
+          - runner: ubuntu-latest
+            target: x86
+    runs-on: ${{ matrix.platform.runner }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            ["ubuntu-latest@x86", "ubuntu-latest@x86_64"],
+            f"Workflow OSs: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            4,
+            f"Steps count in workflow: '{info}' does not match with expected"
+        )
