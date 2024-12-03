@@ -123,8 +123,27 @@ jobs:
             frame = pd.read_csv(path)
             self.assertTrue(
                 all(col in frame.columns for col in
-                    ["w_jobs", "w_oss", "w_steps", "w_has_releases"]),
+                    ["workflows", "w_jobs", "w_oss", "w_steps", "w_has_releases"]),
                 f"Frame {frame.columns} doesn't have expected columns"
+            )
+
+    @pytest.mark.fast
+    def test_counts_workflows_correctly(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "workflows.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-workflows.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            result = frame["workflows"].tolist()
+            self.assertEqual(
+                result,
+                [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1],
+                "Workflows counts don't match with expected"
             )
 
     @pytest.mark.fast

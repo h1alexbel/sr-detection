@@ -64,6 +64,7 @@ def main(repos, out):
                 oss.append(os)
             if info["w_release"]:
                 releases = True
+        frame.at[idx, "workflows"] = len(ymls)
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
