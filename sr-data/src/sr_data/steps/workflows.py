@@ -86,10 +86,18 @@ def workflow_info(content):
         runs = jdetails.get("runs-on")
         if runs is not None and runs.startswith("$"):
             matrix = jdetails.get("strategy").get("matrix")
-            key = runs.strip().replace("${{", "").replace("}}", "").split(".")[1].strip()
-            if matrix.get(key):
-                for matrixed in matrix.get(key):
-                    oss.append(matrixed)
+            keys = [
+                key.strip() for key in
+                runs.strip().replace("${{", "").replace("}}", "")
+                .split(".")[1:]
+            ]
+            if len(keys) == 1:
+                if matrix.get(keys[0]):
+                    for matrixed in matrix.get(keys[0]):
+                        oss.append(matrixed)
+            elif len(keys) > 1:
+                for system in dot_values(keys, matrix):
+                    oss.append(system)
             elif matrix.get("include"):
                 for include in matrix.get("include"):
                     oss.append(
@@ -112,6 +120,34 @@ def workflow_info(content):
         "w_oss": sorted(oss),
         "w_release": used_for_releases(yml)
     }
+
+
+def dot_values(keys, matrix) -> list:
+    result = []
+    current = matrix
+    for i, k in enumerate(keys):
+        if isinstance(current, dict):
+            if k in current:
+                current = current[k]
+            else:
+                return []
+        elif isinstance(current, list):
+            if i == len(keys) - 1:
+                for item in current:
+                    if isinstance(item, dict) and k in item:
+                        system = item.get(k)
+                        if system:
+                            extra = [key for key in item if key != k]
+                            suffix = "@" + "".join(
+                                str(item.get(d, "")) for d in extra)
+                            result.append(system + suffix)
+            else:
+                for item in current:
+                    if isinstance(item, dict) and k in item:
+                        current = item[k]
+        else:
+            return []
+    return result
 
 
 def used_for_releases(yml) -> bool:
