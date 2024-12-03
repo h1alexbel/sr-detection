@@ -85,30 +85,34 @@ def workflow_info(content):
     scount = 0
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
-        if runs is not None and runs.startswith("$"):
-            matrix = jdetails.get("strategy").get("matrix")
-            keys = [
-                key.strip() for key in
-                runs.strip().replace("${{", "").replace("}}", "")
-                .split(".")[1:]
-            ]
-            if len(keys) == 1:
-                if matrix.get(keys[0]):
-                    for matrixed in matrix.get(keys[0]):
-                        oss.append(matrixed)
-            elif len(keys) > 1:
-                for system in dot_values(keys, matrix):
-                    oss.append(system)
-            elif matrix.get("include"):
-                for include in matrix.get("include"):
-                    oss.append(
-                        include.get(
-                            runs.strip()
-                            .replace("${{", "")
-                            .replace("}}", "")
-                            .split(".")[1].strip()
+        if runs is not None and not isinstance(runs, dict):
+            if runs.startswith("$"):
+                matrix = jdetails.get("strategy").get("matrix")
+                keys = [
+                    key.strip() for key in
+                    runs.strip().replace("${{", "").replace("}}", "")
+                    .split(".")[1:]
+                ]
+                if len(keys) == 1:
+                    if matrix.get(keys[0]):
+                        for matrixed in matrix.get(keys[0]):
+                            oss.append(matrixed)
+                elif len(keys) > 1:
+                    for system in dot_values(keys, matrix):
+                        oss.append(system)
+                elif matrix.get("include"):
+                    for include in matrix.get("include"):
+                        oss.append(
+                            include.get(
+                                runs.strip()
+                                .replace("${{", "")
+                                .replace("}}", "")
+                                .split(".")[1].strip()
+                            )
                         )
-                    )
+        elif isinstance(runs, dict):
+            if runs.get("group"):
+                oss.append(runs.get("group"))
         elif runs is not None:
             oss.append(runs)
         steps = jdetails.get("steps")
