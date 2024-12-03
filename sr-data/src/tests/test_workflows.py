@@ -142,7 +142,7 @@ jobs:
             result = frame["workflows"].tolist()
             self.assertEqual(
                 result,
-                [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1],
+                [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1, 10],
                 "Workflows counts don't match with expected"
             )
 
