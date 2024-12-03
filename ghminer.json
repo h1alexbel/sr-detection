@@ -2,9 +2,9 @@
   "repo": "nameWithOwner",
   "branch": "defaultBranchRef.name",
   "readme": "defaultBranchRef.target.repository.object.text",
-  "releases_count": "releases.totalCount",
-  "open_issues_count": "issues.totalCount",
-  "branches_count": "refs.totalCount",
+  "releases": "releases.totalCount",
+  "open_issues": "issues.totalCount",
+  "branches": "refs.totalCount",
   "license": "licenseInfo.spdxId",
   "workflows": "object.entries[].name"
 }
