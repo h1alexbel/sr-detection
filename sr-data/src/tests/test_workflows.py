@@ -174,3 +174,16 @@ jobs:
             ),
             "Workflow shouldn't be used for releases, but it was"
         )
+
+    @pytest.mark.fast
+    def test_returns_false_when_on_list(self):
+        self.assertFalse(
+            used_for_releases(
+                yaml.safe_load(
+                    """
+                    on: [push, pull_request]
+                    """
+                )
+            ),
+            "Workflow shouldn't be used for releases, but it was"
+        )
