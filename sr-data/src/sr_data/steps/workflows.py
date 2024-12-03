@@ -117,7 +117,7 @@ def workflow_info(content):
 def used_for_releases(yml) -> bool:
     result = False
     on = yml[True]
-    if on and not isinstance(on, str):
+    if on and not isinstance(on, str) and not isinstance(on, list):
         if on.get("release"):
             for type in on.get("release").get("types"):
                 if type == "published":
