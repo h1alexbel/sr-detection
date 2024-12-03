@@ -140,7 +140,8 @@ def dot_values(keys, matrix) -> list:
                         if system:
                             extra = [key for key in item if key != k]
                             suffix = "@" + "".join(
-                                str(item.get(d, "")) for d in extra)
+                                str(item.get(d, "")) for d in extra
+                            )
                             result.append(system + suffix)
             else:
                 for item in current:
