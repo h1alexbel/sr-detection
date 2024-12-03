@@ -176,7 +176,7 @@ jobs:
         )
 
     @pytest.mark.fast
-    def test_returns_false_when_on_list(self):
+    def test_returns_false_on_simple_list(self):
         self.assertFalse(
             used_for_releases(
                 yaml.safe_load(
