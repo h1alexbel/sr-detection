@@ -39,7 +39,7 @@ def main(repos, out):
         ymls = []
         if workflows and not isinstance(workflows, float):
             ymls = [
-                file.strip()
+                file
                 for file in workflows.split(",")
                 if file.endswith((".yml", ".yaml"))
             ]
