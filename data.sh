@@ -51,9 +51,11 @@ done
 cp "collect.log" "collection/$OUT"
 cp "numerical.csv" "collection/$OUT/d0-numerical.csv"
 cp "scores.csv" "collection/$OUT/d1-scores.csv"
-cp "sbert.csv" "collection/$OUT/d2-sbert.csv"
-cp "e5.csv" "collection/$OUT/d3-e5.csv"
-cp "embedv3.csv" "collection/$OUT/d4-embedv3.csv"
-cp "d5-scores+sbert.csv" "collection/$OUT"
-cp "d6-scores+e5.csv" "collection/$OUT"
-cp "d7-scores+embedv3.csv" "collection/$OUT"
+if "$EMBEDDINGS"; then
+  cp "sbert.csv" "collection/$OUT/d2-sbert.csv"
+  cp "e5.csv" "collection/$OUT/d3-e5.csv"
+  cp "embedv3.csv" "collection/$OUT/d4-embedv3.csv"
+  cp "d5-scores+sbert.csv" "collection/$OUT"
+  cp "d6-scores+e5.csv" "collection/$OUT"
+  cp "d7-scores+embedv3.csv" "collection/$OUT"
+fi
