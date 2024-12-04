@@ -345,7 +345,7 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
-    def test_parses_non_matrix(self):
+    def test_parses_none_matrix(self):
         info = workflow_info(
             """
 name: test
