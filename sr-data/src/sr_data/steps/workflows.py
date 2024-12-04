@@ -68,7 +68,7 @@ def main(repos, out):
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
-        frame.at[idx, "has_workflow_release"] = releases
+        frame.at[idx, "has_release_workflow"] = releases
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
 
