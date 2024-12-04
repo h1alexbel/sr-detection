@@ -103,7 +103,11 @@ def workflow_info(content):
                         if len(keys) == 1:
                             if matrix.get(keys[0]):
                                 for matrixed in matrix.get(keys[0]):
-                                    oss.append(matrixed)
+                                    if isinstance(matrixed, list):
+                                        for r in matrixed:
+                                            oss.append(r)
+                                    else:
+                                        oss.append(matrixed)
                         elif len(keys) > 1:
                             for system in dot_values(keys, matrix):
                                 oss.append(system)

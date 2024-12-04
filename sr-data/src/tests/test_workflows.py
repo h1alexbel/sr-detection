@@ -369,3 +369,34 @@ jobs:
             0,
             f"Steps count in workflow: '{info}' does not match with expected"
         )
+
+    @pytest.mark.fast
+    def test_parses_oss_as_list_in_matrix(self):
+        info = workflow_info(
+            """
+name: test
+on: push
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - [self-hosted]          
+    runs-on: ${{ matrix.os }}
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            ["self-hosted"],
+            f"Workflow OSs: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            0,
+            f"Steps count in workflow: '{info}' does not match with expected"
+        )
