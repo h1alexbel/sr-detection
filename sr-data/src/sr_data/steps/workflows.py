@@ -166,7 +166,10 @@ def dot_values(keys, matrix) -> list:
 
 def used_for_releases(yml) -> bool:
     result = False
-    on = yml[True]
+    if "on" in list(yml.keys()):
+        on = yml["on"]
+    else:
+        on = yml[True]
     if on and not isinstance(on, str) and not isinstance(on, list):
         if on.get("release"):
             for type in on.get("release").get("types"):
