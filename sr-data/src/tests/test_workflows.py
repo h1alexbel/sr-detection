@@ -123,7 +123,8 @@ jobs:
             frame = pd.read_csv(path)
             self.assertTrue(
                 all(col in frame.columns for col in
-                    ["workflows", "w_jobs", "w_oss", "w_steps", "w_has_releases"]),
+                    ["workflows", "w_jobs", "w_oss", "w_steps",
+                     "w_has_releases"]),
                 f"Frame {frame.columns} doesn't have expected columns"
             )
 
@@ -142,7 +143,7 @@ jobs:
             result = frame["workflows"].tolist()
             self.assertEqual(
                 result,
-                [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1, 10],
+                [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1, 10, 1],
                 "Workflows counts don't match with expected"
             )
 
@@ -176,7 +177,6 @@ jobs:
             ),
             "Workflow should be used for releases, but it wasn't"
         )
-
 
     @pytest.mark.fast
     def test_returns_false_when_no_release(self):
@@ -252,5 +252,33 @@ jobs:
         self.assertEqual(
             info["w_steps"],
             4,
+            f"Steps count in workflow: '{info}' does not match with expected"
+        )
+
+    @pytest.mark.fast
+    def test_skips_matrix_as_text(self):
+        info = workflow_info(
+            """
+on: push
+jobs:
+  plan:
+    strategy:
+        matrix: ${{ fromJson(needs.plan.outputs.val).ci.github.artifacts_matrix }}
+    runs-on: ubuntu-latest
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            ["ubuntu-latest"],
+            f"Workflow OSs: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            0,
             f"Steps count in workflow: '{info}' does not match with expected"
         )
