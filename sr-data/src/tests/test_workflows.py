@@ -122,9 +122,10 @@ jobs:
             )
             frame = pd.read_csv(path)
             self.assertTrue(
-                all(col in frame.columns for col in
-                    ["workflows", "w_jobs", "w_oss", "w_steps",
-                     "w_has_releases"]),
+                all(
+                    col in frame.columns for col in
+                    ["workflows", "w_jobs", "w_oss", "w_steps", "has_workflow_release"]
+                ),
                 f"Frame {frame.columns} doesn't have expected columns"
             )
 
