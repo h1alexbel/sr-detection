@@ -345,3 +345,27 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
+    def test_parses_non_matrix(self):
+        info = workflow_info(
+            """
+name: test
+jobs:
+  build:
+    runs-on: ${{ inputs.platform }}
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            ["ubuntu-latest"],
+            f"Workflow OSs: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            0,
+            f"Steps count in workflow: '{info}' does not match with expected"
+        )

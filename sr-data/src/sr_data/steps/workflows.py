@@ -91,31 +91,32 @@ def workflow_info(content):
                     oss.append(r)
             if not isinstance(runs, list) and runs.startswith("$"):
                 matrix = jdetails.get("strategy").get("matrix")
-                if isinstance(matrix, str):
-                    oss.append(runs)
-                else:
-                    keys = [
-                        key.strip() for key in
-                        runs.strip().replace("${{", "").replace("}}", "")
-                        .split(".")[1:]
-                    ]
-                    if len(keys) == 1:
-                        if matrix.get(keys[0]):
-                            for matrixed in matrix.get(keys[0]):
-                                oss.append(matrixed)
-                    elif len(keys) > 1:
-                        for system in dot_values(keys, matrix):
-                            oss.append(system)
-                    elif matrix.get("include"):
-                        for include in matrix.get("include"):
-                            oss.append(
-                                include.get(
-                                    runs.strip()
-                                    .replace("${{", "")
-                                    .replace("}}", "")
-                                    .split(".")[1].strip()
+                if matrix is not None:
+                    if isinstance(matrix, str):
+                        oss.append(runs)
+                    else:
+                        keys = [
+                            key.strip() for key in
+                            runs.strip().replace("${{", "").replace("}}", "")
+                            .split(".")[1:]
+                        ]
+                        if len(keys) == 1:
+                            if matrix.get(keys[0]):
+                                for matrixed in matrix.get(keys[0]):
+                                    oss.append(matrixed)
+                        elif len(keys) > 1:
+                            for system in dot_values(keys, matrix):
+                                oss.append(system)
+                        elif matrix.get("include"):
+                            for include in matrix.get("include"):
+                                oss.append(
+                                    include.get(
+                                        runs.strip()
+                                        .replace("${{", "")
+                                        .replace("}}", "")
+                                        .split(".")[1].strip()
+                                    )
                                 )
-                            )
             elif not isinstance(runs, list):
                 oss.append(runs)
         elif isinstance(runs, dict):
