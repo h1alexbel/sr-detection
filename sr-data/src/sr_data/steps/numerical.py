@@ -40,5 +40,6 @@ def main(repos, out):
             "has_release_workflow"
         ]
     ]
+    frame["has_release_workflow"] = frame["has_release_workflow"].astype(int)
     frame.to_csv(out, index=False)
     logger.info(f"Numerical dataset created in {out}")
