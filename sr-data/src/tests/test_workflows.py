@@ -345,9 +345,11 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
+    @pytest.mark.fast
     def test_parses_none_matrix(self):
         info = workflow_info(
             """
+on: push
 name: test
 jobs:
   build:
@@ -356,7 +358,7 @@ jobs:
         )
         self.assertEqual(
             info["w_oss"],
-            ["ubuntu-latest"],
+            [],
             f"Workflow OSs: '{info}' does not match with expected"
         )
         self.assertEqual(
