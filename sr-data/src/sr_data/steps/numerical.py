@@ -36,7 +36,8 @@ def main(repos, out):
             "pulls",
             "open_issues",
             "branches",
-            "workflows"
+            "workflows",
+            "has_release_workflow"
         ]
     ]
     frame.to_csv(out, index=False)
