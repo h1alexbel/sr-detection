@@ -282,3 +282,36 @@ jobs:
             0,
             f"Steps count in workflow: '{info}' does not match with expected"
         )
+
+    @pytest.mark.fast
+    def test_parses_runs_as_list(self):
+        info = workflow_info(
+            """
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  ensure_changelog_exists:
+    name: Ensure that .changeset is not empty
+    runs-on: [ubuntu-latest]
+    strategy:
+      matrix:
+        node-version: ["20.x"]
+        pnpm-version: ["9.x"]
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            ["ubuntu-latest"],
+            f"Workflow OSs: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            1,
+            f"Jobs count in workflow: '{info}' does not match with expected"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            0,
+            f"Steps count in workflow: '{info}' does not match with expected"
+        )

@@ -86,7 +86,10 @@ def workflow_info(content):
     for job, jdetails in jobs:
         runs = jdetails.get("runs-on")
         if runs is not None and not isinstance(runs, dict):
-            if runs.startswith("$"):
+            if isinstance(runs, list):
+                for r in runs:
+                    oss.append(r)
+            if not isinstance(runs, list) and runs.startswith("$"):
                 matrix = jdetails.get("strategy").get("matrix")
                 if isinstance(matrix, str):
                     oss.append(runs)
@@ -113,7 +116,7 @@ def workflow_info(content):
                                     .split(".")[1].strip()
                                 )
                             )
-            else:
+            elif not isinstance(runs, list):
                 oss.append(runs)
         elif isinstance(runs, dict):
             if runs.get("group"):
