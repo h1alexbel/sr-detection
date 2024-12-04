@@ -1,0 +1,3 @@
+repo,branch,readme,releases,pulls,open_issues,branches,license,workflows,w_jobs,w_oss,w_steps,has_release_workflow
+foo/bar,master,"",0,0,1,1,"MIT",1,2,3,4,True
+bar/foo,master,"",0,0,1,1,"MIT",1,2,3,4,False
