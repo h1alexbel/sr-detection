@@ -43,5 +43,5 @@ jobs:
             -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
             -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
             -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
-            -e STEPS="pulls,filter,workflows" \
-            -e EMBEDDINGS=false -e NUMBASE="after-workflows.csv" experiment
+            -e STEPS="pulls,filter,workflows,junit" \
+            -e EMBEDDINGS=false -e NUMBASE="after-junit.csv" experiment
