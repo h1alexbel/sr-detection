@@ -30,7 +30,7 @@ packages = [{ include = "models", from = "src" }]
 
 [tool.poetry.dependencies]
 sr-data = { path = "../sr-data" }
-python = "==3.10.* || ==3.11.* || ==3.12.*"
+python = "=3.13.1"
 scikit-learn = "1.5.2"
 pandas = "2.2.3"
 scikit-fuzzy = "0.5.0"

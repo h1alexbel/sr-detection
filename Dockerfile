@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 # Poetry environment variables.
 ENV POETRY_VERSION=1.8.0 \
