@@ -24,5 +24,10 @@
   "workflows": {
     "repos": "@in",
     "out": "../after-workflows.csv"
+  },
+  "junit": {
+    "repos": "@in",
+    "token": "$GH_TOKEN",
+    "out": "../after-junit.csv"
   }
 }

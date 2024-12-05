@@ -37,7 +37,8 @@ def main(repos, out):
             "open_issues",
             "branches",
             "workflows",
-            "has_release_workflow"
+            "has_release_workflow",
+            "tests"
         ]
     ]
     frame["has_release_workflow"] = frame["has_release_workflow"].astype(int)

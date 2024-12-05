@@ -40,7 +40,7 @@ def main(repos, out, token):
     frame = pd.read_csv(repos)
     logger.info(f"Counting JUnit tests in {len(frame)} repositories")
     for idx, row in frame.iterrows():
-        frame.at[idx, "junit_tests"] = count_of_tests(
+        frame.at[idx, "tests"] = count_of_tests(
             row["repo"],
             row["branch"],
             token

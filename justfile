@@ -198,13 +198,14 @@ dataset folder out:
 
 # Cluster repositories.
 cluster dir out:
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d1-scores.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d2-sbert.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d3-e5.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d4-embedv3.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d5-scores+sbert.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d6-scores+e5.csv" --dir {{out}}
-  cd sr-train && poetry poe cluster --dataset "{{dir}}/d7-scores+embedv3.csv" --dir {{out}}
+  cd sr-train && poetry poe cluster --dataset "{{dir}}/d0-numerical.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d1-scores.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d2-sbert.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d3-e5.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d4-embedv3.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d5-scores+sbert.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d6-scores+e5.csv" --dir {{out}}
+#  cd sr-train && poetry poe cluster --dataset "{{dir}}/d7-scores+embedv3.csv" --dir {{out}}
 
 # Statistics about generated clusters.
 clusterstat out dir="experiment":

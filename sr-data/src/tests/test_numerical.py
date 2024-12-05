@@ -55,7 +55,8 @@ class TestNumerical(unittest.TestCase):
                         "open_issues",
                         "branches",
                         "workflows",
-                        "has_release_workflow"
+                        "has_release_workflow",
+                        "tests"
                     ]
                 ),
                 f"Frame {frame.columns} doesn't have expected columns"
