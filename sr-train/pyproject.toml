@@ -35,7 +35,7 @@ scikit-learn = "1.5.2"
 pandas = "2.2.3"
 scikit-fuzzy = "0.5.0"
 packaging = "24.2"
-loguru = "0.7.2"
+loguru = "0.7.3"
 
 [tool.poe.tasks.cluster]
 script = "models.cluster:main(dataset, dir)"
