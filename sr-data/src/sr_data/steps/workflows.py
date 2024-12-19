@@ -65,12 +65,43 @@ def main(repos, out):
             if info["w_release"]:
                 releases = True
         frame.at[idx, "workflows"] = len(ymls)
+        frame["workflows"] = frame["workflows"].astype(int)
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
-        frame.at[idx, "has_release_workflow"] = releases
+        frame.at[idx, "has_release_workflow"] = int(releases)
+        print(frame["workflows"].dtype)
+        frame.at[idx, "w_simplicity"] = w_score(frame.loc[idx], frame)
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
+
+wscope = ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
+weights = {
+    "workflows": 0.3,
+    "w_jobs": 0.25,
+    "w_steps": 0.25,
+    "w_oss": 0.1,
+    "has_release_workflow": 0.1,
+}
+
+def w_score(row, frame) -> int:
+    """
+    Workflow simplicity score.
+    :return: Calculated metric for workflow simplicity score.
+    """
+    print("ROW")
+    print(row)
+    print("END")
+    min = frame[wscope].min()
+    max = frame[wscope].max()
+    normalized = {
+        "workflows": 1 - (row["workflows"] - min["workflows"]) / (max["workflows"] - min["workflows"]),
+        "w_jobs": 1 - (row["w_jobs"] - min["w_jobs"]) / (max["w_jobs"] - min["w_jobs"]),
+        "w_steps": 1 - (row["w_steps"] - min["w_steps"]) / (max["w_steps"] - min["w_steps"]),
+        "w_oss": 1 - (row["w_oss"] - min["w_oss"]) / (max["w_oss"] - min["w_oss"]),
+        "has_release_workflow": 1 - row["has_release_workflow"],
+    }
+    return sum(normalized[key] * weights[key] for key in weights)
 
 
 def fetch(path) -> str:
@@ -98,7 +129,8 @@ def workflow_info(content):
                         else:
                             keys = [
                                 key.strip() for key in
-                                runs.strip().replace("${{", "").replace("}}", "")
+                                runs.strip().replace("${{", "").replace("}}",
+                                                                        "")
                                 .split(".")[1:]
                             ]
                             if len(keys) == 1:
