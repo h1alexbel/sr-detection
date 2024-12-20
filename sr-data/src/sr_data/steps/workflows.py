@@ -91,7 +91,7 @@ def w_score(row) -> int:
     @todo #244:35min Enhance workflow simplicity score with min and max adjustment.
      Currently, we just subtract collected value from 1. We should adjust it with
      min and max values from the dataset. So formula should look like:
-     row - min / max - min.
+     1 - (row - min) / (max - min).
     """
     normalized = {
         "workflows": 1 - row["workflows"],
