@@ -89,7 +89,7 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_collects_unique_oss_across_all_files(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -108,7 +108,7 @@ jobs:
                 f"OSS count: {oss} does not match with expected: {expected}"
             )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_collects_workflows_for_all(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -128,7 +128,7 @@ jobs:
                 f"Frame {frame.columns} doesn't have expected columns"
             )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_counts_workflows_correctly(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -413,7 +413,7 @@ jobs:
             )
         )
         self.assertEqual(
-            w_score(scores.iloc[0], scores),
-            1.00,
+            w_score(scores.iloc[0]),
+            -0.85,
             "Calculated score does not match with expected"
         )

@@ -1,6 +1,7 @@
 """
 Collect information about GitHub workflows in the repo.
 """
+import numpy as np
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -30,7 +31,7 @@ from loguru import logger
 
 def main(repos, out):
     frame = pd.read_csv(repos)
-    frame["workflows"] = frame["workflows"].fillna("")
+    frame["workflows"] = frame["workflows"].fillna(0)
     for idx, row in frame.iterrows():
         repo = row["repo"]
         branch = row["branch"]
@@ -70,8 +71,7 @@ def main(repos, out):
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
         frame.at[idx, "has_release_workflow"] = int(releases)
-        print(frame["workflows"].dtype)
-        frame.at[idx, "w_simplicity"] = w_score(frame.loc[idx], frame)
+        frame.at[idx, "w_simplicity"] = w_score(frame.loc[idx])
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
 
@@ -84,21 +84,20 @@ weights = {
     "has_release_workflow": 0.1,
 }
 
-def w_score(row, frame) -> int:
+def w_score(row) -> int:
     """
     Workflow simplicity score.
     :return: Calculated metric for workflow simplicity score.
+    @todo #244:35min Enhance workflow simplicity score with min and max adjustment.
+     Currently, we just subtract collected value from 1. We should adjust it with
+     min and max values from the dataset. So formula should look like:
+     row - min / max - min.
     """
-    print("ROW")
-    print(row)
-    print("END")
-    min = frame[wscope].min()
-    max = frame[wscope].max()
     normalized = {
-        "workflows": 1 - (row["workflows"] - min["workflows"]) / (max["workflows"] - min["workflows"]),
-        "w_jobs": 1 - (row["w_jobs"] - min["w_jobs"]) / (max["w_jobs"] - min["w_jobs"]),
-        "w_steps": 1 - (row["w_steps"] - min["w_steps"]) / (max["w_steps"] - min["w_steps"]),
-        "w_oss": 1 - (row["w_oss"] - min["w_oss"]) / (max["w_oss"] - min["w_oss"]),
+        "workflows": 1 - row["workflows"],
+        "w_jobs": 1 - row["w_jobs"],
+        "w_steps": 1 - row["w_steps"],
+        "w_oss": 1 - row["w_oss"],
         "has_release_workflow": 1 - row["has_release_workflow"],
     }
     return sum(normalized[key] * weights[key] for key in weights)
