@@ -128,8 +128,7 @@ def workflow_info(content):
                         else:
                             keys = [
                                 key.strip() for key in
-                                runs.strip().replace("${{", "").replace("}}",
-                                                                        "")
+                                runs.strip().replace("${{", "").replace("}}","")
                                 .split(".")[1:]
                             ]
                             if len(keys) == 1:
