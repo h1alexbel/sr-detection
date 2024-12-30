@@ -66,7 +66,7 @@ def main(repos, out):
             if info["w_release"]:
                 releases = True
         frame.at[idx, "workflows"] = len(ymls)
-        frame["workflows"] = frame["workflows"].astype(int)
+        frame["workflows"] = frame["workflows"]
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
