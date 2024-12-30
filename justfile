@@ -211,21 +211,6 @@ cluster dir out:
 clusterstat out dir="experiment":
   cd sr-train && poetry poe clusterstat --dir {{dir}} --out {{out}}
 
-# Fill in labels in repositories dataset.
-labels dir="experiment":
-  cd sr-data && poetry poe labels --repos "experiment/numerical.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/scores.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/sbert.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/e5.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/embedv3.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/scores+sbert.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/scores+e5.csv" --dir {{dir}}
-  cd sr-data && poetry poe labels --repos "experiment/scores+embedv3.csv" --dir {{dir}}
-
-# Label Propagation model training on repos `repos`, should be saved to `out`.
-lpm repos out:
-  cd sr-data && poetry poe lpm --repos {{repos}} --out {{out}}
-
 # Remove readme from CSV file.
 # Can be useful for inspecting large files.
 noreadme repos out="experiment/no-readme.csv":

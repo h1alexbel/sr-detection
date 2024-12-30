@@ -39,7 +39,7 @@ from sr_data.steps.extract import wordnet_pos, filter
 #  extract.py.
 def main(repos, out):
     frame = pd.read_csv(repos)
-    logger.info(f"Collecting most common words in {len(frame)} repositories...")
+    logger.info(f"Collecting MCW from {len(frame)} repositories...")
     frame["words"] = frame["readme"].apply(
         lambda readme: to_words(readme, MarkdownIt())
     )
@@ -58,7 +58,7 @@ def main(repos, out):
     )
     frame["readme_mcw"] = frame["words"].apply(most_common)
     frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with MCW to {out}")
 
 
 def to_words(readme, mit):

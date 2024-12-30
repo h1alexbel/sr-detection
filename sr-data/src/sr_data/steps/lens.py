@@ -38,7 +38,7 @@ def main(repos, out):
     frame["readme_avg_slen"] = frame["readme"].apply(avg_slen)
     frame["readme_avg_wlen"] = frame["readme"].apply(avg_wlen)
     frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with length metrics to {out}")
 
 
 def rlen(readme):

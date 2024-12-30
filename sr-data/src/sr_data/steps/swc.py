@@ -39,7 +39,7 @@ def main(repos, out, config):
                 axis=1
             )
     frame.to_csv(out, index=False)
-    logger.info(f"Saved output to {out}")
+    logger.info(f"Saved {len(frame)} repositories with SWC to {out}")
 
 
 def word_count(repo, word, txt) -> int:

@@ -40,7 +40,7 @@ def main(repos, out):
     DetectorFactory.seed = 0
     frame = pd.read_csv(repos)
     start = len(frame)
-    logger.info(f"Repositories in {start}")
+    logger.info(f"Repositories to filter: {start}")
     frame = frame.dropna(subset=["readme"])
     non_null = start - len(frame)
     after_null = len(frame)
@@ -51,9 +51,8 @@ def main(repos, out):
     non_english = after_null - len(frame)
     logger.info(f"Skipped {non_english} non-english repositories")
     logger.info(f"Total skipped: {non_null + non_english}")
-    logger.info(f"Saving {len(frame)} good repositories to {out}")
-    logger.debug(frame)
     frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} good repositories to {out}")
 
 
 def md_to_text(text):

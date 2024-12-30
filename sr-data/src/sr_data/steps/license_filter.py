@@ -34,7 +34,8 @@ def main(repos, out):
     frame["license"] = frame["license"].apply(lambda name: str(name).lower())
     frame = frame[frame["license"].isin(licenses)]
     logger.info(
-        f"Skipped {before - len(frame)} repositories without proper license"
+        f"Filtered out {before - len(frame)} repositories without proper license"
     )
     frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories with proper license to {out}")
 

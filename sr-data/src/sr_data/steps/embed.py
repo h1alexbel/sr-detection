@@ -50,17 +50,17 @@ def main(repos, prefix, hf, cohere):
     )
     for model, checkpoint in models.items():
         logger.info(
-            f"Generating {model} embeddings for {repos} ({len(frame)}r x {len(frame.columns)}c)"
+            f"Generating {model} embeddings for {repos} ({len(frame)}r x {len(frame.columns)}c)..."
         )
         if model == "cohere":
             embed_cohere(cohere, frame, prefix)
         else:
-            logger.info(f"Inference checkpoint: {checkpoint}")
+            logger.debug(f"Inference checkpoint: {checkpoint}")
             embeddings = pd.DataFrame(infer(frame["mcw"].tolist(), checkpoint, hf))
             embeddings.insert(0, 'repo', frame["repo"])
             embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
         logger.info(
-            f"Generated embeddings saved to {prefix}-{model}.csv ({len(embeddings)}r x {len(embeddings.columns)}c)"
+            f"Generated {len(embeddings)} embeddings saved to {prefix}-{model}.csv ({len(embeddings)}r x {len(embeddings.columns)}c)"
         )
 
 

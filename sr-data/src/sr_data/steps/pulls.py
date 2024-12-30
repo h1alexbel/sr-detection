@@ -33,6 +33,7 @@ def main(repos, out, token):
     for idx, row in frame.iterrows():
         frame.at[idx, "pulls"] = pulls(row["repo"], token)
     frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories with pulls to {out}")
 
 
 def pulls(repo, token) -> int:

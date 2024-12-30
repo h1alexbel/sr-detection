@@ -73,7 +73,7 @@ def main(repos, out):
         frame.at[idx, "has_release_workflow"] = int(releases)
         frame.at[idx, "w_simplicity"] = w_score(frame.loc[idx])
     frame.to_csv(out, index=False)
-    logger.info(f"Saved repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with workflows to {out}")
 
 wscope = ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
 weights = {

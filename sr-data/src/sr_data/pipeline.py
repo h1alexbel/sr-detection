@@ -64,8 +64,10 @@ def main(representation, steps, pipes, out):
         if "extras" in params:
             for extra in params["extras"]:
                 commands.append(extra)
-        logger.info(f"Built step: {command}")
+        logger.debug(f"Built step: {command}")
     with open(pipes, "w") as f:
         f.write("\n".join(commands))
     with open(out, "w") as f:
         f.write("\n".join(files))
+    logger.info(f"The following commands will be executed:\n {commands}")
+    logger.info(f"We expect the following files to be generated: {files}")

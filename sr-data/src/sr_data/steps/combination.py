@@ -42,10 +42,6 @@ def main(scores, embeddings, dir, identifier):
         f"{dir}/d{identifier}-{os.path.splitext(os.path.basename(scores))[0]}"
         f"+{os.path.splitext(os.path.basename(embeddings))[0]}.csv"
     )
-    pd.merge(
-        pd.read_csv(scores), pd.read_csv(embeddings), on="repo"
-    ).to_csv(
-        out,
-        index=False
-    )
-    logger.info(f"Output dataset saved to {out}")
+    frame = pd.merge(pd.read_csv(scores), pd.read_csv(embeddings), on="repo")
+    frame.to_csv(out, index=False)
+    logger.info(f"Saved {len(frame)} repositories to combined dataset in {out}")

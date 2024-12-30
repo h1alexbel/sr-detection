@@ -40,4 +40,4 @@ def main(repos, out):
     )
     scores = frame[["repo", "score"]]
     scores.to_csv(out, index=False)
-    logger.info(f"Scores dataset created in {out}")
+    logger.info(f"Saved {len(scores)} repositories to scores dataset in {out}")

@@ -56,9 +56,9 @@ def main(repos, out, token):
             frame.at[idx, "maven_poms_count"] = 0
     before = len(frame)
     frame = frame[frame.maven_projects_count != 0]
-    logger.info(f"Skipped {before - len(frame)} repositories without pom.xml files")
+    logger.info(f"Filtered out {before - len(frame)} repositories without pom.xml file")
     frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with Maven to {out}")
 
 
 # @todo #118:35min Remove branch that returns None if found == 0.
@@ -115,7 +115,7 @@ def merge(build, repo):
                         namespaces
                     )
             ) > 0:
-                logger.info(f"Skipping {path}, since it contains @project dependency")
+                logger.debug(f"Skipping {path}, since it contains @project dependency")
             else:
                 profile = {}
                 packaging = root.find(".//pom:packaging", namespaces)
@@ -132,7 +132,7 @@ def merge(build, repo):
                         plugins.append(artifact.text)
                 good.append(profile)
     used = len(good)
-    logger.info(f"Found {used} good Maven projects in {repo}")
+    logger.debug(f"Found {used} good Maven projects in {repo}")
     return {
         "projects": used,
         "plugins": sorted(list(set(plugins))),

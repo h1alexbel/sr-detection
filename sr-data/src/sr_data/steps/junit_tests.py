@@ -38,7 +38,7 @@ TEST_ANNOTATIONS = (
 
 def main(repos, out, token):
     frame = pd.read_csv(repos)
-    logger.info(f"Counting JUnit tests in {len(frame)} repositories")
+    logger.info(f"Counting JUnit tests in {len(frame)} repositories...")
     for idx, row in frame.iterrows():
         frame.at[idx, "tests"] = count_of_tests(
             row["repo"],
@@ -46,7 +46,7 @@ def main(repos, out, token):
             token
         )
     frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with JUnit tests to {out}")
 
 
 def count_of_tests(repo, branch, token) -> int:
@@ -67,5 +67,5 @@ def count_of_tests(repo, branch, token) -> int:
         logger.debug(f"Checking {path}")
         for annotation in TEST_ANNOTATIONS:
             found += content.count(f"@{annotation}")
-    logger.info(f"Found {found} tests in {len(files)} files inside {repo}")
+    logger.debug(f"Found {found} tests in {len(files)} files inside {repo}")
     return found

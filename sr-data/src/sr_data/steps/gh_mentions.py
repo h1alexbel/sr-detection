@@ -31,7 +31,7 @@ from loguru import logger
 def main(repos, out):
     frame = pd.read_csv(repos)
     logger.info(
-        f"Counting GitHub pull request, and issue mentions in {len(frame)} repositories"
+        f"Counting GitHub pull request, and issue mentions in {len(frame)} repositories..."
     )
     if frame.empty:
         frame["readme_pmentions"] = 0
@@ -40,7 +40,7 @@ def main(repos, out):
         frame[["readme_pmentions", "readme_imentions"]] = (
             frame["readme"].apply(mentions)).apply(pd.Series)
     frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories to {out}")
+    logger.info(f"Saved {len(frame)} repositories with issues/pull request mentions to {out}")
 
 
 def mentions(readme) -> [int, int]:
