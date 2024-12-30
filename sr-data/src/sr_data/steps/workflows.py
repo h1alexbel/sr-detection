@@ -1,6 +1,7 @@
 """
 Collect information about GitHub workflows in the repo.
 """
+import numpy as np
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -30,7 +31,7 @@ from loguru import logger
 
 def main(repos, out):
     frame = pd.read_csv(repos)
-    frame["workflows"] = frame["workflows"].fillna("")
+    frame["workflows"] = frame["workflows"].fillna(0)
     for idx, row in frame.iterrows():
         repo = row["repo"]
         branch = row["branch"]
@@ -65,12 +66,41 @@ def main(repos, out):
             if info["w_release"]:
                 releases = True
         frame.at[idx, "workflows"] = len(ymls)
+        frame["workflows"] = frame["workflows"]
         frame.at[idx, "w_jobs"] = tjobs
         frame.at[idx, "w_oss"] = len(set(oss))
         frame.at[idx, "w_steps"] = steps
-        frame.at[idx, "has_release_workflow"] = releases
+        frame.at[idx, "has_release_workflow"] = int(releases)
+        frame.at[idx, "w_simplicity"] = w_score(frame.loc[idx])
     frame.to_csv(out, index=False)
     logger.info(f"Saved repositories to {out}")
+
+wscope = ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
+weights = {
+    "workflows": 0.3,
+    "w_jobs": 0.25,
+    "w_steps": 0.25,
+    "w_oss": 0.1,
+    "has_release_workflow": 0.1,
+}
+
+def w_score(row) -> int:
+    """
+    Workflow simplicity score.
+    :return: Calculated metric for workflow simplicity score.
+    @todo #244:35min Enhance workflow simplicity score with min and max adjustment.
+     Currently, we just subtract collected value from 1. We should adjust it with
+     min and max values from the dataset. So formula should look like:
+     1 - (row - min) / (max - min).
+    """
+    normalized = {
+        "workflows": 1 - row["workflows"],
+        "w_jobs": 1 - row["w_jobs"],
+        "w_steps": 1 - row["w_steps"],
+        "w_oss": 1 - row["w_oss"],
+        "has_release_workflow": 1 - row["has_release_workflow"],
+    }
+    return sum(normalized[key] * weights[key] for key in weights)
 
 
 def fetch(path) -> str:

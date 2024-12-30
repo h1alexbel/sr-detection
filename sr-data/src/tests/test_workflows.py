@@ -29,8 +29,7 @@ from tempfile import TemporaryDirectory
 import pandas as pd
 import pytest
 import yaml
-from sr_data.steps.workflows import workflow_info, main, fetch, \
-    used_for_releases
+from sr_data.steps.workflows import workflow_info, main, fetch, used_for_releases, w_score
 
 
 class TestWorkflows(unittest.TestCase):
@@ -90,7 +89,7 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_collects_unique_oss_across_all_files(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -109,7 +108,7 @@ jobs:
                 f"OSS count: {oss} does not match with expected: {expected}"
             )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_collects_workflows_for_all(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -129,7 +128,7 @@ jobs:
                 f"Frame {frame.columns} doesn't have expected columns"
             )
 
-    @pytest.mark.fast
+    @pytest.mark.nightly
     def test_counts_workflows_correctly(self):
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "workflows.csv")
@@ -402,4 +401,19 @@ jobs:
             info["w_steps"],
             0,
             f"Steps count in workflow: '{info}' does not match with expected"
+        )
+
+
+    @pytest.mark.fast
+    def test_calculates_simplicity_score(self):
+        scores = pd.read_csv(
+            os.path.join(
+                os.path.dirname(os.path.realpath(__file__)),
+                "resources/to-wscore.csv"
+            )
+        )
+        self.assertEqual(
+            w_score(scores.iloc[0]),
+            -0.85,
+            "Calculated score does not match with expected"
         )
