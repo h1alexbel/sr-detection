@@ -56,6 +56,7 @@ class TestNumerical(unittest.TestCase):
                         "branches",
                         "workflows",
                         "has_release_workflow",
+                        "w_simplicity",
                         "tests"
                     ]
                 ),
@@ -63,11 +64,11 @@ class TestNumerical(unittest.TestCase):
             )
             self.assertEqual(
                 frame.iloc[0]["has_release_workflow"],
-                1,
-                "has_release_workflow doesn't match with expected format"
+                0,
+                "has_release_workflow doesn't match with expected"
             )
             self.assertEqual(
                 frame.iloc[1]["has_release_workflow"],
-                0,
-                "has_release_workflow doesn't match with expected format"
+                1,
+                "has_release_workflow doesn't match with expected"
             )

@@ -38,9 +38,11 @@ def main(repos, out):
             "branches",
             "workflows",
             "has_release_workflow",
+            "w_simplicity",
             "tests"
         ]
     ]
-    frame["has_release_workflow"] = frame["has_release_workflow"].astype(int)
+    frame["has_release_workflow"] = frame["has_release_workflow"]
+    print(frame)
     frame.to_csv(out, index=False)
     logger.info(f"Numerical dataset created in {out}")
