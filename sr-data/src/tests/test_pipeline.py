@@ -54,7 +54,7 @@ class TestPipeline(unittest.TestCase):
                 steps,
                 [
                     'just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"\n',
-                    'just filter "../repos-with-pulls.csv" "../after-filter.csv"\n',
+                    'just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"\n',
                     'just extract "../after-filter.csv" "../after-extract.csv"\n',
                     'just embed "../after-extract.csv" "../embeddings"\n',
                     'cp "embeddings-s-bert-384.csv" "sbert.csv"\n',
@@ -99,7 +99,7 @@ class TestPipeline(unittest.TestCase):
                 steps,
                 [
                     'just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"\n',
-                    'just filter "../repos-with-pulls.csv" "../after-filter.csv"\n',
+                    'just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"\n',
                     'just workflows "../after-filter.csv" "../after-workflows.csv"',
                 ],
                 f"Resulted steps: {steps} don't match with expected"
