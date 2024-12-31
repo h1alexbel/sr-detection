@@ -55,6 +55,9 @@ def main(representation, steps, pipes, out):
         if "token" in params:
             token = params["token"]
             command += f" {token}"
+        if "filtered" in params:
+            filtered = params["filtered"]
+            command += f" \"{filtered}\""
         if "out" in params:
             output = params["out"]
             command += f" \"{output}\""

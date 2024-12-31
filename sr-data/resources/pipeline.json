@@ -6,6 +6,7 @@
   },
   "filter": {
     "repos": "@in",
+    "filtered": "../filtered.txt",
     "out": "../after-filter.csv"
   },
   "extract": {
