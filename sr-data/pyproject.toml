@@ -56,8 +56,8 @@ args = [
 ]
 
 [tool.poe.tasks.filter]
-script = "sr_data.steps.filter:main(repos, out)"
-args = [{name = "repos"}, {name = "out"}]
+script = "sr_data.steps.filter:main(repos, out, removed)"
+args = [{name = "repos"}, {name = "out"}, {name = "removed"}]
 
 [tool.poe.tasks.license_filter]
 script = "sr_data.steps.license_filter:main(repos, out)"

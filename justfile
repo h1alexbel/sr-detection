@@ -99,8 +99,8 @@ license_filter repos out="experiment/after-license-filter.csv":
   cd sr-data && poetry poe license_filter --repos "{{repos}}" --out "{{out}}"
 
 # Filter collected repositories.
-filter repos out="experiment/after-filter.csv":
-  cd sr-data && poetry poe filter --repos "{{repos}}" --out "{{out}}"
+filter repos removed out="experiment/after-filter.csv":
+  cd sr-data && poetry poe filter --repos "{{repos}}" --out "{{out}}" --removed "{{removed}}"
 
 # Extract headings from README files.
 extract repos out="experiment/after-extract.csv":

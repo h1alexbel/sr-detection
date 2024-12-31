@@ -27,9 +27,10 @@ import pandas as pd
 from bs4 import BeautifulSoup, ParserRejectedMarkup
 from langdetect import DetectorFactory, LangDetectException, detect_langs
 from loguru import logger
+from sr_data.filtered import filtered
 
 
-def main(repos, out):
+def main(repos, out, rm):
     """
     Filter.
     :param repos: CSV with repositories
@@ -41,15 +42,20 @@ def main(repos, out):
     frame = pd.read_csv(repos)
     start = len(frame)
     logger.info(f"Repositories to filter: {start}")
+    dnull = frame[frame["readme"].isnull()]
     frame = frame.dropna(subset=["readme"])
     non_null = start - len(frame)
     after_null = len(frame)
-    logger.info(f"Skipped {non_null} repositories with empty README files")
+    logger.info(f"Filtered {non_null} repositories with empty README files")
     frame["readme_text"] = frame["readme"].apply(md_to_text)
+    deng = frame[~frame["readme_text"].apply(english)]
     frame = frame[frame["readme_text"].apply(english)]
     frame = frame.drop(columns=["readme_text"])
     non_english = after_null - len(frame)
-    logger.info(f"Skipped {non_english} non-english repositories")
+    logger.info(f"Filtered {non_english} non-english repositories")
+    with open(rm, "w") as f:
+        filtered(f, dnull["repo"].tolist(), "filter-null-readme")
+        filtered(f, deng["repo"].tolist(), "filter-non-english")
     logger.info(f"Total skipped: {non_null + non_english}")
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} good repositories to {out}")
