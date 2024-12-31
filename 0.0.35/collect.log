@@ -1,0 +1,605 @@
+${RULTOR:+sudo} npm install -g ghminer@0.0.7
+
+changed 7 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+poetry self add 'poethepoet[poetry_plugin]'
+Using version ^0.32.0 for poethepoet
+
+Updating dependencies
+Resolving dependencies...
+
+No dependencies to install or update
+cd sr-data && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-data (0.0.0)
+cd sr-train && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-train (0.0.0)
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-detection (0.0.0)
+mkdir -p collection/0.0.35
+ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" --start "2024-01-01" --end "2024-01-05" --tokens "$PATS" --filename "repos"
+Running ghminer@0.0.7
+Compiled search query: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-01-01..2024-01-05
+Total results: 44
+
+Extracted 10 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4988,
+  used: 12,
+  resetAt: '2024-12-31T10:31:37Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEw
+
+Extracted 20 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4987,
+  used: 13,
+  resetAt: '2024-12-31T10:31:37Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIw
+
+Extracted 30 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4986,
+  used: 14,
+  resetAt: '2024-12-31T10:31:37Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMw
+
+Extracted 40 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4985,
+  used: 15,
+  resetAt: '2024-12-31T10:31:37Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQw
+
+Extracted 44 results so far...
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4984,
+  used: 16,
+  resetAt: '2024-12-31T10:31:37Z',
+  nodeCount: 0
+}
+hasNextPage: false
+endCursor: Y3Vyc29yOjQ0
+Fetched 44 results.
+Results saved into repos.csv
+cd sr-data && poetry poe pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes "../steps.txt" --out "../files.txt"
+Poe => pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes ../steps.txt --out ../files.txt
+2024-12-31 10:29:58.647 | DEBUG    | sr_data.pipeline:main:70 - Built step: just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"
+2024-12-31 10:29:58.647 | DEBUG    | sr_data.pipeline:main:70 - Built step: just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"
+2024-12-31 10:29:58.647 | DEBUG    | sr_data.pipeline:main:70 - Built step: just workflows "../after-filter.csv" "../after-workflows.csv"
+2024-12-31 10:29:58.647 | DEBUG    | sr_data.pipeline:main:70 - Built step: just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"
+2024-12-31 10:29:58.647 | INFO     | sr_data.pipeline:main:75 - The following commands will be executed:
+ ['just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"', 'just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"', 'just workflows "../after-filter.csv" "../after-workflows.csv"', 'just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"']
+2024-12-31 10:29:58.647 | INFO     | sr_data.pipeline:main:76 - We expect the following files to be generated: ['repos.csv', 'repos-with-pulls.csv', 'after-filter.csv', 'after-workflows.csv', 'after-junit.csv']
+cd sr-data && poetry poe pulls --repos "../repos.csv" --token "REDACTED" --out "../repos-with-pulls.csv"
+Poe => pulls --repos ../repos.csv --token REDACTED --out ../repos-with-pulls.csv
+2024-12-31 10:30:00.941 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for jocrugon/Pokedex: 0
+2024-12-31 10:30:01.132 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for retrogemHK/codingtest_java: 0
+2024-12-31 10:30:01.342 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for arconia-io/arconia: 0
+2024-12-31 10:30:01.548 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for linux-china/sieve-cache: 0
+2024-12-31 10:30:01.775 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for CleanroomMC/Fugue: 12
+2024-12-31 10:30:01.961 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for udhayakumar2701/cricketTournamentSetting: 0
+2024-12-31 10:30:02.171 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for xyzeva/ender-relay: 0
+2024-12-31 10:30:02.469 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for dnwwdwd/homieMatching: 2
+2024-12-31 10:30:04.070 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for GDSC-Hongik/gdsc-server: 404
+2024-12-31 10:30:04.256 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for MirnaGama/hospital-management-api: 11
+2024-12-31 10:30:04.446 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for stuetzlec/merrimack_cs_examples: 0
+2024-12-31 10:30:04.641 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for lgdd/liferay-client-extensions-samples: 1
+2024-12-31 10:30:04.892 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for MehVahdJukaar/polytone: 7
+2024-12-31 10:30:05.081 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for guandasheng/adguardhome: 0
+2024-12-31 10:30:05.311 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for sameh-tarek/Fawry-Internship: 4
+2024-12-31 10:30:05.492 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for DomainDrivers/dd-java: 0
+2024-12-31 10:30:06.196 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for Apress/ChatGPT-for-Java: 0
+2024-12-31 10:30:06.857 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for ttoklip/BackEnd: 164
+2024-12-31 10:30:07.127 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for koupleless/koupleless: 90
+2024-12-31 10:30:07.330 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for alegian/thaumcraft7: 2
+2024-12-31 10:30:07.562 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for Eanya-Tonic/CCTV_Viewer: 14
+2024-12-31 10:30:08.182 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for spon-us/SponUs-BE: 180
+2024-12-31 10:30:08.369 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for d1tto/Rengar: 0
+2024-12-31 10:30:08.562 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for flynt-3650/java-exam-practice: 3
+2024-12-31 10:30:08.791 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for Rozmir-Rohi/mo-creatures-legacy: 24
+2024-12-31 10:30:08.973 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for AutoAccountingOrg/Qianji_auto: 0
+2024-12-31 10:30:09.184 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for sidduganeshsid/Core-Java: 1
+2024-12-31 10:30:09.411 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for wuchubuzai2018/lantu-pay-sdk: 1
+2024-12-31 10:30:10.494 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for frc-862/rhapsody: 247
+2024-12-31 10:30:10.698 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for dromara/warm-flow: 16
+2024-12-31 10:30:10.910 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for MincraftEinstein/SubtleEffects: 4
+2024-12-31 10:30:11.108 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for 6tail/tyme4j: 3
+2024-12-31 10:30:11.286 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for begcode/begcode-admin: 0
+2024-12-31 10:30:11.480 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for youdeyunke/app: 0
+2024-12-31 10:30:11.648 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for JAgentSphere/bytebuddy-agent-demo: 0
+2024-12-31 10:30:11.810 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for hctestedu/api-test-project: 0
+2024-12-31 10:30:11.984 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for simasch/cqrs-meets-modern-java: 0
+2024-12-31 10:30:12.146 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for mt1006/mc-ar-mod: 0
+2024-12-31 10:30:12.318 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for D0g3-8Bit/OFBiz-Attack: 0
+2024-12-31 10:30:12.590 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for ArtformGames/BungeeAuthProxy: 0
+2024-12-31 10:30:12.850 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for ProgrammerLMS/mini-git: 1
+2024-12-31 10:30:13.132 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for jinho-yoo-jack/wanted-preonboarding-challenge-backend-16: 34
+2024-12-31 10:30:13.321 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for seregamorph/spring-test-smart-context: 13
+2024-12-31 10:30:13.491 | INFO     | sr_data.steps.pulls:pulls:57 - Fetched pulls for giteecode/JwSystemPublic: 0
+2024-12-31 10:30:13.497 | INFO     | sr_data.steps.pulls:main:36 - Saved 44 repositories with pulls to ../repos-with-pulls.csv
+cd sr-data && poetry poe filter --repos "../repos-with-pulls.csv" --out "../after-filter.csv" --filtered "../filtered.txt"
+Poe => filter --repos ../repos-with-pulls.csv --out ../after-filter.csv --filtered ../filtered.txt
+2024-12-31 10:30:14.587 | INFO     | sr_data.steps.filter:main:40 - Start filtering...
+2024-12-31 10:30:14.593 | INFO     | sr_data.steps.filter:main:44 - Repositories to filter: 44
+2024-12-31 10:30:14.595 | INFO     | sr_data.steps.filter:main:49 - Filtered out 4 repositories with empty README files
+2024-12-31 10:30:15.729 | INFO     | sr_data.steps.filter:main:55 - Filtered out 15 non-english repositories
+2024-12-31 10:30:15.729 | INFO     | sr_data.steps.filter:main:59 - Total filtered: 19
+2024-12-31 10:30:15.734 | INFO     | sr_data.steps.filter:main:61 - Saved 25 good repositories to ../after-filter.csv
+cd sr-data && poetry poe workflows --repos ../after-filter.csv --out ../after-workflows.csv
+Poe => workflows --repos ../after-filter.csv --out ../after-workflows.csv
+2024-12-31 10:30:16.890 | INFO     | sr_data.steps.workflows:main:47 - Repo arconia-io/arconia has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.013 | INFO     | sr_data.steps.workflows:main:47 - Repo linux-china/sieve-cache has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.013 | INFO     | sr_data.steps.workflows:main:47 - Repo CleanroomMC/Fugue has 2 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.197 | INFO     | sr_data.steps.workflows:main:47 - Repo xyzeva/ender-relay has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.338 | INFO     | sr_data.steps.workflows:main:47 - Repo dnwwdwd/homieMatching has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.339 | INFO     | sr_data.steps.workflows:main:47 - Repo MirnaGama/hospital-management-api has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.479 | INFO     | sr_data.steps.workflows:main:47 - Repo stuetzlec/merrimack_cs_examples has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.480 | INFO     | sr_data.steps.workflows:main:47 - Repo lgdd/liferay-client-extensions-samples has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.638 | INFO     | sr_data.steps.workflows:main:47 - Repo MehVahdJukaar/polytone has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.639 | INFO     | sr_data.steps.workflows:main:47 - Repo sameh-tarek/Fawry-Internship has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.639 | INFO     | sr_data.steps.workflows:main:47 - Repo Apress/ChatGPT-for-Java has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.640 | INFO     | sr_data.steps.workflows:main:47 - Repo koupleless/koupleless has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.749 | INFO     | sr_data.steps.workflows:main:47 - Repo alegian/thaumcraft7 has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.855 | INFO     | sr_data.steps.workflows:main:47 - Repo d1tto/Rengar has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.856 | INFO     | sr_data.steps.workflows:main:47 - Repo Rozmir-Rohi/mo-creatures-legacy has 1 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.977 | INFO     | sr_data.steps.workflows:main:47 - Repo sidduganeshsid/Core-Java has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:17.977 | INFO     | sr_data.steps.workflows:main:47 - Repo frc-862/rhapsody has 2 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.306 | INFO     | sr_data.steps.workflows:main:47 - Repo MincraftEinstein/SubtleEffects has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.307 | INFO     | sr_data.steps.workflows:main:47 - Repo 6tail/tyme4j has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.307 | INFO     | sr_data.steps.workflows:main:47 - Repo begcode/begcode-admin has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.307 | INFO     | sr_data.steps.workflows:main:47 - Repo JAgentSphere/bytebuddy-agent-demo has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.308 | INFO     | sr_data.steps.workflows:main:47 - Repo simasch/cqrs-meets-modern-java has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.309 | INFO     | sr_data.steps.workflows:main:47 - Repo mt1006/mc-ar-mod has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.309 | INFO     | sr_data.steps.workflows:main:47 - Repo ArtformGames/BungeeAuthProxy has 2 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.548 | INFO     | sr_data.steps.workflows:main:47 - Repo seregamorph/spring-test-smart-context has 0 *.yml|*.yaml workflows inside .github/workflows
+2024-12-31 10:30:18.551 | INFO     | sr_data.steps.workflows:main:76 - Saved 25 repositories with workflows to ../after-workflows.csv
+cd sr-data && poetry poe junit --repos "../after-workflows.csv" --out "../after-junit.csv" --token "REDACTED"
+Poe => junit --repos ../after-workflows.csv --out ../after-junit.csv --token REDACTED
+2024-12-31 10:30:19.583 | INFO     | sr_data.steps.junit_tests:main:41 - Counting JUnit tests in 25 repositories...
+2024-12-31 10:30:19.795 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in arconia-io/arconia
+2024-12-31 10:30:19.795 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside arconia-io/arconia
+2024-12-31 10:30:19.957 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 1 test files in linux-china/sieve-cache
+2024-12-31 10:30:20.115 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/org/mvnsearch/SieveCacheTest.java
+2024-12-31 10:30:20.116 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 3 tests in 1 files inside linux-china/sieve-cache
+2024-12-31 10:30:20.259 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in CleanroomMC/Fugue
+2024-12-31 10:30:20.259 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside CleanroomMC/Fugue
+2024-12-31 10:30:20.406 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in xyzeva/ender-relay
+2024-12-31 10:30:20.406 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside xyzeva/ender-relay
+2024-12-31 10:30:20.554 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 8 test files in dnwwdwd/homieMatching
+2024-12-31 10:30:20.658 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/com/hjj/homieMatching/utils/Test.java
+2024-12-31 10:30:20.768 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/BitMapTest.java
+2024-12-31 10:30:20.880 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/BloomFilterTest.java
+2024-12-31 10:30:20.965 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/InsertUserTest.java
+2024-12-31 10:30:21.078 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/PrivateMessageTest.java
+2024-12-31 10:30:21.193 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/RecommendUsersTest.java
+2024-12-31 10:30:21.276 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/RedisDistributedLockTest.java
+2024-12-31 10:30:21.366 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/hjj/homiematching/service/RedisLimiterTest.java
+2024-12-31 10:30:21.366 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 11 tests in 8 files inside dnwwdwd/homieMatching
+2024-12-31 10:30:21.551 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 26 test files in MirnaGama/hospital-management-api
+2024-12-31 10:30:21.666 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/controllers/AuthenticationControllerTest.java
+2024-12-31 10:30:21.810 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/controllers/ConsultationControllerTest.java
+2024-12-31 10:30:21.921 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/controllers/DoctorControllerTest.java
+2024-12-31 10:30:22.039 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/controllers/PatientControllerTest.java
+2024-12-31 10:30:22.208 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/ConsultationServiceTest.java
+2024-12-31 10:30:22.321 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/DoctorServiceTest.java
+2024-12-31 10:30:22.475 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/PatientServiceTest.java
+2024-12-31 10:30:22.601 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/UserServiceTest.java
+2024-12-31 10:30:22.714 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/auth/AuthServiceTest.java
+2024-12-31 10:30:22.838 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/auth/UserDetailsServiceTest.java
+2024-12-31 10:30:22.969 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/service/auth/jwt/TokenServiceTest.java
+2024-12-31 10:30:23.081 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/consultation/FindConsultationByDoctorAndDateUseCaseTest.java
+2024-12-31 10:30:23.192 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/consultation/FindConsultationByIdUseCaseTest.java
+2024-12-31 10:30:23.320 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/consultation/FindConsultationByPatientAndDateUseCaseTest.java
+2024-12-31 10:30:23.460 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/consultation/SaveConsultationUseCaseTest.java
+2024-12-31 10:30:23.588 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/doctor/FindDoctorByIdUseCaseTest.java
+2024-12-31 10:30:23.705 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/doctor/FindDoctorsUseCaseTest.java
+2024-12-31 10:30:23.880 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/doctor/FindOneFreeDoctorBySpecialtyUseCaseTest.java
+2024-12-31 10:30:23.989 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/doctor/SaveDoctorUseCaseTest.java
+2024-12-31 10:30:24.094 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/jwt/CreateJWTUseCaseTest.java
+2024-12-31 10:30:24.227 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/jwt/GetJWTSubjectUseCaseTest.java
+2024-12-31 10:30:24.396 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/patient/FindPatientByIdUseCaseTest.java
+2024-12-31 10:30:24.518 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/patient/FindPatientsUseCaseTest.java
+2024-12-31 10:30:24.671 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/patient/SavePatientUseCaseTest.java
+2024-12-31 10:30:24.826 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/user/FindUserByLoginUseCaseTest.java
+2024-12-31 10:30:24.946 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/mirna/hospitalmanagementapi/unit/application/usecase/user/SaveUserUseCaseTest.java
+2024-12-31 10:30:24.946 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 93 tests in 26 files inside MirnaGama/hospital-management-api
+2024-12-31 10:30:25.242 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in stuetzlec/merrimack_cs_examples
+2024-12-31 10:30:25.242 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside stuetzlec/merrimack_cs_examples
+2024-12-31 10:30:25.438 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in lgdd/liferay-client-extensions-samples
+2024-12-31 10:30:25.438 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside lgdd/liferay-client-extensions-samples
+2024-12-31 10:30:25.594 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in MehVahdJukaar/polytone
+2024-12-31 10:30:25.594 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside MehVahdJukaar/polytone
+2024-12-31 10:30:25.791 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 7 test files in sameh-tarek/Fawry-Internship
+2024-12-31 10:30:25.926 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3-solution/src/test/java/org/example/account/AccountManagerTest.java
+2024-12-31 10:30:26.055 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3-solution/src/test/java/org/example/store/MockTest.java
+2024-12-31 10:30:26.204 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3-solution/src/test/java/org/example/store/StoreMockTest.java
+2024-12-31 10:30:26.328 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3-solution/src/test/java/org/example/store/StoreTest.java
+2024-12-31 10:30:26.515 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3/src/test/java/org/example/store/MockTest.java
+2024-12-31 10:30:26.604 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3/src/test/java/org/example/store/StoreMockTest.java
+2024-12-31 10:30:26.702 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking Week02/unit-testing/unit-test-3/src/test/java/org/example/store/StoreTest.java
+2024-12-31 10:30:26.702 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 16 tests in 7 files inside sameh-tarek/Fawry-Internship
+2024-12-31 10:30:26.869 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in Apress/ChatGPT-for-Java
+2024-12-31 10:30:26.869 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside Apress/ChatGPT-for-Java
+2024-12-31 10:30:27.048 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in koupleless/koupleless
+2024-12-31 10:30:27.048 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside koupleless/koupleless
+2024-12-31 10:30:27.246 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in alegian/thaumcraft7
+2024-12-31 10:30:27.246 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside alegian/thaumcraft7
+2024-12-31 10:30:27.431 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 1 test files in d1tto/Rengar
+2024-12-31 10:30:27.592 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/rengar/thirdparty/hunter/cn/ac/ios/Test.java
+2024-12-31 10:30:27.592 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 1 files inside d1tto/Rengar
+2024-12-31 10:30:27.878 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in Rozmir-Rohi/mo-creatures-legacy
+2024-12-31 10:30:27.878 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside Rozmir-Rohi/mo-creatures-legacy
+2024-12-31 10:30:28.044 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in sidduganeshsid/Core-Java
+2024-12-31 10:30:28.044 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside sidduganeshsid/Core-Java
+2024-12-31 10:30:28.258 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 15 test files in frc-862/rhapsody
+2024-12-31 10:30:28.412 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/ClimbSystemTest.java
+2024-12-31 10:30:28.559 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/CollectorSystemTest.java
+2024-12-31 10:30:28.678 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/CycleSytemTest.java
+2024-12-31 10:30:28.806 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/DrivetrainSystemTest.java
+2024-12-31 10:30:28.928 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/FlywheelSystemTest.java
+2024-12-31 10:30:29.032 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/IndexerSystemTest.java
+2024-12-31 10:30:29.130 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/PivotAngleTest.java
+2024-12-31 10:30:29.246 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/SingSystemTest.java
+2024-12-31 10:30:29.358 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/TurnSystemTest.java
+2024-12-31 10:30:29.480 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/ClimbTest.java
+2024-12-31 10:30:29.606 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/CollectorTest.java
+2024-12-31 10:30:29.725 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/DriveTest.java
+2024-12-31 10:30:29.848 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/FlywheelTest.java
+2024-12-31 10:30:29.968 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/IndexerTest.java
+2024-12-31 10:30:30.095 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/main/java/frc/robot/command/tests/testcmds/TurnTest.java
+2024-12-31 10:30:30.095 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 15 files inside frc-862/rhapsody
+2024-12-31 10:30:30.278 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in MincraftEinstein/SubtleEffects
+2024-12-31 10:30:30.278 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside MincraftEinstein/SubtleEffects
+2024-12-31 10:30:30.430 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 35 test files in 6tail/tyme4j
+2024-12-31 10:30:30.556 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/ConstellationTest.java
+2024-12-31 10:30:30.662 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/DirectionTest.java
+2024-12-31 10:30:30.797 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/DogDayTest.java
+2024-12-31 10:30:30.909 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/DutyTest.java
+2024-12-31 10:30:31.027 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/EarthlyBranchTest.java
+2024-12-31 10:30:31.142 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/EclipticTest.java
+2024-12-31 10:30:31.265 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/EightCharTest.java
+2024-12-31 10:30:31.384 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/ElementTest.java
+2024-12-31 10:30:31.501 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/FetusTest.java
+2024-12-31 10:30:31.608 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/GodTest.java
+2024-12-31 10:30:31.777 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/HeavenlyStemTest.java
+2024-12-31 10:30:31.892 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/HideHeavenStemDayTest.java
+2024-12-31 10:30:32.006 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/JulianDayTest.java
+2024-12-31 10:30:32.118 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LegalHolidayTest.java
+2024-12-31 10:30:32.229 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LunarDayTest.java
+2024-12-31 10:30:32.423 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LunarFestivalTest.java
+2024-12-31 10:30:32.624 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LunarHourTest.java
+2024-12-31 10:30:32.736 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LunarMonthTest.java
+2024-12-31 10:30:32.843 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/LunarYearTest.java
+2024-12-31 10:30:32.970 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/NineDayTest.java
+2024-12-31 10:30:33.076 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/NineStarTest.java
+2024-12-31 10:30:33.216 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/PhenologyTest.java
+2024-12-31 10:30:33.325 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/PlumRainDayTest.java
+2024-12-31 10:30:33.452 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SixStarTest.java
+2024-12-31 10:30:33.599 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SixtyCycleTest.java
+2024-12-31 10:30:33.706 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarDayTest.java
+2024-12-31 10:30:33.825 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarFestivalTest.java
+2024-12-31 10:30:33.938 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarHalfYearTest.java
+2024-12-31 10:30:34.082 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarMonthTest.java
+2024-12-31 10:30:34.179 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarSeasonTest.java
+2024-12-31 10:30:34.289 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarTermTest.java
+2024-12-31 10:30:34.433 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarTimeTest.java
+2024-12-31 10:30:34.544 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/SolarYearTest.java
+2024-12-31 10:30:34.664 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/TabooTest.java
+2024-12-31 10:30:34.777 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/tyme/test/WeekTest.java
+2024-12-31 10:30:34.777 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 334 tests in 35 files inside 6tail/tyme4j
+2024-12-31 10:30:35.011 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 152 test files in begcode/begcode-admin
+2024-12-31 10:30:35.151 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/IntegrationTest.java
+2024-12-31 10:30:35.266 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/TechnicalStructureTest.java
+2024-12-31 10:30:35.347 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/config/CRLFLogConverterTest.java
+2024-12-31 10:30:35.434 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/config/StaticResourcesWebConfigurerTest.java
+2024-12-31 10:30:35.503 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/config/WebConfigurerTest.java
+2024-12-31 10:30:35.580 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/config/timezone/HibernateTimeZoneIT.java
+2024-12-31 10:30:35.691 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/ApiPermissionTest.java
+2024-12-31 10:30:35.800 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/AuthorityTest.java
+2024-12-31 10:30:35.883 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/BusinessTypeTest.java
+2024-12-31 10:30:35.952 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/DepartmentTest.java
+2024-12-31 10:30:36.048 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/PositionTest.java
+2024-12-31 10:30:36.138 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/ResourceCategoryTest.java
+2024-12-31 10:30:36.217 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/UReportFileTest.java
+2024-12-31 10:30:36.322 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/UploadFileTest.java
+2024-12-31 10:30:36.406 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/UploadImageTest.java
+2024-12-31 10:30:36.518 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/UserTest.java
+2024-12-31 10:30:36.596 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/domain/ViewPermissionTest.java
+2024-12-31 10:30:36.724 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/log/domain/SysLogTest.java
+2024-12-31 10:30:36.943 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/log/service/criteria/SysLogCriteriaTest.java
+2024-12-31 10:30:37.087 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/log/service/dto/SysLogDTOTest.java
+2024-12-31 10:30:37.205 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/log/service/mapper/SysLogMapperTest.java
+2024-12-31 10:30:37.317 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/log/web/rest/SysLogResourceIT.java
+2024-12-31 10:30:37.396 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/oss/domain/OssConfigTest.java
+2024-12-31 10:30:37.480 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/oss/service/criteria/OssConfigCriteriaTest.java
+2024-12-31 10:30:37.592 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/oss/service/dto/OssConfigDTOTest.java
+2024-12-31 10:30:37.676 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/oss/service/mapper/OssConfigMapperTest.java
+2024-12-31 10:30:37.770 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/oss/web/rest/OssConfigResourceIT.java
+2024-12-31 10:30:37.848 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/security/DomainUserDetailsServiceIT.java
+2024-12-31 10:30:37.917 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/security/SecurityUtilsUnitTest.java
+2024-12-31 10:30:38.021 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/security/jwt/AuthenticationIntegrationTest.java
+2024-12-31 10:30:38.089 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/security/jwt/TokenAuthenticationIT.java
+2024-12-31 10:30:38.188 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/security/jwt/TokenAuthenticationSecurityMetersIT.java
+2024-12-31 10:30:38.299 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/MailServiceIT.java
+2024-12-31 10:30:38.393 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/UserServiceIT.java
+2024-12-31 10:30:38.469 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/ApiPermissionCriteriaTest.java
+2024-12-31 10:30:38.576 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/AuthorityCriteriaTest.java
+2024-12-31 10:30:38.668 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/BusinessTypeCriteriaTest.java
+2024-12-31 10:30:38.752 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/DepartmentCriteriaTest.java
+2024-12-31 10:30:38.864 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/PositionCriteriaTest.java
+2024-12-31 10:30:38.970 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/ResourceCategoryCriteriaTest.java
+2024-12-31 10:30:39.054 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/UReportFileCriteriaTest.java
+2024-12-31 10:30:39.126 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/UploadFileCriteriaTest.java
+2024-12-31 10:30:39.220 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/UploadImageCriteriaTest.java
+2024-12-31 10:30:39.294 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/UserCriteriaTest.java
+2024-12-31 10:30:39.428 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/criteria/ViewPermissionCriteriaTest.java
+2024-12-31 10:30:39.538 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/ApiPermissionDTOTest.java
+2024-12-31 10:30:39.612 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/AuthorityDTOTest.java
+2024-12-31 10:30:39.690 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/BusinessTypeDTOTest.java
+2024-12-31 10:30:39.785 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/DepartmentDTOTest.java
+2024-12-31 10:30:39.908 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/PositionDTOTest.java
+2024-12-31 10:30:40.036 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/ResourceCategoryDTOTest.java
+2024-12-31 10:30:40.118 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/UReportFileDTOTest.java
+2024-12-31 10:30:40.229 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/UploadFileDTOTest.java
+2024-12-31 10:30:40.308 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/UploadImageDTOTest.java
+2024-12-31 10:30:40.431 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/UserDTOTest.java
+2024-12-31 10:30:40.510 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/dto/ViewPermissionDTOTest.java
+2024-12-31 10:30:40.618 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/ApiPermissionMapperTest.java
+2024-12-31 10:30:40.682 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/AuthorityMapperTest.java
+2024-12-31 10:30:40.755 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/BusinessTypeMapperTest.java
+2024-12-31 10:30:40.867 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/DepartmentMapperTest.java
+2024-12-31 10:30:40.967 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/PositionMapperTest.java
+2024-12-31 10:30:41.045 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/ResourceCategoryMapperTest.java
+2024-12-31 10:30:41.125 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/UReportFileMapperTest.java
+2024-12-31 10:30:41.295 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/UploadFileMapperTest.java
+2024-12-31 10:30:41.402 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/UploadImageMapperTest.java
+2024-12-31 10:30:41.518 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/UserMapperTest.java
+2024-12-31 10:30:41.684 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/service/mapper/ViewPermissionMapperTest.java
+2024-12-31 10:30:41.796 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/CommonFieldDataTest.java
+2024-12-31 10:30:41.895 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/DictionaryTest.java
+2024-12-31 10:30:42.050 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/FillRuleItemTest.java
+2024-12-31 10:30:42.203 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/RegionCodeTest.java
+2024-12-31 10:30:42.321 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/SysFillRuleTest.java
+2024-12-31 10:30:42.488 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/domain/SystemConfigTest.java
+2024-12-31 10:30:42.591 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/CommonFieldDataCriteriaTest.java
+2024-12-31 10:30:42.710 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/DictionaryCriteriaTest.java
+2024-12-31 10:30:42.809 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/FillRuleItemCriteriaTest.java
+2024-12-31 10:30:42.922 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/RegionCodeCriteriaTest.java
+2024-12-31 10:30:43.022 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/SysFillRuleCriteriaTest.java
+2024-12-31 10:30:43.131 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/criteria/SystemConfigCriteriaTest.java
+2024-12-31 10:30:43.304 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/CommonFieldDataDTOTest.java
+2024-12-31 10:30:43.467 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/DictionaryDTOTest.java
+2024-12-31 10:30:43.567 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/FillRuleItemDTOTest.java
+2024-12-31 10:30:43.677 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/RegionCodeDTOTest.java
+2024-12-31 10:30:43.779 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/SysFillRuleDTOTest.java
+2024-12-31 10:30:43.895 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/dto/SystemConfigDTOTest.java
+2024-12-31 10:30:44.007 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/CommonFieldDataMapperTest.java
+2024-12-31 10:30:44.105 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/DictionaryMapperTest.java
+2024-12-31 10:30:44.220 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/FillRuleItemMapperTest.java
+2024-12-31 10:30:44.321 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/RegionCodeMapperTest.java
+2024-12-31 10:30:44.431 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/SysFillRuleMapperTest.java
+2024-12-31 10:30:44.587 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/service/mapper/SystemConfigMapperTest.java
+2024-12-31 10:30:44.691 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/CommonFieldDataResourceIT.java
+2024-12-31 10:30:44.796 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/DictionaryResourceIT.java
+2024-12-31 10:30:44.912 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/FillRuleItemResourceIT.java
+2024-12-31 10:30:45.025 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/RegionCodeResourceIT.java
+2024-12-31 10:30:45.128 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/SysFillRuleResourceIT.java
+2024-12-31 10:30:45.234 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/settings/web/rest/SystemConfigResourceIT.java
+2024-12-31 10:30:45.335 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/AnnouncementRecordTest.java
+2024-12-31 10:30:45.437 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/AnnouncementTest.java
+2024-12-31 10:30:45.564 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/FormConfigTest.java
+2024-12-31 10:30:45.673 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/FormSaveDataTest.java
+2024-12-31 10:30:45.773 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/SmsMessageTest.java
+2024-12-31 10:30:45.892 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/SmsSupplierTest.java
+2024-12-31 10:30:46.009 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/domain/SmsTemplateTest.java
+2024-12-31 10:30:46.133 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/AnnouncementCriteriaTest.java
+2024-12-31 10:30:46.239 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/AnnouncementRecordCriteriaTest.java
+2024-12-31 10:30:46.359 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/FormConfigCriteriaTest.java
+2024-12-31 10:30:46.469 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/FormSaveDataCriteriaTest.java
+2024-12-31 10:30:46.574 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/SmsMessageCriteriaTest.java
+2024-12-31 10:30:46.675 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/SmsSupplierCriteriaTest.java
+2024-12-31 10:30:46.792 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/criteria/SmsTemplateCriteriaTest.java
+2024-12-31 10:30:46.897 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/AnnouncementDTOTest.java
+2024-12-31 10:30:46.992 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/AnnouncementRecordDTOTest.java
+2024-12-31 10:30:47.087 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/FormConfigDTOTest.java
+2024-12-31 10:30:47.223 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/FormSaveDataDTOTest.java
+2024-12-31 10:30:47.338 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/SmsMessageDTOTest.java
+2024-12-31 10:30:47.447 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/SmsSupplierDTOTest.java
+2024-12-31 10:30:47.540 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/dto/SmsTemplateDTOTest.java
+2024-12-31 10:30:47.657 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/AnnouncementMapperTest.java
+2024-12-31 10:30:47.773 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/AnnouncementRecordMapperTest.java
+2024-12-31 10:30:47.866 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/FormConfigMapperTest.java
+2024-12-31 10:30:47.981 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/FormSaveDataMapperTest.java
+2024-12-31 10:30:48.078 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/SmsMessageMapperTest.java
+2024-12-31 10:30:48.191 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/SmsSupplierMapperTest.java
+2024-12-31 10:30:48.289 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/service/mapper/SmsTemplateMapperTest.java
+2024-12-31 10:30:48.393 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/AnnouncementRecordResourceIT.java
+2024-12-31 10:30:48.563 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/AnnouncementResourceIT.java
+2024-12-31 10:30:48.659 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/FormConfigResourceIT.java
+2024-12-31 10:30:48.760 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/FormSaveDataResourceIT.java
+2024-12-31 10:30:48.874 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/SmsMessageResourceIT.java
+2024-12-31 10:30:48.981 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/SmsSupplierResourceIT.java
+2024-12-31 10:30:49.080 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/system/web/rest/SmsTemplateResourceIT.java
+2024-12-31 10:30:49.179 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/taskjob/domain/TaskJobConfigTest.java
+2024-12-31 10:30:49.287 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/taskjob/service/criteria/TaskJobConfigCriteriaTest.java
+2024-12-31 10:30:49.389 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/taskjob/service/dto/TaskJobConfigDTOTest.java
+2024-12-31 10:30:49.487 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/taskjob/service/mapper/TaskJobConfigMapperTest.java
+2024-12-31 10:30:49.592 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/taskjob/web/rest/TaskJobConfigResourceIT.java
+2024-12-31 10:30:49.758 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/filter/SpaWebFilterIT.java
+2024-12-31 10:30:49.864 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/AccountResourceIT.java
+2024-12-31 10:30:49.981 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/ApiPermissionResourceIT.java
+2024-12-31 10:30:50.093 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/AuthorityResourceIT.java
+2024-12-31 10:30:50.197 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/BusinessTypeResourceIT.java
+2024-12-31 10:30:50.344 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/DepartmentResourceIT.java
+2024-12-31 10:30:50.543 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/PositionResourceIT.java
+2024-12-31 10:30:50.639 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/PublicUserResourceIT.java
+2024-12-31 10:30:50.798 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/ResourceCategoryResourceIT.java
+2024-12-31 10:30:50.896 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/UReportFileResourceIT.java
+2024-12-31 10:30:51.063 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/UploadFileResourceIT.java
+2024-12-31 10:30:51.172 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/UploadImageResourceIT.java
+2024-12-31 10:30:51.262 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/UserResourceIT.java
+2024-12-31 10:30:51.351 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/ViewPermissionResourceIT.java
+2024-12-31 10:30:51.501 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking src/test/java/com/begcode/monolith/web/rest/errors/ExceptionTranslatorIT.java
+2024-12-31 10:30:51.502 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 2044 tests in 152 files inside begcode/begcode-admin
+2024-12-31 10:30:51.667 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in JAgentSphere/bytebuddy-agent-demo
+2024-12-31 10:30:51.667 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside JAgentSphere/bytebuddy-agent-demo
+2024-12-31 10:30:51.827 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 4 test files in simasch/cqrs-meets-modern-java
+2024-12-31 10:30:51.930 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking cqrs/src/test/java/ch/martinelli/demo/cqrs/api/command/OrderCommandControllerTest.java
+2024-12-31 10:30:52.076 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking cqrs/src/test/java/ch/martinelli/demo/cqrs/api/command/OrderControllerTest.java
+2024-12-31 10:30:52.204 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking cqrs/src/test/java/ch/martinelli/demo/cqrs/api/query/OrderQueryControllerTest.java
+2024-12-31 10:30:52.369 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking traditional/src/test/java/ch/martinelli/demo/traditional/api/TraditionalOrderControllerTest.java
+2024-12-31 10:30:52.369 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 5 tests in 4 files inside simasch/cqrs-meets-modern-java
+2024-12-31 10:30:52.536 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in mt1006/mc-ar-mod
+2024-12-31 10:30:52.537 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside mt1006/mc-ar-mod
+2024-12-31 10:30:52.686 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 0 test files in ArtformGames/BungeeAuthProxy
+2024-12-31 10:30:52.686 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 0 tests in 0 files inside ArtformGames/BungeeAuthProxy
+2024-12-31 10:30:52.857 | INFO     | sr_data.steps.junit_tests:count_of_tests:58 - Found 68 test files in seregamorph/spring-test-smart-context
+2024-12-31 10:30:52.985 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/GradleSmartDirtiesJupiterEngineTest.java
+2024-12-31 10:30:53.107 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/AbstractIntegrationTest.java
+2024-12-31 10:30:53.245 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:30:53.361 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:30:53.496 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass1IntegrationTest.java
+2024-12-31 10:30:53.706 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass2IntegrationTest.java
+2024-12-31 10:30:53.833 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIntegrationTest.java
+2024-12-31 10:30:53.943 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-gradle-junit-platform-jupiter-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:30:54.054 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesVintageEngineTest.java
+2024-12-31 10:30:54.157 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/AbstractIntegrationTest.java
+2024-12-31 10:30:54.279 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:30:54.385 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:30:54.505 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIntegrationTest.java
+2024-12-31 10:30:54.646 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-junit4-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:30:54.822 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesJupiterEngineTest.java
+2024-12-31 10:30:54.939 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/SmartDirtiesTestsSupportTest.java
+2024-12-31 10:30:55.059 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/AbstractIntegrationTest.java
+2024-12-31 10:30:55.181 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/ExtendWithTest.java
+2024-12-31 10:30:55.309 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1MockBeanTest.java
+2024-12-31 10:30:55.420 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:30:55.526 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2SpringJUnitConfigTest.java
+2024-12-31 10:30:55.625 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:30:55.728 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass1IntegrationTest.java
+2024-12-31 10:30:55.845 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass2IntegrationTest.java
+2024-12-31 10:30:55.977 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextAfterClassTest.java
+2024-12-31 10:30:56.083 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextBeforeClassTest.java
+2024-12-31 10:30:56.202 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIntegrationTest.java
+2024-12-31 10:30:56.324 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SmartDirtiesJupiterTestsSorterTest.java
+2024-12-31 10:30:56.422 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:30:56.527 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesJupiterEngineTest.java
+2024-12-31 10:30:56.643 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/SmartDirtiesTestsSupportTest.java
+2024-12-31 10:30:56.742 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/AbstractIntegrationTest.java
+2024-12-31 10:30:56.860 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:30:57.041 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:30:57.151 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextAfterClassTest.java
+2024-12-31 10:30:57.262 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextBeforeClassTest.java
+2024-12-31 10:30:57.374 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIntegrationTest.java
+2024-12-31 10:30:57.474 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/SmartDirtiesJupiterTestsSorterTest.java
+2024-12-31 10:30:57.573 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-jupiter-spring5/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:30:57.697 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesJupiterEngineTest.java
+2024-12-31 10:30:57.817 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesTestngEngineTest.java
+2024-12-31 10:30:57.938 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/MavenSmartDirtiesVintageEngineTest.java
+2024-12-31 10:30:58.055 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/ExtendWithTest.java
+2024-12-31 10:30:58.182 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:30:58.279 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2SpringJUnitConfigTest.java
+2024-12-31 10:30:58.425 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:30:58.528 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass1IntegrationTest.java
+2024-12-31 10:30:58.657 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/NoBaseClass2IntegrationTest.java
+2024-12-31 10:30:58.773 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextAfterClassTest.java
+2024-12-31 10:30:58.907 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleDirtiesContextBeforeClassTest.java
+2024-12-31 10:30:59.026 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIntegrationTest.java
+2024-12-31 10:30:59.139 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-mixed-boot34/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:30:59.279 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/SmartDirtiesTestngEngineTest.java
+2024-12-31 10:30:59.396 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/AbstractIT.java
+2024-12-31 10:30:59.519 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1IT.java
+2024-12-31 10:30:59.628 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1SecondIT.java
+2024-12-31 10:30:59.747 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2IT.java
+2024-12-31 10:30:59.849 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/SampleIT.java
+2024-12-31 10:30:59.968 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-junit-platform-testng-boot32/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:31:00.109 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-testng-boot24/src/test/java/com/github/seregamorph/testsmartcontext/MavenTestngTest.java
+2024-12-31 10:31:00.237 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-testng-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1SecondTest.java
+2024-12-31 10:31:00.344 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-testng-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration1Test.java
+2024-12-31 10:31:00.480 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-testng-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Integration2Test.java
+2024-12-31 10:31:00.599 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking demo/demo-maven-testng-boot24/src/test/java/com/github/seregamorph/testsmartcontext/demo/Unit1Test.java
+2024-12-31 10:31:00.709 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking spring-test-smart-context/src/main/java/com/github/seregamorph/testsmartcontext/junit4/AbstractJUnit4SpringIntegrationTest.java
+2024-12-31 10:31:00.822 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking spring-test-smart-context/src/main/java/com/github/seregamorph/testsmartcontext/jupiter/AbstractJUnitSpringIntegrationTest.java
+2024-12-31 10:31:00.933 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking spring-test-smart-context/src/main/java/com/github/seregamorph/testsmartcontext/testng/AbstractTestNGSpringIntegrationTest.java
+2024-12-31 10:31:01.041 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:67 - Checking spring-test-smart-context/src/test/java/com/github/seregamorph/testsmartcontext/SpringContextEventLoggerListenerTest.java
+2024-12-31 10:31:01.042 | DEBUG    | sr_data.steps.junit_tests:count_of_tests:70 - Found 81 tests in 68 files inside seregamorph/spring-test-smart-context
+2024-12-31 10:31:01.045 | INFO     | sr_data.steps.junit_tests:main:49 - Saved 25 repositories with JUnit tests to ../after-junit.csv
+"/root/.cargo/bin"/just numerical "..//after-junit.csv" "..//numerical.csv"
+cd sr-data && poetry poe numerical --repos "..//after-junit.csv" --out "..//numerical.csv"
+Poe => numerical --repos ..//after-junit.csv --out ..//numerical.csv
+2024-12-31 10:31:01.973 | INFO     | sr_data.steps.numerical:main:30 - Creating dataset with all numerical data...
+2024-12-31 10:31:01.993 | INFO     | sr_data.steps.numerical:main:48 - Saved 25 repositories to numerical dataset in ..//numerical.csv
+                                      repo  releases  ...  w_simplicity   tests
+0                       arconia-io/arconia         5  ...         -1.40     0.0
+1                  linux-china/sieve-cache         1  ...          1.00     3.0
+2                        CleanroomMC/Fugue        62  ...         -3.30     0.0
+3                       xyzeva/ender-relay         3  ...         -0.65     0.0
+4                    dnwwdwd/homieMatching         0  ...          1.00    11.0
+5        MirnaGama/hospital-management-api         0  ...         -0.65    93.0
+6          stuetzlec/merrimack_cs_examples         0  ...          1.00     0.0
+7   lgdd/liferay-client-extensions-samples         0  ...         -1.15     0.0
+8                   MehVahdJukaar/polytone         0  ...          1.00     0.0
+9             sameh-tarek/Fawry-Internship         0  ...          1.00    16.0
+10                 Apress/ChatGPT-for-Java         1  ...          1.00     0.0
+11                   koupleless/koupleless        19  ...         -0.40     0.0
+12                     alegian/thaumcraft7         0  ...         -0.40     0.0
+13                            d1tto/Rengar         0  ...          1.00     0.0
+14         Rozmir-Rohi/mo-creatures-legacy         1  ...         -0.90     0.0
+15                sidduganeshsid/Core-Java         0  ...          1.00     0.0
+16                        frc-862/rhapsody         5  ...         -1.95     0.0
+17          MincraftEinstein/SubtleEffects         0  ...          1.00     0.0
+18                            6tail/tyme4j        17  ...          1.00   334.0
+19                   begcode/begcode-admin         0  ...          1.00  2044.0
+20       JAgentSphere/bytebuddy-agent-demo         4  ...          1.00     0.0
+21          simasch/cqrs-meets-modern-java         0  ...          1.00     5.0
+22                        mt1006/mc-ar-mod         1  ...          1.00     0.0
+23            ArtformGames/BungeeAuthProxy         5  ...         -2.55     0.0
+24   seregamorph/spring-test-smart-context         8  ...          1.00    81.0
+
+[25 rows x 9 columns]
+"/root/.cargo/bin"/just scores "..//after-junit.csv" "..//scores.csv"
+cd sr-data && poetry poe scores --repos "..//after-junit.csv" --out "..//scores.csv"
+Poe => scores --repos ..//after-junit.csv --out ..//scores.csv
+2024-12-31 10:31:02.912 | INFO     | sr_data.steps.scores:main:33 - Creating dataset with scores...
+2024-12-31 10:31:02.918 | INFO     | sr_data.steps.scores:main:43 - Saved 25 repositories to scores dataset in ..//scores.csv
+"/root/.cargo/bin"/just combine "/root/.cargo/bin" "false" "../"
+if "false"; then "/root/.cargo/bin"/just combination "../" 5 "..//sbert.csv" "..//scores.csv"; fi
+if "false"; then "/root/.cargo/bin"/just combination "../" 6 "..//e5.csv" "..//scores.csv"; fi
+if "false"; then "/root/.cargo/bin"/just combination "../" 7 "..//embedv3.csv" "..//scores.csv"; fi
