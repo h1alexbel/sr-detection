@@ -46,17 +46,17 @@ def main(repos, out, rm):
     frame = frame.dropna(subset=["readme"])
     non_null = start - len(frame)
     after_null = len(frame)
-    logger.info(f"Filtered {non_null} repositories with empty README files")
+    logger.info(f"Filtered out {non_null} repositories with empty README files")
     frame["readme_text"] = frame["readme"].apply(md_to_text)
     deng = frame[~frame["readme_text"].apply(english)]
     frame = frame[frame["readme_text"].apply(english)]
     frame = frame.drop(columns=["readme_text"])
     non_english = after_null - len(frame)
-    logger.info(f"Filtered {non_english} non-english repositories")
+    logger.info(f"Filtered out {non_english} non-english repositories")
     with open(rm, "w") as f:
         filtered(f, dnull["repo"].tolist(), "filter-null-readme")
         filtered(f, deng["repo"].tolist(), "filter-non-english")
-    logger.info(f"Total skipped: {non_null + non_english}")
+    logger.info(f"Total filtered: {non_null + non_english}")
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} good repositories to {out}")
 

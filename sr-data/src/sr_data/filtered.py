@@ -1,5 +1,5 @@
 """
-Removed repositories.
+Filtered repositories.
 """
 # The MIT License (MIT)
 #
@@ -24,7 +24,7 @@ Removed repositories.
 # SOFTWARE.
 
 def filtered(file, repos, step):
-    file.write(f"Filtered {len(repos)} repositories during ({step}):\n\n")
+    file.write(f"Filtered out {len(repos)} repositories during ({step}):\n\n")
     for repo in repos:
         file.write(f"{repo} ({step})\n")
     file.write("\n")

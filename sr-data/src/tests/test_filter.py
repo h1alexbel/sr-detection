@@ -39,13 +39,15 @@ class TestFilter(unittest.TestCase):
         """
         with TemporaryDirectory() as temp:
             path = os.path.join(temp, "after-filter.csv")
+            filtered = os.path.join(temp, "filtered.txt")
             # pylint: disable=redefined-builtin
             main(
                 os.path.join(
                     os.path.dirname(os.path.realpath(__file__)),
                     "resources/to-filter.csv"
                 ),
-                path
+                path,
+                filtered
             )
             out = pd.read_csv(path)["repo"].values.tolist()
             expected = ["blitz-js/blitz", "wasp-lang/wasp"]
@@ -53,4 +55,8 @@ class TestFilter(unittest.TestCase):
                 out,
                 expected,
                 f"Output CSV {out} does not match with expected {expected}"
+            )
+            self.assertTrue(
+                os.path.exists(filtered),
+                f"File {filtered} does not exist, but it should be"
             )
