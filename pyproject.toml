@@ -29,7 +29,7 @@ readme = "README.md"
 packages = [{ include = "sr-data" }, { include = "sr-train" }]
 
 [tool.poetry.dependencies]
-poetry = "1.8.4"
+poetry = "2.0.0"
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
