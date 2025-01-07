@@ -123,7 +123,7 @@ jobs:
             self.assertTrue(
                 all(
                     col in frame.columns for col in
-                    ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
+                    ["has_workflows", "workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
                 ),
                 f"Frame {frame.columns} doesn't have expected columns"
             )
@@ -146,6 +146,30 @@ jobs:
                 [4, 0, 2, 1, 1, 0, 2, 0, 0, 1, 1, 1, 10, 1],
                 "Workflows counts don't match with expected"
             )
+
+    @pytest.mark.nightly
+    def test_checks_has_workflows(self):
+        with TemporaryDirectory() as temp:
+            path = os.path.join(temp, "workflows.csv")
+            main(
+                os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    "resources/to-has-workflows.csv"
+                ),
+                path
+            )
+            frame = pd.read_csv(path)
+            self.assertEqual(
+                frame.iloc[0]["has_workflows"],
+                1.0,
+                "First repo doesn't have workflows, but it should"
+            )
+            self.assertEqual(
+                frame.iloc[1]["has_workflows"],
+                0.0,
+                "First repo has workflows, but it shouldn't"
+            )
+
 
     @pytest.mark.fast
     def test_returns_true_when_workflow_has_type_published(self):
