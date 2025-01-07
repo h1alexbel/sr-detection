@@ -1,0 +1,1264 @@
+${RULTOR:+sudo} npm install -g ghminer@0.0.7
+
+changed 7 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.0.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.0.0
+npm notice To update run: npm install -g npm@11.0.0
+npm notice
+poetry self add 'poethepoet[poetry_plugin]'
+Using version ^0.32.0 for poethepoet
+
+Updating dependencies
+Resolving dependencies...
+
+No dependencies to install or update
+cd sr-data && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-data (0.0.0)
+cd sr-train && poetry install
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-train (0.0.0)
+Skipping virtualenv creation, as specified in config file.
+Installing dependencies from lock file
+
+No dependencies to install or update
+
+Installing the current project: sr-detection (0.0.0)
+mkdir -p collection/2024-01~12
+ghminer --query "stars:>10 language:java size:>=20 mirror:false template:false NOT android" --start "2024-01-01" --end "2024-12-01" --tokens "$PATS" --filename "repos"
+Running ghminer@0.0.7
+Compiled search query: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-01-01..2024-12-01
+Total results: 4409
+Checking if date range should be split: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-01-01..2024-06-16
+{ search: { repositoryCount: 1220 } }
+Results: 1220
+
+Splitting 2024-01-01..2024-06-16 into 168 days...
+Checking if date range should be split: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-01-01..2024-03-25
+{ search: { repositoryCount: 677 } }
+Results: 677
+
+Extracted 10 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4757,
+  used: 243,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEw
+
+Extracted 20 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4756,
+  used: 244,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIw
+
+Extracted 30 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4755,
+  used: 245,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMw
+
+Extracted 40 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4754,
+  used: 246,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQw
+
+Extracted 50 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4753,
+  used: 247,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUw
+
+Extracted 60 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4752,
+  used: 248,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYw
+
+Extracted 70 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4751,
+  used: 249,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjcw
+
+Extracted 80 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4750,
+  used: 250,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjgw
+
+Extracted 90 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4749,
+  used: 251,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjkw
+
+Extracted 100 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4748,
+  used: 252,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEwMA==
+
+Extracted 110 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4747,
+  used: 253,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjExMA==
+
+Extracted 120 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4746,
+  used: 254,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEyMA==
+
+Extracted 130 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4745,
+  used: 255,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEzMA==
+
+Extracted 140 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4744,
+  used: 256,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE0MA==
+
+Extracted 150 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4743,
+  used: 257,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE1MA==
+
+Extracted 160 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4742,
+  used: 258,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE2MA==
+
+Extracted 170 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4741,
+  used: 259,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE3MA==
+
+Extracted 180 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4740,
+  used: 260,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE4MA==
+
+Extracted 190 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4739,
+  used: 261,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjE5MA==
+
+Extracted 200 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4738,
+  used: 262,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIwMA==
+
+Extracted 210 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4737,
+  used: 263,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIxMA==
+
+Extracted 220 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4736,
+  used: 264,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIyMA==
+
+Extracted 230 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4735,
+  used: 265,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIzMA==
+
+Extracted 240 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4734,
+  used: 266,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI0MA==
+
+Extracted 250 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4733,
+  used: 267,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI1MA==
+
+Extracted 260 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4732,
+  used: 268,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI2MA==
+
+Extracted 270 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4731,
+  used: 269,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI3MA==
+
+Extracted 280 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4730,
+  used: 270,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI4MA==
+
+Extracted 290 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4729,
+  used: 271,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjI5MA==
+
+Extracted 300 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4728,
+  used: 272,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMwMA==
+
+Extracted 310 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4727,
+  used: 273,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMxMA==
+
+Extracted 320 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4726,
+  used: 274,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMyMA==
+
+Extracted 330 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4725,
+  used: 275,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjMzMA==
+
+Extracted 340 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4724,
+  used: 276,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM0MA==
+
+Extracted 350 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4723,
+  used: 277,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM1MA==
+
+Extracted 360 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4722,
+  used: 278,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM2MA==
+
+Extracted 370 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4721,
+  used: 279,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM3MA==
+
+Extracted 380 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4720,
+  used: 280,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM4MA==
+
+Extracted 390 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4719,
+  used: 281,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjM5MA==
+
+Extracted 400 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4718,
+  used: 282,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQwMA==
+
+Extracted 410 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4717,
+  used: 283,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQxMA==
+
+Extracted 420 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4716,
+  used: 284,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQyMA==
+
+Extracted 430 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4715,
+  used: 285,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQzMA==
+
+Extracted 440 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4714,
+  used: 286,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ0MA==
+
+Extracted 450 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4713,
+  used: 287,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ1MA==
+
+Extracted 460 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4712,
+  used: 288,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ2MA==
+
+Extracted 470 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4711,
+  used: 289,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ3MA==
+
+Extracted 480 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4710,
+  used: 290,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ4MA==
+
+Extracted 490 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4709,
+  used: 291,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ5MA==
+
+Extracted 500 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4708,
+  used: 292,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUwMA==
+
+Extracted 510 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4707,
+  used: 293,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUxMA==
+
+Extracted 520 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4706,
+  used: 294,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUyMA==
+
+Extracted 530 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4705,
+  used: 295,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUzMA==
+
+Extracted 540 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4704,
+  used: 296,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU0MA==
+
+Extracted 550 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4703,
+  used: 297,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU1MA==
+
+Extracted 560 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4702,
+  used: 298,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU2MA==
+
+Extracted 570 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4701,
+  used: 299,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU3MA==
+
+Extracted 580 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4700,
+  used: 300,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU4MA==
+
+Extracted 590 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4699,
+  used: 301,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU5MA==
+
+Extracted 600 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4698,
+  used: 302,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYwMA==
+
+Extracted 610 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4697,
+  used: 303,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYxMA==
+
+Extracted 620 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4696,
+  used: 304,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYyMA==
+
+Extracted 630 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4695,
+  used: 305,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYzMA==
+
+Extracted 640 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4694,
+  used: 306,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY0MA==
+
+Extracted 650 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4693,
+  used: 307,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY1MA==
+
+Extracted 660 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4692,
+  used: 308,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY2MA==
+
+Extracted 670 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4691,
+  used: 309,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY3MA==
+
+Extracted 677 results for 2024-01-01..2024-03-25...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4690,
+  used: 310,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: false
+endCursor: Y3Vyc29yOjY3Nw==
+
+Extracted 677 results for 2024-01-01..2024-03-25...
+Checking if date range should be split: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-03-26..2024-12-01
+{ search: { repositoryCount: 3732 } }
+Results: 3732
+
+Splitting 2024-03-26..2024-12-01 into 250 days...
+Checking if date range should be split: stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-03-26..2024-07-29
+{ search: { repositoryCount: 803 } }
+Results: 803
+
+Extracted 10 results for 2024-03-26..2024-07-29...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4687,
+  used: 313,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjEw
+
+Extracted 20 results for 2024-03-26..2024-07-29...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4686,
+  used: 314,
+  resetAt: '2025-01-07T13:38:39Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjIw
+ClientError: GraphQL Error (Code: 502): {"response":{"status":502,"headers":{}},"request":{"query":"query ($searchQuery: String!, $first: Int, $after: String) {\n  search(query: $searchQuery, type: REPOSITORY, first: $first, after: $after) {\n    repositoryCount\n    nodes {\n      ... on Repository {\n        nameWithOwner\n        defaultBranchRef {\n          name\n        }\n        createdAt\n        refs(refPrefix: \"refs/heads/\") {\n          totalCount\n        }\n        defaultBranchRef {\n          name\n          target {\n            repository {\n              object(expression: \"HEAD:README.md\") {\n                ... on Blob {\n                  text\n                }\n              }\n            }\n          }\n        }\n        releases(first:1) {\n          edges {\n            node {\n              id\n            }\n          }\n          totalCount\n        }\n        issues(states: [OPEN]) {\n          totalCount\n        }\n        object(expression: \"HEAD:.github/workflows/\") {\n          ... on Tree {\n            entries {\n              name\n              object {\n                ... on Blob {\n                  byteSize\n                }\n              }\n            }\n          }\n        }\n        licenseInfo {\n          spdxId\n        }\n      }\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n","variables":{"searchQuery":"stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-03-26..2024-07-29","first":10,"after":"Y3Vyc29yOjIw"}}}
+    at runRequest (file:///usr/lib/node_modules/ghminer/node_modules/graphql-request/build/legacy/helpers/runRequest.js:26:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async GraphQLClient.request (file:///usr/lib/node_modules/ghminer/node_modules/graphql-request/build/legacy/classes/GraphQLClient.js:66:26)
+    at async fetchResultsBatch (/usr/lib/node_modules/ghminer/src/index.js:103:18)
+    at async fetchResultsBatch (/usr/lib/node_modules/ghminer/src/index.js:122:14)
+    at async fetchResultsBatch (/usr/lib/node_modules/ghminer/src/index.js:122:14)
+    at async fetchAllResults (/usr/lib/node_modules/ghminer/src/index.js:202:28) {
+  response: {
+    status: 502,
+    headers: HeadersList {
+      cookies: null,
+      [Symbol(headers map)]: [Map],
+      [Symbol(headers map sorted)]: null
+    }
+  },
+  request: {
+    query: 'query ($searchQuery: String!, $first: Int, $after: String) {\n' +
+      '  search(query: $searchQuery, type: REPOSITORY, first: $first, after: $after) {\n' +
+      '    repositoryCount\n' +
+      '    nodes {\n' +
+      '      ... on Repository {\n' +
+      '        nameWithOwner\n' +
+      '        defaultBranchRef {\n' +
+      '          name\n' +
+      '        }\n' +
+      '        createdAt\n' +
+      '        refs(refPrefix: "refs/heads/") {\n' +
+      '          totalCount\n' +
+      '        }\n' +
+      '        defaultBranchRef {\n' +
+      '          name\n' +
+      '          target {\n' +
+      '            repository {\n' +
+      '              object(expression: "HEAD:README.md") {\n' +
+      '                ... on Blob {\n' +
+      '                  text\n' +
+      '                }\n' +
+      '              }\n' +
+      '            }\n' +
+      '          }\n' +
+      '        }\n' +
+      '        releases(first:1) {\n' +
+      '          edges {\n' +
+      '            node {\n' +
+      '              id\n' +
+      '            }\n' +
+      '          }\n' +
+      '          totalCount\n' +
+      '        }\n' +
+      '        issues(states: [OPEN]) {\n' +
+      '          totalCount\n' +
+      '        }\n' +
+      '        object(expression: "HEAD:.github/workflows/") {\n' +
+      '          ... on Tree {\n' +
+      '            entries {\n' +
+      '              name\n' +
+      '              object {\n' +
+      '                ... on Blob {\n' +
+      '                  byteSize\n' +
+      '                }\n' +
+      '              }\n' +
+      '            }\n' +
+      '          }\n' +
+      '        }\n' +
+      '        licenseInfo {\n' +
+      '          spdxId\n' +
+      '        }\n' +
+      '      }\n' +
+      '    }\n' +
+      '    pageInfo {\n' +
+      '      endCursor\n' +
+      '      hasNextPage\n' +
+      '    }\n' +
+      '  }\n' +
+      '}\n',
+    variables: {
+      searchQuery: 'stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-03-26..2024-07-29',
+      first: 10,
+      after: 'Y3Vyc29yOjIw'
+    }
+  }
+}
+TypeError: result is not iterable (cannot read property undefined)
+    at fetchAllResults (/usr/lib/node_modules/ghminer/src/index.js:203:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+TypeError: Cannot read properties of undefined (reading 'map')
+    at writeFiles (/usr/lib/node_modules/ghminer/src/index.js:235:33)
+    at /usr/lib/node_modules/ghminer/src/index.js:263:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+cd sr-data && poetry poe pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes "../steps.txt" --out "../files.txt"
+Poe => pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes ../steps.txt --out ../files.txt
+2025-01-07 12:55:12.347 | DEBUG    | sr_data.pipeline:main:70 - Built step: just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"
+2025-01-07 12:55:12.347 | DEBUG    | sr_data.pipeline:main:70 - Built step: just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"
+2025-01-07 12:55:12.347 | DEBUG    | sr_data.pipeline:main:70 - Built step: just workflows "../after-filter.csv" "../after-workflows.csv"
+2025-01-07 12:55:12.347 | DEBUG    | sr_data.pipeline:main:70 - Built step: just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"
+2025-01-07 12:55:12.348 | INFO     | sr_data.pipeline:main:75 - The following commands will be executed:
+ ['just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"', 'just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"', 'just workflows "../after-filter.csv" "../after-workflows.csv"', 'just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"']
+2025-01-07 12:55:12.348 | INFO     | sr_data.pipeline:main:76 - We expect the following files to be generated: ['repos.csv', 'repos-with-pulls.csv', 'after-filter.csv', 'after-workflows.csv', 'after-junit.csv']
+cd sr-data && poetry poe pulls --repos "../repos.csv" --token "REDACTED" --out "../repos-with-pulls.csv"
+Poe => pulls --repos ../repos.csv --token REDACTED --out ../repos-with-pulls.csv
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/sr-data/src/sr_data/steps/pulls.py", line 32, in main
+    frame = pd.read_csv(repos)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../repos.csv'
+error: Recipe `pulls` failed on line 78 with exit code 1
+cd sr-data && poetry poe filter --repos "../repos-with-pulls.csv" --out "../after-filter.csv" --filtered "../filtered.txt"
+Poe => filter --repos ../repos-with-pulls.csv --out ../after-filter.csv --filtered ../filtered.txt
+2025-01-07 12:55:15.558 | INFO     | sr_data.steps.filter:main:40 - Start filtering...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/sr-data/src/sr_data/steps/filter.py", line 42, in main
+    frame = pd.read_csv(repos)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../repos-with-pulls.csv'
+error: Recipe `filter` failed on line 103 with exit code 1
+cd sr-data && poetry poe workflows --repos ../after-filter.csv --out ../after-workflows.csv
+Poe => workflows --repos ../after-filter.csv --out ../after-workflows.csv
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/sr-data/src/sr_data/steps/workflows.py", line 33, in main
+    frame = pd.read_csv(repos)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../after-filter.csv'
+error: Recipe `workflows` failed on line 140 with exit code 1
+cd sr-data && poetry poe junit --repos "../after-workflows.csv" --out "../after-junit.csv" --token "REDACTED"
+Poe => junit --repos ../after-workflows.csv --out ../after-junit.csv --token REDACTED
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/sr-data/src/sr_data/steps/junit_tests.py", line 40, in main
+    frame = pd.read_csv(repos)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../after-workflows.csv'
+error: Recipe `junit` failed on line 88 with exit code 1
+"/root/.cargo/bin"/just numerical "..//after-junit.csv" "..//numerical.csv"
+cd sr-data && poetry poe numerical --repos "..//after-junit.csv" --out "..//numerical.csv"
+Poe => numerical --repos ..//after-junit.csv --out ..//numerical.csv
+2025-01-07 12:55:18.598 | INFO     | sr_data.steps.numerical:main:30 - Creating dataset with all numerical data...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/sr-data/src/sr_data/steps/numerical.py", line 31, in main
+    frame = pd.read_csv(repos)
+            ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '..//after-junit.csv'
+error: Recipe `numerical` failed on line 183 with exit code 1
+error: Recipe `datasets` failed on line 161 with exit code 1
