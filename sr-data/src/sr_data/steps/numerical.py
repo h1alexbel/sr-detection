@@ -36,7 +36,7 @@ def main(repos, out):
             "pulls",
             "open_issues",
             "branches",
-            "workflows",
+            "has_workflows",
             "has_release_workflow",
             "w_simplicity",
             "tests"
