@@ -28,7 +28,7 @@ name: datasets
         description: "Comma-separated names of steps to be executed"
         required: true
       start:
-        description: "Collect repositories created from, in YYYY-MM-D format"
+        description: "Collect repositories created from, in YYYY-MM-DD format"
         required: true
       end:
         description: "Collect repositories created up to, in YYYY-MM-DD format"
