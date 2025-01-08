@@ -63,6 +63,7 @@ jobs:
           )
           export sum
           perl -i -0777 -pe 's/(?<=<!-- metadata_begin -->).*(?=<!-- metadata_end -->)/\n$ENV{sum}\n/gs;' sr-data/README.md
+          rm -rf output/
       - uses: peter-evans/create-pull-request@v7
         with:
           branch: metadata
