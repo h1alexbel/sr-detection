@@ -61,10 +61,6 @@ Then, you should run models against collected datasets via [cluster.yml]. Models
 will distribute repositories from each dataset into clusters. The clustering
 results will be placed into [clusters] branch.
 
-```bash
-docker run --rm -v "$(pwd)/output:/collection" -e QUERY="stars:>10 language:java size:>=20 mirror:false template:false NOT android" -e START="2024-01-01" -e END="2024-01-05" -e COLLECT_TOKEN="${{ secrets.COLLECT_TOKEN_1 }}" -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" -e HF_TOKEN="${{ secrets.HF_TOKEN }}" -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" -e OUT="inspect" -e STEPS="pulls,filter,workflows,junit" -e NUMBASE="after-junit.csv" -e EMBEDDINGS=false h1alexbel/sr-detection
-```
-
 ## How to contribute
 
 Make sure that you have [Python 3.10+], [just], and [npm] installed on your
