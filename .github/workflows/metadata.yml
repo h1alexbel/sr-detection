@@ -29,6 +29,9 @@ on:
 concurrency:
   group: metadata-${{ github.ref }}
   cancel-in-progress: true
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   metadata:
     runs-on: ubuntu-24.04
