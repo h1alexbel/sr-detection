@@ -25,7 +25,7 @@ on:
   push:
     branches:
       - master
-    paths-ignore: [ 'README.md', '.github' ]
+    paths-ignore: [ '**/README.md', '.github' ]
 concurrency:
   group: metadata-${{ github.ref }}
   cancel-in-progress: true
