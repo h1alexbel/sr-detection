@@ -1,0 +1,74 @@
+# The MIT License (MIT)
+#
+# Copyright (c) 2016-2024 Objectionary.com
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+---
+name: benchmark
+on:
+  push:
+    branches:
+      - master
+    paths-ignore: [ 'README.md', '.github' ]
+concurrency:
+  group: benchmark-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  metadata:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: abatilo/actions-poetry@v4
+        with:
+          poetry-version: "1.8.3"
+      - uses: extractions/setup-just@v2
+        with:
+          just-version: "1.30.1"
+      - name: Metadata
+        run: |
+          set -x
+          docker run  --rm -v "$(pwd)/output:/collection" \
+            -e QUERY="stars:>10 language:java size:>=20 mirror:false template:false NOT android" \
+            -e START="2024-01-01" -e END="2024-01-05" \
+            -e COLLECT_TOKEN="${{ secrets.COLLECT_TOKEN_1 }}" \
+            -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
+            -e HF_TOKEN="${{ secrets.HF_TOKEN }}" \
+            -e COHERE_TOKEN="${{ secrets.COHERE_TOKEN }}" \
+            -e OUT="inspect" -e STEPS="pulls,filter,workflows,junit" \
+            -e NUMBASE="after-junit.csv" -e EMBEDDINGS=false \
+            h1alexbel/sr-detection
+          sum=$(
+            printf "\`\`\`text\n"
+            head -n 1 output/inspect/d0-numerical.csv | tr ',' '\n'
+            printf "\`\`\`\n\n"
+          )
+          export sum
+          perl -i -0777 -pe 's/(?<=<!-- metadata_begin -->).*(?=<!-- metadata_end -->)/\n$ENV{sum}\n/gs;' sr-data/README.md
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: metadata
+          commit-message: 'new metadata results'
+          delete-branch: true
+          title: "New metadata results"
+          assignees: h1alexbel
+          base: master
+

@@ -1,7 +1,13 @@
-# sr-data
+# SR Data
 
-`sr-data` consists of a set of tasks that filters collected data about GitHub
-repositories, and transforms them to numerical vectors.
+`sr-data` consists of a set of scripts that filter collected metadata about
+GitHub repositories, and converts them into numerical vectors.
+
+## Collected Metadata
+
+<!-- metadata_begin -->
+...
+<!-- metadata_end -->
 
 ## How to test?
 
