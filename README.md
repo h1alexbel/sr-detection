@@ -18,11 +18,9 @@ research on this very subject.
 
 The repository structured as follows:
 
-* [sr-data](/sr-data), module that consists of a set of tasks that filters
-collected metadata about GitHub repositories.
-* [sr-train](/sr-train), module for training ML models.
-* [sr-detector](sr-detector), trained and reusable model for SR detection.
-* [sr-paper](/sr-paper), LaTeX source for a paper on SR detection.
+* [sr-data](/sr-data), module that consists of a set of tasks that aggregates
+and filters [collected metadata] about GitHub repositories.
+* [sr-train](/sr-train), module for training ML models to identify SRs.
 
 ## Hypotheses
 
@@ -59,13 +57,9 @@ In the output directory you should have these datasets:
 
 Alternatively, you can download existing datasets from [gh-pages] branch.
 
-Then, you should run models against collected datasets:
-
-```bash
-just cluster
-```
-
-TBD..
+Then, you should run models against collected datasets via [cluster.yml]. Models
+will distribute repositories from each dataset into clusters. The clustering
+results will be placed into [clusters] branch.
 
 ## How to contribute
 
@@ -86,3 +80,6 @@ just full
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [just]: https://just.systems/man/en/chapter_4.html
 [gh-pages]: https://github.com/h1alexbel/sr-detection/tree/gh-pages
+[collected metadata]: sr-data/README.md#collected-metadata
+[cluster.yml]: https://github.com/h1alexbel/sr-detection/blob/master/.github/workflows/cluster.yml
+[clusters]: https://github.com/h1alexbel/sr-detection/tree/clusters
