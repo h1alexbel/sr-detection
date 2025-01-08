@@ -81,7 +81,5 @@ just full
 [just]: https://just.systems/man/en/chapter_4.html
 [gh-pages]: https://github.com/h1alexbel/sr-detection/tree/gh-pages
 [collected metadata]: sr-data/README.md#collected-metadata
-[collected metadata]: sr-data/README.md#collected-metadata
 [cluster.yml]: https://github.com/h1alexbel/sr-detection/blob/master/.github/workflows/cluster.yml
 [clusters]: https://github.com/h1alexbel/sr-detection/tree/clusters
-
