@@ -20,14 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: benchmark
+name: metadata
 on:
   push:
     branches:
       - master
     paths-ignore: [ 'README.md', '.github' ]
 concurrency:
-  group: benchmark-${{ github.ref }}
+  group: metadata-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   metadata:
@@ -71,3 +71,4 @@ jobs:
           title: "New metadata results"
           assignees: h1alexbel
           base: master
+
