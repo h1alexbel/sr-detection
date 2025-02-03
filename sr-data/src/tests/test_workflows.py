@@ -37,7 +37,7 @@ class TestWorkflows(unittest.TestCase):
     @pytest.mark.fast
     def test_fetches_workflow_information(self):
         info = fetch(
-            "h1alexbel/h1alexbel/refs/heads/main/.github/workflows/update-readme.yml"
+            "h1alexbel/h1alexbel/refs/heads/main/.github/workflows/update-readme.yml",
         )
         expected = "jobs:"
         self.assertTrue(
@@ -407,7 +407,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - [self-hosted]          
+          - [self-hosted]
     runs-on: ${{ matrix.os }}
             """
         )
@@ -440,4 +440,36 @@ jobs:
             w_score(scores.iloc[0]),
             -0.85,
             "Calculated score does not match with expected"
+        )
+
+
+    @pytest.mark.fast
+    def test_parses_commented_workflow(self):
+        info = workflow_info(
+            """
+# name: test
+# on: push
+# jobs:
+#  build:
+#    strategy:
+#      matrix:
+#        os:
+#          - [self-hosted]
+#    runs-on: ${{ matrix.os }}
+            """
+        )
+        self.assertEqual(
+            info["w_oss"],
+            [],
+            "Workflow OSs are not empty, but they should"
+        )
+        self.assertEqual(
+            info["w_jobs"],
+            0,
+            "Jobs count in workflow is not zero, but should be"
+        )
+        self.assertEqual(
+            info["w_steps"],
+            0,
+            "Steps count in workflow is not zero, but should be"
         )
