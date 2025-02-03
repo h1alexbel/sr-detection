@@ -1,7 +1,6 @@
 """
 Collect information about GitHub workflows in the repo.
 """
-import numpy as np
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -109,66 +108,74 @@ def fetch(path) -> str:
 
 
 def workflow_info(content):
-    yml = yaml.safe_load(content)
-    jobs = yml["jobs"].items()
-    jcount = len(jobs)
-    oss = []
+    yml = yaml.safe_load(
+        '\n'.join(line for line in content.splitlines() if not line.strip().startswith('#')).strip()
+    )
+    jcount = 0
     scount = 0
-    for job, jdetails in jobs:
-        runs = jdetails.get("runs-on")
-        if runs is not None and not isinstance(runs, dict):
-            if isinstance(runs, list):
-                for r in runs:
-                    oss.append(r)
-            if not isinstance(runs, list) and runs.startswith("$"):
-                if jdetails.get("strategy"):
-                    matrix = jdetails.get("strategy").get("matrix")
-                    if matrix is not None:
-                        if isinstance(matrix, str):
-                            oss.append(runs)
-                        else:
-                            keys = [
-                                key.strip() for key in
-                                runs.strip().replace("${{", "").replace("}}", "")
-                                .split(".")[1:]
-                            ]
-                            if len(keys) == 1:
-                                if matrix.get(keys[0]):
-                                    for matrixed in matrix.get(keys[0]):
-                                        if isinstance(matrixed, list):
-                                            for r in matrixed:
-                                                oss.append(r)
-                                        else:
-                                            oss.append(matrixed)
-                            elif len(keys) > 1:
-                                for system in dot_values(keys, matrix):
-                                    oss.append(system)
-                            elif matrix.get("include"):
-                                for include in matrix.get("include"):
-                                    oss.append(
-                                        include.get(
-                                            runs.strip()
-                                            .replace("${{", "")
-                                            .replace("}}", "")
-                                            .split(".")[1].strip()
+    oss = []
+    w_release = False
+    if yml is not None:
+        jobs = yml["jobs"].items()
+        jcount = len(jobs)
+        oss = []
+        scount = 0
+        for job, jdetails in jobs:
+            runs = jdetails.get("runs-on")
+            if runs is not None and not isinstance(runs, dict):
+                if isinstance(runs, list):
+                    for r in runs:
+                        oss.append(r)
+                if not isinstance(runs, list) and runs.startswith("$"):
+                    if jdetails.get("strategy"):
+                        matrix = jdetails.get("strategy").get("matrix")
+                        if matrix is not None:
+                            if isinstance(matrix, str):
+                                oss.append(runs)
+                            else:
+                                keys = [
+                                    key.strip() for key in
+                                    runs.strip().replace("${{", "").replace("}}", "")
+                                    .split(".")[1:]
+                                ]
+                                if len(keys) == 1:
+                                    if matrix.get(keys[0]):
+                                        for matrixed in matrix.get(keys[0]):
+                                            if isinstance(matrixed, list):
+                                                for r in matrixed:
+                                                    oss.append(r)
+                                            else:
+                                                oss.append(matrixed)
+                                elif len(keys) > 1:
+                                    for system in dot_values(keys, matrix):
+                                        oss.append(system)
+                                elif matrix.get("include"):
+                                    for include in matrix.get("include"):
+                                        oss.append(
+                                            include.get(
+                                                runs.strip()
+                                                .replace("${{", "")
+                                                .replace("}}", "")
+                                                .split(".")[1].strip()
+                                            )
                                         )
-                                    )
-            elif not isinstance(runs, list):
+                elif not isinstance(runs, list):
+                    oss.append(runs)
+            elif isinstance(runs, dict):
+                if runs.get("group"):
+                    oss.append(runs.get("group"))
+            elif runs is not None:
                 oss.append(runs)
-        elif isinstance(runs, dict):
-            if runs.get("group"):
-                oss.append(runs.get("group"))
-        elif runs is not None:
-            oss.append(runs)
-        steps = jdetails.get("steps")
-        if steps is not None:
-            scount = len(steps)
-    oss = set(oss)
+            steps = jdetails.get("steps")
+            if steps is not None:
+                scount = len(steps)
+        oss = set(oss)
+        w_release = used_for_releases(yml)
     return {
         "w_jobs": jcount,
         "w_steps": scount,
         "w_oss": sorted(oss),
-        "w_release": used_for_releases(yml)
+        "w_release": w_release
     }
 
 
