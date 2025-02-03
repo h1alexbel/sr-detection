@@ -16,3 +16,4 @@ pwd/
 pyvenv.cfg
 poetry.lock
 tmp/
+coverage.xml
