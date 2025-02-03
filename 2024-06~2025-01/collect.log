@@ -1,6 +1,6 @@
 ${RULTOR:+sudo} npm install -g ghminer@0.0.7
 
-changed 7 packages in 1s
+changed 7 packages in 785ms
 
 1 package is looking for funding
   run `npm fund` for details
@@ -46,9 +46,9 @@ Extracted 10 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4981,
-  used: 19,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4906,
+  used: 94,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -60,9 +60,9 @@ Extracted 20 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4980,
-  used: 20,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4903,
+  used: 97,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -74,9 +74,9 @@ Extracted 30 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4979,
-  used: 21,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4901,
+  used: 99,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -88,9 +88,9 @@ Extracted 40 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4978,
-  used: 22,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4900,
+  used: 100,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -102,9 +102,9 @@ Extracted 50 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4977,
-  used: 23,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4899,
+  used: 101,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -116,9 +116,9 @@ Extracted 60 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4976,
-  used: 24,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4898,
+  used: 102,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -130,9 +130,9 @@ Extracted 70 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4975,
-  used: 25,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4897,
+  used: 103,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -144,9 +144,9 @@ Extracted 80 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4974,
-  used: 26,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4896,
+  used: 104,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -158,9 +158,9 @@ Extracted 90 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4973,
-  used: 27,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4895,
+  used: 105,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -172,9 +172,9 @@ Extracted 100 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4972,
-  used: 28,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4894,
+  used: 106,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -186,9 +186,9 @@ Extracted 110 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4971,
-  used: 29,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4893,
+  used: 107,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -200,9 +200,9 @@ Extracted 120 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4970,
-  used: 30,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4892,
+  used: 108,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -214,9 +214,9 @@ Extracted 130 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4969,
-  used: 31,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4891,
+  used: 109,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -228,9 +228,9 @@ Extracted 140 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4968,
-  used: 32,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4890,
+  used: 110,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -242,9 +242,9 @@ Extracted 150 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4967,
-  used: 33,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4889,
+  used: 111,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -256,9 +256,9 @@ Extracted 160 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4966,
-  used: 34,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4888,
+  used: 112,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -270,9 +270,9 @@ Extracted 170 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4965,
-  used: 35,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4887,
+  used: 113,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -284,9 +284,9 @@ Extracted 180 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4964,
-  used: 36,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4886,
+  used: 114,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -298,9 +298,9 @@ Extracted 190 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4963,
-  used: 37,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4885,
+  used: 115,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -312,9 +312,9 @@ Extracted 200 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4962,
-  used: 38,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4884,
+  used: 116,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -326,9 +326,9 @@ Extracted 210 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4961,
-  used: 39,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4883,
+  used: 117,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -340,9 +340,9 @@ Extracted 220 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4960,
-  used: 40,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4882,
+  used: 118,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -354,9 +354,9 @@ Extracted 230 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4959,
-  used: 41,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4881,
+  used: 119,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -368,9 +368,9 @@ Extracted 240 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4958,
-  used: 42,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4880,
+  used: 120,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -382,9 +382,9 @@ Extracted 250 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4957,
-  used: 43,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4879,
+  used: 121,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -396,9 +396,9 @@ Extracted 260 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4956,
-  used: 44,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4878,
+  used: 122,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -410,9 +410,9 @@ Extracted 270 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4955,
-  used: 45,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4877,
+  used: 123,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -424,9 +424,9 @@ Extracted 280 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4954,
-  used: 46,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4876,
+  used: 124,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -438,9 +438,9 @@ Extracted 290 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4953,
-  used: 47,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4875,
+  used: 125,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -452,9 +452,9 @@ Extracted 300 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4952,
-  used: 48,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4874,
+  used: 126,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -466,9 +466,9 @@ Extracted 310 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4951,
-  used: 49,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4873,
+  used: 127,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -480,9 +480,9 @@ Extracted 320 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4950,
-  used: 50,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4872,
+  used: 128,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -494,9 +494,9 @@ Extracted 330 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4949,
-  used: 51,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4871,
+  used: 129,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -508,9 +508,9 @@ Extracted 340 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4948,
-  used: 52,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4870,
+  used: 130,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -522,9 +522,9 @@ Extracted 350 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4947,
-  used: 53,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4869,
+  used: 131,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -536,9 +536,9 @@ Extracted 360 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4946,
-  used: 54,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4868,
+  used: 132,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -550,9 +550,9 @@ Extracted 370 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4945,
-  used: 55,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4867,
+  used: 133,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -564,9 +564,9 @@ Extracted 380 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4944,
-  used: 56,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4866,
+  used: 134,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -578,9 +578,9 @@ Extracted 390 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4943,
-  used: 57,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4865,
+  used: 135,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -592,9 +592,9 @@ Extracted 400 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4942,
-  used: 58,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4864,
+  used: 136,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -606,9 +606,9 @@ Extracted 410 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4941,
-  used: 59,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4863,
+  used: 137,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -620,9 +620,9 @@ Extracted 420 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4940,
-  used: 60,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4862,
+  used: 138,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -634,9 +634,9 @@ Extracted 430 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4939,
-  used: 61,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4861,
+  used: 139,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -648,9 +648,9 @@ Extracted 440 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4938,
-  used: 62,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4860,
+  used: 140,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -662,9 +662,9 @@ Extracted 450 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4937,
-  used: 63,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4859,
+  used: 141,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -676,9 +676,9 @@ Extracted 460 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4936,
-  used: 64,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4858,
+  used: 142,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -690,9 +690,9 @@ Extracted 470 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4935,
-  used: 65,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4857,
+  used: 143,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -704,9 +704,9 @@ Extracted 480 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4934,
-  used: 66,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4856,
+  used: 144,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -718,9 +718,9 @@ Extracted 490 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4933,
-  used: 67,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4855,
+  used: 145,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -732,9 +732,9 @@ Extracted 500 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4932,
-  used: 68,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4854,
+  used: 146,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -746,9 +746,9 @@ Extracted 510 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4931,
-  used: 69,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4853,
+  used: 147,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -760,9 +760,9 @@ Extracted 520 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4930,
-  used: 70,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4852,
+  used: 148,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -774,9 +774,9 @@ Extracted 530 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4929,
-  used: 71,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4851,
+  used: 149,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -788,9 +788,9 @@ Extracted 540 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4928,
-  used: 72,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4850,
+  used: 150,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -802,9 +802,9 @@ Extracted 550 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4927,
-  used: 73,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4849,
+  used: 151,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -816,9 +816,9 @@ Extracted 560 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4926,
-  used: 74,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4848,
+  used: 152,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -830,9 +830,9 @@ Extracted 570 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4925,
-  used: 75,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4847,
+  used: 153,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -844,9 +844,9 @@ Extracted 580 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4924,
-  used: 76,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4846,
+  used: 154,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -858,9 +858,9 @@ Extracted 590 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4923,
-  used: 77,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4845,
+  used: 155,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -872,9 +872,9 @@ Extracted 600 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4922,
-  used: 78,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4844,
+  used: 156,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -886,9 +886,9 @@ Extracted 610 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4921,
-  used: 79,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4843,
+  used: 157,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -900,9 +900,9 @@ Extracted 620 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4920,
-  used: 80,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4842,
+  used: 158,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -914,9 +914,9 @@ Extracted 630 results for 2024-06-02..2024-09-16...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4919,
-  used: 81,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4841,
+  used: 159,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: false
@@ -938,9 +938,9 @@ Extracted 10 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4916,
-  used: 84,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4838,
+  used: 162,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -952,9 +952,9 @@ Extracted 20 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4915,
-  used: 85,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4837,
+  used: 163,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -966,9 +966,9 @@ Extracted 30 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4914,
-  used: 86,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4836,
+  used: 164,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -980,9 +980,9 @@ Extracted 40 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4913,
-  used: 87,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4835,
+  used: 165,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -994,9 +994,9 @@ Extracted 50 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4912,
-  used: 88,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4834,
+  used: 166,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1008,9 +1008,9 @@ Extracted 60 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4911,
-  used: 89,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4833,
+  used: 167,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1022,9 +1022,9 @@ Extracted 70 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4910,
-  used: 90,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4832,
+  used: 168,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1036,9 +1036,9 @@ Extracted 80 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4909,
-  used: 91,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4831,
+  used: 169,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1050,9 +1050,9 @@ Extracted 90 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4908,
-  used: 92,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4830,
+  used: 170,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1064,9 +1064,9 @@ Extracted 100 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4907,
-  used: 93,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4829,
+  used: 171,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1078,9 +1078,9 @@ Extracted 110 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4906,
-  used: 94,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4828,
+  used: 172,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1092,9 +1092,9 @@ Extracted 120 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4905,
-  used: 95,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4827,
+  used: 173,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1106,9 +1106,9 @@ Extracted 130 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4904,
-  used: 96,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4826,
+  used: 174,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1120,9 +1120,9 @@ Extracted 140 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4903,
-  used: 97,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4825,
+  used: 175,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1134,9 +1134,9 @@ Extracted 150 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4902,
-  used: 98,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4824,
+  used: 176,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1148,9 +1148,9 @@ Extracted 160 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4901,
-  used: 99,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4823,
+  used: 177,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1162,9 +1162,9 @@ Extracted 170 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4900,
-  used: 100,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4822,
+  used: 178,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1176,9 +1176,9 @@ Extracted 180 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4899,
-  used: 101,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4821,
+  used: 179,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1190,9 +1190,9 @@ Extracted 190 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4898,
-  used: 102,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4820,
+  used: 180,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1204,9 +1204,9 @@ Extracted 200 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4897,
-  used: 103,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4819,
+  used: 181,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1218,9 +1218,9 @@ Extracted 210 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4896,
-  used: 104,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4818,
+  used: 182,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1232,9 +1232,9 @@ Extracted 220 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4895,
-  used: 105,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4817,
+  used: 183,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1246,9 +1246,9 @@ Extracted 230 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4894,
-  used: 106,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4816,
+  used: 184,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1260,9 +1260,9 @@ Extracted 240 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4893,
-  used: 107,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4815,
+  used: 185,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1274,9 +1274,9 @@ Extracted 250 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4892,
-  used: 108,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4814,
+  used: 186,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1288,9 +1288,9 @@ Extracted 260 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4891,
-  used: 109,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4813,
+  used: 187,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1302,9 +1302,9 @@ Extracted 270 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4890,
-  used: 110,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4812,
+  used: 188,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1316,9 +1316,9 @@ Extracted 280 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4889,
-  used: 111,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4811,
+  used: 189,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1330,9 +1330,9 @@ Extracted 281 results for 2024-09-17..2024-11-09...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4888,
-  used: 112,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4810,
+  used: 190,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: false
@@ -1379,9 +1379,9 @@ Extracted 10 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4880,
-  used: 120,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4802,
+  used: 198,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1393,9 +1393,9 @@ Extracted 20 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4879,
-  used: 121,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4801,
+  used: 199,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1407,9 +1407,9 @@ Extracted 30 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4878,
-  used: 122,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4800,
+  used: 200,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1421,9 +1421,9 @@ Extracted 40 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4877,
-  used: 123,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4799,
+  used: 201,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1435,9 +1435,9 @@ Extracted 50 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4876,
-  used: 124,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4798,
+  used: 202,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1449,9 +1449,9 @@ Extracted 60 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4875,
-  used: 125,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4797,
+  used: 203,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1463,9 +1463,9 @@ Extracted 70 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4874,
-  used: 126,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4796,
+  used: 204,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1477,9 +1477,9 @@ Extracted 80 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4873,
-  used: 127,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4795,
+  used: 205,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1491,9 +1491,9 @@ Extracted 90 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4872,
-  used: 128,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4794,
+  used: 206,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1505,9 +1505,9 @@ Extracted 100 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4871,
-  used: 129,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4793,
+  used: 207,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1519,9 +1519,9 @@ Extracted 110 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4870,
-  used: 130,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4792,
+  used: 208,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1533,9 +1533,9 @@ Extracted 120 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4869,
-  used: 131,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4791,
+  used: 209,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1547,9 +1547,9 @@ Extracted 130 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4868,
-  used: 132,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4790,
+  used: 210,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1561,9 +1561,9 @@ Extracted 140 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4867,
-  used: 133,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4789,
+  used: 211,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1575,9 +1575,9 @@ Extracted 150 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4866,
-  used: 134,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4788,
+  used: 212,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1589,9 +1589,9 @@ Extracted 160 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4865,
-  used: 135,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4787,
+  used: 213,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1603,9 +1603,9 @@ Extracted 170 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4864,
-  used: 136,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4786,
+  used: 214,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1617,9 +1617,9 @@ Extracted 180 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4863,
-  used: 137,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4785,
+  used: 215,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1631,9 +1631,9 @@ Extracted 190 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4862,
-  used: 138,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4784,
+  used: 216,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1645,9 +1645,9 @@ Extracted 200 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4861,
-  used: 139,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4783,
+  used: 217,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1659,9 +1659,9 @@ Extracted 210 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4860,
-  used: 140,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4782,
+  used: 218,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1673,9 +1673,9 @@ Extracted 220 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4859,
-  used: 141,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4781,
+  used: 219,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1687,9 +1687,9 @@ Extracted 230 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4858,
-  used: 142,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4780,
+  used: 220,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1701,9 +1701,9 @@ Extracted 240 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4857,
-  used: 143,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4779,
+  used: 221,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1715,9 +1715,9 @@ Extracted 250 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4856,
-  used: 144,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4778,
+  used: 222,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1729,9 +1729,9 @@ Extracted 260 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4855,
-  used: 145,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4777,
+  used: 223,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1743,9 +1743,9 @@ Extracted 270 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4854,
-  used: 146,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4776,
+  used: 224,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1757,9 +1757,9 @@ Extracted 280 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4853,
-  used: 147,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4775,
+  used: 225,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1771,9 +1771,9 @@ Extracted 290 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4852,
-  used: 148,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4774,
+  used: 226,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1785,9 +1785,9 @@ Extracted 300 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4851,
-  used: 149,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4773,
+  used: 227,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1799,9 +1799,9 @@ Extracted 310 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4850,
-  used: 150,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4772,
+  used: 228,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1813,9 +1813,9 @@ Extracted 320 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4849,
-  used: 151,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4771,
+  used: 229,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1827,9 +1827,9 @@ Extracted 330 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4848,
-  used: 152,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4770,
+  used: 230,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1841,9 +1841,9 @@ Extracted 340 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4847,
-  used: 153,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4769,
+  used: 231,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1855,9 +1855,9 @@ Extracted 350 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4846,
-  used: 154,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4768,
+  used: 232,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1869,9 +1869,9 @@ Extracted 360 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4845,
-  used: 155,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4767,
+  used: 233,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1883,9 +1883,9 @@ Extracted 370 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4844,
-  used: 156,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4766,
+  used: 234,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1897,9 +1897,9 @@ Extracted 380 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4843,
-  used: 157,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4765,
+  used: 235,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1911,9 +1911,9 @@ Extracted 390 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4842,
-  used: 158,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4764,
+  used: 236,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1925,9 +1925,9 @@ Extracted 400 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4841,
-  used: 159,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4763,
+  used: 237,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1939,9 +1939,9 @@ Extracted 410 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4840,
-  used: 160,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4762,
+  used: 238,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1953,9 +1953,9 @@ Extracted 420 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4839,
-  used: 161,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4761,
+  used: 239,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1967,9 +1967,9 @@ Extracted 430 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4838,
-  used: 162,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4760,
+  used: 240,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1981,9 +1981,9 @@ Extracted 440 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4837,
-  used: 163,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4759,
+  used: 241,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -1995,9 +1995,9 @@ Extracted 450 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4836,
-  used: 164,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4758,
+  used: 242,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2009,9 +2009,9 @@ Extracted 460 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4835,
-  used: 165,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4757,
+  used: 243,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2023,9 +2023,9 @@ Extracted 470 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4834,
-  used: 166,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4756,
+  used: 244,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2037,9 +2037,9 @@ Extracted 480 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4833,
-  used: 167,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4755,
+  used: 245,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2051,9 +2051,9 @@ Extracted 490 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4832,
-  used: 168,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4754,
+  used: 246,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2065,9 +2065,9 @@ Extracted 500 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4831,
-  used: 169,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4753,
+  used: 247,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2079,9 +2079,9 @@ Extracted 510 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4830,
-  used: 170,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4752,
+  used: 248,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2093,9 +2093,9 @@ Extracted 520 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4829,
-  used: 171,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4751,
+  used: 249,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2107,9 +2107,9 @@ Extracted 530 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4828,
-  used: 172,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4750,
+  used: 250,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2121,9 +2121,9 @@ Extracted 540 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4827,
-  used: 173,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4749,
+  used: 251,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2135,9 +2135,9 @@ Extracted 550 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4826,
-  used: 174,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4748,
+  used: 252,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2149,9 +2149,9 @@ Extracted 560 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4825,
-  used: 175,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4747,
+  used: 253,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2163,9 +2163,9 @@ Extracted 570 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4824,
-  used: 176,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4746,
+  used: 254,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2177,9 +2177,9 @@ Extracted 580 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4823,
-  used: 177,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4745,
+  used: 255,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2191,9 +2191,9 @@ Extracted 590 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4822,
-  used: 178,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4744,
+  used: 256,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2205,9 +2205,9 @@ Extracted 600 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4821,
-  used: 179,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4743,
+  used: 257,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2219,9 +2219,9 @@ Extracted 610 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4820,
-  used: 180,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4742,
+  used: 258,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2233,9 +2233,9 @@ Extracted 620 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4819,
-  used: 181,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4741,
+  used: 259,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2247,9 +2247,9 @@ Extracted 630 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4818,
-  used: 182,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4740,
+  used: 260,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2261,9 +2261,9 @@ Extracted 640 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4817,
-  used: 183,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4739,
+  used: 261,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2275,9 +2275,9 @@ Extracted 650 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4816,
-  used: 184,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4738,
+  used: 262,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2289,9 +2289,9 @@ Extracted 660 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4815,
-  used: 185,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4737,
+  used: 263,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2303,9 +2303,9 @@ Extracted 670 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4814,
-  used: 186,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4736,
+  used: 264,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2317,9 +2317,9 @@ Extracted 680 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4813,
-  used: 187,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4735,
+  used: 265,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2331,9 +2331,9 @@ Extracted 690 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4812,
-  used: 188,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4734,
+  used: 266,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2345,9 +2345,9 @@ Extracted 700 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4811,
-  used: 189,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4733,
+  used: 267,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2359,9 +2359,9 @@ Extracted 710 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4810,
-  used: 190,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4732,
+  used: 268,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2373,9 +2373,9 @@ Extracted 720 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4809,
-  used: 191,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4731,
+  used: 269,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2387,9 +2387,9 @@ Extracted 730 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4808,
-  used: 192,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4730,
+  used: 270,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2401,9 +2401,9 @@ Extracted 740 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4807,
-  used: 193,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4729,
+  used: 271,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2415,9 +2415,9 @@ Extracted 750 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4806,
-  used: 194,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4728,
+  used: 272,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2429,9 +2429,9 @@ Extracted 760 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4805,
-  used: 195,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4727,
+  used: 273,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2443,9 +2443,9 @@ Extracted 770 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4804,
-  used: 196,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4726,
+  used: 274,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2457,9 +2457,9 @@ Extracted 780 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4803,
-  used: 197,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4725,
+  used: 275,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2471,9 +2471,9 @@ Extracted 790 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4802,
-  used: 198,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4724,
+  used: 276,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2485,9 +2485,9 @@ Extracted 800 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4801,
-  used: 199,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4723,
+  used: 277,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2499,9 +2499,9 @@ Extracted 810 results for 2024-11-10..2024-11-11...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4800,
-  used: 200,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4722,
+  used: 278,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: false
@@ -2528,9 +2528,9 @@ Extracted 10 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4796,
-  used: 204,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4718,
+  used: 282,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2542,9 +2542,9 @@ Extracted 20 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4795,
-  used: 205,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4717,
+  used: 283,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2556,9 +2556,9 @@ Extracted 30 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4794,
-  used: 206,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4716,
+  used: 284,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2570,9 +2570,9 @@ Extracted 40 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4793,
-  used: 207,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4715,
+  used: 285,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2584,9 +2584,9 @@ Extracted 50 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4792,
-  used: 208,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4714,
+  used: 286,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2598,9 +2598,9 @@ Extracted 60 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4791,
-  used: 209,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4713,
+  used: 287,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2612,9 +2612,9 @@ Extracted 70 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4790,
-  used: 210,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4712,
+  used: 288,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2626,9 +2626,9 @@ Extracted 80 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4789,
-  used: 211,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4711,
+  used: 289,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2640,9 +2640,9 @@ Extracted 90 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4788,
-  used: 212,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4710,
+  used: 290,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2654,9 +2654,9 @@ Extracted 100 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4787,
-  used: 213,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4709,
+  used: 291,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2668,9 +2668,9 @@ Extracted 110 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4786,
-  used: 214,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4708,
+  used: 292,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2682,9 +2682,9 @@ Extracted 120 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4785,
-  used: 215,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4707,
+  used: 293,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2696,9 +2696,9 @@ Extracted 130 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4784,
-  used: 216,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4706,
+  used: 294,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2710,9 +2710,9 @@ Extracted 140 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4783,
-  used: 217,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4705,
+  used: 295,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2724,9 +2724,9 @@ Extracted 150 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4782,
-  used: 218,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4704,
+  used: 296,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2738,9 +2738,9 @@ Extracted 160 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4781,
-  used: 219,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4703,
+  used: 297,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2752,9 +2752,9 @@ Extracted 170 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4780,
-  used: 220,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4702,
+  used: 298,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2766,9 +2766,9 @@ Extracted 180 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4779,
-  used: 221,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4701,
+  used: 299,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2780,9 +2780,9 @@ Extracted 190 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4778,
-  used: 222,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4700,
+  used: 300,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2794,9 +2794,9 @@ Extracted 200 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4777,
-  used: 223,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4699,
+  used: 301,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2808,9 +2808,9 @@ Extracted 210 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4776,
-  used: 224,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4698,
+  used: 302,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2822,9 +2822,9 @@ Extracted 220 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4775,
-  used: 225,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4697,
+  used: 303,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2836,9 +2836,9 @@ Extracted 230 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4774,
-  used: 226,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4696,
+  used: 304,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2850,9 +2850,9 @@ Extracted 240 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4773,
-  used: 227,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4695,
+  used: 305,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2864,9 +2864,9 @@ Extracted 250 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4772,
-  used: 228,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4694,
+  used: 306,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2878,9 +2878,9 @@ Extracted 260 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4771,
-  used: 229,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4693,
+  used: 307,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2892,9 +2892,9 @@ Extracted 270 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4770,
-  used: 230,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4692,
+  used: 308,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2906,9 +2906,9 @@ Extracted 280 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4769,
-  used: 231,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4691,
+  used: 309,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2920,9 +2920,9 @@ Extracted 290 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4768,
-  used: 232,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4690,
+  used: 310,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2934,9 +2934,9 @@ Extracted 300 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4767,
-  used: 233,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4689,
+  used: 311,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2948,9 +2948,9 @@ Extracted 310 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4766,
-  used: 234,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4688,
+  used: 312,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2962,9 +2962,9 @@ Extracted 320 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4765,
-  used: 235,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4687,
+  used: 313,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2976,9 +2976,9 @@ Extracted 330 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4764,
-  used: 236,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4686,
+  used: 314,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -2990,9 +2990,9 @@ Extracted 340 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4763,
-  used: 237,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4685,
+  used: 315,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3004,9 +3004,9 @@ Extracted 350 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4762,
-  used: 238,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4684,
+  used: 316,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3018,9 +3018,9 @@ Extracted 360 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4761,
-  used: 239,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4683,
+  used: 317,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3032,9 +3032,9 @@ Extracted 370 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4760,
-  used: 240,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4682,
+  used: 318,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3046,9 +3046,9 @@ Extracted 380 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4759,
-  used: 241,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4681,
+  used: 319,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3060,9 +3060,9 @@ Extracted 390 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4758,
-  used: 242,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4680,
+  used: 320,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3074,9 +3074,9 @@ Extracted 400 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4757,
-  used: 243,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4679,
+  used: 321,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3088,9 +3088,9 @@ Extracted 410 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4756,
-  used: 244,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4678,
+  used: 322,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3102,9 +3102,9 @@ Extracted 420 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4755,
-  used: 245,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4677,
+  used: 323,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3116,9 +3116,9 @@ Extracted 430 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4754,
-  used: 246,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4676,
+  used: 324,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3130,9 +3130,9 @@ Extracted 440 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4753,
-  used: 247,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4675,
+  used: 325,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3144,9 +3144,9 @@ Extracted 450 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4752,
-  used: 248,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4674,
+  used: 326,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3158,9 +3158,9 @@ Extracted 460 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4751,
-  used: 249,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4673,
+  used: 327,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3172,9 +3172,9 @@ Extracted 470 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4750,
-  used: 250,
-  resetAt: '2025-02-03T10:28:33Z',
+  remaining: 4672,
+  used: 328,
+  resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
@@ -3186,8 +3186,8 @@ Extracted 480 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 5000,
-  used: 0,
+  remaining: 4671,
+  used: 329,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3200,8 +3200,8 @@ Extracted 490 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4999,
-  used: 1,
+  remaining: 4670,
+  used: 330,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3214,8 +3214,8 @@ Extracted 500 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4998,
-  used: 2,
+  remaining: 4669,
+  used: 331,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3228,8 +3228,8 @@ Extracted 510 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4997,
-  used: 3,
+  remaining: 4668,
+  used: 332,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3242,8 +3242,8 @@ Extracted 520 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4996,
-  used: 4,
+  remaining: 4667,
+  used: 333,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3256,8 +3256,8 @@ Extracted 530 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4995,
-  used: 5,
+  remaining: 4666,
+  used: 334,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3270,8 +3270,8 @@ Extracted 540 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4994,
-  used: 6,
+  remaining: 4665,
+  used: 335,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3284,8 +3284,8 @@ Extracted 550 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4993,
-  used: 7,
+  remaining: 4664,
+  used: 336,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3298,8 +3298,8 @@ Extracted 560 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4992,
-  used: 8,
+  remaining: 4663,
+  used: 337,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3312,8 +3312,8 @@ Extracted 570 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4991,
-  used: 9,
+  remaining: 4662,
+  used: 338,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3326,8 +3326,8 @@ Extracted 575 results for 2024-11-12..2024-11-25...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4990,
-  used: 10,
+  remaining: 4661,
+  used: 339,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3380,8 +3380,8 @@ Extracted 10 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4981,
-  used: 19,
+  remaining: 4652,
+  used: 348,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3394,8 +3394,8 @@ Extracted 20 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4980,
-  used: 20,
+  remaining: 4651,
+  used: 349,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3408,8 +3408,8 @@ Extracted 30 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4979,
-  used: 21,
+  remaining: 4650,
+  used: 350,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3422,8 +3422,8 @@ Extracted 40 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4978,
-  used: 22,
+  remaining: 4649,
+  used: 351,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3436,8 +3436,8 @@ Extracted 50 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4977,
-  used: 23,
+  remaining: 4648,
+  used: 352,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3450,8 +3450,8 @@ Extracted 60 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4976,
-  used: 24,
+  remaining: 4647,
+  used: 353,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3464,8 +3464,8 @@ Extracted 70 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4975,
-  used: 25,
+  remaining: 4646,
+  used: 354,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3478,8 +3478,8 @@ Extracted 80 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4974,
-  used: 26,
+  remaining: 4645,
+  used: 355,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3492,8 +3492,8 @@ Extracted 90 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4973,
-  used: 27,
+  remaining: 4644,
+  used: 356,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3506,8 +3506,8 @@ Extracted 100 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4972,
-  used: 28,
+  remaining: 4643,
+  used: 357,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3520,8 +3520,8 @@ Extracted 110 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4971,
-  used: 29,
+  remaining: 4642,
+  used: 358,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3534,8 +3534,8 @@ Extracted 120 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4970,
-  used: 30,
+  remaining: 4641,
+  used: 359,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3548,8 +3548,8 @@ Extracted 130 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4969,
-  used: 31,
+  remaining: 4640,
+  used: 360,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3562,8 +3562,8 @@ Extracted 140 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4968,
-  used: 32,
+  remaining: 4639,
+  used: 361,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3576,8 +3576,8 @@ Extracted 150 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4967,
-  used: 33,
+  remaining: 4638,
+  used: 362,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3590,8 +3590,8 @@ Extracted 160 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4966,
-  used: 34,
+  remaining: 4637,
+  used: 363,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3604,8 +3604,8 @@ Extracted 170 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4965,
-  used: 35,
+  remaining: 4636,
+  used: 364,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3618,8 +3618,8 @@ Extracted 180 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4964,
-  used: 36,
+  remaining: 4635,
+  used: 365,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3632,8 +3632,8 @@ Extracted 190 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4963,
-  used: 37,
+  remaining: 4634,
+  used: 366,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3646,8 +3646,8 @@ Extracted 200 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4962,
-  used: 38,
+  remaining: 4633,
+  used: 367,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3660,8 +3660,8 @@ Extracted 210 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4961,
-  used: 39,
+  remaining: 4632,
+  used: 368,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3674,8 +3674,8 @@ Extracted 220 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4960,
-  used: 40,
+  remaining: 4631,
+  used: 369,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3688,8 +3688,8 @@ Extracted 230 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4959,
-  used: 41,
+  remaining: 4630,
+  used: 370,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3702,8 +3702,8 @@ Extracted 240 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4958,
-  used: 42,
+  remaining: 4629,
+  used: 371,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3716,8 +3716,8 @@ Extracted 250 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4957,
-  used: 43,
+  remaining: 4628,
+  used: 372,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3730,8 +3730,8 @@ Extracted 260 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4956,
-  used: 44,
+  remaining: 4627,
+  used: 373,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3744,8 +3744,8 @@ Extracted 270 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4955,
-  used: 45,
+  remaining: 4626,
+  used: 374,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3758,8 +3758,8 @@ Extracted 280 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4954,
-  used: 46,
+  remaining: 4625,
+  used: 375,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3772,8 +3772,8 @@ Extracted 290 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4953,
-  used: 47,
+  remaining: 4624,
+  used: 376,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3786,8 +3786,8 @@ Extracted 300 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4952,
-  used: 48,
+  remaining: 4623,
+  used: 377,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3800,8 +3800,8 @@ Extracted 310 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4951,
-  used: 49,
+  remaining: 4622,
+  used: 378,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3814,8 +3814,8 @@ Extracted 320 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4950,
-  used: 50,
+  remaining: 4621,
+  used: 379,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3828,8 +3828,8 @@ Extracted 330 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4949,
-  used: 51,
+  remaining: 4620,
+  used: 380,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3842,8 +3842,8 @@ Extracted 340 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4948,
-  used: 52,
+  remaining: 4619,
+  used: 381,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3856,8 +3856,8 @@ Extracted 350 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4947,
-  used: 53,
+  remaining: 4618,
+  used: 382,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3870,8 +3870,8 @@ Extracted 360 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4946,
-  used: 54,
+  remaining: 4617,
+  used: 383,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3884,8 +3884,8 @@ Extracted 370 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4945,
-  used: 55,
+  remaining: 4616,
+  used: 384,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3898,8 +3898,8 @@ Extracted 380 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4944,
-  used: 56,
+  remaining: 4615,
+  used: 385,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3912,8 +3912,8 @@ Extracted 390 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4943,
-  used: 57,
+  remaining: 4614,
+  used: 386,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3926,8 +3926,8 @@ Extracted 400 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4942,
-  used: 58,
+  remaining: 4613,
+  used: 387,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
@@ -3940,14 +3940,420 @@ Extracted 410 results for 2024-11-26..2024-11-26...
 Rate Limit: {
   limit: 5000,
   cost: 1,
-  remaining: 4941,
-  used: 59,
+  remaining: 4612,
+  used: 388,
   resetAt: '2025-02-03T11:28:35Z',
   nodeCount: 0
 }
 hasNextPage: true
 endCursor: Y3Vyc29yOjQxMA==
-ClientError: GraphQL Error (Code: 502): {"response":{"status":502,"headers":{}},"request":{"query":"query ($searchQuery: String!, $first: Int, $after: String) {\n  search(query: $searchQuery, type: REPOSITORY, first: $first, after: $after) {\n    repositoryCount\n    nodes {\n      ... on Repository {\n        nameWithOwner\n        defaultBranchRef {\n          name\n        }\n        createdAt\n        refs(refPrefix: \"refs/heads/\") {\n          totalCount\n        }\n        defaultBranchRef {\n          name\n          target {\n            repository {\n              object(expression: \"HEAD:README.md\") {\n                ... on Blob {\n                  text\n                }\n              }\n            }\n          }\n        }\n        releases(first:1) {\n          edges {\n            node {\n              id\n            }\n          }\n          totalCount\n        }\n        issues(states: [OPEN]) {\n          totalCount\n        }\n        object(expression: \"HEAD:.github/workflows/\") {\n          ... on Tree {\n            entries {\n              name\n              object {\n                ... on Blob {\n                  byteSize\n                }\n              }\n            }\n          }\n        }\n        licenseInfo {\n          spdxId\n        }\n      }\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n","variables":{"searchQuery":"stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-11-26..2024-11-26","first":10,"after":"Y3Vyc29yOjQxMA=="}}}
+
+Extracted 420 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4611,
+  used: 389,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQyMA==
+
+Extracted 430 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4610,
+  used: 390,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQzMA==
+
+Extracted 440 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4609,
+  used: 391,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ0MA==
+
+Extracted 450 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4608,
+  used: 392,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ1MA==
+
+Extracted 460 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4607,
+  used: 393,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ2MA==
+
+Extracted 470 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4606,
+  used: 394,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ3MA==
+
+Extracted 480 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4605,
+  used: 395,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ4MA==
+
+Extracted 490 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4604,
+  used: 396,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjQ5MA==
+
+Extracted 500 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4603,
+  used: 397,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUwMA==
+
+Extracted 510 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4602,
+  used: 398,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUxMA==
+
+Extracted 520 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4601,
+  used: 399,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUyMA==
+
+Extracted 530 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4600,
+  used: 400,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjUzMA==
+
+Extracted 540 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4599,
+  used: 401,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU0MA==
+
+Extracted 550 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4598,
+  used: 402,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU1MA==
+
+Extracted 560 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4597,
+  used: 403,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU2MA==
+
+Extracted 570 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4596,
+  used: 404,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU3MA==
+
+Extracted 580 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4595,
+  used: 405,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU4MA==
+
+Extracted 590 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4594,
+  used: 406,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjU5MA==
+
+Extracted 600 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4593,
+  used: 407,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYwMA==
+
+Extracted 610 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4592,
+  used: 408,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYxMA==
+
+Extracted 620 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4591,
+  used: 409,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYyMA==
+
+Extracted 630 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4590,
+  used: 410,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjYzMA==
+
+Extracted 640 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4589,
+  used: 411,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY0MA==
+
+Extracted 650 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4588,
+  used: 412,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY1MA==
+
+Extracted 660 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4587,
+  used: 413,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY2MA==
+
+Extracted 670 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4586,
+  used: 414,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY3MA==
+
+Extracted 680 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4585,
+  used: 415,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY4MA==
+
+Extracted 690 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4584,
+  used: 416,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjY5MA==
+
+Extracted 700 results for 2024-11-26..2024-11-26...
+
+
+Rate Limit: {
+  limit: 5000,
+  cost: 1,
+  remaining: 4583,
+  used: 417,
+  resetAt: '2025-02-03T11:28:35Z',
+  nodeCount: 0
+}
+hasNextPage: true
+endCursor: Y3Vyc29yOjcwMA==
+ClientError: GraphQL Error (Code: 502): {"response":{"status":502,"headers":{}},"request":{"query":"query ($searchQuery: String!, $first: Int, $after: String) {\n  search(query: $searchQuery, type: REPOSITORY, first: $first, after: $after) {\n    repositoryCount\n    nodes {\n      ... on Repository {\n        nameWithOwner\n        defaultBranchRef {\n          name\n        }\n        createdAt\n        refs(refPrefix: \"refs/heads/\") {\n          totalCount\n        }\n        defaultBranchRef {\n          name\n          target {\n            repository {\n              object(expression: \"HEAD:README.md\") {\n                ... on Blob {\n                  text\n                }\n              }\n            }\n          }\n        }\n        releases(first:1) {\n          edges {\n            node {\n              id\n            }\n          }\n          totalCount\n        }\n        issues(states: [OPEN]) {\n          totalCount\n        }\n        object(expression: \"HEAD:.github/workflows/\") {\n          ... on Tree {\n            entries {\n              name\n              object {\n                ... on Blob {\n                  byteSize\n                }\n              }\n            }\n          }\n        }\n        licenseInfo {\n          spdxId\n        }\n      }\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n","variables":{"searchQuery":"stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-11-26..2024-11-26","first":10,"after":"Y3Vyc29yOjcwMA=="}}}
     at runRequest (file:///usr/lib/node_modules/ghminer/node_modules/graphql-request/build/legacy/helpers/runRequest.js:26:16)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async GraphQLClient.request (file:///usr/lib/node_modules/ghminer/node_modules/graphql-request/build/legacy/classes/GraphQLClient.js:66:26)
@@ -4029,7 +4435,7 @@ ClientError: GraphQL Error (Code: 502): {"response":{"status":502,"headers":{}},
     variables: {
       searchQuery: 'stars:>10 language:java size:>=20 mirror:false template:false NOT android created:2024-11-26..2024-11-26',
       first: 10,
-      after: 'Y3Vyc29yOjQxMA=='
+      after: 'Y3Vyc29yOjcwMA=='
     }
   }
 }
@@ -4042,13 +4448,13 @@ TypeError: Cannot read properties of undefined (reading 'map')
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 cd sr-data && poetry poe pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes "../steps.txt" --out "../files.txt"
 Poe => pipeline --representation resources/pipeline.json --steps pulls,filter,workflows,junit --pipes ../steps.txt --out ../files.txt
-2025-02-03 10:30:36.283 | DEBUG    | sr_data.pipeline:main:70 - Built step: just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"
-2025-02-03 10:30:36.283 | DEBUG    | sr_data.pipeline:main:70 - Built step: just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"
-2025-02-03 10:30:36.283 | DEBUG    | sr_data.pipeline:main:70 - Built step: just workflows "../after-filter.csv" "../after-workflows.csv"
-2025-02-03 10:30:36.283 | DEBUG    | sr_data.pipeline:main:70 - Built step: just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"
-2025-02-03 10:30:36.284 | INFO     | sr_data.pipeline:main:75 - The following commands will be executed:
+2025-02-03 11:20:39.175 | DEBUG    | sr_data.pipeline:main:70 - Built step: just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"
+2025-02-03 11:20:39.175 | DEBUG    | sr_data.pipeline:main:70 - Built step: just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"
+2025-02-03 11:20:39.175 | DEBUG    | sr_data.pipeline:main:70 - Built step: just workflows "../after-filter.csv" "../after-workflows.csv"
+2025-02-03 11:20:39.175 | DEBUG    | sr_data.pipeline:main:70 - Built step: just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"
+2025-02-03 11:20:39.175 | INFO     | sr_data.pipeline:main:75 - The following commands will be executed:
  ['just pulls "../repos.csv" $GH_TOKEN "../repos-with-pulls.csv"', 'just filter "../repos-with-pulls.csv" "../filtered.txt" "../after-filter.csv"', 'just workflows "../after-filter.csv" "../after-workflows.csv"', 'just junit "../after-workflows.csv" $GH_TOKEN "../after-junit.csv"']
-2025-02-03 10:30:36.284 | INFO     | sr_data.pipeline:main:76 - We expect the following files to be generated: ['repos.csv', 'repos-with-pulls.csv', 'after-filter.csv', 'after-workflows.csv', 'after-junit.csv']
+2025-02-03 11:20:39.176 | INFO     | sr_data.pipeline:main:76 - We expect the following files to be generated: ['repos.csv', 'repos-with-pulls.csv', 'after-filter.csv', 'after-workflows.csv', 'after-junit.csv']
 cd sr-data && poetry poe pulls --repos "../repos.csv" --token "REDACTED" --out "../repos-with-pulls.csv"
 Poe => pulls --repos ../repos.csv --token REDACTED --out ../repos-with-pulls.csv
 Traceback (most recent call last):
@@ -4075,7 +4481,7 @@ FileNotFoundError: [Errno 2] No such file or directory: '../repos.csv'
 error: Recipe `pulls` failed on line 78 with exit code 1
 cd sr-data && poetry poe filter --repos "../repos-with-pulls.csv" --out "../after-filter.csv" --filtered "../filtered.txt"
 Poe => filter --repos ../repos-with-pulls.csv --out ../after-filter.csv --filtered ../filtered.txt
-2025-02-03 10:30:39.719 | INFO     | sr_data.steps.filter:main:40 - Start filtering...
+2025-02-03 11:20:42.480 | INFO     | sr_data.steps.filter:main:40 - Start filtering...
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
   File "/sr-data/src/sr_data/steps/filter.py", line 42, in main
@@ -4149,7 +4555,7 @@ error: Recipe `junit` failed on line 88 with exit code 1
 "/root/.cargo/bin"/just numerical "..//after-junit.csv" "..//numerical.csv"
 cd sr-data && poetry poe numerical --repos "..//after-junit.csv" --out "..//numerical.csv"
 Poe => numerical --repos ..//after-junit.csv --out ..//numerical.csv
-2025-02-03 10:30:42.908 | INFO     | sr_data.steps.numerical:main:30 - Creating dataset with all numerical data...
+2025-02-03 11:20:45.531 | INFO     | sr_data.steps.numerical:main:30 - Creating dataset with all numerical data...
 Traceback (most recent call last):
   File "<string>", line 1, in <module>
   File "/sr-data/src/sr_data/steps/numerical.py", line 31, in main
