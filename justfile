@@ -34,8 +34,8 @@ full tests="fast":
   just check
 
 # Run tests.
-test which="fast":
-  poetry run pytest -m "{{which}}"
+test which="fast" cov="":
+  poetry run pytest -m "{{which}}" {{cov}}
 
 # Check quality of source code.
 check:

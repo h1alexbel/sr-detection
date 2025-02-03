@@ -19,29 +19,33 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-detection"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{ include = "sr-data" }, { include = "sr-train" }]
-
-[tool.poetry.dependencies]
-poetry = "1.8.4"
-python = "==3.10.* || ==3.11.* || ==3.12.*"
-sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-
-[tool.poetry.group.dev.dependencies]
-sr-data = { path = "./sr-data" }
-pytest = "^8.2.2"
-pylint = "^3.2.5"
-flake8 = "^7.1.0"
-coverage = "^7.6.10"
-pytest-cov = "^6.0.0"
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+---
+name: codecov
+'on':
+  push:
+    branches:
+      - master
+concurrency:
+  group: codecov-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  codecov:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - uses: abatilo/actions-poetry@v4
+        with:
+          poetry-version: 1.8.4
+      - uses: extractions/setup-just@v2
+        with:
+          just-version: 1.30.1
+      - run: |
+          just install
+          just test "fast or deep" "--cov=sr-data --cov-branch --cov-report=xml"
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
