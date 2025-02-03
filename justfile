@@ -35,7 +35,7 @@ full tests="fast":
 
 # Run tests.
 test which="fast" cov="":
-  poetry run pytest -m "{{which}}" "{{cov}}"
+  poetry run pytest -m "{{which}}" {{cov}}
 
 # Check quality of source code.
 check:
