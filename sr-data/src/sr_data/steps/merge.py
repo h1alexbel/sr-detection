@@ -41,10 +41,11 @@ DATASETS = [
 ]
 
 
-# @todo #319:45min Setup tests for merge.
-#  Currently, there is no tests that can catch errors in the datasets merging.
-#  Would be crucial to add setup tests that will check the merging functionality,
-#  and help us catch bugs.
+# @todo #319:45min Setup unit tests for merge.
+#  Currently, there is no unit tests that can catch errors in the datasets merging,
+#  only an integration test exists in sr-train/test_dataset.py. Would be crucial to
+#  add unit tests too, that will check the merging functionality, and help us catch
+#  bugs faster.
 def main(datasets, out, branch):
     logger.info("Start merging...")
     logger.info(f"Folders={datasets}")
