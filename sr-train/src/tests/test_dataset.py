@@ -35,10 +35,10 @@ class TestDataset(unittest.TestCase):
     @pytest.mark.deep
     def test_fetches_and_stores_dataset(self):
         with TemporaryDirectory() as temp:
-            main("2024", temp)
+            main("2024-j", temp)
             nfiles = len(os.listdir(temp))
             self.assertEqual(
                 nfiles,
-                7,
+                8,
                 "Number of fetched files doesn't match with expected"
             )
