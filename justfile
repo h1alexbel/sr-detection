@@ -28,7 +28,7 @@ install:
   cd sr-train && poetry install
 
 # Full build.
-full tests="fast":
+full tests="fast or deep":
   poetry install
   just test "{{tests}}"
   just check

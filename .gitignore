@@ -4,7 +4,6 @@ venv/
 bin/
 pwd/
 *.egg-info/
-.vscode/
 .idea/
 .DS_Store
 *.iml
@@ -15,5 +14,8 @@ pwd/
 .factorypath
 pyvenv.cfg
 poetry.lock
+__pycache__/
 tmp/
 coverage.xml
+.coverage
+.python-version
