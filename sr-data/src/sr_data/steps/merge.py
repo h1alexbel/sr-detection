@@ -30,6 +30,7 @@ import requests
 from loguru import logger
 
 DATASETS = [
+    "d0-numerical.csv",
     "d1-scores.csv",
     "d2-sbert.csv",
     "d3-e5.csv",
