@@ -23,7 +23,7 @@
 name = "sr-train"
 version = "0.0.0"
 description = "Training of ML models in order to identify sample repositories"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
+authors = ["h1alexbel <h1alexbelx@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{ include = "models", from = "src" }]

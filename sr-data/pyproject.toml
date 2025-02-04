@@ -22,8 +22,8 @@
 [tool.poetry]
 name = "sr-data"
 version = "0.0.0"
-description = "GitHub repositories data to vectors"
-authors = ["h1alexbel <aliaksei.bialiauski@hey.com>"]
+description = "GitHub repositories to numerical vectors"
+authors = ["h1alexbel <h1alexbelx@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "sr_data", from = "src"}]

@@ -19,9 +19,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
----
-errors:
-  - h1alexbelx@gmail.com
-tags:
-  - pdd
-  - bug
+[default]
+extend-ignore-identifiers-re = [
+    "packgs", # variable name
+]
+[files]
+extend-exclude = ["sr-data/src/tests/resources/*.md", "*.csv"]
