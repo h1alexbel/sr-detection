@@ -1,3 +1,6 @@
+"""
+SR command-line toolchain.
+"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,30 +22,23 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-[tool.poetry]
-name = "sr-detection"
-version = "0.0.0"
-description = ""
-authors = ["h1alexbel <h1alexbelx@gmail.com>"]
-license = "MIT"
-readme = "README.md"
-packages = [{ include = "sr-data" }, { include = "sr-train" }, { include = "sr-cli" }]
 
-[tool.poetry.dependencies]
-poetry = "1.8.4"
-python = "==3.10.* || ==3.11.* || ==3.12.*"
-sr-data = { path = "./sr-data" }
-sr-train = { path = "./sr-train" }
-sr-cli = { path = "./sr-cli" }
+import argparse
+import toml
+from loguru import logger
 
-[tool.poetry.group.dev.dependencies]
-sr-data = { path = "./sr-data" }
-pytest = "^8.2.2"
-pylint = "^3.2.5"
-flake8 = "^7.1.0"
-coverage = "^7.6.10"
-pytest-cov = "^6.0.0"
+parser = argparse.ArgumentParser(description="SR toolchain")
+parser.add_argument(
+    "--version",
+    action="version",
+    version=f"%(prog)s {toml.load("pyproject.toml")["tool"]["poetry"]["version"]}"
+)
+parser.add_argument(
+    "--steps",
+    type=str,
+    default="mine,pulls,filter,workflows,junit,package,cluster,stats",
+    help="SR steps to execute"
+)
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+args = parser.parse_args()
+logger.info(f"Registering steps: {args.steps}")
