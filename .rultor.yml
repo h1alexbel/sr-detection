@@ -62,4 +62,4 @@ release:
     git commit -am "${tag}"
     poetry config pypi-token.pypi $(cat ../pypi.txt)
     poetry build
-    poetry publish --build --no-interaction --username h1aelxbel --password $(cat ../pypi.txt)
+    poetry publish --no-interaction --username h1aelxbel --password $(cat ../pypi.txt)
