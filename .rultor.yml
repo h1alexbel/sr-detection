@@ -26,6 +26,7 @@ docker:
   image: yegor256/rultor-image:1.23.1
 assets:
   docker-password: h1alexbel/home#assets/docker-password
+  pypi.txt: h1alexbel/home#assets/pypi.txt
 install: |
   rustup update
   cargo install --version 1.30.1 just
@@ -43,6 +44,8 @@ release:
   pre: false
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
+    sed -i "s/0\.0\.0/${tag}/g" version.txt
+    git commit -am "${tag}"
     repo=h1alexbel/sr-detection
     sed -i -e "s/^0.0.0/${tag}/" Dockerfile
     sudo docker build "$(pwd)" --tag "${repo}:${tag}"
@@ -50,3 +53,6 @@ release:
     cat ../docker-password | sudo docker login --password-stdin --username h1alexbel
     sudo docker push "${repo}:${tag}"
     sudo docker push "${repo}:latest"
+    poetry config pypi-token.pypi $(cat ../pypi.txt)
+    poetry build
+    poetry publish --build --username h1aelxbel --password $(cat ../pypi.txt)

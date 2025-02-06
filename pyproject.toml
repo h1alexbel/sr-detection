@@ -26,13 +26,14 @@ description = ""
 authors = ["h1alexbel <h1alexbelx@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "sr-data" }, { include = "sr-train" }]
+packages = [{ include = "sr-data" }, { include = "sr-train" }, { include = "sr-cli" }]
 
 [tool.poetry.dependencies]
 poetry = "1.8.4"
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
+sr-cli = { path = "./sr-cli" }
 
 [tool.poetry.group.dev.dependencies]
 sr-data = { path = "./sr-data" }
