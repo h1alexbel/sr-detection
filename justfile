@@ -70,7 +70,8 @@ clean:
 collect dir query start end out:
   mkdir -p {{dir}}
   ghminer --query "{{query}}" --start "{{start}}" --end "{{end}}" \
-   --tokens "$PATS" --filename "{{out}}"
+   --tokens "$PATS" --filename "{{out}}" --graphql "sr-data/resources/ghminer.graphql" \
+    --schema "sr-data/resources/ghminer.json"
 
 # Fetch pulls count for collected repos.
 pulls repos token out="experiment/with-pulls.csv":
