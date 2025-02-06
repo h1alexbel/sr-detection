@@ -28,7 +28,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-sr-data = { path = "../sr-data" }
+sr-data = "0.0.0"
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 loguru = "^0.7.3"
 toml = "^0.10.2"
