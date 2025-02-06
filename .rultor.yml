@@ -57,6 +57,7 @@ release:
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
     sed -i "s/version = \"0\.0\.0\"/version = \"${tag}\"/g" pyproject.toml
     sed -i "s/version = \"0\.0\.0\"/version = \"${tag}\"/g" sr-data/pyproject.toml
+    sed -i "s/version = \"0\.0\.0\"/version = \"${tag}\"/g" sr-train/pyproject.toml
     sed -i "s/version = \"0\.0\.0\"/version = \"${tag}\"/g" sr-cli/pyproject.toml
     git commit -am "${tag}"
     poetry config pypi-token.pypi $(cat ../pypi.txt)
