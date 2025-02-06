@@ -40,19 +40,23 @@ merge:
     poetry install --no-root
     just test "deep or fast"
     just check
+# @todo #324:45min Package and publish sr cli in docker registry.
+#  Currently, we are only releasing toolchain in PyPi. Let's return back
+#  our docker pipeline, but instead of sr-data and justfile scripts, we should use
+#  sr cli.
+# repo=h1alexbel/sr-detection
+# sed -i -e "s/^0.0.0/${tag}/" Dockerfile
+# sudo docker build "$(pwd)" --tag "${repo}:${tag}"
+# sudo docker tag "${repo}:${tag}" "${repo}:latest"
+# cat ../docker-password | sudo docker login --password-stdin --username h1alexbel
+# sudo docker push "${repo}:${tag}"
+# sudo docker push "${repo}:latest"
 release:
   pre: false
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
     sed -i "s/0\.0\.0/${tag}/g" version.txt
     git commit -am "${tag}"
-    repo=h1alexbel/sr-detection
-    sed -i -e "s/^0.0.0/${tag}/" Dockerfile
-    sudo docker build "$(pwd)" --tag "${repo}:${tag}"
-    sudo docker tag "${repo}:${tag}" "${repo}:latest"
-    cat ../docker-password | sudo docker login --password-stdin --username h1alexbel
-    sudo docker push "${repo}:${tag}"
-    sudo docker push "${repo}:latest"
     poetry config pypi-token.pypi $(cat ../pypi.txt)
     poetry build
     poetry publish --build --username h1aelxbel --password $(cat ../pypi.txt)
