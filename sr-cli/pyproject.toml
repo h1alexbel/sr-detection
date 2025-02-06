@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 [tool.poetry]
-name = "sr"
+name = "sr-cli"
 version = "0.0.0"
 description = "Command-line SR toolchain"
 authors = ["h1alexbel <h1alexbelx@gmail.com>"]
@@ -29,7 +29,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 sr-data = { path = "../sr-data" }
-python = "^3.10 || ^3.11 || ^3.12"
+python = "==3.10.* || ==3.11.* || ==3.12.*"
 loguru = "^0.7.3"
 toml = "^0.10.2"
 
