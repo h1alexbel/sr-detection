@@ -21,7 +21,7 @@
 # SOFTWARE.
 [tool.poetry]
 name = "sr-filter"
-version = "0.0.0"
+version = "0.0.44"
 description = "Command-line SR toolchain"
 authors = ["h1alexbel <h1alexbelx@gmail.com>"]
 license = "MIT"
@@ -32,7 +32,7 @@ packages = [{include = "sr", from = "src"}]
 sr-filter = "sr.sr:main"
 
 [tool.poetry.dependencies]
-sr-data = "0.0.0"
+sr-data = "0.0.44"
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 loguru = "^0.7.3"
 toml = "^0.10.2"
