@@ -34,7 +34,7 @@ Register steps.
 """
 def register(steps):
     logger.info(f"Registering steps: {steps.replace(",", ", ")}")
-    with open("src/resources/toolchain.json", "r") as spec:
+    with open("src/sr/resources/toolchain.json", "r") as spec:
         tlc = json.load(spec)
         defined = tlc["goal"]
     for step in steps.split(","):
