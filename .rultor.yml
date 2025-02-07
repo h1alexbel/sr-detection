@@ -62,4 +62,4 @@ release:
     sed -i "s/version = \"0\.0\.0\"/version = \"${tag}\"/g" sr-filter/pyproject.toml
     sed -i "s/sr-data = \"0\.0\.0\"/sr-data = \"${tag}\"/g" sr-filter/pyproject.toml
     git commit -am "${tag}"
-    cd sr-cli && poetry build && poetry publish --no-interaction
+    cd sr-filter && poetry build && poetry publish --no-interaction
