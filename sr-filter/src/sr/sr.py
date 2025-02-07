@@ -41,7 +41,7 @@ def register(steps):
     for step in steps.split(","):
         if not step in defined:
             logger.error(
-                f"Step '{step}' cannot be recongnized. List of available steps: {", ".join(defined)}"
+                f"Step '{step}' cannot be recognized. List of available steps: {", ".join(defined)}"
             );
             exit(-1);
     logger.info("Steps registered");
