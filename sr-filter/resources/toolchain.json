@@ -1,0 +1,3 @@
+{
+    "goal": ["mine", "pulls", "filter", "workflows", "junit", "package", "cluster", "stats"]
+}

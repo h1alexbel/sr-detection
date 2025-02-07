@@ -24,7 +24,7 @@ SR command-line toolchain.
 # SOFTWARE.
 
 import argparse
-import toml
+import importlib.metadata
 import json
 from loguru import logger
 
@@ -49,7 +49,7 @@ def main():
     parser.add_argument(
         "--version",
         action="version",
-        version=f"%(prog)s {toml.load("pyproject.toml")["tool"]["poetry"]["version"]}"
+        version=f"%(prog)s {importlib.metadata.version("sr-filter")}"
     )
     parser.add_argument(
         "--steps",
