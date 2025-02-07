@@ -25,20 +25,37 @@ SR command-line toolchain.
 
 import argparse
 import toml
+import json
 from loguru import logger
 
-parser = argparse.ArgumentParser(description="SR toolchain")
-parser.add_argument(
-    "--version",
-    action="version",
-    version=f"%(prog)s {toml.load("pyproject.toml")["tool"]["poetry"]["version"]}"
-)
-parser.add_argument(
-    "--steps",
-    type=str,
-    default="mine,pulls,filter,workflows,junit,package,cluster,stats",
-    help="SR steps to execute"
-)
 
-args = parser.parse_args()
-logger.info(f"Registering steps: {args.steps}")
+"""
+Register steps.
+"""
+def register(steps):
+    logger.info(f"Registering steps: {steps.replace(",", ", ")}")
+    with open("resources/toolchain.json", "r") as spec:
+        tlc = json.load(spec)
+        defined = tlc["goal"]
+    for step in steps.split(","):
+        if not step in defined:
+            logger.error(f"Step '{step}' cannot be recongnized by sr-filter");
+            exit(-1);
+    logger.info("Steps registered");
+
+
+def main():
+    parser = argparse.ArgumentParser(description="SR toolchain")
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {toml.load("pyproject.toml")["tool"]["poetry"]["version"]}"
+    )
+    parser.add_argument(
+        "--steps",
+        type=str,
+        default="mine,pulls,filter,workflows,junit,package,cluster,stats",
+        help="Comma separeted steps to execute"
+    )
+    args = parser.parse_args()
+    register(args.steps)
