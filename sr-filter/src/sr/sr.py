@@ -25,6 +25,7 @@ SR command-line toolchain.
 
 import argparse
 import importlib.metadata
+import importlib.resources
 import json
 from loguru import logger
 
@@ -34,7 +35,7 @@ Register steps.
 """
 def register(steps):
     logger.info(f"Registering steps: {steps.replace(",", ", ")}")
-    with open("src/sr/resources/toolchain.json", "r") as spec:
+    with importlib.resources.files("sr.resources").joinpath("toolchain.json").open("r") as spec:
         tlc = json.load(spec)
         defined = tlc["goal"]
     for step in steps.split(","):
