@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 [tool.poetry]
-name = "sr-cli"
+name = "sr-filter"
 version = "0.0.0"
 description = "Command-line SR toolchain"
 authors = ["h1alexbel <h1alexbelx@gmail.com>"]
