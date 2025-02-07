@@ -21,7 +21,7 @@
 # SOFTWARE.
 [tool.poetry]
 name = "sr-detection"
-version = "0.0.0"
+version = "0.0.43"
 description = ""
 authors = ["h1alexbel <h1alexbelx@gmail.com>"]
 license = "MIT"
