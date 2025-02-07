@@ -34,12 +34,14 @@ Register steps.
 """
 def register(steps):
     logger.info(f"Registering steps: {steps.replace(",", ", ")}")
-    with open("resources/toolchain.json", "r") as spec:
+    with open("src/resources/toolchain.json", "r") as spec:
         tlc = json.load(spec)
         defined = tlc["goal"]
     for step in steps.split(","):
         if not step in defined:
-            logger.error(f"Step '{step}' cannot be recongnized by sr-filter");
+            logger.error(
+                f"Step '{step}' cannot be recongnized. List of available steps: {", ".join(defined)}"
+            );
             exit(-1);
     logger.info("Steps registered");
 
