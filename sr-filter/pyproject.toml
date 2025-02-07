@@ -32,7 +32,7 @@ packages = [{include = "sr", from = "src"}]
 sr-filter = "sr.sr:main"
 
 [tool.poetry.dependencies]
-sr-data = "0.0.0"
+sr-data = "0.0.47"
 python = "==3.10.* || ==3.11.* || ==3.12.*"
 loguru = "^0.7.3"
 
