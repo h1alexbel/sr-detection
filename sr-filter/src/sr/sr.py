@@ -72,7 +72,7 @@ def main():
         "--steps",
         type=str,
         default="pulls,filter,workflows,junit,package,cluster,stats",
-        help="Comma separeted steps to execute"
+        help="Comma separated steps to execute"
     )
     args = parser.parse_args()
     prepare_out()
