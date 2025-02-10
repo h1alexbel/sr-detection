@@ -28,12 +28,25 @@ import importlib.metadata
 import importlib.resources
 import json
 from loguru import logger
+import os
+import shutil
+
+"""
+Prepare target dir.
+"""
+def prepare_out():
+    out = "sr/target"
+    shutil.rmtree(out)
+    logger.debug(f"Cleaned {out}")
+    os.makedirs(out, exist_ok=True)
+    logger.debug(f"Created output directory in {out}")
 
 
 """
 Register steps.
 """
 def register(steps):
+    pipes = []
     logger.info(f"Registering steps: {steps.replace(",", ", ")}")
     with importlib.resources.files("sr.resources").joinpath("toolchain.json").open("r") as spec:
         tlc = json.load(spec)
@@ -44,7 +57,8 @@ def register(steps):
                 f"Step '{step}' cannot be recognized. List of available steps: {", ".join(defined)}"
             );
             exit(-1);
-    logger.info("Steps registered");
+        pipes.append(step);
+    logger.info("Steps registered")
 
 
 def main():
@@ -57,8 +71,9 @@ def main():
     parser.add_argument(
         "--steps",
         type=str,
-        default="mine,pulls,filter,workflows,junit,package,cluster,stats",
+        default="pulls,filter,workflows,junit,package,cluster,stats",
         help="Comma separeted steps to execute"
     )
     args = parser.parse_args()
+    prepare_out()
     register(args.steps)

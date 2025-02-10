@@ -1,3 +1,7 @@
 {
-    "goal": ["mine", "pulls", "filter", "workflows", "junit", "package", "cluster", "stats"]
+    "goal": ["pulls", "filter", "workflows", "junit", "package", "cluster", "stats"],
+    "pulls": {
+        "repos": "repos.csv",
+        "out": "sr/target/pulls/repos.csv"
+    }
 }
