@@ -58,7 +58,7 @@ def prepare_out():
 
 def register(steps):
     pipes = []
-    logger.info(f"Registering steps: {steps.replace(",", ", ")}")
+    logger.info(f"Registering steps: {steps.replace(',', ', ')}")
     with importlib.resources.files("sr.resources").joinpath("toolchain.json").open("r") as spec:
         tlc = json.load(spec)
         defined = tlc["goal"]
