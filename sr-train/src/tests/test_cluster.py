@@ -137,7 +137,7 @@ class TestCluster(unittest.TestCase):
             )
 
     @pytest.mark.fast
-    def test_clusters_with_gmm(self):
+    def test_clusters_with_hdbscan(self):
         with TemporaryDirectory() as temp:
             hdbscan(
                 os.path.join(

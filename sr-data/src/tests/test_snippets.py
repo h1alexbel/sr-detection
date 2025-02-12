@@ -40,11 +40,11 @@ class TestSnippets(unittest.TestCase):
         ```bash
         sh test1.sh
         ```
-        
+
         ```bash
         sh test2.sh
         ```
-        
+
         ```bash
         sh test3.sh
         ```

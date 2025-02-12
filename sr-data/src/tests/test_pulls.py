@@ -30,6 +30,7 @@ import pandas as pd
 import pytest
 from sr_data.steps.pulls import main
 
+
 class TestPulls(unittest.TestCase):
 
     @pytest.mark.nightly

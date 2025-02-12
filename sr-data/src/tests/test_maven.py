@@ -98,7 +98,12 @@ class TestMaven(unittest.TestCase):
             frame = pd.read_csv(path)
             self.assertEqual(
                 frame.iloc[0]["maven_plugins"],
-                "[org.jetbrains.kotlin:kotlin-maven-plugin,org.springframework.boot:spring-boot-maven-plugin]"
+                f"[{','.join(
+                    [
+                        'org.jetbrains.kotlin:kotlin-maven-plugin',
+                        'org.springframework.boot:spring-boot-maven-plugin'
+                    ]
+                )}]"
             )
 
     @pytest.mark.fast
@@ -109,8 +114,8 @@ class TestMaven(unittest.TestCase):
                     "path": "core-spring/auto-configure/pom.xml",
                     "content": "\n".join([
                         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
-                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",
-                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",
+                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",  # noqa: E501
+                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",  # noqa: E501
                         "\t<modelVersion>4.0.0</modelVersion>",
                         "\t<groupId>com.therealdanvega</groupId>",
                         "\t<artifactId>auto-configure</artifactId>",
@@ -154,8 +159,8 @@ class TestMaven(unittest.TestCase):
                     "path": "core-spring/beans/pom.xml",
                     "content": "\n".join([
                         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
-                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",
-                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",
+                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",  # noqa: E501
+                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",  # noqa: E501
                         "\t<modelVersion>4.0.0</modelVersion>",
                         "\t<groupId>com.therealdanvega</groupId>",
                         "\t<artifactId>sbeans</artifactId>",

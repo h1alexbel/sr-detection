@@ -1,0 +1,13 @@
+KhushPatibandha/RiceDB
+wch2019/xiaohai-blog
+daylanbueno/auth-api
+C0de-cake/airbnb-clone-backend
+galliumdata/adumbra
+enisHatipoglu23/tourismAgency
+GreenScripter/minecraft-bot
+PramodDutta/LearningATB7xJavaPrograms
+KirDemorgan/desaAPI
+Farooquekk/DSA-IN-JAVA
+pdudits/jakarta-mvc-unpoly
+justine6/https-github.com-ashishps1-awesome-system-design-resources
+ionutbalosin/java-application-security-practices

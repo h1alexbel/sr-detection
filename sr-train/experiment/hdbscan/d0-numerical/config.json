@@ -1,0 +1,16 @@
+{
+    "algorithm": "auto",
+    "allow_single_cluster": false,
+    "alpha": 1.0,
+    "cluster_selection_epsilon": 0.0,
+    "cluster_selection_method": "eom",
+    "copy": false,
+    "leaf_size": 40,
+    "max_cluster_size": null,
+    "metric": "euclidean",
+    "metric_params": null,
+    "min_cluster_size": 20,
+    "min_samples": null,
+    "n_jobs": null,
+    "store_centers": null
+}

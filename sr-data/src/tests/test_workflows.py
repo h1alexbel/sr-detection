@@ -170,7 +170,6 @@ jobs:
                 "First repo has workflows, but it shouldn't"
             )
 
-
     @pytest.mark.fast
     def test_returns_true_when_workflow_has_type_published(self):
         self.assertTrue(
@@ -427,7 +426,6 @@ jobs:
             f"Steps count in workflow: '{info}' does not match with expected"
         )
 
-
     @pytest.mark.fast
     def test_calculates_simplicity_score(self):
         scores = pd.read_csv(
@@ -441,7 +439,6 @@ jobs:
             -0.85,
             "Calculated score does not match with expected"
         )
-
 
     @pytest.mark.fast
     def test_parses_commented_workflow(self):

@@ -48,9 +48,6 @@ PIPE_MAPPING = {
 }
 
 
-"""
-Prepare target dir.
-"""
 def prepare_out():
     out = "sr/target"
     shutil.rmtree(out)
@@ -59,9 +56,6 @@ def prepare_out():
     logger.debug(f"Created output directory in {out}")
 
 
-"""
-Register steps.
-"""
 def register(steps):
     pipes = []
     logger.info(f"Registering steps: {steps.replace(",", ", ")}")
@@ -69,11 +63,11 @@ def register(steps):
         tlc = json.load(spec)
         defined = tlc["goal"]
     for step in steps.split(","):
-        if not step in defined:
+        if step not in defined:
             logger.error(
                 f"Step '{step}' cannot be recognized. List of available steps: {", ".join(defined)}"
-            );
-            exit(-1);
+            )
+            exit(-1)
         pipes.append(step)
     logger.info("Steps registered")
     return pipes
@@ -82,7 +76,7 @@ def register(steps):
 def validate():
     if not os.path.exists("repos.csv"):
         raise RuntimeError(
-            "File 'repos.csv' is not present at run dir. Please generate this file with 'just collect..' script"
+            "File 'repos.csv' is not present at run dir. Please generate this file with 'just collect..' script"  # noqa: E501
         )
 
 

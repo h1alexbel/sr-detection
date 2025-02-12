@@ -31,11 +31,12 @@ import pytest
 from sr_data.steps.sentiments import top, sentiment, main
 
 
-# @todo #207:60min Enable tests for sentiments.py when rultor will be able to install torch and transformers.
-#  Currently, when rultor tries to install torch and transformers dependencies to
+# @todo #207:60min Enable tests for sentiments.py when rultor will be able to install torch and
+#  transformers. Currently, when rultor tries to install torch and transformers dependencies to
 #  be able to run steps/sentiments.py it fails with exit code 137. Versions were
 #  used: torch = "2.2.2", and transformers = "4.41.2". You can check the example
-#  of such build <a href="https://github.com/h1alexbel/sr-detection/pull/233#issuecomment-2497707744">here<a/>.
+#  of such build
+#  <a href="https://github.com/h1alexbel/sr-detection/pull/233#issuecomment-2497707744">here<a/>.
 #  After issue will be resolved, we should enable uncomment lines in `sentiments.py`,
 #  and enable respective tests in test_sentiments.py.
 @pytest.mark.skip
