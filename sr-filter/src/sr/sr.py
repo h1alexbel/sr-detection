@@ -30,6 +30,23 @@ import json
 from loguru import logger
 import os
 import shutil
+import sr_data.steps.pulls as pulls
+
+
+def pull_requests():
+    logger.info("Calculating the number of pull requests in each repo...")
+    with importlib.resources.files("sr.resources").joinpath("toolchain.json").open("r") as spec:
+        tlc = json.load(spec)
+        config = tlc["pulls"]
+        out = config["out"]
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        pulls.main(config["repos"], out, os.environ[config["token"].replace("$", "")])
+
+
+PIPE_MAPPING = {
+    "pulls": pull_requests
+}
+
 
 """
 Prepare target dir.
@@ -57,8 +74,16 @@ def register(steps):
                 f"Step '{step}' cannot be recognized. List of available steps: {", ".join(defined)}"
             );
             exit(-1);
-        pipes.append(step);
+        pipes.append(step)
     logger.info("Steps registered")
+    return pipes
+
+
+def validate():
+    if not os.path.exists("repos.csv"):
+        raise RuntimeError(
+            "File 'repos.csv' is not present at run dir. Please generate this file with 'just collect..' script"
+        )
 
 
 def main():
@@ -75,5 +100,11 @@ def main():
         help="Comma separated steps to execute"
     )
     args = parser.parse_args()
+    validate()
     prepare_out()
-    register(args.steps)
+    for pipe in register(args.steps):
+        worker = PIPE_MAPPING.get(pipe)
+        if worker:
+            worker()
+        else:
+            raise RuntimeError(f"Cannot find worker for pipe '{pipe}'")

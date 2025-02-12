@@ -2,6 +2,7 @@
     "goal": ["pulls", "filter", "workflows", "junit", "package", "cluster", "stats"],
     "pulls": {
         "repos": "repos.csv",
-        "out": "sr/target/pulls/repos.csv"
+        "out": "sr/target/pulls/repos.csv",
+        "token": "$GH_TOKEN"
     }
 }
