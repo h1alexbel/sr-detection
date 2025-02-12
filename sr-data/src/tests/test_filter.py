@@ -30,6 +30,7 @@ import pandas as pd
 from sr_data.steps.filter import main
 import pytest
 
+
 class TestFilter(unittest.TestCase):
 
     @pytest.mark.fast

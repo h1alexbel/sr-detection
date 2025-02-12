@@ -77,7 +77,7 @@ def contents(folder, branch):
     result = {}
     for file in DATASETS:
         content = requests.get(
-            f"https://raw.githubusercontent.com/h1alexbel/sr-detection/refs/heads/{branch}/{folder}/{file}"
+            f"https://raw.githubusercontent.com/h1alexbel/sr-detection/refs/heads/{branch}/{folder}/{file}"  # noqa: E501
         ).text
         result[file] = pd.read_csv(StringIO(content), sep=",")
         logger.info(f"Fetched @{branch}/{folder}/{file} ({len(result[file])} rows)")

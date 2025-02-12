@@ -101,12 +101,9 @@ def merge(build, repo):
         except ParseError:
             logger.warning(f"Failed to parse {repo}: {path}. Probably XML is broken")
         if root is not None:
+            clean = xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
             pretty = "\n".join(
-                [
-                    line for line
-                    in xml.dom.minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ").splitlines()
-                    if line.strip()
-                ]
+                [line for line in clean if line.strip()]
             )
             logger.debug(f"{path}:\n{pretty}")
             if len(

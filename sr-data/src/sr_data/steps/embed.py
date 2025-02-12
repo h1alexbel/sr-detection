@@ -60,7 +60,7 @@ def main(repos, prefix, hf, cohere):
             embeddings.insert(0, 'repo', frame["repo"])
             embeddings.to_csv(f"{prefix}-{model}.csv", index=False)
         logger.info(
-            f"Generated {len(embeddings)} embeddings saved to {prefix}-{model}.csv ({len(embeddings)}r x {len(embeddings.columns)}c)"
+            f"Generated {len(embeddings)} embeddings saved to {prefix}-{model}.csv ({len(embeddings)}r x {len(embeddings.columns)}c)"  # noqa: E501
         )
 
 
@@ -69,7 +69,9 @@ def embed_cohere(key, texts, prefix):
     embeddings = pd.DataFrame(
         np.asarray(
             client.embed(
-                texts=texts["mcw"].tolist(), input_type="search_document", model="embed-english-v3.0"
+                texts=texts["mcw"].tolist(),
+                input_type="search_document",
+                model="embed-english-v3.0"
             ).embeddings
         )
     )

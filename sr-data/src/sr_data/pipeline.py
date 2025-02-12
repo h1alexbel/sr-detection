@@ -26,6 +26,7 @@ import json
 
 from loguru import logger
 
+
 def main(representation, steps, pipes, out):
     commands = []
     lout = None

@@ -120,7 +120,7 @@ class TestExtract(unittest.TestCase):
                 path
             )
             frame = pd.read_csv(path)
-            self.assertEqual(frame.iloc[0]["readme_hcount"],3)
+            self.assertEqual(frame.iloc[0]["readme_hcount"], 3)
 
     @pytest.mark.fast
     def test_skips_repo_with_null_headings(self):

@@ -28,6 +28,16 @@ import yaml
 from loguru import logger
 
 
+wscope = ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
+weights = {
+    "workflows": 0.3,
+    "w_jobs": 0.25,
+    "w_steps": 0.25,
+    "w_oss": 0.1,
+    "has_release_workflow": 0.1,
+}
+
+
 def main(repos, out):
     frame = pd.read_csv(repos)
     frame["workflows"] = frame["workflows"].fillna(0)
@@ -75,14 +85,6 @@ def main(repos, out):
     frame.to_csv(out, index=False)
     logger.info(f"Saved {len(frame)} repositories with workflows to {out}")
 
-wscope = ["workflows", "w_jobs", "w_oss", "w_steps", "has_release_workflow"]
-weights = {
-    "workflows": 0.3,
-    "w_jobs": 0.25,
-    "w_steps": 0.25,
-    "w_oss": 0.1,
-    "has_release_workflow": 0.1,
-}
 
 def w_score(row) -> int:
     """

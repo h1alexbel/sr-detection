@@ -39,9 +39,7 @@ test which="fast" cov="":
 
 # Check quality of source code.
 check:
-  git ls-files '*.py' | xargs -I {} sh -c \
-    ' echo "Running Pylint for {}" poetry run pylint "$@" echo "Running Flake8 for {}" poetry run flake8 "$@" \
-     ' _ {}
+  flake8 sr-data sr-train sr-filter
 
 # Run experiment.
 @experiment:
