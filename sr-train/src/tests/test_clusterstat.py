@@ -53,5 +53,5 @@ class TestClusterstat(unittest.TestCase):
                 content = r.readlines()
             self.assertEqual(
                 content,
-        ["to-cluster -> clusters: 0 clusters ()\n"]
+                ["to-cluster -> clusters: 0 clusters ()\n"]
             )

@@ -46,9 +46,25 @@ class TestMaven(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
+            plugins = ','.join(
+                [
+                    'com.github.volodya-lombrozo:jtcop-maven-plugin',
+                    'maven-surefire-plugin',
+                    'org.apache.maven.plugins:maven-checkstyle-plugin',
+                    'org.apache.maven.plugins:maven-compiler-plugin',
+                    'org.apache.maven.plugins:maven-gpg-plugin',
+                    'org.apache.maven.plugins:maven-invoker-plugin',
+                    'org.apache.maven.plugins:maven-javadoc-plugin',
+                    'org.apache.maven.plugins:maven-source-plugin',
+                    'org.apache.maven.plugins:maven-verifier-plugin',
+                    'org.jacoco:jacoco-maven-plugin',
+                    'org.sonatype.plugins:nexus-staging-maven-plugin',
+                    'ru.l3r8y:sa-tan'
+                ]
+            )
             self.assertEqual(
                 frame.iloc[0]["maven_plugins"],
-                "[com.github.volodya-lombrozo:jtcop-maven-plugin,maven-surefire-plugin,org.apache.maven.plugins:maven-checkstyle-plugin,org.apache.maven.plugins:maven-compiler-plugin,org.apache.maven.plugins:maven-gpg-plugin,org.apache.maven.plugins:maven-invoker-plugin,org.apache.maven.plugins:maven-javadoc-plugin,org.apache.maven.plugins:maven-source-plugin,org.apache.maven.plugins:maven-verifier-plugin,org.jacoco:jacoco-maven-plugin,org.sonatype.plugins:nexus-staging-maven-plugin,ru.l3r8y:sa-tan]"
+                f"[{plugins}]"
             )
             self.assertEqual(frame.iloc[0]["maven_projects_count"], 1.0)
             self.assertEqual(frame.iloc[0]["maven_wars_count"], 0.0)
@@ -83,9 +99,15 @@ class TestMaven(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
+            plugins = ','.join(
+                [
+                    'org.jetbrains.kotlin:kotlin-maven-plugin',
+                    'org.springframework.boot:spring-boot-maven-plugin'
+                ]
+            )
             self.assertEqual(
                 frame.iloc[0]["maven_plugins"],
-                "[org.jetbrains.kotlin:kotlin-maven-plugin,org.springframework.boot:spring-boot-maven-plugin]"
+                f"[{plugins}]"
             )
 
     @pytest.mark.fast
@@ -94,12 +116,94 @@ class TestMaven(unittest.TestCase):
             [
                 {
                     "path": "core-spring/auto-configure/pom.xml",
-                    "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n\t<modelVersion>4.0.0</modelVersion>\n\n\t<groupId>com.therealdanvega</groupId>\n\t<artifactId>auto-configure</artifactId>\n\t<version>0.0.1-SNAPSHOT</version>\n\t<packaging>jar</packaging>\n\n\t<name>auto-configure</name>\n\t<description>Spring Boot Auto Configure demo</description>\n\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\n\t\t<version>1.3.0.BUILD-SNAPSHOT</version>\n\t\t<relativePath/> <!-- lookup parent from repository -->\n\t</parent>\n\n\t<properties>\n\t\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n\t\t<java.version>1.8</java.version>\n\t</properties>\n\n\t<dependencies>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\n\t\t</dependency>\n\t\t\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\t\t</dependency>\n\t</dependencies>\n\t\n\t<build>\n\t\t<plugins>\n\t\t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\t\n\t<repositories>\n\t\t<repository>\n\t\t\t<id>spring-snapshots</id>\n\t\t\t<name>Spring Snapshots</name>\n\t\t\t<url>https://repo.spring.io/snapshot</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>true</enabled>\n\t\t\t</snapshots>\n\t\t</repository>\n\t\t<repository>\n\t\t\t<id>spring-milestones</id>\n\t\t\t<name>Spring Milestones</name>\n\t\t\t<url>https://repo.spring.io/milestone</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>false</enabled>\n\t\t\t</snapshots>\n\t\t</repository>\n\t</repositories>\n\t<pluginRepositories>\n\t\t<pluginRepository>\n\t\t\t<id>spring-snapshots</id>\n\t\t\t<name>Spring Snapshots</name>\n\t\t\t<url>https://repo.spring.io/snapshot</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>true</enabled>\n\t\t\t</snapshots>\n\t\t</pluginRepository>\n\t\t<pluginRepository>\n\t\t\t<id>spring-milestones</id>\n\t\t\t<name>Spring Milestones</name>\n\t\t\t<url>https://repo.spring.io/milestone</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>false</enabled>\n\t\t\t</snapshots>\n\t\t</pluginRepository>\n\t</pluginRepositories>\n\n</project>\n"
+                    "content": "\n".join([
+                        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",  # noqa: E501
+                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",  # noqa: E501
+                        "\t<modelVersion>4.0.0</modelVersion>",
+                        "\t<groupId>com.therealdanvega</groupId>",
+                        "\t<artifactId>auto-configure</artifactId>",
+                        "\t<version>0.0.1-SNAPSHOT</version>",
+                        "\t<packaging>jar</packaging>",
+                        "\t<name>auto-configure</name>",
+                        "\t<description>Spring Boot Auto Configure demo</description>",
+                        "\t<parent>",
+                        "\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t<artifactId>spring-boot-starter-parent</artifactId>",
+                        "\t\t<version>1.3.0.BUILD-SNAPSHOT</version>",
+                        "\t\t<relativePath/> <!-- lookup parent from repository -->",
+                        "\t</parent>",
+                        "\t<properties>",
+                        "\t\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>",
+                        "\t\t<java.version>1.8</java.version>",
+                        "\t</properties>",
+                        "\t<dependencies>",
+                        "\t\t<dependency>",
+                        "\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t<artifactId>spring-boot-starter-web</artifactId>",
+                        "\t\t</dependency>",
+                        "\t\t<dependency>",
+                        "\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t<artifactId>spring-boot-starter-test</artifactId>",
+                        "\t\t\t<scope>test</scope>",
+                        "\t\t</dependency>",
+                        "\t</dependencies>",
+                        "\t<build>",
+                        "\t\t<plugins>",
+                        "\t\t\t<plugin>",
+                        "\t\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>",
+                        "\t\t\t</plugin>",
+                        "\t\t</plugins>",
+                        "\t</build>",
+                        "</project>"
+                    ])
                 },
                 {
                     "path": "core-spring/beans/pom.xml",
-                    "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n\t<modelVersion>4.0.0</modelVersion>\n\n\t<groupId>com.therealdanvega</groupId>\n\t<artifactId>sbeans</artifactId>\n\t<version>0.0.1-SNAPSHOT</version>\n\t<packaging>jar</packaging>\n\n\t<name>SpringBeans</name>\n\t<description>Spring Beans Demo</description>\n\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\n\t\t<version>1.3.0.BUILD-SNAPSHOT</version>\n\t\t<relativePath/> <!-- lookup parent from repository -->\n\t</parent>\n\n\t<properties>\n\t\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n\t\t<java.version>1.8</java.version>\n\t</properties>\n\n\t<dependencies>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\n\t\t</dependency>\n\t\t\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\t\t</dependency>\n\t</dependencies>\n\t\n\t<build>\n\t\t<plugins>\n\t\t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\t\n\t<repositories>\n\t\t<repository>\n\t\t\t<id>spring-snapshots</id>\n\t\t\t<name>Spring Snapshots</name>\n\t\t\t<url>https://repo.spring.io/snapshot</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>true</enabled>\n\t\t\t</snapshots>\n\t\t</repository>\n\t\t<repository>\n\t\t\t<id>spring-milestones</id>\n\t\t\t<name>Spring Milestones</name>\n\t\t\t<url>https://repo.spring.io/milestone</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>false</enabled>\n\t\t\t</snapshots>\n\t\t</repository>\n\t</repositories>\n\t<pluginRepositories>\n\t\t<pluginRepository>\n\t\t\t<id>spring-snapshots</id>\n\t\t\t<name>Spring Snapshots</name>\n\t\t\t<url>https://repo.spring.io/snapshot</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>true</enabled>\n\t\t\t</snapshots>\n\t\t</pluginRepository>\n\t\t<pluginRepository>\n\t\t\t<id>spring-milestones</id>\n\t\t\t<name>Spring Milestones</name>\n\t\t\t<url>https://repo.spring.io/milestone</url>\n\t\t\t<snapshots>\n\t\t\t\t<enabled>false</enabled>\n\t\t\t</snapshots>\n\t\t</pluginRepository>\n\t</pluginRepositories>\n\n</project>\n"
-                },
+                    "content": "\n".join([
+                        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+                        "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",  # noqa: E501
+                        "\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">",  # noqa: E501
+                        "\t<modelVersion>4.0.0</modelVersion>",
+                        "\t<groupId>com.therealdanvega</groupId>",
+                        "\t<artifactId>sbeans</artifactId>",
+                        "\t<version>0.0.1-SNAPSHOT</version>",
+                        "\t<packaging>jar</packaging>",
+                        "\t<name>SpringBeans</name>",
+                        "\t<description>Spring Beans Demo</description>",
+                        "\t<parent>",
+                        "\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t<artifactId>spring-boot-starter-parent</artifactId>",
+                        "\t\t<version>1.3.0.BUILD-SNAPSHOT</version>",
+                        "\t\t<relativePath/> <!-- lookup parent from repository -->",
+                        "\t</parent>",
+                        "\t<properties>",
+                        "\t\t<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>",
+                        "\t\t<java.version>1.8</java.version>",
+                        "\t</properties>",
+                        "\t<dependencies>",
+                        "\t\t<dependency>",
+                        "\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t<artifactId>spring-boot-starter-web</artifactId>",
+                        "\t\t</dependency>",
+                        "\t\t<dependency>",
+                        "\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t<artifactId>spring-boot-starter-test</artifactId>",
+                        "\t\t\t<scope>test</scope>",
+                        "\t\t</dependency>",
+                        "\t</dependencies>",
+                        "\t<build>",
+                        "\t\t<plugins>",
+                        "\t\t\t<plugin>",
+                        "\t\t\t\t<groupId>org.springframework.boot</groupId>",
+                        "\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>",
+                        "\t\t\t</plugin>",
+                        "\t\t</plugins>",
+                        "\t</build>",
+                        "</project>"
+                    ])
+                }
             ],
             "foo/bar"
         )

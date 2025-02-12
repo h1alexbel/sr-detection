@@ -82,7 +82,7 @@ def request(token, repo, cursor) -> Response:
                             }
                         }
                     }
-                }            
+                }
                 """,
             "variables": {
                 "owner": owner,

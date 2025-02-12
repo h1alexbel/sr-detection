@@ -23,6 +23,7 @@ Filtered repositories.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+
 def filtered(file, repos, step):
     file.write(f"Filtered out {len(repos)} repositories during ({step}):\n\n")
     for repo in repos:

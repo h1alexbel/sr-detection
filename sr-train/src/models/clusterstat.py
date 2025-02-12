@@ -23,7 +23,7 @@ Statistics about generated clusters.
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import os
-
+import pandas as pd
 from loguru import logger
 
 
@@ -37,7 +37,8 @@ def main(dir, out):
                 clusters = []
                 noisy = None
                 for dataset in os.listdir(deep):
-                    if dataset in ["d1-scores", "d2-sbert", "d5-scores+sbert"]:
+                    if dataset in ["d0-numerical"]:
+                        lines = len(pd.read_csv(f"{dir}/{dataset}.csv"))
                         result = f"{dir}/{model}/{dataset}/clusters"
                         if os.path.isdir(result):
                             for cluster in os.listdir(result):
@@ -46,7 +47,7 @@ def main(dir, out):
                                     with open(path, "r") as c:
                                         count = sum(1 for _ in c)
                                         if not cluster == "-1.txt" and not cluster == "config.json":
-                                            clusters.append(count)
+                                            clusters.append(f"{count}/{lines}")
                                         else:
                                             noisy = count
                     if not dataset == "config.json":

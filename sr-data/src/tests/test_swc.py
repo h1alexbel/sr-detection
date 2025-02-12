@@ -24,7 +24,7 @@ Tests for special words count in README.
 # SOFTWARE.
 import os.path
 import unittest
-from tempfile import TemporaryDirectory, TemporaryFile
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 import pytest
@@ -36,7 +36,9 @@ class TestSwc(unittest.TestCase):
     @pytest.mark.fast
     def test_counts_example_word(self):
         count = word_count(
-            "foo/bar", "example", "This is test Example. Example is good, examples are good. Examples are awesome"
+            "foo/bar",
+            "example",
+            "This is test Example. Example is good, examples are good. Examples are awesome"
         )
         expected = 4
         self.assertEqual(

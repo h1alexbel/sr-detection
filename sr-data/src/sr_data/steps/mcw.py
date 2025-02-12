@@ -54,7 +54,7 @@ def main(repos, out):
     before = len(frame)
     frame = frame[frame["words"].apply(bool)]
     logger.info(
-        f"Filtered out {before - len(frame)} repositories that have 0 words after regex filtering ('{rword}')"
+        f"Filtered out {before - len(frame)} repositories that have 0 words after regex filtering ('{rword}')"  # noqa: E501
     )
     frame["readme_mcw"] = frame["words"].apply(most_common)
     frame.to_csv(out, index=False)

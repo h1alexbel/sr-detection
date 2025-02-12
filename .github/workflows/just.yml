@@ -1,6 +1,3 @@
-"""
-Filter repositories without certain licenses.
-"""
 # The MIT License (MIT)
 #
 # Copyright (c) 2024 Aliaksei Bialiauski
@@ -22,20 +19,37 @@ Filter repositories without certain licenses.
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import pandas as pd
-from loguru import logger
-
-
-def main(repos, out):
-    frame = pd.read_csv(repos)
-    licenses = ["mit", "apache-2.0", "0bsd"]
-    before = len(frame)
-    logger.info(f"Checking {before} repositories for licenses: {licenses}")
-    frame["license"] = frame["license"].apply(lambda name: str(name).lower())
-    frame = frame[frame["license"].isin(licenses)]
-    logger.info(
-        f"Filtered out {before - len(frame)} repositories without proper license"
-    )
-    frame.to_csv(out, index=False)
-    logger.info(f"Saved {len(frame)} repositories with proper license to {out}")
-
+---
+name: just
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.10", "3.11", "3.12" ]
+        poetry-version: [ "1.8.4" ]
+        os: [ ubuntu-22.04, macos-13, windows-2022 ]
+        just-version: [ "1.30.1" ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: abatilo/actions-poetry@v4
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+      - uses: extractions/setup-just@v2
+        with:
+          just-version: ${{ matrix.just-version }}
+      - name: Build
+        run: |
+          just install
+          just full "deep or fast"

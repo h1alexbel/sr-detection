@@ -23,6 +23,7 @@
 # Install dependencies.
 install:
   ${RULTOR:+sudo} npm install -g ghminer@0.0.7
+  python -m pip install flake8
   poetry self add 'poethepoet[poetry_plugin]'
   cd sr-data && poetry install
   cd sr-train && poetry install
@@ -39,9 +40,7 @@ test which="fast" cov="":
 
 # Check quality of source code.
 check:
-  git ls-files '*.py' | xargs -I {} sh -c \
-    ' echo "Running Pylint for {}" poetry run pylint "$@" echo "Running Flake8 for {}" poetry run flake8 "$@" \
-     ' _ {}
+  flake8 sr-data sr-train sr-filter
 
 # Run experiment.
 @experiment:
