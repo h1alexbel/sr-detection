@@ -65,7 +65,7 @@ def register(steps):
     for step in steps.split(","):
         if step not in defined:
             logger.error(
-                f"Step '{step}' cannot be recognized. List of available steps: {", ".join(defined)}"
+                f"Step '{step}' cannot be recognized. List of available steps: {', '.join(defined)}"
             )
             exit(-1)
         pipes.append(step)
