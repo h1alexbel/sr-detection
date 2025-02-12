@@ -46,9 +46,8 @@ class TestMaven(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
-            self.assertEqual(
-                frame.iloc[0]["maven_plugins"],
-                f"[{','.join([
+            plugins = ','.join(
+                [
                     'com.github.volodya-lombrozo:jtcop-maven-plugin',
                     'maven-surefire-plugin',
                     'org.apache.maven.plugins:maven-checkstyle-plugin',
@@ -61,7 +60,11 @@ class TestMaven(unittest.TestCase):
                     'org.jacoco:jacoco-maven-plugin',
                     'org.sonatype.plugins:nexus-staging-maven-plugin',
                     'ru.l3r8y:sa-tan'
-                ])}]"
+                ]
+            )
+            self.assertEqual(
+                frame.iloc[0]["maven_plugins"],
+                f"[{plugins}]"
             )
             self.assertEqual(frame.iloc[0]["maven_projects_count"], 1.0)
             self.assertEqual(frame.iloc[0]["maven_wars_count"], 0.0)
