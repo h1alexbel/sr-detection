@@ -99,14 +99,15 @@ class TestMaven(unittest.TestCase):
                 os.environ["GH_TESTING_TOKEN"]
             )
             frame = pd.read_csv(path)
+            plugins = ','.join(
+                [
+                    'org.jetbrains.kotlin:kotlin-maven-plugin',
+                    'org.springframework.boot:spring-boot-maven-plugin'
+                ]
+            )
             self.assertEqual(
                 frame.iloc[0]["maven_plugins"],
-                f"[{','.join(
-                    [
-                        'org.jetbrains.kotlin:kotlin-maven-plugin',
-                        'org.springframework.boot:spring-boot-maven-plugin'
-                    ]
-                )}]"
+                f"[{plugins}]"
             )
 
     @pytest.mark.fast
