@@ -1,5 +1,0 @@
-nkuhn-vmw/GenAI-for-TPCF-Samples
-annuk123/Java-Questions
-aws-samples/sigv4-signing-examples
-aquestry/Nebula
-sidd-harth/jenkins-hello-world

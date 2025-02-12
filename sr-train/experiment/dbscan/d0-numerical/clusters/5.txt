@@ -1,7 +1,0 @@
-findhumane/react-native-threaded-downloader
-Pan4ur/ThunderHack-Updater
-developer-krushna/XML-Formatter
-EasonLyo/sigma
-sparrowwallet/larkapp
-oddbyte/Unweaken
-Tinkoprof/WurstPlusThree-Ported

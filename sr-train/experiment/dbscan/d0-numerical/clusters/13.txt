@@ -1,8 +1,0 @@
-GOLDILOCKS-DBMS/IITP_TASK
-Hindhuja-V/devOps-project
-FRC-team5449/FRC-2025-Elective-Prototype
-Hindhuja-V/bluetooth-home-automation
-ngud-119/Social-Network
-ivangfr/web-reactive-jvm-native-cds-aot-virtual-threads
-hangga/sample-usaidbox
-Jeremiahcheng1206/AML-Monitoring-Engine
