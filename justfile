@@ -23,6 +23,7 @@
 # Install dependencies.
 install:
   ${RULTOR:+sudo} npm install -g ghminer@0.0.7
+  python -m pip install flake8
   poetry self add 'poethepoet[poetry_plugin]'
   cd sr-data && poetry install
   cd sr-train && poetry install
