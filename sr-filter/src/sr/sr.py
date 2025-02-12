@@ -33,16 +33,18 @@ import shutil
 import sr_data.steps.pulls as pulls
 
 
-def pull():
+def pull_requests():
     logger.info("Calculating the number of pull requests in each repo...")
     with importlib.resources.files("sr.resources").joinpath("toolchain.json").open("r") as spec:
         tlc = json.load(spec)
         config = tlc["pulls"]
-        pulls.main(config["repos"], config["out"], os.environ[config["token"].replace("$", "")])
+        out = config["out"]
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        pulls.main(config["repos"], out, os.environ[config["token"].replace("$", "")])
 
 
 PIPE_MAPPING = {
-    "pulls": pull
+    "pulls": pull_requests
 }
 
 
