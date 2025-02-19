@@ -75,7 +75,7 @@ jobs:
             -e OUT="${{ inputs.out }}" -e STEPS="${{ inputs.steps }}" \
             -e NUMBASE="${{ inputs.numbase }}" -e EMBEDDINGS=false \
             h1alexbel/sr-detection
-      - uses: JamesIves/github-pages-deploy-action@v4.7.2
+      - uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: gh-pages
           folder: output

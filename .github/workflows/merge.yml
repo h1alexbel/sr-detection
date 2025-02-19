@@ -60,7 +60,7 @@ jobs:
             just merge "${{ inputs.folders }}" "../merged/${{ inputs.out }}" "${{ inputs.branch }}"
           } 2>&1 | tee -a merge.log
           cp "merge.log" "merged/${{ inputs.out }}"
-      - uses: JamesIves/github-pages-deploy-action@v4.7.2
+      - uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: datasets
           folder: merged

@@ -57,7 +57,7 @@ jobs:
           } 2>&1 | tee -a cluster.log
           cp "results.txt" "clustered/${{ inputs.out }}"
           cp "cluster.log" "clustered/${{ inputs.out }}"
-      - uses: JamesIves/github-pages-deploy-action@v4.7.2
+      - uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: clusters
           folder: clustered
