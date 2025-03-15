@@ -46,7 +46,7 @@ jobs:
       - uses: abatilo/actions-poetry@v4
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - uses: extractions/setup-just@v2
+      - uses: extractions/setup-just@v3
         with:
           just-version: ${{ matrix.just-version }}
       - name: Build
