@@ -30,7 +30,7 @@ packages = [{ include = "sr-data" }, { include = "sr-train" }, { include = "sr-f
 
 [tool.poetry.dependencies]
 poetry = "1.8.4"
-python = "==3.10.* || ==3.11.* || ==3.12.*"
+python = "=3.13.3"
 sr-data = { path = "./sr-data" }
 sr-train = { path = "./sr-train" }
 sr-filter = { path = "./sr-filter" }

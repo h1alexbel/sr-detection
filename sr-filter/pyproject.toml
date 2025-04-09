@@ -33,7 +33,7 @@ sr-filter = "sr.sr:main"
 
 [tool.poetry.dependencies]
 sr-data = "0.0.0"
-python = "==3.10.* || ==3.11.* || ==3.12.*"
+python = "=3.13.3"
 loguru = "^0.7.3"
 
 [build-system]
