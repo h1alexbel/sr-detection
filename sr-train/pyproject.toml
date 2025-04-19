@@ -34,7 +34,7 @@ python = "==3.10.* || ==3.11.* || ==3.12.*"
 scikit-learn = "1.6.0"
 pandas = "2.2.3"
 scikit-fuzzy = "0.5.0"
-packaging = "24.2"
+packaging = "25.0"
 loguru = "0.7.3"
 
 [tool.poe.tasks.cluster]
